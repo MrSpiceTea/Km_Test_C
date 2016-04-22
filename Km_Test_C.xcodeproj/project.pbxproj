@@ -26,6 +26,7 @@
 		51DE66881CCA2781001F0BAC /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66871CCA2781001F0BAC /* UIColor+expanded.m */; };
 		51DE668B1CCA28BC001F0BAC /* UIImage+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE668A1CCA28BC001F0BAC /* UIImage+expanded.m */; };
 		51DE668E1CCA28E9001F0BAC /* UINavigationBar+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE668D1CCA28E9001F0BAC /* UINavigationBar+expanded.m */; };
+		51DE66921CCA2C58001F0BAC /* ChooseSongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66911CCA2C58001F0BAC /* ChooseSongViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,8 @@
 		51DE668A1CCA28BC001F0BAC /* UIImage+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+expanded.m"; sourceTree = "<group>"; };
 		51DE668C1CCA28E9001F0BAC /* UINavigationBar+expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+expanded.h"; sourceTree = "<group>"; };
 		51DE668D1CCA28E9001F0BAC /* UINavigationBar+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+expanded.m"; sourceTree = "<group>"; };
+		51DE66901CCA2C58001F0BAC /* ChooseSongViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSongViewController.h; sourceTree = "<group>"; };
+		51DE66911CCA2C58001F0BAC /* ChooseSongViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSongViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +209,7 @@
 		51DE664E1CCA2183001F0BAC /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				51DE668F1CCA2C41001F0BAC /* ChooseSong */,
 				51DE66571CCA2183001F0BAC /* RootControllers */,
 				51DE664F1CCA2183001F0BAC /* Chat */,
 				51DE66501CCA2183001F0BAC /* Discover */,
@@ -340,6 +344,23 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
+		51DE668F1CCA2C41001F0BAC /* ChooseSong */ = {
+			isa = PBXGroup;
+			children = (
+				51DE66901CCA2C58001F0BAC /* ChooseSongViewController.h */,
+				51DE66911CCA2C58001F0BAC /* ChooseSongViewController.m */,
+				51DE66931CCA2CAB001F0BAC /* RemoteControl */,
+			);
+			path = ChooseSong;
+			sourceTree = "<group>";
+		};
+		51DE66931CCA2CAB001F0BAC /* RemoteControl */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RemoteControl;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -419,6 +440,7 @@
 				51DE668B1CCA28BC001F0BAC /* UIImage+expanded.m in Sources */,
 				51DE66271CCA1C1F001F0BAC /* main.m in Sources */,
 				51DE667F1CCA274E001F0BAC /* MASLayoutConstraint.m in Sources */,
+				51DE66921CCA2C58001F0BAC /* ChooseSongViewController.m in Sources */,
 				51DE665E1CCA229F001F0BAC /* RootViewController.m in Sources */,
 				51DE66851CCA274E001F0BAC /* ViewController+MASAdditions.m in Sources */,
 				51DE66841CCA274E001F0BAC /* View+MASAdditions.m in Sources */,

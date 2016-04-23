@@ -1,18 +1,18 @@
 //
-//  ChooseSongViewController.m
+//  BaseViewController.m
 //  Km_Test_C
 //
-//  Created by Mr.Xie on 16/4/22.
+//  Created by 谢展图 on 16/4/23.
 //  Copyright © 2016年 OMG. All rights reserved.
 //
 
-#import "ChooseSongViewController.h"
+#import "BaseViewController.h"
 
-@interface ChooseSongViewController ()
+@interface BaseViewController ()
 
 @end
 
-@implementation ChooseSongViewController
+@implementation BaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

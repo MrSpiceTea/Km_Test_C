@@ -12,6 +12,8 @@
 		3560131F1CCA9DA900DE2275 /* ChooseSongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3560131E1CCA9DA900DE2275 /* ChooseSongViewController.m */; };
 		356013261CCA9E3500DE2275 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356013251CCA9E3500DE2275 /* MeViewController.m */; };
 		3560132C1CCAA2B300DE2275 /* ChooseSongHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3560132B1CCAA2B300DE2275 /* ChooseSongHeaderView.m */; };
+		35F98D651CCBE97E004356D0 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F98D5A1CCBE97E004356D0 /* DiscoverViewController.m */; };
+		35F98D661CCBE97E004356D0 /* FriendCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F98D601CCBE97E004356D0 /* FriendCircleViewController.m */; };
 		51DE66271CCA1C1F001F0BAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66261CCA1C1F001F0BAC /* main.m */; };
 		51DE662A1CCA1C1F001F0BAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66291CCA1C1F001F0BAC /* AppDelegate.m */; };
 		51DE66321CCA1C1F001F0BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DE66311CCA1C1F001F0BAC /* Assets.xcassets */; };
@@ -44,6 +46,10 @@
 		356013251CCA9E3500DE2275 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
 		3560132A1CCAA2B300DE2275 /* ChooseSongHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSongHeaderView.h; sourceTree = "<group>"; };
 		3560132B1CCAA2B300DE2275 /* ChooseSongHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSongHeaderView.m; sourceTree = "<group>"; };
+		35F98D591CCBE97E004356D0 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
+		35F98D5A1CCBE97E004356D0 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
+		35F98D5F1CCBE97E004356D0 /* FriendCircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCircleViewController.h; sourceTree = "<group>"; };
+		35F98D601CCBE97E004356D0 /* FriendCircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCircleViewController.m; sourceTree = "<group>"; };
 		51DE66221CCA1C1F001F0BAC /* Km_Test_C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Km_Test_C.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DE66261CCA1C1F001F0BAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		51DE66281CCA1C1F001F0BAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -127,6 +133,8 @@
 		356013221CCA9E1F00DE2275 /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				35F98D671CCBEA0E004356D0 /* Model */,
+				35F98D681CCBEA0E004356D0 /* View */,
 				356013231CCA9E1F00DE2275 /* Contorller */,
 			);
 			path = Me;
@@ -139,6 +147,86 @@
 				356013251CCA9E3500DE2275 /* MeViewController.m */,
 			);
 			path = Contorller;
+			sourceTree = "<group>";
+		};
+		35F98D571CCBE97E004356D0 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				35F98D581CCBE97E004356D0 /* Controller */,
+				35F98D5B1CCBE97E004356D0 /* Model */,
+				35F98D5C1CCBE97E004356D0 /* View */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		35F98D581CCBE97E004356D0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				35F98D591CCBE97E004356D0 /* DiscoverViewController.h */,
+				35F98D5A1CCBE97E004356D0 /* DiscoverViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		35F98D5B1CCBE97E004356D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		35F98D5C1CCBE97E004356D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		35F98D5D1CCBE97E004356D0 /* FriendCircle */ = {
+			isa = PBXGroup;
+			children = (
+				35F98D5E1CCBE97E004356D0 /* Controller */,
+				35F98D611CCBE97E004356D0 /* Model */,
+				35F98D621CCBE97E004356D0 /* View */,
+			);
+			path = FriendCircle;
+			sourceTree = "<group>";
+		};
+		35F98D5E1CCBE97E004356D0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				35F98D5F1CCBE97E004356D0 /* FriendCircleViewController.h */,
+				35F98D601CCBE97E004356D0 /* FriendCircleViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		35F98D611CCBE97E004356D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		35F98D621CCBE97E004356D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		35F98D671CCBEA0E004356D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		35F98D681CCBEA0E004356D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		51DE66191CCA1C1F001F0BAC = {
@@ -263,35 +351,13 @@
 		51DE664E1CCA2183001F0BAC /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				35F98D571CCBE97E004356D0 /* Discover */,
+				35F98D5D1CCBE97E004356D0 /* FriendCircle */,
 				51DE66571CCA2183001F0BAC /* RootControllers */,
 				356013221CCA9E1F00DE2275 /* Me */,
 				51DE668F1CCA2C41001F0BAC /* ChooseSong */,
-				51DE664F1CCA2183001F0BAC /* Chat */,
-				51DE66501CCA2183001F0BAC /* Discover */,
-				51DE66511CCA2183001F0BAC /* FriendCircle */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		51DE664F1CCA2183001F0BAC /* Chat */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Chat;
-			sourceTree = "<group>";
-		};
-		51DE66501CCA2183001F0BAC /* Discover */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Discover;
-			sourceTree = "<group>";
-		};
-		51DE66511CCA2183001F0BAC /* FriendCircle */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = FriendCircle;
 			sourceTree = "<group>";
 		};
 		51DE66571CCA2183001F0BAC /* RootControllers */ = {
@@ -453,6 +519,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3560131B1CCA922600DE2275 /* BaseViewController.m in Sources */,
+				35F98D651CCBE97E004356D0 /* DiscoverViewController.m in Sources */,
 				51DE66831CCA274E001F0BAC /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				51DE66811CCA274E001F0BAC /* MASViewConstraint.m in Sources */,
 				3560132C1CCAA2B300DE2275 /* ChooseSongHeaderView.m in Sources */,
@@ -468,6 +535,7 @@
 				51DE66841CCA274E001F0BAC /* View+MASAdditions.m in Sources */,
 				51DE66881CCA2781001F0BAC /* UIColor+expanded.m in Sources */,
 				356013261CCA9E3500DE2275 /* MeViewController.m in Sources */,
+				35F98D661CCBE97E004356D0 /* FriendCircleViewController.m in Sources */,
 				51DE668E1CCA28E9001F0BAC /* UINavigationBar+expanded.m in Sources */,
 				356013181CCA91DA00DE2275 /* BaseNavigationController.m in Sources */,
 				51DE66801CCA274E001F0BAC /* MASViewAttribute.m in Sources */,

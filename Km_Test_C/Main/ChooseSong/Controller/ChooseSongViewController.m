@@ -24,6 +24,7 @@
 
 #pragma mark - LifeCycle
 
+static const CGFloat kGirdViewHeight = 480.0f;
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -80,6 +81,8 @@ static const CGFloat kTopGridViewMargin = 5.0f;
     }else{
         if (indexPath.row == 0 ||indexPath.row ==7) {
             return 50;
+        }else if (indexPath.row == 8){
+            return kGirdViewHeight;
         }
         return 60;
     }
@@ -120,10 +123,10 @@ static const CGFloat kTopGridViewMargin = 5.0f;
             if (indexPath.row == 0 || indexPath.row == 7) {
                 cell = [[ChooseSongCell alloc]initWithTitle:@"" reuseIdentifier:chooseSongTitleCellIdentifier];
             }else if (indexPath.row == 8){
-
+                cell = [[ChooseSongCell alloc]initWithCustomView:self.chooseSongBottomGirdView reuseIdentifier:chooseSongBottomGirdCellIdentifier];
+                cell.contentView.backgroundColor = RGB(240, 240, 240);
             }else{
                 cell = [[ChooseSongCell alloc]initWithTitle:@"" detail:@"" reuseIdentifier:chooseSongHotCellIdentifier];
-                
             }
         }
     }
@@ -149,7 +152,7 @@ static const CGFloat kTopGridViewMargin = 5.0f;
     if (section == 0) {
         return 2;
     }else{
-        return 8;
+        return 9;
     }
 }
 #pragma mark - UIScrollViewDelegate
@@ -261,12 +264,14 @@ static const CGFloat kTopGridViewMargin = 5.0f;
     }
     return _tableView;
 }
+
 - (UIView *)headerView{
     if (!_headerView) {
         _headerView = [[ChooseSongHeadView alloc]init];
     }
     return _headerView;
 }
+
 -(UIButton *)hoverButton{
     if (!_hoverButton) {
         _hoverButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -274,5 +279,71 @@ static const CGFloat kTopGridViewMargin = 5.0f;
         [_hoverButton setBackgroundImage:[UIImage imageNamed:@"btn_remote_control_n"] forState:UIControlStateNormal];
     }
     return _hoverButton;
+}
+static const CGFloat kGridViewHeight = 130;
+- (UIView *)chooseSongBottomGirdView{
+        __block UIView *lastView = nil;
+        UIView *nineButtonView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, kGirdViewHeight - 30)];
+        nineButtonView.backgroundColor = [UIColor whiteColor];
+        int intes = 10;
+        int num = 3;
+        for (int i = 0; i < 9; i++) {
+            UIView *view = [UIView new];
+            [view setTag:i];
+            [nineButtonView addSubview:view];
+            UIImageView *icon= [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"zhuanjitest"]];
+            icon.layer.masksToBounds = YES;
+            icon.layer.cornerRadius = 8;
+            UILabel *iconLabel = [[UILabel alloc]init];
+            
+            iconLabel.text = @"好声音第一季";
+            iconLabel.font = [UIFont systemFontOfSize:14];
+            iconLabel.textColor = [UIColor blackColor];
+            [view addSubview:icon];
+            [view addSubview:iconLabel];
+            
+            [icon mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.edges.equalTo(view).with.insets(UIEdgeInsetsMake(0, 0, 20, 0));
+            }];
+            [iconLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(icon.mas_bottom).with.offset(5);
+                make.width.mas_offset(kGridViewHeight);
+                make.left.equalTo(iconLabel.superview.mas_left).with.offset(5);
+            }];
+            [view mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.height.mas_equalTo(kGridViewHeight);
+                if (lastView) {
+                    make.width.equalTo(lastView);
+                } else {
+                    if (i % num != 0) {
+                        make.width.mas_equalTo((view.superview.frame.size.width - (num + 1)* intes)/4);
+                    }
+                }
+                // 2. 判断是否是第一列
+                if (i % num == 0) {
+                    // 一：是第一列时 添加左侧与父视图左侧约束
+                    make.left.mas_equalTo(view.superview).offset(intes);
+                } else {
+                    // 二： 不是第一列时 添加左侧与上个view左侧约束
+                    make.left.mas_equalTo(lastView.mas_right).offset(intes);
+                }
+                // 3. 判断是否是最后一列 给最后一列添加与父视图右边约束
+                if (i % num == (num - 1)) {
+                    make.right.mas_equalTo(view.superview).offset(-intes);
+                }
+                // 4. 判断是否为第一列
+                if (i / num == 0) {
+                    // 第一列添加顶部约束
+                    make.top.mas_equalTo(view.superview).offset(intes);
+                } else {
+                    // 其余添加顶部约束 intes*10 是我留出的距顶部高度
+                    make.top.mas_equalTo(intes + ( i / num )* (100 + intes*5));
+                }
+                
+            }];
+            // 每次循环结束 此次的View为下次约束的基准
+            lastView = view;
+        }
+        return nineButtonView;
 }
 @end

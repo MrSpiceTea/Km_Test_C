@@ -34,7 +34,7 @@
     [super viewDidLoad];
     UIImage *image = [UIImage imageNamed:@"ktv_home_shadow"];
 //    [self.tabBar setBackgroundImage:image];
-    [self.tabBar setBackgroundColor:RGB(200, 200, 200)];
+//    [self.tabBar setBackgroundColor:RGB(300, 300, 203000)];
     [self.tabBar setShadowImage:image];
 //     [[UITabBar appearance] setTintColor:[UIColor clearColor]];
     // Do any additional setup after loading the view.

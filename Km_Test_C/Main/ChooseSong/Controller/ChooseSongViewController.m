@@ -7,33 +7,41 @@
 //
 
 #import "ChooseSongViewController.h"
+#import "ChooseSongCell.h"
+#import "ChooseSongHeadView.h"
+
 #import "UINavigationBar+expanded.h"
 
 #define kCellIdentifier_TitleDisclosure @"TitleDisclosureCell"
 
 @interface ChooseSongViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
-@property (nonatomic,strong) UISearchBar *serachBar;
+@property (nonatomic,strong) UIView *headerView;
+@property (nonatomic,strong) UIButton *hoverButton;
 @end
 
 @implementation ChooseSongViewController
 
 #pragma mark - LifeCycle
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
      self.automaticallyAdjustsScrollViewInsets = NO;
-//    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     [self.navigationController.navigationBar cnSetBackgroundColor:[UIColor clearColor]];
+    [[[UIApplication sharedApplication].delegate window] addSubview:self.hoverButton];
 //    self.timer = [[NSTimer alloc]initWithFireDate:[NSDate distantPast] interval:kTimerInterval target:self selector:@selector(connnectButtionTimer:) userInfo:nil repeats:YES];
 //    [[NSRunLoop mainRunLoop]addTimer:self.timer forMode:NSDefaultRunLoopMode];
 }
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.hoverButton removeFromSuperview];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"k歌";
-    self.view.backgroundColor = [UIColor brownColor];
-
-
+    self.navigationItem.title = @"KTV点歌";
     [self layoutSubViews];
 }
 
@@ -51,41 +59,98 @@
 
 
 #pragma mark - UITablewViewDelegate
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 80, 30)];
-    [button setTitle:@"最新歌曲" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [button setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.1]];
-    return button;
-}
+//-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 80, 30)];
+//    [button setTitle:@"最新歌曲" forState:UIControlStateNormal];
+//    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    [button setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.1]];
+//    return button;
+//}
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 50;
+    return 1;
 }
 
+static const CGFloat kTopGridViewMargin = 5.0f;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 1) {
-        return 50;
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            return 60;
+        }
+        return kSCREEN_WIDTH/2;
+    }else{
+        if (indexPath.row == 0 ||indexPath.row ==7) {
+            return 50;
+        }
+        return 60;
     }
-    return 50;
 }
 
 #pragma mark - UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *CellIdentifier=@"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-  
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    static NSString *chooseSongSerachCellIdentifier = @"chooseSongSerachCell";
+    static NSString *chooseSongTopGridCellIdentifier = @"chooseSongTopGridCell";
+    static NSString *chooseSongTitleCellIdentifier=@"chooseSongTitleCell";
+    static NSString *chooseSongHotCellIdentifier=@"chooseSongHotCell";
+    static NSString *chooseSongBottomGirdCellIdentifier=@"chooseSongBottomGirdCell";
+    ChooseSongCell *cell = nil;
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            cell = (ChooseSongCell *)[tableView dequeueReusableCellWithIdentifier:chooseSongSerachCellIdentifier];
+        }else if (indexPath.row == 1){
+            cell = (ChooseSongCell *)[tableView dequeueReusableCellWithIdentifier:chooseSongTopGridCellIdentifier];
+        }
+    }else if (indexPath.section == 1){
+        if (indexPath.row == 0 || indexPath.row == 7) {
+            cell = (ChooseSongCell *)[tableView dequeueReusableCellWithIdentifier:chooseSongTitleCellIdentifier];
+        }else if (indexPath.row == 8){
+            cell = (ChooseSongCell *)[tableView dequeueReusableCellWithIdentifier:chooseSongBottomGirdCellIdentifier];
+        }else{
+            cell = (ChooseSongCell *)[tableView dequeueReusableCellWithIdentifier:chooseSongHotCellIdentifier];
+        }
     }
-    cell.textLabel.text = @"wer";
+
+    if (!cell) {
+        if (indexPath.section == 0) {
+            if (indexPath.row == 0) {
+                cell = [[ChooseSongCell alloc]initWithCustomView:[self serachBarView] reuseIdentifier:chooseSongSerachCellIdentifier];
+            }else if (indexPath.row == 1){
+                cell = [[ChooseSongCell alloc]initWithCustomView:[self chooseSongTopGridView] reuseIdentifier:chooseSongTopGridCellIdentifier];
+            }
+        }else if (indexPath.section == 1){
+            if (indexPath.row == 0 || indexPath.row == 7) {
+                cell = [[ChooseSongCell alloc]initWithTitle:@"" reuseIdentifier:chooseSongTitleCellIdentifier];
+            }else if (indexPath.row == 8){
+
+            }else{
+                cell = [[ChooseSongCell alloc]initWithTitle:@"" detail:@"" reuseIdentifier:chooseSongHotCellIdentifier];
+                
+            }
+        }
+    }
+    
+    if (indexPath.row == 0 ) {
+        cell.titleLabel.text = @"最热新歌";
+    } else if (indexPath.row == 7 ) {
+        cell.titleLabel.text = @"推荐歌单";
+    }else{
+        cell.titleLabel.text = @"鲁冰花[我是歌手第四季]";
+        cell.detailLabel.text = @"徐佳莹";
+    }
+    
+  
     return cell;
 }
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    if (section == 0) {
+        return 2;
+    }else{
+        return 8;
+    }
 }
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -103,6 +168,87 @@
 #pragma mark - ActionTarget
 #pragma mark - UITextFieldDelegate
 #pragma mark - Private Method
+- (UIView *)serachBarView{
+    UIView *view = [UIView new];
+    [view setFrame:CGRectMake(10, 10, kSCREEN_WIDTH - 20, 35)];
+    view.backgroundColor = RGB(240, 240, 240);
+    view.layer.cornerRadius = 15;
+    
+    UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"wan_searchview_icon"]];
+    UILabel *label = [UILabel new];
+    [label setText:@"搜歌"];
+    [label setFont:[UIFont systemFontOfSize:13]];
+    [label setTextColor:RGB(160, 160, 160)];
+    
+    [view addSubview:imageView];
+    [view addSubview:label];
+    
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_offset(CGSizeMake(15, 15));
+        make.centerY.equalTo(view);
+        make.left.equalTo(view).with.offset(10);
+    }];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_offset(CGSizeMake(50, 25));
+        make.centerY.equalTo(view);
+        make.left.equalTo(imageView.mas_right).with.offset(10);
+    }];
+    return view;
+    
+}
+- (UIView *)chooseSongTopGridView{
+    int sidesMargin = 10;
+    int leftWidth = kSCREEN_WIDTH/2 - kTopGridViewMargin/2 - sidesMargin;
+    int rightWidth = (kSCREEN_WIDTH/2 - kTopGridViewMargin/2 - kTopGridViewMargin -sidesMargin)/2;
+    UIView *chooseSongTopGridView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, (leftWidth)+20)];
+    UIImageView *view1 = [UIImageView new];
+    UIImageView *view2 = [UIImageView new];
+    UIImageView *view3 = [UIImageView new];
+    UIImageView *view4 = [UIImageView new];
+    
+    void (^viewBlock)() = ^(UIImageView *view,NSString *title,NSString *imageName){
+        [view setImage:[UIImage imageNamed:imageName]];
+        UILabel *iconLabel = [[UILabel alloc]init];
+        iconLabel.text = title;
+        iconLabel.font = [UIFont systemFontOfSize:16];
+        iconLabel.textColor = [UIColor whiteColor];
+        [view addSubview:iconLabel];
+        [chooseSongTopGridView addSubview:view];
+        
+        [iconLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(view.mas_left).with.offset(kTopGridViewMargin);
+            make.bottom.equalTo(view.mas_bottom).with.offset(-kTopGridViewMargin);
+        }];
+    };
+    
+    viewBlock(view1,@"歌手",@"angelababy");
+    viewBlock(view2,@"",@"new_wan_picksong_local");
+    viewBlock(view3,@"",@"new_wan_picksong_common");
+    viewBlock(view4,@"",@"new_wan_picksong_rank");
+    
+    [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(chooseSongTopGridView).with.offset(0);
+        make.size.mas_equalTo(CGSizeMake(leftWidth, leftWidth));
+        make.left.equalTo(chooseSongTopGridView).with.offset(sidesMargin);
+    }];
+    [view2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(chooseSongTopGridView).with.offset(0);
+        make.left.equalTo(view1.mas_right).with.offset(kTopGridViewMargin);
+        make.size.mas_equalTo(CGSizeMake(rightWidth, rightWidth));
+    }];
+    [view3 mas_makeConstraints:^(MASConstraintMaker *make){
+        make.top.equalTo(chooseSongTopGridView).with.offset(0);
+        make.left.equalTo(view2.mas_right).with.offset(kTopGridViewMargin);
+        make.size.mas_equalTo(CGSizeMake(rightWidth, rightWidth));
+    }];
+    [view4 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(leftWidth, rightWidth));
+        make.left.equalTo(view1.mas_right).with.offset(kTopGridViewMargin);
+        make.top.equalTo(view2.mas_bottom).with.offset(kTopGridViewMargin);
+    }];
+    return chooseSongTopGridView;
+}
+
 #pragma mark - Getter/Setter
 - (UITableView *)tableView{
     if (!_tableView) {
@@ -110,10 +256,23 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//        [_tableView registerClass:[ChooseSongViewController class] forCellReuseIdentifier:kCellIdentifier_TitleDisclosure];
-//        _tableView.tableHeaderView = self.headerView;
-        _tableView.backgroundColor = [UIColor clearColor];
+        _tableView.tableHeaderView = self.headerView;
+        _tableView.backgroundColor = RGB(246, 246, 246);
     }
     return _tableView;
+}
+- (UIView *)headerView{
+    if (!_headerView) {
+        _headerView = [[ChooseSongHeadView alloc]init];
+    }
+    return _headerView;
+}
+-(UIButton *)hoverButton{
+    if (!_hoverButton) {
+        _hoverButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _hoverButton.frame = CGRectMake(10, kSCREEN_HEIGHT - 104, 42, 42);
+        [_hoverButton setBackgroundImage:[UIImage imageNamed:@"btn_remote_control_n"] forState:UIControlStateNormal];
+    }
+    return _hoverButton;
 }
 @end

@@ -12,6 +12,12 @@
 		3560131F1CCA9DA900DE2275 /* ChooseSongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3560131E1CCA9DA900DE2275 /* ChooseSongViewController.m */; };
 		356013261CCA9E3500DE2275 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356013251CCA9E3500DE2275 /* MeViewController.m */; };
 		3560132C1CCAA2B300DE2275 /* ChooseSongHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3560132B1CCAA2B300DE2275 /* ChooseSongHeaderView.m */; };
+		35E68FE41CCCB385003F1AC7 /* ChooseSongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FE31CCCB385003F1AC7 /* ChooseSongCell.m */; };
+		35E68FE71CCCB3A1003F1AC7 /* ChooseSongHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FE61CCCB3A1003F1AC7 /* ChooseSongHeadView.m */; };
+		35E68FED1CCCD148003F1AC7 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FEC1CCCD148003F1AC7 /* ChatViewController.m */; };
+		35E68FF61CCCD18D003F1AC7 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FF51CCCD18D003F1AC7 /* DiscoverViewController.m */; };
+		35E68FF91CCCD19F003F1AC7 /* FirendCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FF81CCCD19F003F1AC7 /* FirendCircleViewController.m */; };
+		35E68FFC1CCD1219003F1AC7 /* ChosseSongSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FFB1CCD1219003F1AC7 /* ChosseSongSearchView.m */; };
 		51DE66271CCA1C1F001F0BAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66261CCA1C1F001F0BAC /* main.m */; };
 		51DE662A1CCA1C1F001F0BAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66291CCA1C1F001F0BAC /* AppDelegate.m */; };
 		51DE66321CCA1C1F001F0BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DE66311CCA1C1F001F0BAC /* Assets.xcassets */; };
@@ -44,6 +50,18 @@
 		356013251CCA9E3500DE2275 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
 		3560132A1CCAA2B300DE2275 /* ChooseSongHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSongHeaderView.h; sourceTree = "<group>"; };
 		3560132B1CCAA2B300DE2275 /* ChooseSongHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSongHeaderView.m; sourceTree = "<group>"; };
+		35E68FE21CCCB385003F1AC7 /* ChooseSongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSongCell.h; sourceTree = "<group>"; };
+		35E68FE31CCCB385003F1AC7 /* ChooseSongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSongCell.m; sourceTree = "<group>"; };
+		35E68FE51CCCB3A1003F1AC7 /* ChooseSongHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSongHeadView.h; sourceTree = "<group>"; };
+		35E68FE61CCCB3A1003F1AC7 /* ChooseSongHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSongHeadView.m; sourceTree = "<group>"; };
+		35E68FEB1CCCD148003F1AC7 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		35E68FEC1CCCD148003F1AC7 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		35E68FF41CCCD18D003F1AC7 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
+		35E68FF51CCCD18D003F1AC7 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
+		35E68FF71CCCD19F003F1AC7 /* FirendCircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirendCircleViewController.h; sourceTree = "<group>"; };
+		35E68FF81CCCD19F003F1AC7 /* FirendCircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirendCircleViewController.m; sourceTree = "<group>"; };
+		35E68FFA1CCD1219003F1AC7 /* ChosseSongSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChosseSongSearchView.h; sourceTree = "<group>"; };
+		35E68FFB1CCD1219003F1AC7 /* ChosseSongSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChosseSongSearchView.m; sourceTree = "<group>"; };
 		51DE66221CCA1C1F001F0BAC /* Km_Test_C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Km_Test_C.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DE66261CCA1C1F001F0BAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		51DE66281CCA1C1F001F0BAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -104,6 +122,12 @@
 			children = (
 				3560131D1CCA9DA900DE2275 /* ChooseSongViewController.h */,
 				3560131E1CCA9DA900DE2275 /* ChooseSongViewController.m */,
+				35E68FE21CCCB385003F1AC7 /* ChooseSongCell.h */,
+				35E68FE31CCCB385003F1AC7 /* ChooseSongCell.m */,
+				35E68FE51CCCB3A1003F1AC7 /* ChooseSongHeadView.h */,
+				35E68FE61CCCB3A1003F1AC7 /* ChooseSongHeadView.m */,
+				35E68FFA1CCD1219003F1AC7 /* ChosseSongSearchView.h */,
+				35E68FFB1CCD1219003F1AC7 /* ChosseSongSearchView.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -139,6 +163,82 @@
 				356013251CCA9E3500DE2275 /* MeViewController.m */,
 			);
 			path = Contorller;
+			sourceTree = "<group>";
+		};
+		35E68FE11CCCA8FF003F1AC7 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		35E68FE81CCCD12F003F1AC7 /* Contorller */ = {
+			isa = PBXGroup;
+			children = (
+				35E68FEB1CCCD148003F1AC7 /* ChatViewController.h */,
+				35E68FEC1CCCD148003F1AC7 /* ChatViewController.m */,
+			);
+			path = Contorller;
+			sourceTree = "<group>";
+		};
+		35E68FE91CCCD12F003F1AC7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		35E68FEA1CCCD12F003F1AC7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		35E68FEE1CCCD17B003F1AC7 /* Contorller */ = {
+			isa = PBXGroup;
+			children = (
+				35E68FF41CCCD18D003F1AC7 /* DiscoverViewController.h */,
+				35E68FF51CCCD18D003F1AC7 /* DiscoverViewController.m */,
+			);
+			path = Contorller;
+			sourceTree = "<group>";
+		};
+		35E68FEF1CCCD17B003F1AC7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		35E68FF01CCCD17B003F1AC7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		35E68FF11CCCD181003F1AC7 /* Contorller */ = {
+			isa = PBXGroup;
+			children = (
+				35E68FF71CCCD19F003F1AC7 /* FirendCircleViewController.h */,
+				35E68FF81CCCD19F003F1AC7 /* FirendCircleViewController.m */,
+			);
+			path = Contorller;
+			sourceTree = "<group>";
+		};
+		35E68FF21CCCD181003F1AC7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		35E68FF31CCCD181003F1AC7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		51DE66191CCA1C1F001F0BAC = {
@@ -232,17 +332,10 @@
 		51DE66451CCA2172001F0BAC /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				51DE66461CCA2172001F0BAC /* Image */,
+				35E68FE11CCCA8FF003F1AC7 /* Images */,
 				51DE66471CCA2172001F0BAC /* Plist */,
 			);
 			path = Resource;
-			sourceTree = "<group>";
-		};
-		51DE66461CCA2172001F0BAC /* Image */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Image;
 			sourceTree = "<group>";
 		};
 		51DE66471CCA2172001F0BAC /* Plist */ = {
@@ -276,6 +369,9 @@
 		51DE664F1CCA2183001F0BAC /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				35E68FE81CCCD12F003F1AC7 /* Contorller */,
+				35E68FE91CCCD12F003F1AC7 /* Model */,
+				35E68FEA1CCCD12F003F1AC7 /* View */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -283,6 +379,9 @@
 		51DE66501CCA2183001F0BAC /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				35E68FEE1CCCD17B003F1AC7 /* Contorller */,
+				35E68FEF1CCCD17B003F1AC7 /* Model */,
+				35E68FF01CCCD17B003F1AC7 /* View */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -290,6 +389,9 @@
 		51DE66511CCA2183001F0BAC /* FriendCircle */ = {
 			isa = PBXGroup;
 			children = (
+				35E68FF11CCCD181003F1AC7 /* Contorller */,
+				35E68FF21CCCD181003F1AC7 /* Model */,
+				35E68FF31CCCD181003F1AC7 /* View */,
 			);
 			path = FriendCircle;
 			sourceTree = "<group>";
@@ -454,6 +556,7 @@
 			files = (
 				3560131B1CCA922600DE2275 /* BaseViewController.m in Sources */,
 				51DE66831CCA274E001F0BAC /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				35E68FF91CCCD19F003F1AC7 /* FirendCircleViewController.m in Sources */,
 				51DE66811CCA274E001F0BAC /* MASViewConstraint.m in Sources */,
 				3560132C1CCAA2B300DE2275 /* ChooseSongHeaderView.m in Sources */,
 				51DE667C1CCA274E001F0BAC /* MASCompositeConstraint.m in Sources */,
@@ -466,11 +569,16 @@
 				51DE665E1CCA229F001F0BAC /* RootViewController.m in Sources */,
 				51DE66851CCA274E001F0BAC /* ViewController+MASAdditions.m in Sources */,
 				51DE66841CCA274E001F0BAC /* View+MASAdditions.m in Sources */,
+				35E68FED1CCCD148003F1AC7 /* ChatViewController.m in Sources */,
+				35E68FF61CCCD18D003F1AC7 /* DiscoverViewController.m in Sources */,
+				35E68FFC1CCD1219003F1AC7 /* ChosseSongSearchView.m in Sources */,
 				51DE66881CCA2781001F0BAC /* UIColor+expanded.m in Sources */,
 				356013261CCA9E3500DE2275 /* MeViewController.m in Sources */,
 				51DE668E1CCA28E9001F0BAC /* UINavigationBar+expanded.m in Sources */,
 				356013181CCA91DA00DE2275 /* BaseNavigationController.m in Sources */,
 				51DE66801CCA274E001F0BAC /* MASViewAttribute.m in Sources */,
+				35E68FE71CCCB3A1003F1AC7 /* ChooseSongHeadView.m in Sources */,
+				35E68FE41CCCB385003F1AC7 /* ChooseSongCell.m in Sources */,
 				51DE667D1CCA274E001F0BAC /* MASConstraint.m in Sources */,
 				51DE667E1CCA274E001F0BAC /* MASConstraintMaker.m in Sources */,
 			);
@@ -527,7 +635,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -565,7 +673,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

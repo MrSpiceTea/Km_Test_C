@@ -57,8 +57,6 @@
 //    [[UINavigationBar appearance] setClipsToBounds:YES];
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithWhite:0  alpha:0.5]];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];//状态栏
-    
 }
 
 @end

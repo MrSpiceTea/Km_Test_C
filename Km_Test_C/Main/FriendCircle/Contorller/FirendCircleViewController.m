@@ -17,8 +17,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //set NavigationBar 背景颜色&title 颜色
+    [self.navigationController.navigationBar setBarTintColor:RGB(230, 230, 230)];
+    UIBarButtonItem *navRightBtn = [[UIBarButtonItem alloc]initWithTitle:@"发布"
+    style:UIBarButtonItemStyleBordered
+    target:self
+    action:@selector(navRightBtnAction:)];
+    [navRightBtn setTintColor:RGB(255, 140, 0)];
+    self.navigationItem.rightBarButtonItem = navRightBtn;
+    
+    UIProgressView *myProgress;
+    myProgress =[[UIProgressView alloc] initWithFrame:CGRectMake(80.0f, 28.0f, 150.0f, 8.0f)];
+    [self.navigationController.navigationBar addSubview: myProgress];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -33,5 +44,8 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+#pragma mark - Target Action
+- (void)navRightBtnAction:(UIButton *)btn{
+    
+}
 @end

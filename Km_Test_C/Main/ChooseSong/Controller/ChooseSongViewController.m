@@ -24,24 +24,30 @@
 
 #pragma mark - LifeCycle
 
-static const CGFloat kGirdViewHeight = 480.0f;
+CGFloat kGirdViewHeight = 480.0f;
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
      self.automaticallyAdjustsScrollViewInsets = NO;
     [self.navigationController.navigationBar cnSetBackgroundColor:[UIColor clearColor]];
     [[[UIApplication sharedApplication].delegate window] addSubview:self.hoverButton];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];//状态栏
 //    self.timer = [[NSTimer alloc]initWithFireDate:[NSDate distantPast] interval:kTimerInterval target:self selector:@selector(connnectButtionTimer:) userInfo:nil repeats:YES];
 //    [[NSRunLoop mainRunLoop]addTimer:self.timer forMode:NSDefaultRunLoopMode];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];//状态栏
     [self.hoverButton removeFromSuperview];
+    [self.navigationController.navigationBar cnReset];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if (kDevice_Is_iPhone6Plus) {
+        kGirdViewHeight = 520;
+    }
     self.navigationItem.title = @"KTV点歌";
     [self layoutSubViews];
 }
@@ -280,13 +286,18 @@ static const CGFloat kTopGridViewMargin = 5.0f;
     }
     return _hoverButton;
 }
-static const CGFloat kGridViewHeight = 130;
+
 - (UIView *)chooseSongBottomGirdView{
+        CGFloat gridViewHeight = 130;
+        int intes = 10;
+        int num = 3;
+        if(kDevice_Is_iPhone6Plus){
+            gridViewHeight = 150;
+            intes = 12;
+        }
         __block UIView *lastView = nil;
         UIView *nineButtonView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, kGirdViewHeight - 30)];
         nineButtonView.backgroundColor = [UIColor whiteColor];
-        int intes = 10;
-        int num = 3;
         for (int i = 0; i < 9; i++) {
             UIView *view = [UIView new];
             [view setTag:i];
@@ -307,11 +318,11 @@ static const CGFloat kGridViewHeight = 130;
             }];
             [iconLabel mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.equalTo(icon.mas_bottom).with.offset(5);
-                make.width.mas_offset(kGridViewHeight);
+                make.width.mas_offset(gridViewHeight);
                 make.left.equalTo(iconLabel.superview.mas_left).with.offset(5);
             }];
             [view mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.height.mas_equalTo(kGridViewHeight);
+                make.height.mas_equalTo(gridViewHeight);
                 if (lastView) {
                     make.width.equalTo(lastView);
                 } else {

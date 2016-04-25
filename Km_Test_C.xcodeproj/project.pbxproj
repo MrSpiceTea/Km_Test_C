@@ -18,6 +18,11 @@
 		35E68FF61CCCD18D003F1AC7 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FF51CCCD18D003F1AC7 /* DiscoverViewController.m */; };
 		35E68FF91CCCD19F003F1AC7 /* FirendCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FF81CCCD19F003F1AC7 /* FirendCircleViewController.m */; };
 		35E68FFC1CCD1219003F1AC7 /* ChosseSongSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FFB1CCD1219003F1AC7 /* ChosseSongSearchView.m */; };
+		517D09391CCDCC4A007EA37D /* FriendCircleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D09381CCDCC4A007EA37D /* FriendCircleCell.m */; };
+		517D093D1CCDE4C3007EA37D /* segmentedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D093C1CCDE4C3007EA37D /* segmentedView.m */; };
+		517D09401CCDEBDE007EA37D /* MeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D093F1CCDEBDE007EA37D /* MeCell.m */; };
+		517D09431CCDF11E007EA37D /* MeHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D09421CCDF11E007EA37D /* MeHeaderCell.m */; };
+		517D09461CCE16BE007EA37D /* MasonryTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D09451CCE16BE007EA37D /* MasonryTool.m */; };
 		51DE66271CCA1C1F001F0BAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66261CCA1C1F001F0BAC /* main.m */; };
 		51DE662A1CCA1C1F001F0BAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66291CCA1C1F001F0BAC /* AppDelegate.m */; };
 		51DE66321CCA1C1F001F0BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DE66311CCA1C1F001F0BAC /* Assets.xcassets */; };
@@ -62,6 +67,16 @@
 		35E68FF81CCCD19F003F1AC7 /* FirendCircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirendCircleViewController.m; sourceTree = "<group>"; };
 		35E68FFA1CCD1219003F1AC7 /* ChosseSongSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChosseSongSearchView.h; sourceTree = "<group>"; };
 		35E68FFB1CCD1219003F1AC7 /* ChosseSongSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChosseSongSearchView.m; sourceTree = "<group>"; };
+		517D09371CCDCC4A007EA37D /* FriendCircleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCircleCell.h; sourceTree = "<group>"; };
+		517D09381CCDCC4A007EA37D /* FriendCircleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCircleCell.m; sourceTree = "<group>"; };
+		517D093B1CCDE4C3007EA37D /* segmentedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = segmentedView.h; sourceTree = "<group>"; };
+		517D093C1CCDE4C3007EA37D /* segmentedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = segmentedView.m; sourceTree = "<group>"; };
+		517D093E1CCDEBDE007EA37D /* MeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeCell.h; sourceTree = "<group>"; };
+		517D093F1CCDEBDE007EA37D /* MeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeCell.m; sourceTree = "<group>"; };
+		517D09411CCDF11E007EA37D /* MeHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeHeaderCell.h; sourceTree = "<group>"; };
+		517D09421CCDF11E007EA37D /* MeHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeHeaderCell.m; sourceTree = "<group>"; };
+		517D09441CCE16BE007EA37D /* MasonryTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasonryTool.h; sourceTree = "<group>"; };
+		517D09451CCE16BE007EA37D /* MasonryTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasonryTool.m; sourceTree = "<group>"; };
 		51DE66221CCA1C1F001F0BAC /* Km_Test_C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Km_Test_C.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DE66261CCA1C1F001F0BAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		51DE66281CCA1C1F001F0BAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -161,6 +176,10 @@
 			children = (
 				356013241CCA9E3500DE2275 /* MeViewController.h */,
 				356013251CCA9E3500DE2275 /* MeViewController.m */,
+				517D093E1CCDEBDE007EA37D /* MeCell.h */,
+				517D093F1CCDEBDE007EA37D /* MeCell.m */,
+				517D09411CCDF11E007EA37D /* MeHeaderCell.h */,
+				517D09421CCDF11E007EA37D /* MeHeaderCell.m */,
 			);
 			path = Contorller;
 			sourceTree = "<group>";
@@ -223,6 +242,8 @@
 			children = (
 				35E68FF71CCCD19F003F1AC7 /* FirendCircleViewController.h */,
 				35E68FF81CCCD19F003F1AC7 /* FirendCircleViewController.m */,
+				517D09371CCDCC4A007EA37D /* FriendCircleCell.h */,
+				517D09381CCDCC4A007EA37D /* FriendCircleCell.m */,
 			);
 			path = Contorller;
 			sourceTree = "<group>";
@@ -239,6 +260,15 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		517D093A1CCDE49F007EA37D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				517D093B1CCDE4C3007EA37D /* segmentedView.h */,
+				517D093C1CCDE4C3007EA37D /* segmentedView.m */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		51DE66191CCA1C1F001F0BAC = {
@@ -325,6 +355,8 @@
 		51DE66401CCA2167001F0BAC /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				517D09441CCE16BE007EA37D /* MasonryTool.h */,
+				517D09451CCE16BE007EA37D /* MasonryTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -356,6 +388,7 @@
 		51DE664E1CCA2183001F0BAC /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				517D093A1CCDE49F007EA37D /* Base */,
 				51DE66571CCA2183001F0BAC /* RootControllers */,
 				356013221CCA9E1F00DE2275 /* Me */,
 				51DE668F1CCA2C41001F0BAC /* ChooseSong */,
@@ -561,6 +594,7 @@
 				3560132C1CCAA2B300DE2275 /* ChooseSongHeaderView.m in Sources */,
 				51DE667C1CCA274E001F0BAC /* MASCompositeConstraint.m in Sources */,
 				3560131F1CCA9DA900DE2275 /* ChooseSongViewController.m in Sources */,
+				517D09391CCDCC4A007EA37D /* FriendCircleCell.m in Sources */,
 				51DE66821CCA274E001F0BAC /* NSArray+MASAdditions.m in Sources */,
 				51DE662A1CCA1C1F001F0BAC /* AppDelegate.m in Sources */,
 				51DE668B1CCA28BC001F0BAC /* UIImage+expanded.m in Sources */,
@@ -568,19 +602,23 @@
 				51DE667F1CCA274E001F0BAC /* MASLayoutConstraint.m in Sources */,
 				51DE665E1CCA229F001F0BAC /* RootViewController.m in Sources */,
 				51DE66851CCA274E001F0BAC /* ViewController+MASAdditions.m in Sources */,
+				517D09461CCE16BE007EA37D /* MasonryTool.m in Sources */,
 				51DE66841CCA274E001F0BAC /* View+MASAdditions.m in Sources */,
 				35E68FED1CCCD148003F1AC7 /* ChatViewController.m in Sources */,
 				35E68FF61CCCD18D003F1AC7 /* DiscoverViewController.m in Sources */,
+				517D093D1CCDE4C3007EA37D /* segmentedView.m in Sources */,
 				35E68FFC1CCD1219003F1AC7 /* ChosseSongSearchView.m in Sources */,
 				51DE66881CCA2781001F0BAC /* UIColor+expanded.m in Sources */,
 				356013261CCA9E3500DE2275 /* MeViewController.m in Sources */,
 				51DE668E1CCA28E9001F0BAC /* UINavigationBar+expanded.m in Sources */,
+				517D09401CCDEBDE007EA37D /* MeCell.m in Sources */,
 				356013181CCA91DA00DE2275 /* BaseNavigationController.m in Sources */,
 				51DE66801CCA274E001F0BAC /* MASViewAttribute.m in Sources */,
 				35E68FE71CCCB3A1003F1AC7 /* ChooseSongHeadView.m in Sources */,
 				35E68FE41CCCB385003F1AC7 /* ChooseSongCell.m in Sources */,
 				51DE667D1CCA274E001F0BAC /* MASConstraint.m in Sources */,
 				51DE667E1CCA274E001F0BAC /* MASConstraintMaker.m in Sources */,
+				517D09431CCDF11E007EA37D /* MeHeaderCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,11 +722,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Km_Test_C/Expand/Macros/Km_Test_C_Prefixr.pch";
 				INFOPLIST_FILE = Km_Test_C/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.km.test.Km-Test-C";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.km.test.Km-Test-C-b";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -697,11 +736,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Km_Test_C/Expand/Macros/Km_Test_C_Prefixr.pch";
 				INFOPLIST_FILE = Km_Test_C/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.km.test.Km-Test-C";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.km.test.Km-Test-C-b";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

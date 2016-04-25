@@ -223,7 +223,6 @@ static const CGFloat kTopGridViewMargin = 5.0f;
         iconLabel.textColor = [UIColor whiteColor];
         [view addSubview:iconLabel];
         [chooseSongTopGridView addSubview:view];
-        
         [iconLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(view.mas_left).with.offset(kTopGridViewMargin);
             make.bottom.equalTo(view.mas_bottom).with.offset(-kTopGridViewMargin);

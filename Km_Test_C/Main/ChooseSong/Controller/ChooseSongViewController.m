@@ -78,6 +78,7 @@ CGFloat kGirdViewHeight = 480.0f;
 }
 
 static const CGFloat kTopGridViewMargin = 5.0f;
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {

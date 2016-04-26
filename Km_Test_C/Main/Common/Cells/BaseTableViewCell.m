@@ -1,14 +1,14 @@
 //
-//  FriendCircleCell.m
+//  BaseTableViewCell.m
 //  Km_Test_C
 //
-//  Created by Mr.Xie on 16/4/25.
+//  Created by Mr.Xie on 16/4/26.
 //  Copyright © 2016年 OMG. All rights reserved.
 //
 
-#import "FriendCircleCell.h"
+#import "BaseTableViewCell.h"
 
-@implementation FriendCircleCell
+@implementation BaseTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

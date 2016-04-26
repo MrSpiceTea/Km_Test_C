@@ -13,4 +13,9 @@
 @property (nonatomic,strong) UILabel *titleLabel;
 @property (nonatomic,strong) UILabel *detailLabel;
 
+- (instancetype)initWithTitle:(NSString *)title reuseIdentifier:(NSString *)reuseIdentifier;
+- (instancetype)initWithTitle:(NSString *)title
+                       detail:(NSString *)detail
+                       detail:(NSString *)imageName
+              reuseIdentifier:(NSString *)reuseIdentifier;
 @end

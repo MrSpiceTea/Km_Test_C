@@ -15,17 +15,21 @@
 		356A37DA1CCE5A56001F4FA0 /* ArtistDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356A37D91CCE5A56001F4FA0 /* ArtistDetailViewController.m */; };
 		356A37DD1CCE5A6C001F4FA0 /* ArtistListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356A37DC1CCE5A6C001F4FA0 /* ArtistListViewController.m */; };
 		356A37E01CCE5BBA001F4FA0 /* ArtistClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356A37DF1CCE5BBA001F4FA0 /* ArtistClassViewController.m */; };
-		356A37EB1CCE5EF5001F4FA0 /* SlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356A37E51CCE5EF5001F4FA0 /* SlideViewController.m */; };
-		356A37EC1CCE5EF5001F4FA0 /* SegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 356A37E81CCE5EF5001F4FA0 /* SegmentedControl.m */; };
-		356A37ED1CCE5EF5001F4FA0 /* SlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 356A37EA1CCE5EF5001F4FA0 /* SlideView.m */; };
 		35E68FE41CCCB385003F1AC7 /* ChooseSongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FE31CCCB385003F1AC7 /* ChooseSongCell.m */; };
 		35E68FE71CCCB3A1003F1AC7 /* ChooseSongHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FE61CCCB3A1003F1AC7 /* ChooseSongHeadView.m */; };
 		35E68FED1CCCD148003F1AC7 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FEC1CCCD148003F1AC7 /* ChatViewController.m */; };
 		35E68FF61CCCD18D003F1AC7 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FF51CCCD18D003F1AC7 /* DiscoverViewController.m */; };
 		35E68FF91CCCD19F003F1AC7 /* FirendCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FF81CCCD19F003F1AC7 /* FirendCircleViewController.m */; };
 		35E68FFC1CCD1219003F1AC7 /* ChosseSongSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FFB1CCD1219003F1AC7 /* ChosseSongSearchView.m */; };
-		517D09391CCDCC4A007EA37D /* FriendCircleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D09381CCDCC4A007EA37D /* FriendCircleCell.m */; };
-		517D093D1CCDE4C3007EA37D /* segmentedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D093C1CCDE4C3007EA37D /* segmentedView.m */; };
+		5162AA871CCF46C3008317D1 /* FriendCircleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162AA831CCF46C3008317D1 /* FriendCircleModel.m */; };
+		5162AA881CCF46C3008317D1 /* FriendCircleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162AA861CCF46C3008317D1 /* FriendCircleCell.m */; };
+		5162AA991CCF470D008317D1 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162AA8C1CCF470C008317D1 /* BaseTableViewCell.m */; };
+		5162AA9C1CCF470D008317D1 /* SlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162AA931CCF470C008317D1 /* SlideViewController.m */; };
+		5162AA9D1CCF470D008317D1 /* SegemtedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162AA961CCF470C008317D1 /* SegemtedControl.m */; };
+		5162AAA71CCF4B9F008317D1 /* KMAbstractObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162AAA61CCF4B9F008317D1 /* KMAbstractObject.m */; };
+		5162AAAA1CCF58A8008317D1 /* FriendCircleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162AAA91CCF58A8008317D1 /* FriendCircleHeaderView.m */; };
+		5162AAAC1CCF5CF0008317D1 /* FriendCircleHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5162AAAB1CCF5CF0008317D1 /* FriendCircleHeaderView.xib */; };
+		5162AAB51CCF6130008317D1 /* SlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162AAB41CCF6130008317D1 /* SlideView.m */; };
 		517D09401CCDEBDE007EA37D /* MeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D093F1CCDEBDE007EA37D /* MeCell.m */; };
 		517D09431CCDF11E007EA37D /* MeHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D09421CCDF11E007EA37D /* MeHeaderCell.m */; };
 		517D09461CCE16BE007EA37D /* MasonryTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D09451CCE16BE007EA37D /* MasonryTool.m */; };
@@ -33,6 +37,7 @@
 		517D094E1CCE2698007EA37D /* ChooseAlwaysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D094D1CCE2698007EA37D /* ChooseAlwaysViewController.m */; };
 		517D09511CCE26D2007EA37D /* RankingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D09501CCE26D2007EA37D /* RankingListViewController.m */; };
 		517D09541CCE2707007EA37D /* PhoneSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D09531CCE2707007EA37D /* PhoneSendViewController.m */; };
+		519008011CCF621E000BAE7A /* CommonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 519008001CCF621E000BAE7A /* CommonTableViewController.m */; };
 		51DE66271CCA1C1F001F0BAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66261CCA1C1F001F0BAC /* main.m */; };
 		51DE662A1CCA1C1F001F0BAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66291CCA1C1F001F0BAC /* AppDelegate.m */; };
 		51DE66321CCA1C1F001F0BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DE66311CCA1C1F001F0BAC /* Assets.xcassets */; };
@@ -71,28 +76,36 @@
 		356A37DC1CCE5A6C001F4FA0 /* ArtistListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistListViewController.m; sourceTree = "<group>"; };
 		356A37DE1CCE5BBA001F4FA0 /* ArtistClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistClassViewController.h; sourceTree = "<group>"; };
 		356A37DF1CCE5BBA001F4FA0 /* ArtistClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistClassViewController.m; sourceTree = "<group>"; };
-		356A37E41CCE5EF5001F4FA0 /* SlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideViewController.h; sourceTree = "<group>"; };
-		356A37E51CCE5EF5001F4FA0 /* SlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideViewController.m; sourceTree = "<group>"; };
-		356A37E71CCE5EF5001F4FA0 /* SegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedControl.h; sourceTree = "<group>"; };
-		356A37E81CCE5EF5001F4FA0 /* SegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedControl.m; sourceTree = "<group>"; };
-		356A37E91CCE5EF5001F4FA0 /* SlideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideView.h; sourceTree = "<group>"; };
-		356A37EA1CCE5EF5001F4FA0 /* SlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideView.m; sourceTree = "<group>"; };
-		35E68FE21CCCB385003F1AC7 /* ChooseSongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSongCell.h; sourceTree = "<group>"; };
-		35E68FE31CCCB385003F1AC7 /* ChooseSongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSongCell.m; sourceTree = "<group>"; };
-		35E68FE51CCCB3A1003F1AC7 /* ChooseSongHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSongHeadView.h; sourceTree = "<group>"; };
-		35E68FE61CCCB3A1003F1AC7 /* ChooseSongHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSongHeadView.m; sourceTree = "<group>"; };
+		35E68FE21CCCB385003F1AC7 /* ChooseSongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChooseSongCell.h; path = ../Controller/ChooseSongCell.h; sourceTree = "<group>"; };
+		35E68FE31CCCB385003F1AC7 /* ChooseSongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChooseSongCell.m; path = ../Controller/ChooseSongCell.m; sourceTree = "<group>"; };
+		35E68FE51CCCB3A1003F1AC7 /* ChooseSongHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChooseSongHeadView.h; path = ../Controller/ChooseSongHeadView.h; sourceTree = "<group>"; };
+		35E68FE61CCCB3A1003F1AC7 /* ChooseSongHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChooseSongHeadView.m; path = ../Controller/ChooseSongHeadView.m; sourceTree = "<group>"; };
 		35E68FEB1CCCD148003F1AC7 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		35E68FEC1CCCD148003F1AC7 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		35E68FF41CCCD18D003F1AC7 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
 		35E68FF51CCCD18D003F1AC7 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
 		35E68FF71CCCD19F003F1AC7 /* FirendCircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirendCircleViewController.h; sourceTree = "<group>"; };
 		35E68FF81CCCD19F003F1AC7 /* FirendCircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirendCircleViewController.m; sourceTree = "<group>"; };
-		35E68FFA1CCD1219003F1AC7 /* ChosseSongSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChosseSongSearchView.h; sourceTree = "<group>"; };
-		35E68FFB1CCD1219003F1AC7 /* ChosseSongSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChosseSongSearchView.m; sourceTree = "<group>"; };
-		517D09371CCDCC4A007EA37D /* FriendCircleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCircleCell.h; sourceTree = "<group>"; };
-		517D09381CCDCC4A007EA37D /* FriendCircleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCircleCell.m; sourceTree = "<group>"; };
-		517D093B1CCDE4C3007EA37D /* segmentedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = segmentedView.h; sourceTree = "<group>"; };
-		517D093C1CCDE4C3007EA37D /* segmentedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = segmentedView.m; sourceTree = "<group>"; };
+		35E68FFA1CCD1219003F1AC7 /* ChosseSongSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChosseSongSearchView.h; path = ../Controller/ChosseSongSearchView.h; sourceTree = "<group>"; };
+		35E68FFB1CCD1219003F1AC7 /* ChosseSongSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChosseSongSearchView.m; path = ../Controller/ChosseSongSearchView.m; sourceTree = "<group>"; };
+		5162AA821CCF46C3008317D1 /* FriendCircleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCircleModel.h; sourceTree = "<group>"; };
+		5162AA831CCF46C3008317D1 /* FriendCircleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCircleModel.m; sourceTree = "<group>"; };
+		5162AA851CCF46C3008317D1 /* FriendCircleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCircleCell.h; sourceTree = "<group>"; };
+		5162AA861CCF46C3008317D1 /* FriendCircleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCircleCell.m; sourceTree = "<group>"; };
+		5162AA8B1CCF470C008317D1 /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
+		5162AA8C1CCF470C008317D1 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
+		5162AA921CCF470C008317D1 /* SlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideViewController.h; sourceTree = "<group>"; };
+		5162AA931CCF470C008317D1 /* SlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideViewController.m; sourceTree = "<group>"; };
+		5162AA951CCF470C008317D1 /* SegemtedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegemtedControl.h; sourceTree = "<group>"; };
+		5162AA961CCF470C008317D1 /* SegemtedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegemtedControl.m; sourceTree = "<group>"; };
+		5162AAA41CCF4B79008317D1 /* KMDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMDataSource.h; sourceTree = "<group>"; };
+		5162AAA51CCF4B9F008317D1 /* KMAbstractObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMAbstractObject.h; sourceTree = "<group>"; };
+		5162AAA61CCF4B9F008317D1 /* KMAbstractObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMAbstractObject.m; sourceTree = "<group>"; };
+		5162AAA81CCF58A8008317D1 /* FriendCircleHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCircleHeaderView.h; sourceTree = "<group>"; };
+		5162AAA91CCF58A8008317D1 /* FriendCircleHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCircleHeaderView.m; sourceTree = "<group>"; };
+		5162AAAB1CCF5CF0008317D1 /* FriendCircleHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendCircleHeaderView.xib; sourceTree = "<group>"; };
+		5162AAB31CCF6130008317D1 /* SlideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideView.h; sourceTree = "<group>"; };
+		5162AAB41CCF6130008317D1 /* SlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideView.m; sourceTree = "<group>"; };
 		517D093E1CCDEBDE007EA37D /* MeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeCell.h; sourceTree = "<group>"; };
 		517D093F1CCDEBDE007EA37D /* MeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeCell.m; sourceTree = "<group>"; };
 		517D09411CCDF11E007EA37D /* MeHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeHeaderCell.h; sourceTree = "<group>"; };
@@ -107,6 +120,8 @@
 		517D09501CCE26D2007EA37D /* RankingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingListViewController.m; sourceTree = "<group>"; };
 		517D09521CCE2707007EA37D /* PhoneSendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneSendViewController.h; sourceTree = "<group>"; };
 		517D09531CCE2707007EA37D /* PhoneSendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneSendViewController.m; sourceTree = "<group>"; };
+		519007FF1CCF621E000BAE7A /* CommonTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTableViewController.h; sourceTree = "<group>"; };
+		519008001CCF621E000BAE7A /* CommonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTableViewController.m; sourceTree = "<group>"; };
 		51DE66221CCA1C1F001F0BAC /* Km_Test_C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Km_Test_C.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DE66261CCA1C1F001F0BAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		51DE66281CCA1C1F001F0BAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -167,12 +182,6 @@
 			children = (
 				3560131D1CCA9DA900DE2275 /* ChooseSongViewController.h */,
 				3560131E1CCA9DA900DE2275 /* ChooseSongViewController.m */,
-				35E68FE21CCCB385003F1AC7 /* ChooseSongCell.h */,
-				35E68FE31CCCB385003F1AC7 /* ChooseSongCell.m */,
-				35E68FE51CCCB3A1003F1AC7 /* ChooseSongHeadView.h */,
-				35E68FE61CCCB3A1003F1AC7 /* ChooseSongHeadView.m */,
-				35E68FFA1CCD1219003F1AC7 /* ChosseSongSearchView.h */,
-				35E68FFB1CCD1219003F1AC7 /* ChosseSongSearchView.m */,
 				517D094C1CCE2698007EA37D /* ChooseAlwaysViewController.h */,
 				517D094D1CCE2698007EA37D /* ChooseAlwaysViewController.m */,
 				517D094F1CCE26D2007EA37D /* RankingListViewController.h */,
@@ -195,6 +204,12 @@
 			children = (
 				3560132A1CCAA2B300DE2275 /* ChooseSongHeaderView.h */,
 				3560132B1CCAA2B300DE2275 /* ChooseSongHeaderView.m */,
+				35E68FE21CCCB385003F1AC7 /* ChooseSongCell.h */,
+				35E68FE31CCCB385003F1AC7 /* ChooseSongCell.m */,
+				35E68FE51CCCB3A1003F1AC7 /* ChooseSongHeadView.h */,
+				35E68FE61CCCB3A1003F1AC7 /* ChooseSongHeadView.m */,
+				35E68FFA1CCD1219003F1AC7 /* ChosseSongSearchView.h */,
+				35E68FFB1CCD1219003F1AC7 /* ChosseSongSearchView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -231,43 +246,6 @@
 				356A37DF1CCE5BBA001F4FA0 /* ArtistClassViewController.m */,
 			);
 			path = Artist;
-			sourceTree = "<group>";
-		};
-		356A37E11CCE5DD4001F4FA0 /* CommonUI */ = {
-			isa = PBXGroup;
-			children = (
-				356A37E21CCE5EF5001F4FA0 /* Cells */,
-				356A37E31CCE5EF5001F4FA0 /* Controllers */,
-				356A37E61CCE5EF5001F4FA0 /* Views */,
-			);
-			path = CommonUI;
-			sourceTree = "<group>";
-		};
-		356A37E21CCE5EF5001F4FA0 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		356A37E31CCE5EF5001F4FA0 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				356A37E41CCE5EF5001F4FA0 /* SlideViewController.h */,
-				356A37E51CCE5EF5001F4FA0 /* SlideViewController.m */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		356A37E61CCE5EF5001F4FA0 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				356A37E71CCE5EF5001F4FA0 /* SegmentedControl.h */,
-				356A37E81CCE5EF5001F4FA0 /* SegmentedControl.m */,
-				356A37E91CCE5EF5001F4FA0 /* SlideView.h */,
-				356A37EA1CCE5EF5001F4FA0 /* SlideView.m */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		35E68FE11CCCA8FF003F1AC7 /* Images */ = {
@@ -328,33 +306,84 @@
 			children = (
 				35E68FF71CCCD19F003F1AC7 /* FirendCircleViewController.h */,
 				35E68FF81CCCD19F003F1AC7 /* FirendCircleViewController.m */,
-				517D09371CCDCC4A007EA37D /* FriendCircleCell.h */,
-				517D09381CCDCC4A007EA37D /* FriendCircleCell.m */,
 			);
 			path = Contorller;
 			sourceTree = "<group>";
 		};
-		35E68FF21CCCD181003F1AC7 /* Model */ = {
+		5162AA811CCF46C3008317D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5162AA821CCF46C3008317D1 /* FriendCircleModel.h */,
+				5162AA831CCF46C3008317D1 /* FriendCircleModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		35E68FF31CCCD181003F1AC7 /* View */ = {
+		5162AA841CCF46C3008317D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5162AA851CCF46C3008317D1 /* FriendCircleCell.h */,
+				5162AA861CCF46C3008317D1 /* FriendCircleCell.m */,
+				5162AAA81CCF58A8008317D1 /* FriendCircleHeaderView.h */,
+				5162AAA91CCF58A8008317D1 /* FriendCircleHeaderView.m */,
+				5162AAAB1CCF5CF0008317D1 /* FriendCircleHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		517D093A1CCDE49F007EA37D /* Base */ = {
+		5162AA891CCF470C008317D1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				517D093B1CCDE4C3007EA37D /* segmentedView.h */,
-				517D093C1CCDE4C3007EA37D /* segmentedView.m */,
+				5162AAA21CCF478E008317D1 /* Models */,
+				5162AA8D1CCF470C008317D1 /* Controllers */,
+				5162AA941CCF470C008317D1 /* Views */,
 			);
-			path = Base;
+			path = Common;
+			sourceTree = "<group>";
+		};
+		5162AA8A1CCF470C008317D1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5162AA8B1CCF470C008317D1 /* BaseTableViewCell.h */,
+				5162AA8C1CCF470C008317D1 /* BaseTableViewCell.m */,
+			);
+			name = Cells;
+			path = ../Cells;
+			sourceTree = "<group>";
+		};
+		5162AA8D1CCF470C008317D1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				51DE665A1CCA21EF001F0BAC /* Navigation */,
+				51DE665B1CCA21EF001F0BAC /* TabBar */,
+				5162AA921CCF470C008317D1 /* SlideViewController.h */,
+				5162AA931CCF470C008317D1 /* SlideViewController.m */,
+				519007FF1CCF621E000BAE7A /* CommonTableViewController.h */,
+				519008001CCF621E000BAE7A /* CommonTableViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5162AA941CCF470C008317D1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5162AA8A1CCF470C008317D1 /* Cells */,
+				5162AA951CCF470C008317D1 /* SegemtedControl.h */,
+				5162AA961CCF470C008317D1 /* SegemtedControl.m */,
+				5162AAB31CCF6130008317D1 /* SlideView.h */,
+				5162AAB41CCF6130008317D1 /* SlideView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5162AAA21CCF478E008317D1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5162AAA41CCF4B79008317D1 /* KMDataSource.h */,
+				5162AAA51CCF4B9F008317D1 /* KMAbstractObject.h */,
+				5162AAA61CCF4B9F008317D1 /* KMAbstractObject.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		51DE66191CCA1C1F001F0BAC = {
@@ -474,9 +503,8 @@
 		51DE664E1CCA2183001F0BAC /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				356A37E11CCE5DD4001F4FA0 /* CommonUI */,
+				5162AA891CCF470C008317D1 /* Common */,
 				356A37D71CCE58EA001F4FA0 /* Artist */,
-				517D093A1CCDE49F007EA37D /* Base */,
 				51DE66571CCA2183001F0BAC /* RootControllers */,
 				356013221CCA9E1F00DE2275 /* Me */,
 				51DE668F1CCA2C41001F0BAC /* ChooseSong */,
@@ -511,8 +539,8 @@
 			isa = PBXGroup;
 			children = (
 				35E68FF11CCCD181003F1AC7 /* Contorller */,
-				35E68FF21CCCD181003F1AC7 /* Model */,
-				35E68FF31CCCD181003F1AC7 /* View */,
+				5162AA811CCF46C3008317D1 /* Model */,
+				5162AA841CCF46C3008317D1 /* View */,
 			);
 			path = FriendCircle;
 			sourceTree = "<group>";
@@ -533,8 +561,6 @@
 		51DE66581CCA21EF001F0BAC /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				51DE665A1CCA21EF001F0BAC /* Navigation */,
-				51DE665B1CCA21EF001F0BAC /* TabBar */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -543,14 +569,16 @@
 			isa = PBXGroup;
 			children = (
 			);
-			path = Navigation;
+			name = Navigation;
+			path = ../../../Other/Navigation;
 			sourceTree = "<group>";
 		};
 		51DE665B1CCA21EF001F0BAC /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = TabBar;
+			name = TabBar;
+			path = ../../../Other/TabBar;
 			sourceTree = "<group>";
 		};
 		51DE66601CCA274E001F0BAC /* Masonry */ = {
@@ -665,6 +693,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51DE66351CCA1C1F001F0BAC /* LaunchScreen.storyboard in Resources */,
+				5162AAAC1CCF5CF0008317D1 /* FriendCircleHeaderView.xib in Resources */,
 				51DE66321CCA1C1F001F0BAC /* Assets.xcassets in Resources */,
 				51DE667B1CCA274E001F0BAC /* Info.plist in Resources */,
 			);
@@ -679,16 +708,14 @@
 			files = (
 				3560131B1CCA922600DE2275 /* BaseViewController.m in Sources */,
 				51DE66831CCA274E001F0BAC /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
-				356A37EC1CCE5EF5001F4FA0 /* SegmentedControl.m in Sources */,
+				519008011CCF621E000BAE7A /* CommonTableViewController.m in Sources */,
 				517D09491CCE20B7007EA37D /* RemoteControlViewController.m in Sources */,
 				35E68FF91CCCD19F003F1AC7 /* FirendCircleViewController.m in Sources */,
 				51DE66811CCA274E001F0BAC /* MASViewConstraint.m in Sources */,
-				356A37ED1CCE5EF5001F4FA0 /* SlideView.m in Sources */,
 				3560132C1CCAA2B300DE2275 /* ChooseSongHeaderView.m in Sources */,
 				356A37DA1CCE5A56001F4FA0 /* ArtistDetailViewController.m in Sources */,
 				51DE667C1CCA274E001F0BAC /* MASCompositeConstraint.m in Sources */,
 				3560131F1CCA9DA900DE2275 /* ChooseSongViewController.m in Sources */,
-				517D09391CCDCC4A007EA37D /* FriendCircleCell.m in Sources */,
 				51DE66821CCA274E001F0BAC /* NSArray+MASAdditions.m in Sources */,
 				51DE662A1CCA1C1F001F0BAC /* AppDelegate.m in Sources */,
 				51DE668B1CCA28BC001F0BAC /* UIImage+expanded.m in Sources */,
@@ -698,10 +725,12 @@
 				51DE66851CCA274E001F0BAC /* ViewController+MASAdditions.m in Sources */,
 				356A37DD1CCE5A6C001F4FA0 /* ArtistListViewController.m in Sources */,
 				517D09461CCE16BE007EA37D /* MasonryTool.m in Sources */,
+				5162AA881CCF46C3008317D1 /* FriendCircleCell.m in Sources */,
+				5162AAA71CCF4B9F008317D1 /* KMAbstractObject.m in Sources */,
 				51DE66841CCA274E001F0BAC /* View+MASAdditions.m in Sources */,
+				5162AA991CCF470D008317D1 /* BaseTableViewCell.m in Sources */,
 				35E68FED1CCCD148003F1AC7 /* ChatViewController.m in Sources */,
 				35E68FF61CCCD18D003F1AC7 /* DiscoverViewController.m in Sources */,
-				517D093D1CCDE4C3007EA37D /* segmentedView.m in Sources */,
 				35E68FFC1CCD1219003F1AC7 /* ChosseSongSearchView.m in Sources */,
 				51DE66881CCA2781001F0BAC /* UIColor+expanded.m in Sources */,
 				356013261CCA9E3500DE2275 /* MeViewController.m in Sources */,
@@ -709,12 +738,16 @@
 				51DE668E1CCA28E9001F0BAC /* UINavigationBar+expanded.m in Sources */,
 				517D09401CCDEBDE007EA37D /* MeCell.m in Sources */,
 				517D09541CCE2707007EA37D /* PhoneSendViewController.m in Sources */,
+				5162AAB51CCF6130008317D1 /* SlideView.m in Sources */,
 				356013181CCA91DA00DE2275 /* BaseNavigationController.m in Sources */,
 				51DE66801CCA274E001F0BAC /* MASViewAttribute.m in Sources */,
-				356A37EB1CCE5EF5001F4FA0 /* SlideViewController.m in Sources */,
+				5162AAAA1CCF58A8008317D1 /* FriendCircleHeaderView.m in Sources */,
+				5162AA871CCF46C3008317D1 /* FriendCircleModel.m in Sources */,
 				35E68FE71CCCB3A1003F1AC7 /* ChooseSongHeadView.m in Sources */,
 				35E68FE41CCCB385003F1AC7 /* ChooseSongCell.m in Sources */,
+				5162AA9C1CCF470D008317D1 /* SlideViewController.m in Sources */,
 				517D09511CCE26D2007EA37D /* RankingListViewController.m in Sources */,
+				5162AA9D1CCF470D008317D1 /* SegemtedControl.m in Sources */,
 				51DE667D1CCA274E001F0BAC /* MASConstraint.m in Sources */,
 				51DE667E1CCA274E001F0BAC /* MASConstraintMaker.m in Sources */,
 				517D09431CCDF11E007EA37D /* MeHeaderCell.m in Sources */,

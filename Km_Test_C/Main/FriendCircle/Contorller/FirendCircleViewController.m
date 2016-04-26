@@ -8,8 +8,8 @@
 
 #import "FirendCircleViewController.h"
 
-@interface FirendCircleViewController ()
-
+@interface FirendCircleViewController ()<UITableViewDataSource,UITableViewDelegate>
+@property(nonatomic,strong) UITableView *tableView;
 @end
 
 @implementation FirendCircleViewController
@@ -26,26 +26,46 @@
     [navRightBtn setTintColor:RGB(255, 140, 0)];
     self.navigationItem.rightBarButtonItem = navRightBtn;
     
-    UIProgressView *myProgress;
-    myProgress =[[UIProgressView alloc] initWithFrame:CGRectMake(80.0f, 28.0f, 150.0f, 8.0f)];
-    [self.navigationController.navigationBar addSubview: myProgress];
+    [self.view addSubview:self.tableView];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 250;
 }
-*/
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *identifier = @"CellIdentifier";
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[[NSBundle mainBundle]loadNibNamed:@"FriendCircleHeaderView" owner:nil options:nil]firstObject];
+        tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    }
+    
+    return cell;
+}
 #pragma mark - Target Action
 - (void)navRightBtnAction:(UIButton *)btn{
     
 }
+
+#pragma mark - Getter/Setter
+- (UITableView *)tableView{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT) style:UITableViewStylePlain];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//        _tableView.tableHeaderView = self.headerView;
+        _tableView.backgroundColor = RGB(246, 246, 246);
+    }
+    return _tableView;
+}
+
 @end

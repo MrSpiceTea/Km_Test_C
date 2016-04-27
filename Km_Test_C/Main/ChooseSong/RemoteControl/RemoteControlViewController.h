@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface RemoteControlViewController : UIViewController
+@interface RemoteControlViewController : BaseViewController
+
 
 @end

@@ -22,10 +22,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"个人主页";
-
-    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor], NSForegroundColorAttributeName, nil]];
-    [self.navigationController.navigationBar setBarTintColor:RGB(240, 240, 240)];
-    
     UIButton *settingBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [settingBtn setFrame:CGRectMake(20, 0, 50, 50)];
     [settingBtn setBackgroundImage:[UIImage imageNamed:@"title_setting_icon_n"] forState:UIControlStateNormal];

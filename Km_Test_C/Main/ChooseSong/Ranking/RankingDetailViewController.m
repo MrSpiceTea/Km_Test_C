@@ -1,22 +1,21 @@
 //
-//  RankingListViewController.m
+//  RankingDetailViewController.m
 //  Km_Test_C
 //
-//  Created by Mr.Xie on 16/4/25.
+//  Created by Mr.Xie on 16/4/27.
 //  Copyright © 2016年 OMG. All rights reserved.
 //
 
-#import "RankingListViewController.h"
+#import "RankingDetailViewController.h"
 
-@interface RankingListViewController ()
+@interface RankingDetailViewController ()
 
 @end
 
-@implementation RankingListViewController
+@implementation RankingDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"排行榜";
     // Do any additional setup after loading the view.
 }
 

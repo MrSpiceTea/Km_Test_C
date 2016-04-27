@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonTableViewController.h"
 
-@interface ChooseAlwaysViewController : UIViewController
+@interface ChooseAlwaysViewController : CommonTableViewController
 
 @end

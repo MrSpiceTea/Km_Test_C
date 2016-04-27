@@ -37,6 +37,7 @@
 		517D094E1CCE2698007EA37D /* ChooseAlwaysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D094D1CCE2698007EA37D /* ChooseAlwaysViewController.m */; };
 		517D09511CCE26D2007EA37D /* RankingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D09501CCE26D2007EA37D /* RankingListViewController.m */; };
 		517D09541CCE2707007EA37D /* PhoneSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D09531CCE2707007EA37D /* PhoneSendViewController.m */; };
+		5189E0EF1CD0C9DC001CE0E6 /* RankingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5189E0EE1CD0C9DC001CE0E6 /* RankingDetailViewController.m */; };
 		519008011CCF621E000BAE7A /* CommonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 519008001CCF621E000BAE7A /* CommonTableViewController.m */; };
 		51DE66271CCA1C1F001F0BAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66261CCA1C1F001F0BAC /* main.m */; };
 		51DE662A1CCA1C1F001F0BAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66291CCA1C1F001F0BAC /* AppDelegate.m */; };
@@ -57,6 +58,8 @@
 		51DE66881CCA2781001F0BAC /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66871CCA2781001F0BAC /* UIColor+expanded.m */; };
 		51DE668B1CCA28BC001F0BAC /* UIImage+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE668A1CCA28BC001F0BAC /* UIImage+expanded.m */; };
 		51DE668E1CCA28E9001F0BAC /* UINavigationBar+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE668D1CCA28E9001F0BAC /* UINavigationBar+expanded.m */; };
+		51F7C3111CD06676002BEB8F /* ArtistSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F7C3101CD06676002BEB8F /* ArtistSearchView.m */; };
+		51F7C3151CD08CAA002BEB8F /* ArtistClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F7C3141CD08CAA002BEB8F /* ArtistClassCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,10 +119,12 @@
 		517D09481CCE20B7007EA37D /* RemoteControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteControlViewController.m; sourceTree = "<group>"; };
 		517D094C1CCE2698007EA37D /* ChooseAlwaysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseAlwaysViewController.h; sourceTree = "<group>"; };
 		517D094D1CCE2698007EA37D /* ChooseAlwaysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseAlwaysViewController.m; sourceTree = "<group>"; };
-		517D094F1CCE26D2007EA37D /* RankingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingListViewController.h; sourceTree = "<group>"; };
-		517D09501CCE26D2007EA37D /* RankingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingListViewController.m; sourceTree = "<group>"; };
+		517D094F1CCE26D2007EA37D /* RankingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RankingListViewController.h; path = ../Controller/RankingListViewController.h; sourceTree = "<group>"; };
+		517D09501CCE26D2007EA37D /* RankingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RankingListViewController.m; path = ../Controller/RankingListViewController.m; sourceTree = "<group>"; };
 		517D09521CCE2707007EA37D /* PhoneSendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneSendViewController.h; sourceTree = "<group>"; };
 		517D09531CCE2707007EA37D /* PhoneSendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneSendViewController.m; sourceTree = "<group>"; };
+		5189E0ED1CD0C9DC001CE0E6 /* RankingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingDetailViewController.h; sourceTree = "<group>"; };
+		5189E0EE1CD0C9DC001CE0E6 /* RankingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingDetailViewController.m; sourceTree = "<group>"; };
 		519007FF1CCF621E000BAE7A /* CommonTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTableViewController.h; sourceTree = "<group>"; };
 		519008001CCF621E000BAE7A /* CommonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTableViewController.m; sourceTree = "<group>"; };
 		51DE66221CCA1C1F001F0BAC /* Km_Test_C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Km_Test_C.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +169,10 @@
 		51DE668A1CCA28BC001F0BAC /* UIImage+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+expanded.m"; sourceTree = "<group>"; };
 		51DE668C1CCA28E9001F0BAC /* UINavigationBar+expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+expanded.h"; sourceTree = "<group>"; };
 		51DE668D1CCA28E9001F0BAC /* UINavigationBar+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+expanded.m"; sourceTree = "<group>"; };
+		51F7C30F1CD06676002BEB8F /* ArtistSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArtistSearchView.h; path = ../ArtistSearchView.h; sourceTree = "<group>"; };
+		51F7C3101CD06676002BEB8F /* ArtistSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArtistSearchView.m; path = ../ArtistSearchView.m; sourceTree = "<group>"; };
+		51F7C3131CD08CAA002BEB8F /* ArtistClassCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistClassCell.h; sourceTree = "<group>"; };
+		51F7C3141CD08CAA002BEB8F /* ArtistClassCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistClassCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,8 +193,6 @@
 				3560131E1CCA9DA900DE2275 /* ChooseSongViewController.m */,
 				517D094C1CCE2698007EA37D /* ChooseAlwaysViewController.h */,
 				517D094D1CCE2698007EA37D /* ChooseAlwaysViewController.m */,
-				517D094F1CCE26D2007EA37D /* RankingListViewController.h */,
-				517D09501CCE26D2007EA37D /* RankingListViewController.m */,
 				517D09521CCE2707007EA37D /* PhoneSendViewController.h */,
 				517D09531CCE2707007EA37D /* PhoneSendViewController.m */,
 			);
@@ -238,6 +245,7 @@
 		356A37D71CCE58EA001F4FA0 /* Artist */ = {
 			isa = PBXGroup;
 			children = (
+				51F7C3121CD08C66002BEB8F /* View */,
 				356A37D81CCE5A56001F4FA0 /* ArtistDetailViewController.h */,
 				356A37D91CCE5A56001F4FA0 /* ArtistDetailViewController.m */,
 				356A37DB1CCE5A6C001F4FA0 /* ArtistListViewController.h */,
@@ -384,6 +392,17 @@
 				5162AAA61CCF4B9F008317D1 /* KMAbstractObject.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5189E0EC1CD0C992001CE0E6 /* Ranking */ = {
+			isa = PBXGroup;
+			children = (
+				517D094F1CCE26D2007EA37D /* RankingListViewController.h */,
+				517D09501CCE26D2007EA37D /* RankingListViewController.m */,
+				5189E0ED1CD0C9DC001CE0E6 /* RankingDetailViewController.h */,
+				5189E0EE1CD0C9DC001CE0E6 /* RankingDetailViewController.m */,
+			);
+			path = Ranking;
 			sourceTree = "<group>";
 		};
 		51DE66191CCA1C1F001F0BAC = {
@@ -617,6 +636,7 @@
 		51DE668F1CCA2C41001F0BAC /* ChooseSong */ = {
 			isa = PBXGroup;
 			children = (
+				5189E0EC1CD0C992001CE0E6 /* Ranking */,
 				356013211CCA9DC600DE2275 /* View */,
 				356013201CCA9DC100DE2275 /* Model */,
 				3560131C1CCA9DA900DE2275 /* Controller */,
@@ -632,6 +652,17 @@
 				517D09481CCE20B7007EA37D /* RemoteControlViewController.m */,
 			);
 			path = RemoteControl;
+			sourceTree = "<group>";
+		};
+		51F7C3121CD08C66002BEB8F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				51F7C30F1CD06676002BEB8F /* ArtistSearchView.h */,
+				51F7C3101CD06676002BEB8F /* ArtistSearchView.m */,
+				51F7C3131CD08CAA002BEB8F /* ArtistClassCell.h */,
+				51F7C3141CD08CAA002BEB8F /* ArtistClassCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -722,6 +753,7 @@
 				51DE66271CCA1C1F001F0BAC /* main.m in Sources */,
 				51DE667F1CCA274E001F0BAC /* MASLayoutConstraint.m in Sources */,
 				51DE665E1CCA229F001F0BAC /* RootViewController.m in Sources */,
+				51F7C3111CD06676002BEB8F /* ArtistSearchView.m in Sources */,
 				51DE66851CCA274E001F0BAC /* ViewController+MASAdditions.m in Sources */,
 				356A37DD1CCE5A6C001F4FA0 /* ArtistListViewController.m in Sources */,
 				517D09461CCE16BE007EA37D /* MasonryTool.m in Sources */,
@@ -730,6 +762,7 @@
 				51DE66841CCA274E001F0BAC /* View+MASAdditions.m in Sources */,
 				5162AA991CCF470D008317D1 /* BaseTableViewCell.m in Sources */,
 				35E68FED1CCCD148003F1AC7 /* ChatViewController.m in Sources */,
+				51F7C3151CD08CAA002BEB8F /* ArtistClassCell.m in Sources */,
 				35E68FF61CCCD18D003F1AC7 /* DiscoverViewController.m in Sources */,
 				35E68FFC1CCD1219003F1AC7 /* ChosseSongSearchView.m in Sources */,
 				51DE66881CCA2781001F0BAC /* UIColor+expanded.m in Sources */,
@@ -737,6 +770,7 @@
 				517D094E1CCE2698007EA37D /* ChooseAlwaysViewController.m in Sources */,
 				51DE668E1CCA28E9001F0BAC /* UINavigationBar+expanded.m in Sources */,
 				517D09401CCDEBDE007EA37D /* MeCell.m in Sources */,
+				5189E0EF1CD0C9DC001CE0E6 /* RankingDetailViewController.m in Sources */,
 				517D09541CCE2707007EA37D /* PhoneSendViewController.m in Sources */,
 				5162AAB51CCF6130008317D1 /* SlideView.m in Sources */,
 				356013181CCA91DA00DE2275 /* BaseNavigationController.m in Sources */,

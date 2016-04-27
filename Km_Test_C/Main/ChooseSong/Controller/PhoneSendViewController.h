@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface PhoneSendViewController : UIViewController
+#import "BaseViewController.h"
+@interface PhoneSendViewController : BaseViewController
 
 @end

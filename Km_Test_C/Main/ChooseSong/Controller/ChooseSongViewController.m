@@ -7,9 +7,14 @@
 //
 
 #import "ChooseSongViewController.h"
+#import "RemoteControlViewController.h"
+#import "ChooseAlwaysViewController.h"
+#import "RankingListViewController.h"
+#import "PhoneSendViewController.h"
+#import "ArtistClassViewController.h"
+
 #import "ChooseSongCell.h"
 #import "ChooseSongHeadView.h"
-#import "ArtistListViewController.h"
 #import "UINavigationBar+expanded.h"
 
 #define kCellIdentifier_TitleDisclosure @"TitleDisclosureCell"
@@ -32,16 +37,18 @@ CGFloat kGirdViewHeight = 480.0f;
     [self.navigationController.navigationBar cnSetBackgroundColor:[UIColor clearColor]];
     [[[UIApplication sharedApplication].delegate window] addSubview:self.hoverButton];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];//状态栏
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil]];
 //    self.timer = [[NSTimer alloc]initWithFireDate:[NSDate distantPast] interval:kTimerInterval target:self selector:@selector(connnectButtionTimer:) userInfo:nil repeats:YES];
 //    [[NSRunLoop mainRunLoop]addTimer:self.timer forMode:NSDefaultRunLoopMode];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    [self.navigationController.navigationBar cnReset];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];//状态栏
     [self.hoverButton removeFromSuperview];
-    [self.navigationController.navigationBar cnReset];
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -99,9 +106,9 @@ static const CGFloat kTopGridViewMargin = 5.0f;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *chooseSongSerachCellIdentifier = @"chooseSongSerachCell";
     static NSString *chooseSongTopGridCellIdentifier = @"chooseSongTopGridCell";
-    static NSString *chooseSongTitleCellIdentifier=@"chooseSongTitleCell";
-    static NSString *chooseSongHotCellIdentifier=@"chooseSongHotCell";
-    static NSString *chooseSongBottomGirdCellIdentifier=@"chooseSongBottomGirdCell";
+    static NSString *chooseSongTitleCellIdentifier = @"chooseSongTitleCell";
+    static NSString *chooseSongHotCellIdentifier = @"chooseSongHotCell";
+    static NSString *chooseSongBottomGirdCellIdentifier = @"chooseSongBottomGirdCell";
     ChooseSongCell *cell = nil;
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
@@ -177,11 +184,24 @@ static const CGFloat kTopGridViewMargin = 5.0f;
 }
 #pragma mark - ActionTarget
 - (void)topButtonTapAction:(UIButton *)btn{
-    NSLog(@"tag:%ld",(long)btn.tag);
     if (btn.tag == 101) {
-        ArtistListViewController *artistListVC = [[ArtistListViewController alloc] init];
-        [self.navigationController pushViewController:artistListVC animated:YES];
+        ArtistClassViewController *artistClasssVC = [[ArtistClassViewController alloc] init];
+        [self.navigationController pushViewController:artistClasssVC animated:YES];
+    }else if (btn.tag == 102){
+        PhoneSendViewController *phoneSendVC = [[PhoneSendViewController alloc]init];
+        [self.navigationController pushViewController:phoneSendVC animated:YES];
+    }else if (btn.tag == 103){
+        ChooseAlwaysViewController *chooseAlwayVC = [[ChooseAlwaysViewController alloc]init];
+        [self.navigationController pushViewController:chooseAlwayVC animated:YES];
+    }else if (btn.tag == 104){
+        RankingListViewController *rankingListVC = [[RankingListViewController alloc]init];
+        [self.navigationController pushViewController:rankingListVC animated:YES];
     }
+}
+
+- (void)remoteControl:(UIButton *)btn{
+    RemoteControlViewController *remoteControVC = [[RemoteControlViewController alloc]init];
+    [self.navigationController pushViewController:remoteControVC animated:NO];
 }
 #pragma mark - UITextFieldDelegate
 #pragma mark - Private Method
@@ -298,6 +318,7 @@ static const CGFloat kTopGridViewMargin = 5.0f;
         _hoverButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _hoverButton.frame = CGRectMake(10, kSCREEN_HEIGHT - 104, 42, 42);
         [_hoverButton setBackgroundImage:[UIImage imageNamed:@"btn_remote_control_n"] forState:UIControlStateNormal];
+        [_hoverButton addTarget:self action:@selector(remoteControl:) forControlEvents:UIControlEventTouchDown];
     }
     return _hoverButton;
 }

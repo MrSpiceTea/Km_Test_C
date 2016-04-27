@@ -9,7 +9,7 @@
 #import "ChooseSongViewController.h"
 #import "ChooseSongCell.h"
 #import "ChooseSongHeadView.h"
-
+#import "ArtistListViewController.h"
 #import "UINavigationBar+expanded.h"
 
 #define kCellIdentifier_TitleDisclosure @"TitleDisclosureCell"
@@ -176,6 +176,13 @@ static const CGFloat kTopGridViewMargin = 5.0f;
     }
 }
 #pragma mark - ActionTarget
+- (void)topButtonTapAction:(UIButton *)btn{
+    NSLog(@"tag:%ld",(long)btn.tag);
+    if (btn.tag == 101) {
+        ArtistListViewController *artistListVC = [[ArtistListViewController alloc] init];
+        [self.navigationController pushViewController:artistListVC animated:YES];
+    }
+}
 #pragma mark - UITextFieldDelegate
 #pragma mark - Private Method
 - (UIView *)serachBarView{
@@ -211,49 +218,57 @@ static const CGFloat kTopGridViewMargin = 5.0f;
     int leftWidth = kSCREEN_WIDTH/2 - kTopGridViewMargin/2 - sidesMargin;
     int rightWidth = (kSCREEN_WIDTH/2 - kTopGridViewMargin/2 - kTopGridViewMargin -sidesMargin)/2;
     UIView *chooseSongTopGridView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, (leftWidth)+20)];
-    UIImageView *view1 = [UIImageView new];
-    UIImageView *view2 = [UIImageView new];
-    UIImageView *view3 = [UIImageView new];
-    UIImageView *view4 = [UIImageView new];
+    UIButton *button1 = [UIButton new];
+    UIButton *button2 = [UIButton new];
+    UIButton *button3 = [UIButton new];
+    UIButton *button4 = [UIButton new];
     
-    void (^viewBlock)() = ^(UIImageView *view,NSString *title,NSString *imageName){
-        [view setImage:[UIImage imageNamed:imageName]];
+    [button1 setTag:101];
+    [button2 setTag:102];
+    [button3 setTag:103];
+    [button4 setTag:104];
+    
+    __weak ChooseSongViewController *weakSelf = self;
+    void (^viewBlock)() = ^(UIButton *btn,NSString *title,NSString *imageName){
+        [btn setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+//        [view setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+        [btn addTarget:weakSelf action:@selector(topButtonTapAction:) forControlEvents:UIControlEventTouchUpInside];
         UILabel *iconLabel = [[UILabel alloc]init];
         iconLabel.text = title;
         iconLabel.font = [UIFont systemFontOfSize:16];
         iconLabel.textColor = [UIColor whiteColor];
-        [view addSubview:iconLabel];
-        [chooseSongTopGridView addSubview:view];
+        [btn addSubview:iconLabel];
+        [chooseSongTopGridView addSubview:btn];
         [iconLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(view.mas_left).with.offset(kTopGridViewMargin);
-            make.bottom.equalTo(view.mas_bottom).with.offset(-kTopGridViewMargin);
+            make.left.equalTo(btn.mas_left).with.offset(kTopGridViewMargin);
+            make.bottom.equalTo(btn.mas_bottom).with.offset(-kTopGridViewMargin);
         }];
     };
     
-    viewBlock(view1,@"歌手",@"angelababy");
-    viewBlock(view2,@"",@"new_wan_picksong_local");
-    viewBlock(view3,@"",@"new_wan_picksong_common");
-    viewBlock(view4,@"",@"new_wan_picksong_rank");
+    viewBlock(button1,@"歌手",@"angelababy");
+    viewBlock(button2,@"",@"new_wan_picksong_local");
+    viewBlock(button3,@"",@"new_wan_picksong_common");
+    viewBlock(button4,@"",@"new_wan_picksong_rank");
     
-    [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
+    [button1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(chooseSongTopGridView).with.offset(0);
         make.size.mas_equalTo(CGSizeMake(leftWidth, leftWidth));
         make.left.equalTo(chooseSongTopGridView).with.offset(sidesMargin);
     }];
-    [view2 mas_makeConstraints:^(MASConstraintMaker *make) {
+    [button2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(chooseSongTopGridView).with.offset(0);
-        make.left.equalTo(view1.mas_right).with.offset(kTopGridViewMargin);
+        make.left.equalTo(button1.mas_right).with.offset(kTopGridViewMargin);
         make.size.mas_equalTo(CGSizeMake(rightWidth, rightWidth));
     }];
-    [view3 mas_makeConstraints:^(MASConstraintMaker *make){
+    [button3 mas_makeConstraints:^(MASConstraintMaker *make){
         make.top.equalTo(chooseSongTopGridView).with.offset(0);
-        make.left.equalTo(view2.mas_right).with.offset(kTopGridViewMargin);
+        make.left.equalTo(button2.mas_right).with.offset(kTopGridViewMargin);
         make.size.mas_equalTo(CGSizeMake(rightWidth, rightWidth));
     }];
-    [view4 mas_makeConstraints:^(MASConstraintMaker *make) {
+    [button4 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(leftWidth, rightWidth));
-        make.left.equalTo(view1.mas_right).with.offset(kTopGridViewMargin);
-        make.top.equalTo(view2.mas_bottom).with.offset(kTopGridViewMargin);
+        make.left.equalTo(button1.mas_right).with.offset(kTopGridViewMargin);
+        make.top.equalTo(button2.mas_bottom).with.offset(kTopGridViewMargin);
     }];
     return chooseSongTopGridView;
 }

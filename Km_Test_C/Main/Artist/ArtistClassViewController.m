@@ -39,9 +39,9 @@
     [settingBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:settingBtn];
     self.navigationItem.rightBarButtonItem = item;
-    
-    [self.view addSubview:self.artistSearchView];
+
     [self.view addSubview:self.tableView];
+    [self.view addSubview:self.artistSearchView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -142,7 +142,7 @@
 #pragma mark - GET/SET
 - (UITableView *)tableView{
     if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, kArtistSearchViewHeight+20, kSCREEN_WIDTH, kSCREEN_HEIGHT) style:UITableViewStyleGrouped];
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, kNavBar_Height + kArtistSearchViewHeight+20, kSCREEN_WIDTH, kSCREEN_HEIGHT) style:UITableViewStyleGrouped];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.backgroundColor = RGB(246, 246, 246);
@@ -153,7 +153,7 @@
 static const CGFloat kArtistSearchViewHeight = 40;
 - (ArtistSearchView *)artistSearchView{
     if (!_artistSearchView) {
-        _artistSearchView = [[ArtistSearchView alloc]initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kArtistSearchViewHeight)];
+        _artistSearchView = [[ArtistSearchView alloc]initWithFrame:CGRectMake(0, kNavBar_Height + 10, kSCREEN_WIDTH, kArtistSearchViewHeight)];
     }
     return _artistSearchView;
 }

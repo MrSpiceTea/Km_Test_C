@@ -32,6 +32,8 @@
 		5162AAB51CCF6130008317D1 /* SlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162AAB41CCF6130008317D1 /* SlideView.m */; };
 		516746A41CD1E98D007AC9C6 /* QRCodeAreaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 516746A31CD1E98D007AC9C6 /* QRCodeAreaView.m */; };
 		516746A71CD1EB98007AC9C6 /* QRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 516746A61CD1EB98007AC9C6 /* QRCodeView.m */; };
+		516746AB1CD1F713007AC9C6 /* ParallaxTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 516746AA1CD1F713007AC9C6 /* ParallaxTableViewController.m */; };
+		516746AE1CD1F788007AC9C6 /* ParallaxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 516746AD1CD1F788007AC9C6 /* ParallaxView.m */; };
 		517D09401CCDEBDE007EA37D /* MeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D093F1CCDEBDE007EA37D /* MeCell.m */; };
 		517D09431CCDF11E007EA37D /* MeHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D09421CCDF11E007EA37D /* MeHeaderCell.m */; };
 		517D09461CCE16BE007EA37D /* MasonryTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D09451CCE16BE007EA37D /* MasonryTool.m */; };
@@ -116,6 +118,10 @@
 		516746A51CD1EB98007AC9C6 /* QRCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeView.h; sourceTree = "<group>"; };
 		516746A61CD1EB98007AC9C6 /* QRCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeView.m; sourceTree = "<group>"; };
 		516746A81CD1EC90007AC9C6 /* GlobalDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalDefines.h; sourceTree = "<group>"; };
+		516746A91CD1F713007AC9C6 /* ParallaxTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallaxTableViewController.h; sourceTree = "<group>"; };
+		516746AA1CD1F713007AC9C6 /* ParallaxTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParallaxTableViewController.m; sourceTree = "<group>"; };
+		516746AC1CD1F788007AC9C6 /* ParallaxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallaxView.h; sourceTree = "<group>"; };
+		516746AD1CD1F788007AC9C6 /* ParallaxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParallaxView.m; sourceTree = "<group>"; };
 		517D093E1CCDEBDE007EA37D /* MeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeCell.h; sourceTree = "<group>"; };
 		517D093F1CCDEBDE007EA37D /* MeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeCell.m; sourceTree = "<group>"; };
 		517D09411CCDF11E007EA37D /* MeHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeHeaderCell.h; sourceTree = "<group>"; };
@@ -386,6 +392,8 @@
 				5162AA931CCF470C008317D1 /* SlideViewController.m */,
 				519007FF1CCF621E000BAE7A /* CommonTableViewController.h */,
 				519008001CCF621E000BAE7A /* CommonTableViewController.m */,
+				516746A91CD1F713007AC9C6 /* ParallaxTableViewController.h */,
+				516746AA1CD1F713007AC9C6 /* ParallaxTableViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -398,6 +406,8 @@
 				5162AA961CCF470C008317D1 /* SegemtedControl.m */,
 				5162AAB31CCF6130008317D1 /* SlideView.h */,
 				5162AAB41CCF6130008317D1 /* SlideView.m */,
+				516746AC1CD1F788007AC9C6 /* ParallaxView.h */,
+				516746AD1CD1F788007AC9C6 /* ParallaxView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -777,6 +787,7 @@
 				356A37DD1CCE5A6C001F4FA0 /* ArtistListViewController.m in Sources */,
 				517D09461CCE16BE007EA37D /* MasonryTool.m in Sources */,
 				513DE63E1CD1A8730073A7EC /* QRCodeViewController.m in Sources */,
+				516746AE1CD1F788007AC9C6 /* ParallaxView.m in Sources */,
 				5162AA881CCF46C3008317D1 /* FriendCircleCell.m in Sources */,
 				5162AAA71CCF4B9F008317D1 /* KMAbstractObject.m in Sources */,
 				51DE66841CCA274E001F0BAC /* View+MASAdditions.m in Sources */,
@@ -797,6 +808,7 @@
 				356013181CCA91DA00DE2275 /* BaseNavigationController.m in Sources */,
 				51DE66801CCA274E001F0BAC /* MASViewAttribute.m in Sources */,
 				5162AAAA1CCF58A8008317D1 /* FriendCircleHeaderView.m in Sources */,
+				516746AB1CD1F713007AC9C6 /* ParallaxTableViewController.m in Sources */,
 				5162AA871CCF46C3008317D1 /* FriendCircleModel.m in Sources */,
 				35E68FE71CCCB3A1003F1AC7 /* ChooseSongHeadView.m in Sources */,
 				35E68FE41CCCB385003F1AC7 /* ChooseSongCell.m in Sources */,

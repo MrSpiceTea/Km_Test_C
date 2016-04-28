@@ -216,7 +216,7 @@ static const CGFloat kScanRectHeight = 250;
     [path appendPath: [UIBezierPath bezierPathWithRect: CGRectMake(minX, maxY, width, boundsHeight - maxY)]];
     maskLayer.path = path.CGPath;
     
-    return maskLayer;
+    return maskLayer; 
 }
 
 /**

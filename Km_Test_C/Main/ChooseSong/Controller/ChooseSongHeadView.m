@@ -17,6 +17,7 @@
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn setImage:[UIImage imageNamed:@"picksonghome_scan_n"] forState:UIControlStateNormal];
         [btn setImage:[UIImage imageNamed:@"picksonghome_scan_hl"] forState:UIControlStateHighlighted];
+        [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn];
         
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -28,4 +29,7 @@
     return self;
 }
 
+- (void)btnAction{
+    self.btnActionBlock();
+}
 @end

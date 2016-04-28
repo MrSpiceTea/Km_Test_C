@@ -10,4 +10,7 @@
 
 @interface UIImage (expanded)
 + (UIImage *)scaleToSize:(UIImage *)img size:(CGSize)size;
++ (UIImage *)imageOfRoundRectWithImage: (UIImage *)image
+                                  size: (CGSize)size
+                                radius: (CGFloat)radius;
 @end

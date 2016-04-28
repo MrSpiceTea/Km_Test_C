@@ -12,6 +12,7 @@
 #import "RankingListViewController.h"
 #import "PhoneSendViewController.h"
 #import "ArtistClassViewController.h"
+#import "QRCodeViewController.h"
 
 #import "ChooseSongCell.h"
 #import "ChooseSongHeadView.h"
@@ -21,7 +22,7 @@
 
 @interface ChooseSongViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
-@property (nonatomic,strong) UIView *headerView;
+@property (nonatomic,strong) ChooseSongHeadView *headerView;
 @property (nonatomic,strong) UIButton *hoverButton;
 @end
 
@@ -201,6 +202,7 @@ static const CGFloat kTopGridViewMargin = 5.0f;
 
 - (void)remoteControl:(UIButton *)btn{
     RemoteControlViewController *remoteControVC = [[RemoteControlViewController alloc]init];
+    remoteControVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:remoteControVC animated:NO];
 }
 #pragma mark - UITextFieldDelegate
@@ -309,6 +311,12 @@ static const CGFloat kTopGridViewMargin = 5.0f;
 - (UIView *)headerView{
     if (!_headerView) {
         _headerView = [[ChooseSongHeadView alloc]init];
+        __weak ChooseSongViewController *weakSelf = self;
+        _headerView.btnActionBlock = ^{
+            QRCodeViewController *QRCodeVC = [[QRCodeViewController alloc]init];
+            QRCodeVC.hidesBottomBarWhenPushed = YES;
+            [weakSelf.navigationController pushViewController:QRCodeVC animated:YES];
+        };
     }
     return _headerView;
 }

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef void(^actionBlock)(void);
 @interface ChooseSongHeadView : UIView
-
+@property (nonatomic, copy) actionBlock btnActionBlock;
 @end

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseViewController : UIViewController
-
+- (void)showTabBar:(UITabBarController *) tabbarcontroller;
+- (void)hideTabBar:(UITabBarController *) tabbarcontroller;
 @end

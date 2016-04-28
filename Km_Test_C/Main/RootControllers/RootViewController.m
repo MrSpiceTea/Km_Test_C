@@ -16,7 +16,7 @@
 
 #import "UIImage+expanded.h"
 
-@interface RootViewController ()
+@interface RootViewController ()<UINavigationControllerDelegate>
 
 @end
 
@@ -106,5 +106,6 @@
 - (UIImage *)customTabbarimageNamed:(NSString *)name{
     return  [[UIImage scaleToSize:[UIImage imageNamed:name] size:CGSizeMake(60, 60)] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
+
 
 @end

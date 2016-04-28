@@ -29,19 +29,54 @@
     [super viewWillAppear:animated];
 
 }
+
+- (void)viewWillDisAppear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)hideTabBar:(UITabBarController *) tabbarcontroller {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.2];
+    for(UIView *view in tabbarcontroller.view.subviews)
+    {
+        if([view isKindOfClass:[UITabBar class]])
+        {
+            [view setFrame:CGRectMake(view.frame.origin.x, kSCREEN_HEIGHT + 10, view.frame.size.width, view.frame.size.height)];
+        }
+        else
+        {
+            [view setFrame:CGRectMake(view.frame.origin.x, view.frame.origin.y, view.frame.size.width, kSCREEN_HEIGHT + 10)];
+        }
+    }
+    [UIView commitAnimations];
 }
-*/
+
+- (void)showTabBar:(UITabBarController *) tabbarcontroller {
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.2];
+    CGFloat tabHeight = CGRectGetHeight(self.tabBarController.tabBar.bounds);
+    for(UIView *view in tabbarcontroller.view.subviews)
+    {
+        NSLog(@"%@", view);
+        
+        if([view isKindOfClass:[UITabBar class]])
+        {
+            [view setFrame:CGRectMake(view.frame.origin.x, kSCREEN_HEIGHT - tabHeight, view.frame.size.width, view.frame.size.height)];
+        }
+        else
+        {
+            [view setFrame:CGRectMake(view.frame.origin.x, view.frame.origin.y, view.frame.size.width, kSCREEN_HEIGHT - tabHeight)];
+        }
+    }
+    
+    [UIView commitAnimations];
+}
 
 @end

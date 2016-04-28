@@ -10,6 +10,5 @@
 #import "BaseViewController.h"
 
 @interface RemoteControlViewController : BaseViewController
-
-
+- (void)hideTabBar:(UITabBarController *) tabbarcontroller;
 @end

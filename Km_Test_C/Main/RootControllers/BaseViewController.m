@@ -22,7 +22,7 @@
     float ver =[[[UIDevice currentDevice] systemVersion] floatValue];
     if(ver>=7.0)
     {
-        self.automaticallyAdjustsScrollViewInsets = NO;
+//        self.automaticallyAdjustsScrollViewInsets = NO;
     }
 }
 - (void)viewWillAppear:(BOOL)animated{
@@ -75,8 +75,5 @@
             [view setFrame:CGRectMake(view.frame.origin.x, view.frame.origin.y, view.frame.size.width, kSCREEN_HEIGHT - tabHeight)];
         }
     }
-    
-    [UIView commitAnimations];
 }
-
 @end

@@ -20,6 +20,12 @@
     self.view.backgroundColor = RGB(0, 0, 0);
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+//    [self hideTabBar:self.tabBarController];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

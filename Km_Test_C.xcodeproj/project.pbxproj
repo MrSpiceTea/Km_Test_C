@@ -20,6 +20,7 @@
 		35E68FF61CCCD18D003F1AC7 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FF51CCCD18D003F1AC7 /* DiscoverViewController.m */; };
 		35E68FF91CCCD19F003F1AC7 /* FirendCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FF81CCCD19F003F1AC7 /* FirendCircleViewController.m */; };
 		35E68FFC1CCD1219003F1AC7 /* ChosseSongSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FFB1CCD1219003F1AC7 /* ChosseSongSearchView.m */; };
+		513C20D11CD33A7600A6A886 /* HeaderInsetTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 513C20D01CD33A7600A6A886 /* HeaderInsetTableView.m */; };
 		513DE63E1CD1A8730073A7EC /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513DE63D1CD1A8730073A7EC /* QRCodeViewController.m */; };
 		5162AA871CCF46C3008317D1 /* FriendCircleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162AA831CCF46C3008317D1 /* FriendCircleModel.m */; };
 		5162AA881CCF46C3008317D1 /* FriendCircleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162AA861CCF46C3008317D1 /* FriendCircleCell.m */; };
@@ -93,6 +94,8 @@
 		35E68FF81CCCD19F003F1AC7 /* FirendCircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirendCircleViewController.m; sourceTree = "<group>"; };
 		35E68FFA1CCD1219003F1AC7 /* ChosseSongSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChosseSongSearchView.h; path = ../Controller/ChosseSongSearchView.h; sourceTree = "<group>"; };
 		35E68FFB1CCD1219003F1AC7 /* ChosseSongSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChosseSongSearchView.m; path = ../Controller/ChosseSongSearchView.m; sourceTree = "<group>"; };
+		513C20CF1CD33A7600A6A886 /* HeaderInsetTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderInsetTableView.h; sourceTree = "<group>"; };
+		513C20D01CD33A7600A6A886 /* HeaderInsetTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderInsetTableView.m; sourceTree = "<group>"; };
 		513DE63C1CD1A8730073A7EC /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
 		513DE63D1CD1A8730073A7EC /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
 		5162AA821CCF46C3008317D1 /* FriendCircleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCircleModel.h; sourceTree = "<group>"; };
@@ -408,6 +411,8 @@
 				5162AAB41CCF6130008317D1 /* SlideView.m */,
 				516746AC1CD1F788007AC9C6 /* ParallaxView.h */,
 				516746AD1CD1F788007AC9C6 /* ParallaxView.m */,
+				513C20CF1CD33A7600A6A886 /* HeaderInsetTableView.h */,
+				513C20D01CD33A7600A6A886 /* HeaderInsetTableView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -805,6 +810,7 @@
 				5189E0EF1CD0C9DC001CE0E6 /* RankingDetailViewController.m in Sources */,
 				517D09541CCE2707007EA37D /* PhoneSendViewController.m in Sources */,
 				5162AAB51CCF6130008317D1 /* SlideView.m in Sources */,
+				513C20D11CD33A7600A6A886 /* HeaderInsetTableView.m in Sources */,
 				356013181CCA91DA00DE2275 /* BaseNavigationController.m in Sources */,
 				51DE66801CCA274E001F0BAC /* MASViewAttribute.m in Sources */,
 				5162AAAA1CCF58A8008317D1 /* FriendCircleHeaderView.m in Sources */,

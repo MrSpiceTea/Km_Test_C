@@ -27,7 +27,7 @@
 
 - (void)configSubView{
         UIView *view = [UIView new];
-        view.backgroundColor = RGB(240, 240, 240);
+        view.backgroundColor = RGB(220, 220, 220);
         view.layer.cornerRadius = 5;
         UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"search_result_key_icon"]];
         UILabel *label = [UILabel new];

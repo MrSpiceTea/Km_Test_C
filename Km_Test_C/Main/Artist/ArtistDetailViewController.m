@@ -7,6 +7,7 @@
 //
 
 #import "ArtistDetailViewController.h"
+#import "ChooseSongCell.h"
 
 @interface ArtistDetailViewController ()
 
@@ -17,11 +18,11 @@ static const CGFloat kBackgroundHeight = 180;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.backgroundHeight = kBackgroundHeight;
+    self.title = @"张学友"; 
+//    self.backgroundHeight = kBackgroundHeight;
     self.backgroundImage = [UIImage imageNamed:@"zhangxueyou"];
-    [self setBackgroundDefaultImage:[UIImage imageNamed:@"AlbumDefault"]];
-    [self setBackgroundDefaultImageBGColor:[UIColor redColor]];
+//    [self setBackgroundDefaultImage:[UIImage imageNamed:@"AlbumDefault _Thumbnail"]];
+    [self setBackgroundDefaultImageBGColor:[UIColor blueColor]];
     
 }
 
@@ -38,18 +39,18 @@ static const CGFloat kBackgroundHeight = 180;
 #pragma mark - UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellIdentifier = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    ChooseSongCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.textLabel.text = @"title" ;
+        cell = [[ChooseSongCell alloc]initWithTitle:@"" detail:@"" reuseIdentifier:cellIdentifier];
+        cell.titleLabel.text = @"每天爱你多一些";
+        cell.detailLabel.text = @"张学友";
     }
     return cell;
     
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return 20;
 }
 
 

@@ -178,6 +178,7 @@ static const CGFloat kTopGridViewMargin = 5.0f;
         if (offsetY > 50) {
             CGFloat alpha = MIN(0.9, 0.9 - ((50 + 64 - offsetY) / 64));
             [self.navigationController.navigationBar cnSetBackgroundColor:[color colorWithAlphaComponent:alpha]];
+                 NSLog(@"%F,50 + 64 - offsetY =%f,%falpha = ",offsetY,50 + 64 - offsetY,alpha);
         } else {
             [self.navigationController.navigationBar cnSetBackgroundColor:[color colorWithAlphaComponent:0]];
         }

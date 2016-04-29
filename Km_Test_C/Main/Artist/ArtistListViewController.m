@@ -30,6 +30,7 @@
 - (void)configUI{
     self.navigationItem.title = @"热门";
     self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     UIButton *settingBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [settingBtn setFrame:CGRectMake(20, 0, 50, 50)];
     [settingBtn setImage:[UIImage imageNamed:@"title_setting_icon_n"] forState:UIControlStateNormal];
@@ -92,6 +93,7 @@ static const CGFloat kArtistSearchViewHeight = 40;
 - (ArtistSearchView *)artistSearchView{
     if (!_artistSearchView) {
         _artistSearchView = [[ArtistSearchView alloc]initWithFrame:CGRectMake(0, kNavBar_Height, kSCREEN_WIDTH, kArtistSearchViewHeight)];
+        _artistSearchView.backgroundColor = RGB(240, 240, 240);
     }
     return _artistSearchView;
 }

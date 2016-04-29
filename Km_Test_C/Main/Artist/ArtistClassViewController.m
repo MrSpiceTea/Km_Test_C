@@ -154,6 +154,7 @@ static const CGFloat kArtistSearchViewHeight = 40;
 - (ArtistSearchView *)artistSearchView{
     if (!_artistSearchView) {
         _artistSearchView = [[ArtistSearchView alloc]initWithFrame:CGRectMake(0, kNavBar_Height, kSCREEN_WIDTH, kArtistSearchViewHeight)];
+        _artistSearchView.backgroundColor = RGB(240, 240, 240);
     }
     return _artistSearchView;
 }

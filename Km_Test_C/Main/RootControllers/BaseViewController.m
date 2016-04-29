@@ -18,6 +18,7 @@
     [super viewDidLoad];
     [self.navigationController.navigationBar setBarTintColor:RGB(240, 240, 240)];
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor], NSForegroundColorAttributeName, nil]];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     self.view.backgroundColor = RGB(240, 240, 240);
     float ver =[[[UIDevice currentDevice] systemVersion] floatValue];
     if(ver>=7.0)

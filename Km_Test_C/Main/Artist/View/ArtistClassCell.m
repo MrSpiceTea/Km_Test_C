@@ -31,7 +31,6 @@ static const CGFloat kImageCount = 9;
         [scrollView setContentSize:scrollViewContentSize];
         scrollView.userInteractionEnabled = YES;
         scrollView.showsHorizontalScrollIndicator = NO;
-        
          __block UIButton *lastView = nil;
         for (int i = 0; i<kImageCount; i++) {
             UIButton *button = [UIButton new];

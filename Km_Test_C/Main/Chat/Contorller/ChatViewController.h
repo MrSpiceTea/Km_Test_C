@@ -6,8 +6,9 @@
 //  Copyright © 2016年 OMG. All rights reserved.
 //
 
+#import "BaseViewController.h"
 #import <UIKit/UIKit.h>
 
-@interface ChatViewController : UIViewController
+@interface ChatViewController : BaseViewController
 
 @end

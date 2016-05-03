@@ -90,13 +90,25 @@ static const CGFloat kSegmentedControlHeight = 24 + 15;
     return _parallaxView;
 }
 
-- (CGFloat)backgroundHeight{
+- (CGFloat)backgroundHeight {
     return self.parallaxView.backgroundHeight;
 }
 
-- (void)setBackgroundHeight:(CGFloat)backgroundHeight{
+- (void)setBackgroundHeight:(CGFloat)backgroundHeight {
     self.parallaxView.backgroundHeight = backgroundHeight;
+    [self updateTableViewHeaderInsets];
 }
+
+
+- (CGFloat)foregroundOffsetY {
+    return self.parallaxView.foregroundOffsetY;
+}
+
+- (void)setForegroundOffsetY:(CGFloat)foregroundOffsetY {
+    self.parallaxView.foregroundOffsetY = foregroundOffsetY;
+    [self updateTableViewHeaderInsets];
+}
+
 
 - (UIImageView *)imageView {
     if (!_imageView) {

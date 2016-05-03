@@ -19,7 +19,7 @@ static const CGFloat kBackgroundHeight = 180;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"张学友"; 
-//    self.backgroundHeight = kBackgroundHeight;
+    self.backgroundHeight = kBackgroundHeight;
     self.backgroundImage = [UIImage imageNamed:@"zhangxueyou"];
 //    [self setBackgroundDefaultImage:[UIImage imageNamed:@"AlbumDefault _Thumbnail"]];
     [self setBackgroundDefaultImageBGColor:[UIColor blueColor]];
@@ -28,7 +28,6 @@ static const CGFloat kBackgroundHeight = 180;
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-     [self.parallaxView updateParallaxEffect];
 }
 
 - (void)didReceiveMemoryWarning {

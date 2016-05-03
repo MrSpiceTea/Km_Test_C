@@ -14,6 +14,7 @@
 #import "ArtistClassViewController.h"
 #import "QRCodeViewController.h"
 #import "AlbumRecListViewController.h"
+#import "SearchViewController.h"
 
 #import "ChooseSongCell.h"
 #import "ChooseSongHeadView.h"
@@ -35,18 +36,18 @@ CGFloat kGirdViewHeight = 480.0f;
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-     self.automaticallyAdjustsScrollViewInsets = NO;
-    [self.navigationController.navigationBar cnSetBackgroundColor:[UIColor clearColor]];
+    self.automaticallyAdjustsScrollViewInsets = NO;
     [[[UIApplication sharedApplication].delegate window] addSubview:self.hoverButton];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];//状态栏
-  
+    [self.navigationController.navigationBar cnSetBackgroundColor:[UIColor clearColor]];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil]];
 //    self.timer = [[NSTimer alloc]initWithFireDate:[NSDate distantPast] interval:kTimerInterval target:self selector:@selector(connnectButtionTimer:) userInfo:nil repeats:YES];
 //    [[NSRunLoop mainRunLoop]addTimer:self.timer forMode:NSDefaultRunLoopMode];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil]];
     [super viewDidAppear:animated];
+  
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
@@ -107,7 +108,14 @@ static const CGFloat kTopGridViewMargin = 5.0f;
         return 60;
     }
 }
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            SearchViewController *search = [[SearchViewController alloc]init];
+            [self.navigationController pushViewController:search animated:YES];
+        }
+    }
+}
 #pragma mark - UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *chooseSongSerachCellIdentifier = @"chooseSongSerachCell";
@@ -183,7 +191,6 @@ static const CGFloat kTopGridViewMargin = 5.0f;
         if (offsetY > 50) {
             CGFloat alpha = MIN(0.9, 0.9 - ((50 + 64 - offsetY) / 64));
             [self.navigationController.navigationBar cnSetBackgroundColor:[color colorWithAlphaComponent:alpha]];
-                 NSLog(@"%F,50 + 64 - offsetY =%f,%falpha = ",offsetY,50 + 64 - offsetY,alpha);
         } else {
             [self.navigationController.navigationBar cnSetBackgroundColor:[color colorWithAlphaComponent:0]];
         }
@@ -213,7 +220,6 @@ static const CGFloat kTopGridViewMargin = 5.0f;
 }
 
 - (void)nineViewTapAction:(UITapGestureRecognizer *)tap{
-    NSLog(@"%ld",tap.view.tag);
     AlbumRecListViewController *AlbumRecListVC = [[AlbumRecListViewController alloc]init];
     [self.navigationController pushViewController:AlbumRecListVC animated:YES];
 }

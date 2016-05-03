@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface CommonAbstractObject : NSObject
-
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *imageUrl;
 @end

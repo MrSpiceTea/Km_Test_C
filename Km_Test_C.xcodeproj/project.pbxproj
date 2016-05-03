@@ -41,7 +41,10 @@
 		51700BE91CD851AF0091FF33 /* AlbumListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51700BE81CD851AF0091FF33 /* AlbumListCell.m */; };
 		51700BEC1CD8575D0091FF33 /* AlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 51700BEB1CD8575D0091FF33 /* AlbumModel.m */; };
 		51700BEF1CD8771F0091FF33 /* CommonAbstractObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 51700BEE1CD8771F0091FF33 /* CommonAbstractObject.m */; };
-		51700BF21CD8772D0091FF33 /* CommonDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 51700BF11CD8772D0091FF33 /* CommonDataSource.m */; };
+		51700BF51CD883CB0091FF33 /* RankingListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51700BF41CD883CB0091FF33 /* RankingListHeaderView.m */; };
+		51700C051CD898ED0091FF33 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51700C041CD898ED0091FF33 /* SearchViewController.m */; };
+		51700C081CD8AB8D0091FF33 /* DiscoverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51700C071CD8AB8D0091FF33 /* DiscoverView.xib */; };
+		51700C0B1CD8AC510091FF33 /* RemoteControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51700C0A1CD8AC510091FF33 /* RemoteControlView.m */; };
 		517D09401CCDEBDE007EA37D /* MeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D093F1CCDEBDE007EA37D /* MeCell.m */; };
 		517D09431CCDF11E007EA37D /* MeHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D09421CCDF11E007EA37D /* MeHeaderCell.m */; };
 		517D09461CCE16BE007EA37D /* MasonryTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D09451CCE16BE007EA37D /* MasonryTool.m */; };
@@ -144,8 +147,13 @@
 		51700BEB1CD8575D0091FF33 /* AlbumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumModel.m; sourceTree = "<group>"; };
 		51700BED1CD8771F0091FF33 /* CommonAbstractObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonAbstractObject.h; sourceTree = "<group>"; };
 		51700BEE1CD8771F0091FF33 /* CommonAbstractObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonAbstractObject.m; sourceTree = "<group>"; };
-		51700BF01CD8772D0091FF33 /* CommonDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDataSource.h; sourceTree = "<group>"; };
-		51700BF11CD8772D0091FF33 /* CommonDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonDataSource.m; sourceTree = "<group>"; };
+		51700BF31CD883CB0091FF33 /* RankingListHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingListHeaderView.h; sourceTree = "<group>"; };
+		51700BF41CD883CB0091FF33 /* RankingListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingListHeaderView.m; sourceTree = "<group>"; };
+		51700C031CD898ED0091FF33 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		51700C041CD898ED0091FF33 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		51700C071CD8AB8D0091FF33 /* DiscoverView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DiscoverView.xib; path = Km_Test_C/Main/Discover/DiscoverView.xib; sourceTree = SOURCE_ROOT; };
+		51700C091CD8AC510091FF33 /* RemoteControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteControlView.h; sourceTree = "<group>"; };
+		51700C0A1CD8AC510091FF33 /* RemoteControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteControlView.m; sourceTree = "<group>"; };
 		517D093E1CCDEBDE007EA37D /* MeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeCell.h; sourceTree = "<group>"; };
 		517D093F1CCDEBDE007EA37D /* MeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeCell.m; sourceTree = "<group>"; };
 		517D09411CCDF11E007EA37D /* MeHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeHeaderCell.h; sourceTree = "<group>"; };
@@ -326,6 +334,7 @@
 			children = (
 				35E68FF41CCCD18D003F1AC7 /* DiscoverViewController.h */,
 				35E68FF51CCCD18D003F1AC7 /* DiscoverViewController.m */,
+				51700C071CD8AB8D0091FF33 /* DiscoverView.xib */,
 			);
 			path = Contorller;
 			sourceTree = "<group>";
@@ -390,9 +399,9 @@
 		5162AA891CCF470C008317D1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5162AA941CCF470C008317D1 /* Views */,
 				5162AAA21CCF478E008317D1 /* Models */,
 				5162AA8D1CCF470C008317D1 /* Controllers */,
-				5162AA941CCF470C008317D1 /* Views */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -446,8 +455,6 @@
 				5162AAA61CCF4B9F008317D1 /* KMAbstractObject.m */,
 				51700BED1CD8771F0091FF33 /* CommonAbstractObject.h */,
 				51700BEE1CD8771F0091FF33 /* CommonAbstractObject.m */,
-				51700BF01CD8772D0091FF33 /* CommonDataSource.h */,
-				51700BF11CD8772D0091FF33 /* CommonDataSource.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -457,6 +464,8 @@
 			children = (
 				51700BD91CD84A0A0091FF33 /* RankingListCell.h */,
 				51700BDA1CD84A0A0091FF33 /* RankingListCell.m */,
+				51700BF31CD883CB0091FF33 /* RankingListHeaderView.h */,
+				51700BF41CD883CB0091FF33 /* RankingListHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -503,6 +512,39 @@
 			children = (
 				51700BE71CD851AF0091FF33 /* AlbumListCell.h */,
 				51700BE81CD851AF0091FF33 /* AlbumListCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		51700BFF1CD8987B0091FF33 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				51700C001CD8987B0091FF33 /* Controller */,
+				51700C011CD8987B0091FF33 /* Model */,
+				51700C021CD8987B0091FF33 /* View */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		51700C001CD8987B0091FF33 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				51700C031CD898ED0091FF33 /* SearchViewController.h */,
+				51700C041CD898ED0091FF33 /* SearchViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		51700C011CD8987B0091FF33 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		51700C021CD8987B0091FF33 /* View */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -639,6 +681,7 @@
 			isa = PBXGroup;
 			children = (
 				5162AA891CCF470C008317D1 /* Common */,
+				51700BFF1CD8987B0091FF33 /* Search */,
 				51700BE01CD850490091FF33 /* Album */,
 				356A37D71CCE58EA001F4FA0 /* Artist */,
 				51DE66571CCA2183001F0BAC /* RootControllers */,
@@ -768,6 +811,8 @@
 			children = (
 				517D09471CCE20B7007EA37D /* RemoteControlViewController.h */,
 				517D09481CCE20B7007EA37D /* RemoteControlViewController.m */,
+				51700C091CD8AC510091FF33 /* RemoteControlView.h */,
+				51700C0A1CD8AC510091FF33 /* RemoteControlView.m */,
 			);
 			path = RemoteControl;
 			sourceTree = "<group>";
@@ -845,6 +890,7 @@
 				5162AAAC1CCF5CF0008317D1 /* FriendCircleHeaderView.xib in Resources */,
 				51DE66321CCA1C1F001F0BAC /* Assets.xcassets in Resources */,
 				51DE667B1CCA274E001F0BAC /* Info.plist in Resources */,
+				51700C081CD8AB8D0091FF33 /* DiscoverView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -858,7 +904,6 @@
 				3560131B1CCA922600DE2275 /* BaseViewController.m in Sources */,
 				51DE66831CCA274E001F0BAC /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				519008011CCF621E000BAE7A /* CommonTableViewController.m in Sources */,
-				51700BF21CD8772D0091FF33 /* CommonDataSource.m in Sources */,
 				517D09491CCE20B7007EA37D /* RemoteControlViewController.m in Sources */,
 				51700BDF1CD84D410091FF33 /* RankingListModel.m in Sources */,
 				35E68FF91CCCD19F003F1AC7 /* FirendCircleViewController.m in Sources */,
@@ -869,6 +914,7 @@
 				3560131F1CCA9DA900DE2275 /* ChooseSongViewController.m in Sources */,
 				51DE66821CCA274E001F0BAC /* NSArray+MASAdditions.m in Sources */,
 				51700BE61CD851270091FF33 /* AlbumRecListViewController.m in Sources */,
+				51700C0B1CD8AC510091FF33 /* RemoteControlView.m in Sources */,
 				51DE662A1CCA1C1F001F0BAC /* AppDelegate.m in Sources */,
 				51DE668B1CCA28BC001F0BAC /* UIImage+expanded.m in Sources */,
 				51DE66271CCA1C1F001F0BAC /* main.m in Sources */,
@@ -879,6 +925,7 @@
 				356A37DD1CCE5A6C001F4FA0 /* ArtistListViewController.m in Sources */,
 				517D09461CCE16BE007EA37D /* MasonryTool.m in Sources */,
 				513DE63E1CD1A8730073A7EC /* QRCodeViewController.m in Sources */,
+				51700BF51CD883CB0091FF33 /* RankingListHeaderView.m in Sources */,
 				516746AE1CD1F788007AC9C6 /* ParallaxView.m in Sources */,
 				5162AA881CCF46C3008317D1 /* FriendCircleCell.m in Sources */,
 				5162AAA71CCF4B9F008317D1 /* KMAbstractObject.m in Sources */,
@@ -897,6 +944,7 @@
 				516746A41CD1E98D007AC9C6 /* QRCodeAreaView.m in Sources */,
 				5189E0EF1CD0C9DC001CE0E6 /* RankingDetailViewController.m in Sources */,
 				51700BDB1CD84A0A0091FF33 /* RankingListCell.m in Sources */,
+				51700C051CD898ED0091FF33 /* SearchViewController.m in Sources */,
 				517D09541CCE2707007EA37D /* PhoneSendViewController.m in Sources */,
 				5162AAB51CCF6130008317D1 /* SlideView.m in Sources */,
 				513C20D11CD33A7600A6A886 /* HeaderInsetTableView.m in Sources */,

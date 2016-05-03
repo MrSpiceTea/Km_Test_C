@@ -11,5 +11,5 @@
 
 @interface RankingListCell : UITableViewCell
 
-- (instancetype)initWithRankingListModel:(RankingListModel *)rankingListCell reuseIdentifier:(NSString *)reuseIdentifier;
+- (instancetype)initWithRankingListModel:(RankingListModel *)rankingListModel reuseIdentifier:(NSString *)reuseIdentifier;
 @end

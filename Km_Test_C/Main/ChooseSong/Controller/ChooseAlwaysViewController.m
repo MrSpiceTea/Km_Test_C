@@ -8,7 +8,7 @@
 
 #import "ChooseAlwaysViewController.h"
 
-@interface ChooseAlwaysViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface ChooseAlwaysViewController ()
 
 @end
 

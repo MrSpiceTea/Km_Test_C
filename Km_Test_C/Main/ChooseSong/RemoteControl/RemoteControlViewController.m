@@ -7,6 +7,7 @@
 //
 
 #import "RemoteControlViewController.h"
+#import "RemoteControlView.h"
 
 @interface RemoteControlViewController ()
 
@@ -17,7 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = RGB(0, 0, 0);
+    self.view.backgroundColor = [UIColor whiteColor];
+    RemoteControlView *remoteView = [[RemoteControlView alloc]init];
+    [self.view addSubview:remoteView];
 }
 
 -(void)viewWillAppear:(BOOL)animated

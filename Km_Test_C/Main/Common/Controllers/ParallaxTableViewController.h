@@ -10,6 +10,8 @@
 
 @interface ParallaxTableViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, assign) CGFloat backgroundHeight;
+@property (nonatomic, assign) CGFloat foregroundOffsetY;
+
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) ParallaxView *parallaxView;
 

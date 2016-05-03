@@ -11,14 +11,18 @@
 @interface ParallaxView : UIView
 @property (nonatomic, assign) CGFloat backgroundHeight;
 @property (nonatomic, assign) CGFloat foregroundOffsetY;
+
 @property (nonatomic, strong) UIView *backgroundView;
 @property (nonatomic, strong) UIView *foregroundView;
-@property (nonatomic, strong) UIView *toolbarView;
+
 @property (nonatomic, assign) CGPoint contentOffset;
+
+@property (nonatomic, strong) UIView *toolbarView;
 
 @property (nonatomic, assign) UIEdgeInsets contentInset;
 
 @property (nonatomic, weak) id <UIScrollViewDelegate> scrollViewDelegate;
 
 - (void)updateParallaxEffect;
+
 @end

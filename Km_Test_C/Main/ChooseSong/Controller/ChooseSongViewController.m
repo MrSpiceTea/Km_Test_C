@@ -13,6 +13,7 @@
 #import "PhoneSendViewController.h"
 #import "ArtistClassViewController.h"
 #import "QRCodeViewController.h"
+#import "AlbumRecListViewController.h"
 
 #import "ChooseSongCell.h"
 #import "ChooseSongHeadView.h"
@@ -38,11 +39,15 @@ CGFloat kGirdViewHeight = 480.0f;
     [self.navigationController.navigationBar cnSetBackgroundColor:[UIColor clearColor]];
     [[[UIApplication sharedApplication].delegate window] addSubview:self.hoverButton];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];//状态栏
-    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil]];
+  
 //    self.timer = [[NSTimer alloc]initWithFireDate:[NSDate distantPast] interval:kTimerInterval target:self selector:@selector(connnectButtionTimer:) userInfo:nil repeats:YES];
 //    [[NSRunLoop mainRunLoop]addTimer:self.timer forMode:NSDefaultRunLoopMode];
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil]];
+    [super viewDidAppear:animated];
+}
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [self.navigationController.navigationBar cnReset];
@@ -206,6 +211,13 @@ static const CGFloat kTopGridViewMargin = 5.0f;
     remoteControVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:remoteControVC animated:NO];
 }
+
+- (void)nineViewTapAction:(UITapGestureRecognizer *)tap{
+    NSLog(@"%ld",tap.view.tag);
+    AlbumRecListViewController *AlbumRecListVC = [[AlbumRecListViewController alloc]init];
+    [self.navigationController pushViewController:AlbumRecListVC animated:YES];
+}
+
 #pragma mark - UITextFieldDelegate
 #pragma mark - Private Method
 - (UIView *)serachBarView{
@@ -346,6 +358,10 @@ static const CGFloat kTopGridViewMargin = 5.0f;
         for (int i = 0; i < 9; i++) {
             UIView *view = [UIView new];
             [view setTag:i];
+            
+            UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(nineViewTapAction:)];
+            [view addGestureRecognizer:singleTap];
+            
             [nineButtonView addSubview:view];
             UIImageView *icon= [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"zhuanjitest"]];
             icon.layer.masksToBounds = YES;

@@ -26,6 +26,11 @@ static const CGFloat kBackgroundHeight = 180;
     
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+     [self.parallaxView updateParallaxEffect];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

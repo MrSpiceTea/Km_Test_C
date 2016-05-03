@@ -1,16 +1,17 @@
 //
-//  ChooseSongCell.m
+//  AlbumListCell.m
 //  Km_Test_C
 //
-//  Created by 谢展图 on 16/4/24.
+//  Created by Mr.Xie on 16/5/3.
 //  Copyright © 2016年 OMG. All rights reserved.
 //
 
-#import "ChooseSongCell.h"
+#import "AlbumListCell.h"
 
-@implementation ChooseSongCell
+@implementation AlbumListCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
 }
 
@@ -20,49 +21,14 @@
     // Configure the view for the selected state
 }
 
-- (instancetype)initWithTitle:(NSString *)title reuseIdentifier:(NSString *)reuseIdentifier{
+- (instancetype)initWithArtists:(NSArray *)artists reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
-        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
-
-        UIView *iconView = [UIView new];
-        iconView.backgroundColor = RGB(255, 110, 0);
-        iconView.layer.cornerRadius = 3;
-        [self.contentView addSubview:iconView];
-        
-        UILabel *titleLabel = [[UILabel alloc] init];
-        [titleLabel setBackgroundColor:[UIColor clearColor]];
-        [titleLabel setText:title];
-        [titleLabel setFont:[UIFont systemFontOfSize:14]];
-        [titleLabel setTextColor:RGB(2, 2, 2)];
-        [self.contentView addSubview:titleLabel];
-
-        UIView *bottomSeparator = [UIView new];
-        bottomSeparator.backgroundColor = RGB(235, 235, 235);
-        [self.contentView addSubview:bottomSeparator];
-        
-        [iconView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(iconView.superview);
-            make.left.equalTo(iconView.superview.mas_left).with.offset(10);
-            make.size.mas_equalTo(CGSizeMake(6, 28));
-        }];
-        [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(iconView.superview);
-            make.left.equalTo(iconView.mas_right).with.offset(6);
-            make.size.mas_equalTo(CGSizeMake(80, 15));
-        }];
-        [bottomSeparator mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(bottomSeparator.superview.mas_left).with.offset(0);
-            make.bottom.equalTo(bottomSeparator.superview.mas_bottom).with.offset(0);
-            make.size.mas_equalTo(CGSizeMake(kSCREEN_WIDTH, 1));
-        }];
-        
-        self.titleLabel = titleLabel;
         
     }
     return self;
 }
 
-- (instancetype)initWithTitle:(NSString *)title detail:(NSString *)detail reuseIdentifier:(NSString *)reuseIdentifier{
+- (instancetype)initWithTitle:(NSString *)title reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         
@@ -75,7 +41,6 @@
         
         UILabel *detailLabel = [[UILabel alloc] init];
         [detailLabel setBackgroundColor:[UIColor clearColor]];
-        [detailLabel setText:detail];
         [detailLabel setFont:[UIFont systemFontOfSize:12]];
         [detailLabel setTextColor:RGB(150, 150, 150)];
         [self.contentView addSubview:detailLabel];
@@ -88,49 +53,54 @@
         //        [button setImage:[UIImage imageNamed:@"jia"] forState:UIControlStateNormal];
         [self.contentView addSubview:button];
         
+        UILabel *numLabel = [[UILabel alloc] init];
+        [numLabel setBackgroundColor:[UIColor clearColor]];
+        [numLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:14]];
+        [numLabel setTextColor:RGB(150, 150, 150)];
+        [numLabel setTextAlignment:NSTextAlignmentCenter];
+        [self.contentView addSubview:numLabel];
+        
         UIView *bottomSeparator = [UIView new];
         bottomSeparator.backgroundColor = RGB(235, 235, 235);
         [self.contentView addSubview:bottomSeparator];
         
+        [numLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(25, 25));
+            make.left.equalTo(numLabel.superview.mas_left).with.offset(10);
+            make.centerY.equalTo(numLabel.superview);
+        }];
+        
         [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.mas_offset(25);
-            make.left.equalTo(titleLabel.superview.mas_left).with.offset(10);
+            make.left.equalTo(numLabel.mas_right).with.offset(10);
             make.top.equalTo(titleLabel.superview.mas_top).with.offset(5);
             make.right.mas_equalTo(button.mas_left).with.offset(-30);
         }];
         
         [detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(50, 20));
-            make.left.mas_offset(10);
+            make.left.equalTo(numLabel.mas_right).with.offset(10);
             make.top.mas_equalTo(titleLabel.mas_bottom).with.offset(0);
         }];
+        
         [button mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(65, 25));
             make.centerY.equalTo(button.superview);
             make.right.equalTo(button.superview.mas_right).with.offset(-15);
         }];
-
+        
         [bottomSeparator mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(bottomSeparator.superview.mas_left).with.offset(0);
+            make.left.equalTo(numLabel.mas_right).with.offset(10);
             make.bottom.equalTo(bottomSeparator.superview.mas_bottom).with.offset(0);
             make.size.mas_equalTo(CGSizeMake(kSCREEN_WIDTH, 1));
         }];
         
         self.titleLabel = titleLabel;
         self.detailLabel = detailLabel;
-
-    }
-    return self;
-}
-
-- (instancetype)initWithCustomView:(UIView *)customview reuseIdentifier:(NSString *)reuseIdentifier{
-    if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
-        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
+        self.numLabel = numLabel;
         
-        [self.contentView addSubview:customview];
     }
     return self;
 }
-
 
 @end

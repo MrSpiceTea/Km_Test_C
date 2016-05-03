@@ -86,7 +86,8 @@ static const CGFloat kDefaultBackgroundHeight = 150.0f;
 }
 - (void)setBackgroundHeight:(CGFloat)backgroundHeight {
     _backgroundHeight = backgroundHeight;
-    [self updateForegroundFrame];
+    [self setContentInset:self.contentInset];
+    [self updateParallaxEffect];
     self.lastUpdate = [NSDate date];
 }
 
@@ -219,7 +220,6 @@ static const CGFloat kDefaultBackgroundHeight = 150.0f;
         }
         
         scrollView.contentOffset = CGPointMake(0, contentOffsetY);
-        NSLog(@"%f",contentOffsetY);
     }
     _contentOffset = scrollView.contentOffset;
     [self updateParallaxEffect];

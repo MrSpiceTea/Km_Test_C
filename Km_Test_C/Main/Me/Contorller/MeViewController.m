@@ -7,6 +7,7 @@
 //
 
 #import "MeViewController.h"
+#import "LoginViewController.h"
 #import "MeCell.h"
 #import "MeHeaderCell.h"
 
@@ -80,7 +81,12 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 5;
+    return 2;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    LoginViewController *loginVC = [[LoginViewController alloc]init];
+    [self.navigationController pushViewController:loginVC animated:YES];
 }
 
 #pragma mark - UITableViewDataSource

@@ -25,6 +25,7 @@ typedef NS_ENUM(NSUInteger, MessageType) {
 @property (nonatomic,copy) NSString *createdAt;//创建时间
 @property (nonatomic,copy) NSString *source;//设备来源
 @property (nonatomic,copy) NSString *text;//内容
+@property (nonatomic,copy) NSString *distan;//距离
 
 
 - (FriendCircleModel *)initWithDictionary:(NSDictionary *)dic;

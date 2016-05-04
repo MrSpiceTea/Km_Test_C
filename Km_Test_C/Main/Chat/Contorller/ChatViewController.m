@@ -16,7 +16,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    self.navigationItem.title = @"会话";
+    
+    UIButton *navButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 30)];
+    [navButton setTitle:@"好友" forState:UIControlStateNormal];
+    [navButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:navButton];
+    self.navigationItem.rightBarButtonItem = item;
+    
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:kSCREEN_BOUNDS];
+    imageView.image = [UIImage imageNamed:@"data_empty"];
+    imageView.contentMode = UIViewContentModeCenter;
+    [self.view addSubview:imageView];
     // Do any additional setup after loading the view.
 }
 

@@ -204,7 +204,7 @@ static const CGFloat kDefaultBackgroundHeight = 150.0f;
     [super layoutSubviews];
     [self updateBackgroundFrame];
     [self updateForegroundFrame];
-//    [self updateParallaxEffect];
+    [self updateParallaxEffect];
 }
 
 #pragma mark - UIScrollViewDelegate

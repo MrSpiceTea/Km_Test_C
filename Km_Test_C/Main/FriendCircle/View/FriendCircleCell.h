@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FriendCircleModel.h"
 
 @interface FriendCircleCell : UITableViewCell
 
@@ -14,6 +15,7 @@
 @property (nonatomic,strong) UILabel *detailLabel;
 
 - (instancetype)initWithTitle:(NSString *)title reuseIdentifier:(NSString *)reuseIdentifier;
+- (instancetype)initWithFriendCircleModel:(FriendCircleModel *)friendCircleModel reuseIdentifier:(NSString *)reuseIdentifier;
 - (instancetype)initWithTitle:(NSString *)title
                        detail:(NSString *)detail
                        detail:(NSString *)imageName

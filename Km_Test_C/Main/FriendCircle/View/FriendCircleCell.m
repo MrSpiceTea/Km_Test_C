@@ -23,6 +23,7 @@
 - (instancetype)initWithTitle:(NSString *)title reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
+        
     }
     return self;
 }
@@ -81,6 +82,27 @@
         
         self.titleLabel = titleLabel;
         self.detailLabel = detailLabel;
+    }
+    return self;
+}
+
+- (instancetype)initWithFriendCircleModel:(FriendCircleModel *)friendCircleModel reuseIdentifier:(NSString *)reuseIdentifier{
+    if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
+        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
+        
+        UIImageView *headerImageView = [UIImageView new];
+        UILabel *detailLabel = [UILabel new];
+        UILabel *distanceLabel = [UILabel new];
+        UILabel *dateLabel = [UILabel new];
+        UILabel *locationLabel = [UILabel new];
+        [self.contentView addSubview:headerImageView];
+        [self.contentView addSubview:detailLabel];
+        [self.contentView addSubview:distanceLabel];
+        [self.contentView addSubview:dateLabel];
+        [self.contentView addSubview:locationLabel];
+        
+        [headerImageView setImage:[UIImage imageNamed:friendCircleModel.profileImageUrl]];
+        
     }
     return self;
 }

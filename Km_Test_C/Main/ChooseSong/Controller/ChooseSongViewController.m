@@ -27,12 +27,13 @@
 @property (nonatomic,strong) ChooseSongHeadView *headerView;
 @property (nonatomic,strong) UIButton *hoverButton;
 @property (nonatomic,strong) UIColor *navColor;
+@property (nonatomic,strong) NSTimer *timer;
 @end
 
 @implementation ChooseSongViewController
 
 #pragma mark - LifeCycle
-
+static const CGFloat kTimerInterval = 5.0f;
 CGFloat kGirdViewHeight = 480.0f;
 -(void)viewWillAppear:(BOOL)animated
 {

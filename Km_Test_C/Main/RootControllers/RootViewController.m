@@ -64,29 +64,32 @@
 //    navVc.title = title;
 //    UITabBarItem *tabBarItem = [[UITabBarItem alloc]initWithTitle:title image:nil selectedImage:nil];
     UITabBarItem *tabBarItem = [UITabBarItem new];
-    tabBarItem.image = [self customTabbarimageNamed:@"bottom_tab_nearby_bg_n"];
-    tabBarItem.selectedImage = [self customTabbarimageNamed:@"bottom_tab_nearby_bg_hl"];
+    tabBarItem.image = [[UIImage imageNamed:@"bottomview_near"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarItem.selectedImage = [[UIImage imageNamed:@"bottomview_near_hl"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
     navVc.tabBarItem = tabBarItem;
     [controllers addObject:navVc];
     
     navVc = [[BaseNavigationController alloc]initWithRootViewController:chatVC];
     tabBarItem = [UITabBarItem new];
-    tabBarItem.image = [self customTabbarimageNamed:@"bottom_tab_chat_bg_n"];
-    tabBarItem.selectedImage = [self customTabbarimageNamed:@"bottom_tab_chat_bg_hl"];
+    tabBarItem.image = [[UIImage imageNamed:@"bottomview_chat"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarItem.selectedImage = [[UIImage imageNamed:@"bottomview_chat_hl"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
     navVc.tabBarItem = tabBarItem;
     [controllers addObject:navVc];
     
     navVc = [[BaseNavigationController alloc]initWithRootViewController:chooseSongVC];
     tabBarItem = [UITabBarItem new];
-    tabBarItem.image = [self customTabbarimageNamed:@"bottom_tab_kge_bg_n"];
-    tabBarItem.selectedImage = [self customTabbarimageNamed:@"bottom_tab_kge_bg_hl"];
+    tabBarItem.image = [[UIImage imageNamed:@"bottomview_k"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarItem.selectedImage = [[UIImage imageNamed:@"bottomview_k_hl"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     navVc.tabBarItem = tabBarItem;
     [controllers addObject:navVc];
     
     navVc = [[BaseNavigationController alloc]initWithRootViewController:discoverVC];
     tabBarItem = [UITabBarItem new];
-    tabBarItem.image = [self customTabbarimageNamed:@"bottom_tab_discover_bg_n"];
-    tabBarItem.selectedImage = [self customTabbarimageNamed:@"bottom_tab_discover_bg_hl"];
+    tabBarItem.image = [[UIImage imageNamed:@"bottomview_safari"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarItem.selectedImage = [[UIImage imageNamed:@"bottomview_safari_hl"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
     navVc.tabBarItem = tabBarItem;
     [controllers addObject:navVc];
     
@@ -94,8 +97,9 @@
     //    title = NSLocalizedString(@"我的", @"我的");
     //    navVc.title = title;
     tabBarItem = [UITabBarItem new];
-    tabBarItem.image = [self customTabbarimageNamed:@"bottom_tab_mykme_bg_n"];
-    tabBarItem.selectedImage = [self customTabbarimageNamed:@"bottom_tab_mykme_bg_hl"];
+    tabBarItem.image = [[UIImage imageNamed:@"bottomview_me"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarItem.selectedImage = [[UIImage imageNamed:@"bottomview_me_hl"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
     navVc.tabBarItem = tabBarItem;
     [controllers addObject:navVc];
 

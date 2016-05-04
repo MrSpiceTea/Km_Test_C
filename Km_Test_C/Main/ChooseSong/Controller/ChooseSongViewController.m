@@ -26,6 +26,7 @@
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) ChooseSongHeadView *headerView;
 @property (nonatomic,strong) UIButton *hoverButton;
+@property (nonatomic,strong) UIColor *navColor;
 @end
 
 @implementation ChooseSongViewController
@@ -41,6 +42,8 @@ CGFloat kGirdViewHeight = 480.0f;
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];//状态栏
     [self.navigationController.navigationBar cnSetBackgroundColor:[UIColor clearColor]];
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil]];
+    [self.navigationController.navigationBar cnSetBackgroundColor:self.navColor];
+    
 //    self.timer = [[NSTimer alloc]initWithFireDate:[NSDate distantPast] interval:kTimerInterval target:self selector:@selector(connnectButtionTimer:) userInfo:nil repeats:YES];
 //    [[NSRunLoop mainRunLoop]addTimer:self.timer forMode:NSDefaultRunLoopMode];
 }
@@ -190,6 +193,8 @@ static const CGFloat kTopGridViewMargin = 5.0f;
         CGFloat offsetY = scrollView.contentOffset.y;
         if (offsetY > 50) {
             CGFloat alpha = MIN(0.9, 0.9 - ((50 + 64 - offsetY) / 64));
+            //~todo runtime
+            self.navColor = [color colorWithAlphaComponent:alpha];
             [self.navigationController.navigationBar cnSetBackgroundColor:[color colorWithAlphaComponent:alpha]];
         } else {
             [self.navigationController.navigationBar cnSetBackgroundColor:[color colorWithAlphaComponent:0]];

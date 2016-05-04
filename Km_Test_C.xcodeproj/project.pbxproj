@@ -43,7 +43,6 @@
 		51700BEF1CD8771F0091FF33 /* CommonAbstractObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 51700BEE1CD8771F0091FF33 /* CommonAbstractObject.m */; };
 		51700BF51CD883CB0091FF33 /* RankingListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51700BF41CD883CB0091FF33 /* RankingListHeaderView.m */; };
 		51700C051CD898ED0091FF33 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51700C041CD898ED0091FF33 /* SearchViewController.m */; };
-		51700C081CD8AB8D0091FF33 /* DiscoverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51700C071CD8AB8D0091FF33 /* DiscoverView.xib */; };
 		51700C0B1CD8AC510091FF33 /* RemoteControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51700C0A1CD8AC510091FF33 /* RemoteControlView.m */; };
 		517D09401CCDEBDE007EA37D /* MeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D093F1CCDEBDE007EA37D /* MeCell.m */; };
 		517D09431CCDF11E007EA37D /* MeHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D09421CCDF11E007EA37D /* MeHeaderCell.m */; };
@@ -57,7 +56,6 @@
 		51DE66271CCA1C1F001F0BAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66261CCA1C1F001F0BAC /* main.m */; };
 		51DE662A1CCA1C1F001F0BAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66291CCA1C1F001F0BAC /* AppDelegate.m */; };
 		51DE66321CCA1C1F001F0BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DE66311CCA1C1F001F0BAC /* Assets.xcassets */; };
-		51DE66351CCA1C1F001F0BAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51DE66331CCA1C1F001F0BAC /* LaunchScreen.storyboard */; };
 		51DE665E1CCA229F001F0BAC /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE665D1CCA229F001F0BAC /* RootViewController.m */; };
 		51DE667B1CCA274E001F0BAC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51DE66611CCA274E001F0BAC /* Info.plist */; };
 		51DE667C1CCA274E001F0BAC /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66631CCA274E001F0BAC /* MASCompositeConstraint.m */; };
@@ -151,7 +149,6 @@
 		51700BF41CD883CB0091FF33 /* RankingListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingListHeaderView.m; sourceTree = "<group>"; };
 		51700C031CD898ED0091FF33 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		51700C041CD898ED0091FF33 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
-		51700C071CD8AB8D0091FF33 /* DiscoverView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DiscoverView.xib; path = Km_Test_C/Main/Discover/DiscoverView.xib; sourceTree = SOURCE_ROOT; };
 		51700C091CD8AC510091FF33 /* RemoteControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteControlView.h; sourceTree = "<group>"; };
 		51700C0A1CD8AC510091FF33 /* RemoteControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteControlView.m; sourceTree = "<group>"; };
 		517D093E1CCDEBDE007EA37D /* MeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeCell.h; sourceTree = "<group>"; };
@@ -177,7 +174,6 @@
 		51DE66281CCA1C1F001F0BAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		51DE66291CCA1C1F001F0BAC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		51DE66311CCA1C1F001F0BAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		51DE66341CCA1C1F001F0BAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		51DE66361CCA1C1F001F0BAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51DE665C1CCA229F001F0BAC /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		51DE665D1CCA229F001F0BAC /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
@@ -334,7 +330,6 @@
 			children = (
 				35E68FF41CCCD18D003F1AC7 /* DiscoverViewController.h */,
 				35E68FF51CCCD18D003F1AC7 /* DiscoverViewController.m */,
-				51700C071CD8AB8D0091FF33 /* DiscoverView.xib */,
 			);
 			path = Contorller;
 			sourceTree = "<group>";
@@ -597,7 +592,6 @@
 			isa = PBXGroup;
 			children = (
 				51DE66311CCA1C1F001F0BAC /* Assets.xcassets */,
-				51DE66331CCA1C1F001F0BAC /* LaunchScreen.storyboard */,
 				51DE66361CCA1C1F001F0BAC /* Info.plist */,
 				51DE66261CCA1C1F001F0BAC /* main.m */,
 			);
@@ -886,11 +880,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51DE66351CCA1C1F001F0BAC /* LaunchScreen.storyboard in Resources */,
 				5162AAAC1CCF5CF0008317D1 /* FriendCircleHeaderView.xib in Resources */,
 				51DE66321CCA1C1F001F0BAC /* Assets.xcassets in Resources */,
 				51DE667B1CCA274E001F0BAC /* Info.plist in Resources */,
-				51700C081CD8AB8D0091FF33 /* DiscoverView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -968,17 +960,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		51DE66331CCA1C1F001F0BAC /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				51DE66341CCA1C1F001F0BAC /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		51DE66371CCA1C1F001F0BAC /* Debug */ = {
@@ -1067,6 +1048,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Km_Test_C/Expand/Macros/Km_Test_C_Prefixr.pch";
 				INFOPLIST_FILE = Km_Test_C/Info.plist;
@@ -1081,6 +1063,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Km_Test_C/Expand/Macros/Km_Test_C_Prefixr.pch";
 				INFOPLIST_FILE = Km_Test_C/Info.plist;

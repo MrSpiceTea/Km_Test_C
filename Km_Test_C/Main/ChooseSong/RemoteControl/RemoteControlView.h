@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RemoteControlView : UIView
+@protocol RemoteControlDelegate
+- (void)RemoteControlButtonAction:(UIButton *)button;
+@end
 
+@interface RemoteControlView : UIView{
+    id<RemoteControlDelegate> delegate;
+}
+@property(assign,nonatomic)id<RemoteControlDelegate> delegate;
 @end

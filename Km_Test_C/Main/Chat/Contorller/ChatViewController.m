@@ -17,7 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"会话";
-    
     UIButton *navButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 30)];
     [navButton setTitle:@"好友" forState:UIControlStateNormal];
     [navButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
@@ -27,7 +26,18 @@
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:kSCREEN_BOUNDS];
     imageView.image = [UIImage imageNamed:@"data_empty"];
     imageView.contentMode = UIViewContentModeCenter;
+    
+    UILabel *dateLabel = [UILabel new];
+    [dateLabel setText:@"这里空空的，好像找人说话"];
+    [dateLabel setFont:[UIFont systemFontOfSize:13]];
+    [dateLabel setTextColor:[UIColor colorWithWhite:0.4 alpha:1]];
+    [imageView addSubview:dateLabel];
     [self.view addSubview:imageView];
+    
+    [dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.view.mas_centerY).with.offset(80);
+    }];
     // Do any additional setup after loading the view.
 }
 

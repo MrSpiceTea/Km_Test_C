@@ -13,6 +13,7 @@
 
 @property (nonatomic,strong) UILabel *titleLabel;
 @property (nonatomic,strong) UILabel *detailLabel;
+@property (nonatomic, strong) FriendCircleModel *model;
 
 - (instancetype)initWithTitle:(NSString *)title reuseIdentifier:(NSString *)reuseIdentifier;
 - (instancetype)initWithFriendCircleModel:(FriendCircleModel *)friendCircleModel reuseIdentifier:(NSString *)reuseIdentifier;
@@ -20,4 +21,6 @@
                        detail:(NSString *)detail
                        detail:(NSString *)imageName
               reuseIdentifier:(NSString *)reuseIdentifier;
+
++ (CGFloat)heightWithModel:(FriendCircleModel *)model;
 @end

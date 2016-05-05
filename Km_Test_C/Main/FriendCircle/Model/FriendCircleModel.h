@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "KMAbstractObject.h"
-typedef NS_ENUM(NSUInteger, MessageType) {
-    MessageTypeNone,
-    MessageTypeImage,
-    MessageTypeVideo,
-    MessageTypeAudio,
+typedef NS_ENUM(NSUInteger, FriendCircleModelMessageType) {
+    FriendCircleModelMessageTypeNone,
+    FriendCircleModelMessageTypeImage,
+    FriendCircleModelMessageTypeVideo,
+    FriendCircleModelMessageTypeAudio,
 };
 
 @interface FriendCircleModel : KMAbstractObject
@@ -26,6 +26,8 @@ typedef NS_ENUM(NSUInteger, MessageType) {
 @property (nonatomic,copy) NSString *source;//设备来源
 @property (nonatomic,copy) NSString *text;//内容
 @property (nonatomic,copy) NSString *distan;//距离
+@property (nonatomic,assign) FriendCircleModelMessageType messageType;//距离
+@property (nonatomic,strong) NSMutableArray *imagesArray;
 
 
 - (FriendCircleModel *)initWithDictionary:(NSDictionary *)dic;

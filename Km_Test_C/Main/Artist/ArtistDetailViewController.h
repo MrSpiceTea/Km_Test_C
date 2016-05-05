@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ParallaxTableViewController.h"
 
-@interface ArtistDetailViewController : ParallaxTableViewController
+@interface ArtistDetailViewController : UIViewController
 //@property (nonatomic, strong) id<DataSource> dataSource;
 @end

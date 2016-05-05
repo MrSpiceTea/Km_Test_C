@@ -111,5 +111,10 @@
     return  [[UIImage scaleToSize:[UIImage imageNamed:name] size:CGSizeMake(60, 60)] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
 
+#pragma mark - UINavigationControllerDelegate methods
 
+- (id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
+    NSLog(@"%@",[fromVC class]);
+    return nil;
+}
 @end

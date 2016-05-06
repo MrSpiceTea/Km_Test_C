@@ -28,7 +28,7 @@ typedef NS_ENUM(NSUInteger, FriendCircleModelMessageType) {
 @property (nonatomic,copy) NSString *distan;//距离
 @property (nonatomic,assign) FriendCircleModelMessageType messageType;//距离
 @property (nonatomic,strong) NSMutableArray *imagesArray;
-
+@property (nonatomic,assign) CGFloat cellHeight;
 
 - (FriendCircleModel *)initWithDictionary:(NSDictionary *)dic;
 + (FriendCircleModel *)statusWithDictionary:(NSDictionary *)dic;

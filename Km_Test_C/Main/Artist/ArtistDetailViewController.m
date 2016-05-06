@@ -7,7 +7,9 @@
 //
 
 #import "ArtistDetailViewController.h"
-#import "ChooseSongCell.h"
+#import "AlbumListCell.h"
+#import "ArtistDetailCell.h"
+#import "ArtistModel.h"
 #import "UINavigationBar+expanded.h"
 @interface ArtistDetailViewController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
@@ -22,6 +24,7 @@
 @property (nonatomic, strong) UIImageView                *backgroundImageView;
 @property (nonatomic, strong) UIView                     *backgroundView;
 @property (nonatomic, strong) UIButton *likeButton;
+@property (nonatomic, strong) NSMutableArray *dataSource;
 
 @end
 static const CGFloat kBackgroundImageHeight = 180;
@@ -64,8 +67,31 @@ static const CGFloat kBackgroundImageHeight = 180;
     
     [self.view addSubview:self.backgroundImageView];
     [self.view addSubview:self.tableView];
+    [self initData];
     
 }
+- (void)initData{
+//    ArtistModel *model = [[ArtistModel alloc]init];
+//    model.artistName = @"张学友";
+//    model.fansNum = @"53611";
+
+ 
+    for (int i=0; i<30; i++) {
+        AlbumModel *albumModel = [[AlbumModel alloc]init];
+        albumModel.serialNumber = [NSString stringWithFormat:@"%d",i];
+        albumModel.artistName = @"张学友";
+        albumModel.albumName = [NSString stringWithFormat:@"歌曲%d",i];
+        [self.dataSource addObject:albumModel];
+    }
+}
+
+- (NSMutableArray *)dataSource{
+    if (!_dataSource) {
+        _dataSource = [NSMutableArray array];
+    }
+    return _dataSource;
+}
+
 - (UIButton *)likeButton{
     if (_likeButton) {
         _likeButton = [UIButton new];
@@ -120,7 +146,7 @@ static const CGFloat kBackgroundImageHeight = 180;
             [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil]];
             [self.navigationController.navigationBar cnSetBackgroundColor:[color colorWithAlphaComponent:0]];
         }
-        CGFloat insetTop = scrollView.contentInset.top;
+//        CGFloat insetTop = scrollView.contentInset.top;
 
         CGFloat scaleTopView = 1 - (offsetY + kBackgroundImageHeight)/ 300;
 //        CGRect frame = self.backgroundImageView.frame;
@@ -142,20 +168,20 @@ static const CGFloat kBackgroundImageHeight = 180;
 
 #pragma mark - UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *cellIdentifier = @"cell";
-    ChooseSongCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (!cell) {
-        cell = [[ChooseSongCell alloc]initWithTitle:@"" detail:@"" reuseIdentifier:cellIdentifier];
-        cell.titleLabel.text = @"每天爱你多一些";
-        cell.detailLabel.text = @"张学友";
-    }
-    return cell;
     
+    if (indexPath.row == 0) {
+        ArtistDetailCell *cell = [[ArtistDetailCell alloc]initWithTitle:@"邓紫棋" Fans:@"65656"];
+        return cell;
+    }else{
+        AlbumListCell *cell = [AlbumListCell cellWithTabelView:tableView];
+        cell.albumModel = self.dataSource[indexPath.row -1];
+        return cell;
+    }
+ 
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return self.dataSource.count;
 }
-
 
 @end

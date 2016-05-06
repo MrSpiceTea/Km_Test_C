@@ -8,14 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "FriendCircleModel.h"
+#import "FriendPhotoContainerView.h"
 
 @interface FriendCircleCell : UITableViewCell
 
 @property (nonatomic,strong) UILabel *titleLabel;
 @property (nonatomic,strong) UILabel *detailLabel;
-@property (nonatomic, strong) FriendCircleModel *model;
+@property (nonatomic,strong) FriendCircleModel *model;
+@property (nonatomic,strong) FriendPhotoContainerView *friendPhotoContainerView;
 
-- (instancetype)initWithTitle:(NSString *)title reuseIdentifier:(NSString *)reuseIdentifier;
 - (instancetype)initWithFriendCircleModel:(FriendCircleModel *)friendCircleModel reuseIdentifier:(NSString *)reuseIdentifier;
 - (instancetype)initWithTitle:(NSString *)title
                        detail:(NSString *)detail
@@ -23,4 +24,5 @@
               reuseIdentifier:(NSString *)reuseIdentifier;
 
 + (CGFloat)heightWithModel:(FriendCircleModel *)model;
++ (instancetype)cellWithTabelView:(UITableView *)tableView;
 @end

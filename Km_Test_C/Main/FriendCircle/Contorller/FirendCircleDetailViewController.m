@@ -1,25 +1,22 @@
 //
-//  DiscoverViewController.m
+//  FirendCircleDetailViewController.m
 //  Km_Test_C
 //
-//  Created by 谢展图 on 16/4/24.
+//  Created by Mr.Xie on 16/5/6.
 //  Copyright © 2016年 OMG. All rights reserved.
 //
 
-#import "DiscoverViewController.h"
-#import "KM_NetAPIClient.h"
+#import "FirendCircleDetailViewController.h"
 
-@interface DiscoverViewController ()
+@interface FirendCircleDetailViewController ()
 
 @end
 
-@implementation DiscoverViewController
+@implementation FirendCircleDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
-    [[KM_NetAPIClient defaultManage] gettest];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,6 +33,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
 
 @end

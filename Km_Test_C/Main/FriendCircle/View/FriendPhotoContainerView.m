@@ -25,7 +25,6 @@
 - (void)setupUI
 {
     NSMutableArray *temp = [NSMutableArray new];
-    
     for (int i = 0; i < 9; i++) {
         UIImageView *imageView = [UIImageView new];
         [self addSubview:imageView];
@@ -43,10 +42,21 @@
 static const CGFloat kFriendPhotoContainerViewPicMargin = 5.0f;
 - (void)setPicUrlStringsArray:(NSArray *)picUrlStringsArray{
     _picUrlStringsArray = picUrlStringsArray;
+    
+//    for (UIImageView *view in [self subviews]) {
+//        if ([view isKindOfClass:[UIImageView class]]) {
+//            view.image = nil;
+//        }
+//    }
     if (picUrlStringsArray.count == 0) {
         [self setFrame:CGRectZero];
+        [self mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(0, 0));
+        }];
+//        self.hidden = YES;
         return;
     }
+//    self.hidden = NO;
     CGFloat itemW = [self itemWidthForPicPathArray:_imageViewsArray];
     CGFloat itemH = 0;
     if (_picUrlStringsArray.count == 1) {

@@ -43,19 +43,19 @@ static const CGFloat kFriendPhotoContainerViewPicMargin = 5.0f;
 - (void)setPicUrlStringsArray:(NSArray *)picUrlStringsArray{
     _picUrlStringsArray = picUrlStringsArray;
     
-//    for (UIImageView *view in [self subviews]) {
-//        if ([view isKindOfClass:[UIImageView class]]) {
-//            view.image = nil;
-//        }
-//    }
-    if (picUrlStringsArray.count == 0) {
-        [self setFrame:CGRectZero];
-        [self mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(0, 0));
-        }];
-//        self.hidden = YES;
-        return;
+    for (UIImageView *view in [self subviews]) {
+        if ([view isKindOfClass:[UIImageView class]]) {
+            view.image = nil;
+        }
     }
+//    if (picUrlStringsArray.count == 0) {
+////        [self setFrame:CGRectZero];
+////        [self mas_makeConstraints:^(MASConstraintMaker *make) {
+////            make.size.mas_equalTo(CGSizeMake(0, 0));
+////        }];
+//        self.hidden = YES;
+//        return;
+//    }
 //    self.hidden = NO;
     CGFloat itemW = [self itemWidthForPicPathArray:_imageViewsArray];
     CGFloat itemH = 0;
@@ -84,10 +84,10 @@ static const CGFloat kFriendPhotoContainerViewPicMargin = 5.0f;
     CGRect frame = self.frame;
     frame.size = CGSizeMake(width, height);
     self.frame = frame;
-    
-    [self mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(width, height));
-    }];
+    self.backgroundColor = [UIColor redColor];
+//    [self mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.size.mas_equalTo(CGSizeMake(width, height));
+//    }];
 }
 
 #pragma mark - private actions

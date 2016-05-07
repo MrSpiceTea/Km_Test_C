@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface SearchViewController : UIViewController
+typedef NS_ENUM(NSInteger, SearchState) {
+    DSearchStateUnknown,
+    SearchStateStandby,
+    SearchStateTyping,
+    SearchStateLoading,
+    SearchStateShowingResult,
+    SearchStateNoResult
+};
+
+
+@interface SearchViewController : BaseViewController
 
 @end

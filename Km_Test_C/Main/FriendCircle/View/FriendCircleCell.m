@@ -157,6 +157,10 @@ static const CGFloat FriendCircleCellTopMargin = 15.0f;
         [detailCmtikeButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -10, 0, 0)];
         [self.contentView addSubview:detailCmtikeButton];
         
+        FriendPhotoContainerView * friendPhotoContainerView = [FriendPhotoContainerView new];
+        [friendPhotoContainerView setPicUrlStringsArray:friendCircleModel.imagesArray];
+        [self.contentView addSubview:friendPhotoContainerView];
+        
         [headerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.top.equalTo(self.contentView).insets(UIEdgeInsetsMake(FriendCircleCellTopMargin,FriendCircleCellTopMargin,0,0));
             make.size.mas_equalTo(CGSizeMake(FriendCircleCellImageViewHeight, FriendCircleCellImageViewHeight));
@@ -183,10 +187,6 @@ static const CGFloat FriendCircleCellTopMargin = 15.0f;
             make.right.equalTo(self.contentView.mas_right).with.offset(-FriendCircleCellTopMargin);
         }];
 
-        FriendPhotoContainerView * friendPhotoContainerView = [FriendPhotoContainerView new];
-        [friendPhotoContainerView setPicUrlStringsArray:friendCircleModel.imagesArray];
-        [self.contentView addSubview:friendPhotoContainerView];
-        
         [friendPhotoContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(detailLabel.mas_bottom).with.offset(5);
             make.left.equalTo(userNameLabel);
@@ -278,48 +278,8 @@ static const CGFloat FriendCircleCellTopMargin = 15.0f;
         [detailCmtikeButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -10, 0, 0)];
         [self.contentView addSubview:detailCmtikeButton];
         
-        [headerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.top.equalTo(self.contentView).insets(UIEdgeInsetsMake(FriendCircleCellTopMargin,FriendCircleCellTopMargin,0,0));
-            make.size.mas_equalTo(CGSizeMake(FriendCircleCellImageViewHeight, FriendCircleCellImageViewHeight));
-        }];
-        [userNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(headerImageView);
-            make.left.equalTo(headerImageView.mas_right).with.offset(FriendCircleCellTopMargin);
-        }];
-        [dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(headerImageView);
-            make.right.equalTo(self.contentView.mas_right).with.offset(-FriendCircleCellTopMargin);
-        }];
-        [locationLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.equalTo(headerImageView);
-            make.left.equalTo(userNameLabel);
-        }];
-        [distanceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.equalTo(locationLabel);
-            make.left.equalTo(locationLabel.mas_right).with.offset(5);
-        }];
-        [detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(locationLabel.mas_bottom).with.offset(5);
-            make.left.equalTo(userNameLabel);
-            make.right.equalTo(self.contentView.mas_right).with.offset(-FriendCircleCellTopMargin);
-        }];
-        
         FriendPhotoContainerView * friendPhotoContainerView = [FriendPhotoContainerView new];
         [self.contentView addSubview:friendPhotoContainerView];
-        
-        [friendPhotoContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(detailLabel.mas_bottom).with.offset(5);
-            make.left.equalTo(userNameLabel);
-        }];
-        
-        [detailCmtikeButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(friendPhotoContainerView.mas_bottom).with.offset(FriendCircleCellTopMargin);
-            make.right.equalTo(self.contentView.mas_right).with.offset(-FriendCircleCellTopMargin);
-        }];
-        [detailLikeikeButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(detailCmtikeButton);
-            make.right.equalTo(detailCmtikeButton.mas_left).with.offset(-FriendCircleCellTopMargin);
-        }];
         
         self.headerImageView = headerImageView;
         self.distanceLabel = distanceLabel;
@@ -336,12 +296,12 @@ static const CGFloat FriendCircleCellTopMargin = 15.0f;
 }
 
 + (CGFloat)heightWithModel:(FriendCircleModel *)model {
-//    FriendCircleCell *cell = [[FriendCircleCell
-//                                alloc] initWithFriendCircleModel:model reuseIdentifier:@"FriendCircleCell"];
-//    [cell layoutIfNeeded];
-//    CGRect frame =  cell.lastView.frame;
-//    return frame.origin.y + frame.size.height + FriendCircleCellTopMargin;
-    return 200;
+    FriendCircleCell *cell = [[FriendCircleCell
+                                alloc] initWithFriendCircleModel:model reuseIdentifier:@"FriendCircleCell"];
+    [cell layoutIfNeeded];
+    CGRect frame =  cell.lastView.frame;
+    return frame.origin.y + frame.size.height + FriendCircleCellTopMargin;
+//    return 200;
 }
 
 - (void)setModel:(FriendCircleModel *)model{
@@ -352,12 +312,6 @@ static const CGFloat FriendCircleCellTopMargin = 15.0f;
     self.locationLabel.text = model.location;
     self.detailLabel.text = model.text;
 
-    self.friendPhotoContainerView.picUrlStringsArray = model.imagesArray;
-    
-    [self.headerImageView  mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.equalTo(self.contentView).insets(UIEdgeInsetsMake(FriendCircleCellTopMargin,FriendCircleCellTopMargin,0,0));
-        make.size.mas_equalTo(CGSizeMake(FriendCircleCellImageViewHeight, FriendCircleCellImageViewHeight));
-    }];
     UIImage *image = [UIImage imageNamed:model.profileImageUrl];
     UIGraphicsBeginImageContextWithOptions(self.headerImageView .bounds.size, NO, 1.0);
     [[UIBezierPath bezierPathWithRoundedRect:self.headerImageView .bounds
@@ -365,6 +319,49 @@ static const CGFloat FriendCircleCellTopMargin = 15.0f;
     [image drawInRect:self.headerImageView.bounds];
     self.headerImageView .image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+    
+
+    self.friendPhotoContainerView.picUrlStringsArray = model.imagesArray;
+
+    [self.headerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.equalTo(self.contentView).insets(UIEdgeInsetsMake(FriendCircleCellTopMargin,FriendCircleCellTopMargin,0,0));
+        make.size.mas_equalTo(CGSizeMake(FriendCircleCellImageViewHeight, FriendCircleCellImageViewHeight));
+    }];
+    [self.userNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.headerImageView);
+        make.left.equalTo(self.headerImageView.mas_right).with.offset(FriendCircleCellTopMargin);
+    }];
+    [self.dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.headerImageView);
+        make.right.equalTo(self.contentView.mas_right).with.offset(-FriendCircleCellTopMargin);
+    }];
+    [self.locationLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.headerImageView);
+        make.left.equalTo(self.userNameLabel);
+    }];
+    [self.distanceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.locationLabel);
+        make.left.equalTo(self.locationLabel.mas_right).with.offset(5);
+    }];
+    [self.detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.locationLabel.mas_bottom).with.offset(5);
+        make.left.equalTo(self.userNameLabel);
+        make.right.equalTo(self.contentView.mas_right).with.offset(-FriendCircleCellTopMargin);
+    }];
+    [self.friendPhotoContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.detailLabel.mas_bottom).with.offset(5);
+        make.left.equalTo(self.userNameLabel);
+    }];
+    
+    [self.detailCmtikeButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-FriendCircleCellTopMargin);
+        make.right.equalTo(self.contentView.mas_right).with.offset(-FriendCircleCellTopMargin);
+    }];
+    [self.detailLikeikeButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.detailCmtikeButton);
+        make.right.equalTo(self.detailCmtikeButton.mas_left).with.offset(-FriendCircleCellTopMargin);
+    }];
+    
 }
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ChooseSongViewController : UIViewController
+#import "ChooseBaseViewController.h"
+@interface ChooseSongViewController : ChooseBaseViewController
 
 @end

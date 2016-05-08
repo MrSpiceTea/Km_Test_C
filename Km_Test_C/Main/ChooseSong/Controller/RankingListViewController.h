@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CommonTableViewController.h"
+#import "ChooseBaseTableViewController.h"
 
-@interface RankingListViewController : CommonTableViewController
+@interface RankingListViewController : ChooseBaseTableViewController
 
 @end

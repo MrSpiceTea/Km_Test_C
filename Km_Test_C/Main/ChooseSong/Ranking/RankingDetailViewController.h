@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface RankingDetailViewController : UIViewController
+#import "ChooseBaseViewController.h"
+@interface RankingDetailViewController : ChooseBaseViewController
 
 @end

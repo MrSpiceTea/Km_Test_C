@@ -23,25 +23,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-//    [[UITableView appearance] setSectionIndexBackgroundColor:[UIColor clearColor]];
-//    [[UITableView appearance] setSectionIndexTrackingBackgroundColor:[UIColor lightGrayColor]];
-//    [[UITableView appearance] setSectionIndexColor:[UIColor darkGrayColor]];
     [self configUI];
 }
 
 - (void)configUI{
     self.navigationItem.title = @"歌手";
-    self.view.backgroundColor = [UIColor whiteColor];
     UIButton *settingBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [settingBtn setFrame:CGRectMake(20, 0, 50, 50)];
     [settingBtn setImage:[UIImage imageNamed:@"title_setting_icon_n"] forState:UIControlStateNormal];
-//    [ addTarget:self action:@selector(navRightBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    //    [ addTarget:self action:@selector(navRightBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     [settingBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:settingBtn];
     self.navigationItem.rightBarButtonItem = item;
-
-    [self.view addSubview:self.tableView];
     [self.view addSubview:self.artistSearchView];
+    [self.view addSubview:self.tableView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -140,15 +135,17 @@
 }
 
 #pragma mark - GET/SET
+#pragma mark - GET/SET
 - (UITableView *)tableView{
     if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, kArtistSearchViewHeight, kSCREEN_WIDTH, kSCREEN_HEIGHT) style:UITableViewStyleGrouped];
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, kArtistSearchViewHeight + kNavBar_Height , kSCREEN_WIDTH, kSCREEN_HEIGHT) style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.backgroundColor = RGB(246, 246, 246);
     }
     return _tableView;
 }
+
 
 static const CGFloat kArtistSearchViewHeight = 40;
 - (ArtistSearchView *)artistSearchView{
@@ -158,5 +155,4 @@ static const CGFloat kArtistSearchViewHeight = 40;
     }
     return _artistSearchView;
 }
-
 @end

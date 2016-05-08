@@ -87,6 +87,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     LoginViewController *loginVC = [[LoginViewController alloc]init];
     [self.navigationController pushViewController:loginVC animated:YES];
+//    [self presentViewController:loginVC animated:YES completion:nil];
 }
 
 #pragma mark - UITableViewDataSource

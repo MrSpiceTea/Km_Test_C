@@ -29,8 +29,6 @@
 
 - (void)configUI{
     self.navigationItem.title = @"热门";
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     UIButton *settingBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [settingBtn setFrame:CGRectMake(20, 0, 50, 50)];
     [settingBtn setImage:[UIImage imageNamed:@"title_setting_icon_n"] forState:UIControlStateNormal];

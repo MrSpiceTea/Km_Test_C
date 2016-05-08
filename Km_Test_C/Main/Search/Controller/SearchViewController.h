@@ -10,7 +10,7 @@
 #import "BaseViewController.h"
 
 typedef NS_ENUM(NSInteger, SearchState) {
-    DSearchStateUnknown,
+    SearchStateUnknown,
     SearchStateStandby,
     SearchStateTyping,
     SearchStateLoading,
@@ -20,5 +20,5 @@ typedef NS_ENUM(NSInteger, SearchState) {
 
 
 @interface SearchViewController : BaseViewController
-
+@property (nonatomic, assign) SearchState state;
 @end

@@ -42,6 +42,7 @@
 //    img.frame = CGRectMake(0, 0, self.tabBar.frame.size.width, self.tabBar.frame.size.height);
 //    img.contentMode = UIViewContentModeScaleToFill;
 //    [[self tabBar] insertSubview:img atIndex:0];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,6 +60,7 @@
     
     
     UINavigationController *navVc = [[BaseNavigationController alloc]initWithRootViewController:firendCircleVC];
+    
 //    NSString *title =  NSLocalizedString(@"k歌", @"k歌");
 //    title = @""; //~
 //    navVc.title = title;
@@ -112,9 +114,13 @@
 }
 
 #pragma mark - UINavigationControllerDelegate methods
+//- (id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
+//    NSLog(@"%@",[fromVC class]);
+//    return nil;
+//}
+//
+//- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+//    NSLog(@"123");
+//}
 
-- (id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
-    NSLog(@"%@",[fromVC class]);
-    return nil;
-}
 @end

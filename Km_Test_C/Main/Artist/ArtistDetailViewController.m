@@ -13,16 +13,10 @@
 #import "UINavigationBar+expanded.h"
 @interface ArtistDetailViewController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
-/** 记录scrollView上次偏移的Y距离 */
-@property (nonatomic, assign) CGFloat                    scrollY;
-/** 记录scrollView上次偏移X的距离 */
-@property (nonatomic, assign) CGFloat                    scrollX;
-/** 最底部的scrollView，用来掌控所有控件的滚动 */
-@property (nonatomic, strong) UIScrollView               *backgroundScrollView;
-/** 推荐tableView */
 @property (nonatomic, strong) UITableView                *tableView;
 @property (nonatomic, strong) UIImageView                *backgroundImageView;
 @property (nonatomic, strong) UIView                     *backgroundView;
+@property (nonatomic, strong) UIView                     *backgroundToolBarView;
 @property (nonatomic, strong) UIButton *likeButton;
 @property (nonatomic, strong) NSMutableArray *dataSource;
 
@@ -35,9 +29,18 @@ static const CGFloat kBackgroundImageHeight = 180;
     // Do any additional setup after loading the view.
     self.title = @"张学友";
 //    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil]];
-//    [self.navigationController.navigationBar cnSetBackgroundColor:[UIColor clearColor]];
+//
     [self setupUI];
 
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.navigationController.navigationBar setBarTintColor:RGB(240, 240, 240)];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor], NSForegroundColorAttributeName, nil]];
+    [self.navigationController.navigationBar cnReset];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];//状态栏
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -55,16 +58,7 @@ static const CGFloat kBackgroundImageHeight = 180;
     self.automaticallyAdjustsScrollViewInsets = NO;
     //设置背景色
     self.view.backgroundColor = [UIColor whiteColor];
-//    //初始化最底部的scrollView,装tableView用
-//    self.backgroundScrollView = [[UIScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    [self.view addSubview:self.backgroundScrollView];
-//    self.backgroundScrollView.backgroundColor = [UIColor blackColor];
-//    self.backgroundScrollView.pagingEnabled = YES;
-//    self.backgroundScrollView.bounces = NO;
-//    self.backgroundScrollView.showsHorizontalScrollIndicator = NO;
-//    self.backgroundScrollView.delegate = self;
-//    self.backgroundScrollView.contentSize = CGSizeMake(kSCREEN_HEIGHT, 0);
-    
+   
     [self.view addSubview:self.backgroundImageView];
     [self.view addSubview:self.tableView];
     [self initData];

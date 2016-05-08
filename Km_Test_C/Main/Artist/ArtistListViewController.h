@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseViewController.h"
+#import "ChooseBaseViewController.h"
 
-@interface ArtistListViewController : BaseViewController
+@interface ArtistListViewController : ChooseBaseViewController
 
 @end

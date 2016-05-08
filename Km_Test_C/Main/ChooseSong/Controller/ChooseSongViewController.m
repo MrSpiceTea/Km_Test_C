@@ -7,7 +7,6 @@
 //
 
 #import "ChooseSongViewController.h"
-#import "RemoteControlViewController.h"
 #import "ChooseAlwaysViewController.h"
 #import "RankingListViewController.h"
 #import "PhoneSendViewController.h"
@@ -25,7 +24,7 @@
 @interface ChooseSongViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) ChooseSongHeadView *headerView;
-@property (nonatomic,strong) UIButton *hoverButton;
+
 @property (nonatomic,strong) UIColor *navColor;
 @property (nonatomic,strong) NSTimer *timer;
 @end
@@ -39,12 +38,10 @@ CGFloat kGirdViewHeight = 480.0f;
 {
     [super viewWillAppear:animated];
     self.automaticallyAdjustsScrollViewInsets = NO;
-    [[[UIApplication sharedApplication].delegate window] addSubview:self.hoverButton];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];//状态栏
     [self.navigationController.navigationBar cnSetBackgroundColor:[UIColor clearColor]];
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil]];
     [self.navigationController.navigationBar cnSetBackgroundColor:self.navColor];
-    
 //    self.timer = [[NSTimer alloc]initWithFireDate:[NSDate distantPast] interval:kTimerInterval target:self selector:@selector(connnectButtionTimer:) userInfo:nil repeats:YES];
 //    [[NSRunLoop mainRunLoop]addTimer:self.timer forMode:NSDefaultRunLoopMode];
 }
@@ -57,9 +54,7 @@ CGFloat kGirdViewHeight = 480.0f;
     [super viewWillDisappear:animated];
     [self.navigationController.navigationBar cnReset];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];//状态栏
-    [self.hoverButton removeFromSuperview];
 }
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -219,12 +214,6 @@ static const CGFloat kTopGridViewMargin = 5.0f;
     }
 }
 
-- (void)remoteControl:(UIButton *)btn{
-    RemoteControlViewController *remoteControVC = [[RemoteControlViewController alloc]init];
-    remoteControVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:remoteControVC animated:NO];
-}
-
 - (void)nineViewTapAction:(UITapGestureRecognizer *)tap{
     AlbumRecListViewController *AlbumRecListVC = [[AlbumRecListViewController alloc]init];
     [self.navigationController pushViewController:AlbumRecListVC animated:YES];
@@ -344,16 +333,6 @@ static const CGFloat kTopGridViewMargin = 5.0f;
         };
     }
     return _headerView;
-}
-
--(UIButton *)hoverButton{
-    if (!_hoverButton) {
-        _hoverButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _hoverButton.frame = CGRectMake(10, kSCREEN_HEIGHT - 104, 42, 42);
-        [_hoverButton setBackgroundImage:[UIImage imageNamed:@"btn_remote_control_n"] forState:UIControlStateNormal];
-        [_hoverButton addTarget:self action:@selector(remoteControl:) forControlEvents:UIControlEventTouchDown];
-    }
-    return _hoverButton;
 }
 
 - (UIView *)chooseSongBottomGirdView{

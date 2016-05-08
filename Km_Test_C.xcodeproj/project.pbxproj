@@ -11,6 +11,10 @@
 		3560131B1CCA922600DE2275 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3560131A1CCA922600DE2275 /* BaseViewController.m */; };
 		3560131F1CCA9DA900DE2275 /* ChooseSongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3560131E1CCA9DA900DE2275 /* ChooseSongViewController.m */; };
 		356013261CCA9E3500DE2275 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356013251CCA9E3500DE2275 /* MeViewController.m */; };
+		3568ECB21CDF147500A56133 /* FirendCircleIssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3568ECB11CDF147500A56133 /* FirendCircleIssueViewController.m */; };
+		3568ECB51CDF388100A56133 /* ChooseBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3568ECB41CDF388100A56133 /* ChooseBaseViewController.m */; };
+		3568ECB81CDF3BF100A56133 /* ChooseBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3568ECB71CDF3BF100A56133 /* ChooseBaseTableViewController.m */; };
+		3568ECBC1CDF406400A56133 /* TopPresentAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3568ECBB1CDF406400A56133 /* TopPresentAnimation.m */; };
 		356A37DA1CCE5A56001F4FA0 /* ArtistDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356A37D91CCE5A56001F4FA0 /* ArtistDetailViewController.m */; };
 		356A37DD1CCE5A6C001F4FA0 /* ArtistListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356A37DC1CCE5A6C001F4FA0 /* ArtistListViewController.m */; };
 		356A37E01CCE5BBA001F4FA0 /* ArtistClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356A37DF1CCE5BBA001F4FA0 /* ArtistClassViewController.m */; };
@@ -119,6 +123,14 @@
 		3560131E1CCA9DA900DE2275 /* ChooseSongViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSongViewController.m; sourceTree = "<group>"; };
 		356013241CCA9E3500DE2275 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
 		356013251CCA9E3500DE2275 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
+		3568ECB01CDF147500A56133 /* FirendCircleIssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirendCircleIssueViewController.h; sourceTree = "<group>"; };
+		3568ECB11CDF147500A56133 /* FirendCircleIssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirendCircleIssueViewController.m; sourceTree = "<group>"; };
+		3568ECB31CDF388100A56133 /* ChooseBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseBaseViewController.h; sourceTree = "<group>"; };
+		3568ECB41CDF388100A56133 /* ChooseBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseBaseViewController.m; sourceTree = "<group>"; };
+		3568ECB61CDF3BF100A56133 /* ChooseBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseBaseTableViewController.h; sourceTree = "<group>"; };
+		3568ECB71CDF3BF100A56133 /* ChooseBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseBaseTableViewController.m; sourceTree = "<group>"; };
+		3568ECBA1CDF406400A56133 /* TopPresentAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopPresentAnimation.h; sourceTree = "<group>"; };
+		3568ECBB1CDF406400A56133 /* TopPresentAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopPresentAnimation.m; sourceTree = "<group>"; };
 		356A37D81CCE5A56001F4FA0 /* ArtistDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistDetailViewController.h; sourceTree = "<group>"; };
 		356A37D91CCE5A56001F4FA0 /* ArtistDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistDetailViewController.m; sourceTree = "<group>"; };
 		356A37DB1CCE5A6C001F4FA0 /* ArtistListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistListViewController.h; sourceTree = "<group>"; };
@@ -341,6 +353,10 @@
 				517D094D1CCE2698007EA37D /* ChooseAlwaysViewController.m */,
 				517D09521CCE2707007EA37D /* PhoneSendViewController.h */,
 				517D09531CCE2707007EA37D /* PhoneSendViewController.m */,
+				3568ECB31CDF388100A56133 /* ChooseBaseViewController.h */,
+				3568ECB41CDF388100A56133 /* ChooseBaseViewController.m */,
+				3568ECB61CDF3BF100A56133 /* ChooseBaseTableViewController.h */,
+				3568ECB71CDF3BF100A56133 /* ChooseBaseTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -383,6 +399,15 @@
 				356013251CCA9E3500DE2275 /* MeViewController.m */,
 			);
 			path = Contorller;
+			sourceTree = "<group>";
+		};
+		3568ECB91CDF401D00A56133 /* ViewControllerAnimated */ = {
+			isa = PBXGroup;
+			children = (
+				3568ECBA1CDF406400A56133 /* TopPresentAnimation.h */,
+				3568ECBB1CDF406400A56133 /* TopPresentAnimation.m */,
+			);
+			path = ViewControllerAnimated;
 			sourceTree = "<group>";
 		};
 		356A37D71CCE58EA001F4FA0 /* Artist */ = {
@@ -453,6 +478,8 @@
 				35E68FF81CCCD19F003F1AC7 /* FirendCircleViewController.m */,
 				518F9DDA1CDC8F1000C084E7 /* FirendCircleDetailViewController.h */,
 				518F9DDB1CDC8F1000C084E7 /* FirendCircleDetailViewController.m */,
+				3568ECB01CDF147500A56133 /* FirendCircleIssueViewController.h */,
+				3568ECB11CDF147500A56133 /* FirendCircleIssueViewController.m */,
 			);
 			path = Contorller;
 			sourceTree = "<group>";
@@ -946,6 +973,7 @@
 		51DE66401CCA2167001F0BAC /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				3568ECB91CDF401D00A56133 /* ViewControllerAnimated */,
 				517D09441CCE16BE007EA37D /* MasonryTool.h */,
 				517D09451CCE16BE007EA37D /* MasonryTool.m */,
 			);
@@ -1239,6 +1267,7 @@
 				5162AA991CCF470D008317D1 /* BaseTableViewCell.m in Sources */,
 				35E68FED1CCCD148003F1AC7 /* ChatViewController.m in Sources */,
 				5139DA981CDB2B1E00C7F931 /* MJRefreshConst.m in Sources */,
+				3568ECB51CDF388100A56133 /* ChooseBaseViewController.m in Sources */,
 				513571A41CDC355E00E600DE /* ArtistModel.m in Sources */,
 				51F7C3151CD08CAA002BEB8F /* ArtistClassCell.m in Sources */,
 				35E68FF61CCCD18D003F1AC7 /* DiscoverViewController.m in Sources */,
@@ -1271,11 +1300,14 @@
 				513C20D11CD33A7600A6A886 /* HeaderInsetTableView.m in Sources */,
 				5139DA9A1CDB2B1E00C7F931 /* UIScrollView+MJRefresh.m in Sources */,
 				356013181CCA91DA00DE2275 /* BaseNavigationController.m in Sources */,
+				3568ECBC1CDF406400A56133 /* TopPresentAnimation.m in Sources */,
 				51DE66801CCA274E001F0BAC /* MASViewAttribute.m in Sources */,
 				5162AAAA1CCF58A8008317D1 /* FriendCircleHeaderView.m in Sources */,
+				3568ECB21CDF147500A56133 /* FirendCircleIssueViewController.m in Sources */,
 				51700BEC1CD8575D0091FF33 /* AlbumModel.m in Sources */,
 				516746AB1CD1F713007AC9C6 /* ParallaxTableViewController.m in Sources */,
 				5139DA911CDB2B1E00C7F931 /* MJRefreshBackGifFooter.m in Sources */,
+				3568ECB81CDF3BF100A56133 /* ChooseBaseTableViewController.m in Sources */,
 				5139DA8E1CDB2B1E00C7F931 /* MJRefreshAutoGifFooter.m in Sources */,
 				5162AA871CCF46C3008317D1 /* FriendCircleModel.m in Sources */,
 				35E68FE71CCCB3A1003F1AC7 /* ChooseSongHeadView.m in Sources */,

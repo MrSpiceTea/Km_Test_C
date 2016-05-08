@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseViewController.h"
-@interface PhoneSendViewController : BaseViewController
+#import "ChooseBaseViewController.h"
+@interface PhoneSendViewController : ChooseBaseViewController
 
 @end

@@ -29,8 +29,8 @@
     
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self.searchTextFiled becomeFirstResponder];
 }
 
@@ -62,7 +62,6 @@
     [self.view addSubview:self.historyTableView];
 //    [self.view addSubview:self.resultTableView];
     
-    
 }
 
 - (void)setupBarSubView{
@@ -76,6 +75,97 @@
    [self.searchTextFiled resignFirstResponder];
    [self.navigationController popViewControllerAnimated:YES];
 }
+
+#pragma mark - UITableViewDataSource
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *cellidentifier = @"hisorycell";
+    UITableViewCell *cell = nil;
+    if (indexPath.row != self.historyDatas.count) {
+        cell = [tableView dequeueReusableCellWithIdentifier:cellidentifier];
+        if (!cell) {
+            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellidentifier];
+        }
+    }else{
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
+        cell.textLabel.text = @"清空搜索历史";
+    }
+    if (indexPath.row != self.historyDatas.count) {
+        cell.textLabel.text = self.historyDatas[indexPath.row];
+        cell.imageView.image = [UIImage imageNamed:@"book_ktv_time"];
+        
+    }
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 50;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.historyDatas.count + 1;
+}
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == self.historyDatas.count) {
+        //TODO: search
+        NSFileManager *fileMger = [NSFileManager defaultManager];
+        BOOL bRet = [fileMger fileExistsAtPath:kSearchHistoryPath];
+        if (bRet) {
+            NSError *err;
+            [fileMger removeItemAtPath:kSearchHistoryPath error:&err];
+            [self.historyDatas removeAllObjects];
+           [self.historyTableView reloadData];
+        }
+    }
+}
+
+#pragma mark - UITextFieldDelegate
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    NSLog(@"ks");
+    self.state = SearchStateStandby;
+}
+
+- (void)textFieldDidChange:(UITextField *) TextField{
+    NSLog(@"TextField%@",TextField.text);
+    if (TextField.text.length>0) {
+        self.state = SearchStateTyping;
+    }else{
+        self.state = SearchStateStandby;
+    }
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    //history
+    if (textField.text.length) {
+        for (NSString *text in self.historyDatas) {
+            if ([text isEqualToString:textField.text]) {
+                return YES;
+            }
+        }
+        [self.historyDatas insertObject:textField.text atIndex:0];
+        [self.historyDatas writeToFile:kSearchHistoryPath atomically:YES];
+        [self.historyTableView reloadData];
+        
+        //TODO: is SearchStateLoading
+//        self.state = SearchStateLoading;
+        self.state = SearchStateStandby;
+    }
+//    [self.searchTextFiled resignFirstResponder];
+    return YES;
+}
+
+- (BOOL)textFieldShouldClear:(UITextField *)textField{
+    //displayhistory
+    return YES;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString*)string{
+    //updataresule
+//    NSLog(@"%@",string);
+    return YES;
+}
+
 #pragma mark - Get/Set
 - (UIView *)navSeachView{
     if (!_navSeachView) {
@@ -121,12 +211,12 @@
         [_searchTextFiled setValue:RGB(240, 240, 240) forKeyPath:@"_placeholderLabel.textColor"];
         [_searchTextFiled setTextColor:[UIColor blackColor]];
         [_searchTextFiled setTintColor:[UIColor blackColor]];
-//        [_searchTextFiled.layer setCornerRadius:5];
+        //        [_searchTextFiled.layer setCornerRadius:5];
         
         _searchTextFiled.clearButtonMode = UITextFieldViewModeWhileEditing;
         _searchTextFiled.returnKeyType = UIReturnKeyGoogle;
         
-//        [_searchTextFiled addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+        [_searchTextFiled addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
         //        [_textFiled addObserver:self forKeyPath:@"delegate" options:NSKeyValueObservingOptionNew context:nil];
         
     }
@@ -138,6 +228,8 @@
         _historyTableView = [[UITableView alloc]initWithFrame:self.view.bounds];
         _historyTableView.delegate = self;
         _historyTableView.dataSource = self;
+        _historyTableView.contentInset = UIEdgeInsetsMake(kNavBar_Height, 0, 0, 0);
+        [_historyTableView setTableFooterView:[UIView new]];
     }
     return _historyTableView;
 }
@@ -168,64 +260,30 @@
 
 - (NSMutableArray *)historyDatas{
     if (!_historyDatas) {
-          NSLog(@"kSearchHistoryPath : %@",kSearchHistoryPath);
         _historyDatas = [NSMutableArray arrayWithContentsOfFile:kSearchHistoryPath];
-        _historyDatas = [NSMutableArray array];
+        if (!_historyDatas) {
+            _historyDatas = [NSMutableArray array];
+        }
     }
     return _historyDatas;
 }
 
-#pragma mark - UITableViewDataSource
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *cellidentifier = @"hisorycell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellidentifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellidentifier];
-    }
-    cell.textLabel.text = self.historyDatas[indexPath.row];
-    return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.historyDatas.count;
-}
-#pragma mark - UITableViewDelegate
-
-#pragma mark - UITextFieldDelegate
-- (void)textFieldDidBeginEditing:(UITextField *)textField{
-    NSLog(@"ks");
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    //history
-    NSLog(@"%@",textField.text);
-    if (textField.text.length) {
-        for (NSString *text in self.historyDatas) {
-            if ([text isEqualToString:textField.text]) {
-                return YES;
+- (void)setState:(SearchState)state{
+    _state = state;
+    switch (state) {
+        case SearchStateStandby:
+            if (self.historyDatas.count == 0) {
+                self.historyTableView.hidden = YES;
+            }else{
+                self.historyTableView.hidden = NO;
             }
-        }
-      
-        [self.historyDatas insertObject:textField.text atIndex:0];
-        [self.historyDatas writeToFile:kSearchHistoryPath atomically:YES];
+            break;
+        case SearchStateTyping:
+            self.historyTableView.hidden = YES;
+            break;
+        default:
+            break;
     }
-//    [self.searchTextFiled resignFirstResponder];
-    return YES;
 }
-
-- (BOOL)textFieldShouldClear:(UITextField *)textField{
-    //displayhistory
-    return YES;
-}
-
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString*)string{
-    //updataresule
-//    NSLog(@"%@",string);
-    return YES;
-}
-
+    
 @end

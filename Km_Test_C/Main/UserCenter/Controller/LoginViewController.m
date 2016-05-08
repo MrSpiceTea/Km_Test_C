@@ -31,6 +31,12 @@
 }
 
 - (void)configUI{
+//    UIButton *settingBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [settingBtn setFrame:CGRectMake(20, 0, 50, 50)];
+//    [settingBtn setTitle:@"返回" forState:UIControlStateNormal];
+//    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:settingBtn];
+//    self.navigationItem.leftBarButtonItem = item;
+
     UIImageView *atImageView = [[UIImageView alloc]initWithFrame:CGRectMake(5, 0, 50, 20)];
     [atImageView setImage:[UIImage imageNamed:@"login_username"]];
     atImageView.contentMode = UIViewContentModeScaleAspectFit;

@@ -12,4 +12,5 @@
 @interface KM_APIRequestAgent : NSObject
 
 - (NSURLRequest *)apiRequestOfHotSongList;
+- (NSString *)apiRequestOfHotSongListUrl;
 @end

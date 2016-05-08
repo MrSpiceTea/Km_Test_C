@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "KM_APIRequestAgent.h"
 typedef void(^NetAPIRequestCompletion)(id resultAsDictOrArray, NSError *error);
-
+typedef void (^NetAPIRequestListCompletion)(NSArray *results, NSInteger total, NSError *error);
 @interface KM_NetAPIManager : NSObject
 
 + (instancetype)defaultManage;
@@ -17,6 +17,6 @@ typedef void(^NetAPIRequestCompletion)(id resultAsDictOrArray, NSError *error);
 
 
 #pragma mark - 
-- (void)fetchHotSongListWithCompletion:(NetAPIRequestCompletion)completion;
+- (void)fetchHotSongListWithCompletion:(NetAPIRequestListCompletion)completion;
 
 @end

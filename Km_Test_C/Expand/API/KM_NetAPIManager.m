@@ -7,6 +7,7 @@
 //
 
 #import "KM_NetAPIManager.h"
+#import "KM_NetAPIClient.h"
 
 @interface KM_NetAPIManager ()
 @property (nonatomic,strong) KM_APIRequestAgent *requestAgen;
@@ -28,8 +29,20 @@
 }
 
 #pragma mark -
-- (void)fetchHotSongListWithCompletion:(NetAPIRequestCompletion)completion{
-    
+- (void)fetchHotSongListWithCompletion:(NetAPIRequestListCompletion)completion{
+    NSString *url = [self.requestAgen apiRequestOfHotSongListUrl];
+    [[KM_NetAPIClient defaultManage] requestJsonDicWithPath:url withParams:nil withMethodType:Get completionBolck:^(id jsonResponseObject, NSError *error) {
+        if ([jsonResponseObject isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *rs = ((NSDictionary *)jsonResponseObject)[@"rs"];
+            NSArray *rsArray = rs[@"r"];
+            if (rsArray.count>0) {
+                NSMutableArray *mutableArray = [NSMutableArray arrayWithCapacity:rsArray.count];
+                for (NSDictionary *dirtyDict in rsArray) {
+                     NSLog(@"%@",dirtyDict);
+                }
+            }
+        }
+    }];
 }
 
 @end

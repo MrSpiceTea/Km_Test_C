@@ -9,9 +9,28 @@
 #import <UIKit/UIKit.h>
 
 @interface KM_NetAPIClient : NSObject
+typedef enum {
+    Get = 0,
+    Post,
+    Put,
+    Delete
+} NetworkMethod;
 
 + (instancetype)defaultManage;
 
-//
+//test
 - (void)gettest;
+- (void)gettest:(NSString *)url;
+
+- (void)requestJsonDicWithPath:(NSString *)aPath
+                     withParams:(NSDictionary*)params
+                 withMethodType:(NetworkMethod)method
+                       completionBolck:(void (^)(id jsonResponseObject, NSError *error))completion;
+//GET
+
+//POST
+
+//DOWNLOAD
+
+//UPLOAD
 @end

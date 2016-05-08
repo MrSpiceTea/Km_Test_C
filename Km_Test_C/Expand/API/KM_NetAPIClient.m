@@ -25,19 +25,21 @@
 }
 
 - (void)gettest{
+  
+}
+- (void)requestJsonDicWithPath:(NSString *)aPath
+                    withParams:(NSDictionary*)params
+                withMethodType:(NetworkMethod)method
+               completionBolck:(void (^)(id jsonResponseObject, NSError *error))completion{
     AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
-    [session GET:@"http://mobile.ktvme.com:8100/?body=%7B%22cmdid%22%3A%22D332%22%2C%22tid%22%3A%229%22%2C%22supportfullsongdb%22%3A%220%22%2C%22startpos%22%3A%221%22%2C%22requestnum%22%3A%2220%22%7D" parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-         NSLog(@"%@",downloadProgress);
-   
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"%@",responseObject);
+    [session GET:aPath parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        NSLog(@"%@",downloadProgress);
         
-        NSLog(@"%@",[responseObject class]);
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        completion(responseObject,nil);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];
     
-    
-  
 }
 @end

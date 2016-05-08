@@ -15,6 +15,8 @@
 #import "AlbumRecListViewController.h"
 #import "SearchViewController.h"
 
+#import "KM_NetAPIManager.h"
+
 #import "ChooseSongCell.h"
 #import "ChooseSongHeadView.h"
 #import "UINavigationBar+expanded.h"
@@ -63,13 +65,15 @@ CGFloat kGirdViewHeight = 480.0f;
     }
     self.navigationItem.title = @"KTV点歌";
     [self layoutSubViews];
+    [self initData];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)initData{
+    KM_NetAPIManager *apiManager = [KM_NetAPIManager defaultManage];
+    [apiManager fetchHotSongListWithCompletion:^(NSArray *results, NSInteger total, NSError *error) {
+        
+    }];
 }
-
 #pragma mark - Init
 -(void)layoutSubViews{
     [self.view addSubview:self.tableView];

@@ -18,6 +18,7 @@
 		356A37DA1CCE5A56001F4FA0 /* ArtistDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356A37D91CCE5A56001F4FA0 /* ArtistDetailViewController.m */; };
 		356A37DD1CCE5A6C001F4FA0 /* ArtistListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356A37DC1CCE5A6C001F4FA0 /* ArtistListViewController.m */; };
 		356A37E01CCE5BBA001F4FA0 /* ArtistClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356A37DF1CCE5BBA001F4FA0 /* ArtistClassViewController.m */; };
+		358935FC1CE0E1EA001B2DD0 /* SegmentedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 358935FB1CE0E1EA001B2DD0 /* SegmentedView.m */; };
 		35E68FE41CCCB385003F1AC7 /* ChooseSongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FE31CCCB385003F1AC7 /* ChooseSongCell.m */; };
 		35E68FE71CCCB3A1003F1AC7 /* ChooseSongHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FE61CCCB3A1003F1AC7 /* ChooseSongHeadView.m */; };
 		35E68FED1CCCD148003F1AC7 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FEC1CCCD148003F1AC7 /* ChatViewController.m */; };
@@ -142,6 +143,8 @@
 		356A37DC1CCE5A6C001F4FA0 /* ArtistListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistListViewController.m; sourceTree = "<group>"; };
 		356A37DE1CCE5BBA001F4FA0 /* ArtistClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistClassViewController.h; sourceTree = "<group>"; };
 		356A37DF1CCE5BBA001F4FA0 /* ArtistClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistClassViewController.m; sourceTree = "<group>"; };
+		358935FA1CE0E1EA001B2DD0 /* SegmentedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedView.h; sourceTree = "<group>"; };
+		358935FB1CE0E1EA001B2DD0 /* SegmentedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedView.m; sourceTree = "<group>"; };
 		35E68FE21CCCB385003F1AC7 /* ChooseSongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChooseSongCell.h; path = ../Controller/ChooseSongCell.h; sourceTree = "<group>"; };
 		35E68FE31CCCB385003F1AC7 /* ChooseSongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChooseSongCell.m; path = ../Controller/ChooseSongCell.m; sourceTree = "<group>"; };
 		35E68FE51CCCB3A1003F1AC7 /* ChooseSongHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChooseSongHeadView.h; path = ../Controller/ChooseSongHeadView.h; sourceTree = "<group>"; };
@@ -659,7 +662,6 @@
 			isa = PBXGroup;
 			children = (
 				5162AA941CCF470C008317D1 /* Views */,
-				5162AAA21CCF478E008317D1 /* Models */,
 				5162AA8D1CCF470C008317D1 /* Controllers */,
 			);
 			path = Common;
@@ -702,6 +704,8 @@
 				516746AD1CD1F788007AC9C6 /* ParallaxView.m */,
 				513C20CF1CD33A7600A6A886 /* HeaderInsetTableView.h */,
 				513C20D01CD33A7600A6A886 /* HeaderInsetTableView.m */,
+				358935FA1CE0E1EA001B2DD0 /* SegmentedView.h */,
+				358935FB1CE0E1EA001B2DD0 /* SegmentedView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -715,7 +719,8 @@
 				51700BED1CD8771F0091FF33 /* CommonAbstractObject.h */,
 				51700BEE1CD8771F0091FF33 /* CommonAbstractObject.m */,
 			);
-			path = Models;
+			name = Models;
+			path = ../../Main/Common/Models;
 			sourceTree = "<group>";
 		};
 		51700BD81CD849AD0091FF33 /* View */ = {
@@ -1099,6 +1104,7 @@
 		51DE665B1CCA21EF001F0BAC /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				5162AAA21CCF478E008317D1 /* Models */,
 			);
 			name = TabBar;
 			path = ../../../Other/TabBar;
@@ -1334,6 +1340,7 @@
 				516746AB1CD1F713007AC9C6 /* ParallaxTableViewController.m in Sources */,
 				5139DA911CDB2B1E00C7F931 /* MJRefreshBackGifFooter.m in Sources */,
 				3568ECB81CDF3BF100A56133 /* ChooseBaseTableViewController.m in Sources */,
+				358935FC1CE0E1EA001B2DD0 /* SegmentedView.m in Sources */,
 				5139DA8E1CDB2B1E00C7F931 /* MJRefreshAutoGifFooter.m in Sources */,
 				5162AA871CCF46C3008317D1 /* FriendCircleModel.m in Sources */,
 				35E68FE71CCCB3A1003F1AC7 /* ChooseSongHeadView.m in Sources */,

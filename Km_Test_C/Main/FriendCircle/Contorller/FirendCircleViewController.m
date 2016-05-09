@@ -11,6 +11,7 @@
 #import "FirendCircleDetailViewController.h"
 #import "FriendCircleModel.h"
 #import "FriendCircleCell.h"
+#import "SegmentedView.h"
 #import "MJRefresh.h"
 
 @interface FirendCircleViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -25,8 +26,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //set NavigationBar 背景颜色&title 颜色
-    self.navigationItem.title = @"动态";
+//    self.navigationItem.title = @"动态";
     [self.navigationController.navigationBar setBarTintColor:RGB(230, 230, 230)];
+    NSArray *titlearray = [NSArray arrayWithObjects:@"动态",@"人", nil];
+    SegmentedView *seg = [[SegmentedView alloc]initWithFrame:CGRectMake(0, 20, 120, 40)];
+    [seg setTitles:titlearray];
+    [self.navigationItem setTitleView:seg];
+    
     UIBarButtonItem *navRightBtn = [[UIBarButtonItem alloc]initWithTitle:@"发布"
     style:UIBarButtonItemStyleBordered
     target:self

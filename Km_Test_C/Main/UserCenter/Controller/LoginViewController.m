@@ -25,6 +25,15 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.navigationController.navigationBar setBarTintColor:RGB(240, 240, 240)];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor], NSForegroundColorAttributeName, nil]];
+    [self.navigationController.navigationBar cnReset];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];//状态栏
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -180,9 +180,14 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
     for (int i = 0; i<4; i++) {
         UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, buttonWidth, buttonWidth)];
         [button setTag:i+1000];
-        [button addTarget:self action:@selector(actionViewAction:) forControlEvents:UIControlEventTouchUpInside];
+        [button setImage:[UIImage imageNamed:@"quanzi_publishfeed_addimage_icon"] forState:UIControlStateNormal];
+        [button setTitle:@"照片" forState:UIControlStateNormal];
+        [button.titleLabel setFont:[UIFont systemFontOfSize:12]];
+        button.imageEdgeInsets = UIEdgeInsetsMake(-15, 15, 15, -15);
+        button.titleEdgeInsets = UIEdgeInsetsMake(15, -15, -15, 15);
         button.backgroundColor = RGB(230, 230, 230);
         button.layer.cornerRadius = 10;
+        [button addTarget:self action:@selector(actionViewAction:) forControlEvents:UIControlEventTouchUpInside];
         [backView addSubview:button];
         [array addObject:button];
     }

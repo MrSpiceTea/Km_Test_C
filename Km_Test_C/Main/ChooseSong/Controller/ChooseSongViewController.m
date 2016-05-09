@@ -20,6 +20,7 @@
 #import "ChooseSongCell.h"
 #import "ChooseSongHeadView.h"
 #import "UINavigationBar+expanded.h"
+#import "MJRefresh.h"
 
 #define kCellIdentifier_TitleDisclosure @"TitleDisclosureCell"
 
@@ -65,10 +66,10 @@ CGFloat kGirdViewHeight = 480.0f;
     }
     self.navigationItem.title = @"KTV点歌";
     [self layoutSubViews];
-    [self initData];
+    [self refresh];
 }
 
-- (void)initData{
+- (void)refresh{
     KM_NetAPIManager *apiManager = [KM_NetAPIManager defaultManage];
     [apiManager fetchHotSongListWithCompletion:^(NSArray *results, NSInteger total, NSError *error) {
         

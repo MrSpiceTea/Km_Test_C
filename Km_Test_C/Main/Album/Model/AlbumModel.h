@@ -12,4 +12,6 @@
 @property (nonatomic,copy) NSString *albumName;
 @property (nonatomic,copy) NSString *serialNumber;
 @property (nonatomic,copy) NSString *artistName;
+
+- (instancetype)initWithDict:(NSDictionary *)dirtyDict;
 @end

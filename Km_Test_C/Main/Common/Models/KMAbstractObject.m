@@ -9,5 +9,13 @@
 #import "KMAbstractObject.h"
 
 @implementation KMAbstractObject
-
+- (instancetype)initWithDict:(NSDictionary *)dirtyDict{
+    if (self = [super init]) {
+        if (dirtyDict) {
+            NSArray *keys = @[@"id", @"contentid"];
+            self.theID = [dirtyDict stringValueForCandidateKeys:keys];
+        }
+    }
+    return self;
+}
 @end

@@ -9,5 +9,8 @@
 #ifndef GlobalDefines_h
 #define GlobalDefines_h
 
+#define kSearchHistoryPath [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"historyDatas.plist"]
+
+#define kFriendCircleListPath [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"historyDatas.plist"]
 
 #endif /* GlobalDefines_h */

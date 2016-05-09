@@ -20,10 +20,12 @@
 
 @implementation FirendCircleViewController
 
+#pragma mark - lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //set NavigationBar 背景颜色&title 颜色
+    self.navigationItem.title = @"动态";
     [self.navigationController.navigationBar setBarTintColor:RGB(230, 230, 230)];
     UIBarButtonItem *navRightBtn = [[UIBarButtonItem alloc]initWithTitle:@"发布"
     style:UIBarButtonItemStyleBordered
@@ -32,69 +34,94 @@
     [navRightBtn setTintColor:RGB(255, 140, 0)];
     self.navigationItem.rightBarButtonItem = navRightBtn;
     [self.view addSubview:self.tableView];
-    [self initData];
-    
+
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         // 进入刷新状态后会自动调用这个block
-        NSLog(@"123");
-    
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             // 刷新表格
-            [self.tableView reloadData];
+            [self initData];
             [self.tableView.mj_header endRefreshing];
         });
     }];
     // 马上进入刷新状态
 //    [self.tableView.mj_header beginRefreshing];
+    [self initData];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+  
 }
 
 - (void)initData{
-    NSMutableArray *imagesArray1 = [NSMutableArray arrayWithObjects:@"zhangxueyou", @"zhangxueyou", @"angelababy", @"angelababy", @"zhangxueyou", @"zhangxueyou", @"zhangxueyou", @"zhangxueyou", @"zhangxueyou",nil];
-    NSMutableArray *imagesArray2 = [NSMutableArray arrayWithObjects:@"angelababy", @"angelababy", @"angelababy", @"angelababy", @"angelababy",nil];
+//    NSMutableArray *array = [NSMutableArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"FriendCircleList" ofType:@"plist"]];
+    self.dataSource = nil;
+    NSMutableArray *array  = [NSMutableArray arrayWithContentsOfFile:kFriendCircleListPath];
+    if (array.count == 0) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"FriendCircleList" ofType:@"plist"];
+        NSMutableArray *plistarray = [NSMutableArray arrayWithContentsOfFile:path];
+        array = plistarray;
+        [array writeToFile:kFriendCircleListPath atomically:YES];
+    }
     
-    FriendCircleModel *model1 = [[FriendCircleModel alloc] init];
-    model1.profileImageUrl = @"angelababy";
-    model1.userName = @"陈奕迅 史蒂夫111111";
-    model1.location = @"阿富汗欢乐ktv";
-    model1.text = @"???";
-    model1.distan = @"6000KM";
-    model1.createdAt = @"6小时前";
-    model1.imagesArray = imagesArray1;
-    [self.dataSource addObject:model1];
-    FriendCircleModel *model2 = [[FriendCircleModel alloc] init];
-    model2.profileImageUrl = @"angelababy";
-    model2.userName = @"asdfasdf  史蒂夫222222";
-    model2.location = @"阿富汗欢";
-    model2.text = @"今天天气很好啊啊都发生的路啊啊都发生的路口附近阿拉山口大家福利卡圣诞节啊啊都发生的路口附近阿拉山口大家福利卡圣诞节口附近阿拉山口大家福利卡圣诞节";
-    model2.distan = @"6000KM";
-    model2.createdAt = @"6小时前";
-    [self.dataSource addObject:model2];
-    
-    FriendCircleModel *model4 = [[FriendCircleModel alloc] init];
-    model4.profileImageUrl = @"zhangxueyou";
-    model4.userName = @"史蒂夫33333333";
-    model4.location = @"欢乐ktv";
-    model4.text = @"model4model4model4model4model4mo333333333";
-    model4.distan = @"6000KM";
-    model4.createdAt = @"6小前";
-    [self.dataSource addObject:model4];
-    
-    FriendCircleModel *model5 = [[FriendCircleModel alloc] init];
-    model5.profileImageUrl = @"jay";
-    model5.userName = @"史蒂夫444444";
-    model5.location = @"欢乐ktv";
-    model5.text = @"555555天";
-
-    model5.imagesArray = imagesArray2;
-    model5.distan = @"6000KM";
-    model5.createdAt = @"6小前";
-    [self.dataSource addObject:model5];
-    [self.dataSource addObject:model5];
-    [self.dataSource addObject:model5];
-    [self.dataSource addObject:model5];
-    [self.dataSource addObject:model5];
-    [self.dataSource addObject:model5];
-    [self.dataSource addObject:model5];
+    for (NSDictionary *dic in array) {
+        FriendCircleModel *model1 = [[FriendCircleModel alloc] init];
+        model1.profileImageUrl = dic[@"profileImageUrl"];
+        model1.userName = dic[@"userName"];
+        model1.location = dic[@"location"];
+        model1.text = dic[@"text"];
+        model1.distan = dic[@"distan"];
+        model1.createdAt = dic[@"createdAt"];
+        model1.imagesArray = dic[@"images"];
+        [self.dataSource addObject:model1];
+    }
+//    NSMutableArray *imagesArray1 = [NSMutableArray arrayWithObjects:@"zhangxueyou", @"zhangxueyou", @"angelababy", @"angelababy", @"zhangxueyou", @"zhangxueyou", @"zhangxueyou", @"zhangxueyou", @"zhangxueyou",nil];
+//    NSMutableArray *imagesArray2 = [NSMutableArray arrayWithObjects:@"angelababy", @"angelababy", @"angelababy", @"angelababy", @"angelababy",nil];
+//
+//    FriendCircleModel *model1 = [[FriendCircleModel alloc] init];
+//    model1.profileImageUrl = @"angelababy";
+//    model1.userName = @"陈奕迅 史蒂夫111111";
+//    model1.location = @"阿富汗欢乐ktv";
+//    model1.text = @"???";
+//    model1.distan = @"6000KM";
+//    model1.createdAt = @"6小时前";
+//    model1.imagesArray = imagesArray1;
+//    [self.dataSource addObject:model1];
+//    FriendCircleModel *model2 = [[FriendCircleModel alloc] init];
+//    model2.profileImageUrl = @"angelababy";
+//    model2.userName = @"asdfasdf  史蒂夫222222";
+//    model2.location = @"阿富汗欢";
+//    model2.text = @"今天天气很好啊啊都发生的路啊啊都发生的路口附近阿拉山口大家福利卡圣诞节啊啊都发生的路口附近阿拉山口大家福利卡圣诞节口附近阿拉山口大家福利卡圣诞节";
+//    model2.distan = @"6000KM";
+//    model2.createdAt = @"6小时前";
+//    [self.dataSource addObject:model2];
+//    
+//    FriendCircleModel *model4 = [[FriendCircleModel alloc] init];
+//    model4.profileImageUrl = @"zhangxueyou";
+//    model4.userName = @"史蒂夫33333333";
+//    model4.location = @"欢乐ktv";
+//    model4.text = @"model4model4model4model4model4mo333333333";
+//    model4.distan = @"6000KM";
+//    model4.createdAt = @"6小前";
+//    [self.dataSource addObject:model4];
+//    
+//    FriendCircleModel *model5 = [[FriendCircleModel alloc] init];
+//    model5.profileImageUrl = @"jay";
+//    model5.userName = @"史蒂夫444444";
+//    model5.location = @"欢乐ktv";
+//    model5.text = @"555555天";
+//
+//    model5.imagesArray = imagesArray2;
+//    model5.distan = @"6000KM";
+//    model5.createdAt = @"6小前";
+//    [self.dataSource addObject:model5];
+//    [self.dataSource addObject:model5];
+//    [self.dataSource addObject:model5];
+//    [self.dataSource addObject:model5];
+//    [self.dataSource addObject:model5];
+//    [self.dataSource addObject:model5];
+//    [self.dataSource addObject:model5];
     
     [self.tableView reloadData];
 }

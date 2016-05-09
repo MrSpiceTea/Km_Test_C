@@ -12,5 +12,4 @@
 
 + (UIColor *)randomColor;
 + (UIColor *)randomColorAlpha:(CGFloat)alpha;
-
 @end

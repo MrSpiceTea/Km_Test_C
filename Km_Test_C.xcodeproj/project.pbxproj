@@ -82,6 +82,9 @@
 		517D09541CCE2707007EA37D /* PhoneSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D09531CCE2707007EA37D /* PhoneSendViewController.m */; };
 		518608891CE024B70066E0D6 /* NSObject+ObjectMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 518608881CE024B70066E0D6 /* NSObject+ObjectMap.m */; };
 		5186088C1CE038E10066E0D6 /* NSDictionary+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 5186088B1CE038E10066E0D6 /* NSDictionary+Utilities.m */; };
+		5186088E1CE040240066E0D6 /* chatList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5186088D1CE040240066E0D6 /* chatList.plist */; };
+		518608901CE0405A0066E0D6 /* FriendCircleList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5186088F1CE0405A0066E0D6 /* FriendCircleList.plist */; };
+		518608931CE066AB0066E0D6 /* FriendCircleIssueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 518608921CE066AB0066E0D6 /* FriendCircleIssueCell.m */; };
 		5189E0EF1CD0C9DC001CE0E6 /* RankingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5189E0EE1CD0C9DC001CE0E6 /* RankingDetailViewController.m */; };
 		518F9DDC1CDC8F1000C084E7 /* FirendCircleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DDB1CDC8F1000C084E7 /* FirendCircleDetailViewController.m */; };
 		518F9DEB1CDC908D00C084E7 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DDF1CDC908D00C084E7 /* AFHTTPSessionManager.m */; };
@@ -266,6 +269,10 @@
 		518608881CE024B70066E0D6 /* NSObject+ObjectMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ObjectMap.m"; sourceTree = "<group>"; };
 		5186088A1CE038E10066E0D6 /* NSDictionary+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Utilities.h"; sourceTree = "<group>"; };
 		5186088B1CE038E10066E0D6 /* NSDictionary+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Utilities.m"; sourceTree = "<group>"; };
+		5186088D1CE040240066E0D6 /* chatList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = chatList.plist; sourceTree = "<group>"; };
+		5186088F1CE0405A0066E0D6 /* FriendCircleList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FriendCircleList.plist; sourceTree = "<group>"; };
+		518608911CE066AB0066E0D6 /* FriendCircleIssueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCircleIssueCell.h; sourceTree = "<group>"; };
+		518608921CE066AB0066E0D6 /* FriendCircleIssueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCircleIssueCell.m; sourceTree = "<group>"; };
 		5189E0ED1CD0C9DC001CE0E6 /* RankingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingDetailViewController.h; sourceTree = "<group>"; };
 		5189E0EE1CD0C9DC001CE0E6 /* RankingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingDetailViewController.m; sourceTree = "<group>"; };
 		518F9DDA1CDC8F1000C084E7 /* FirendCircleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirendCircleDetailViewController.h; sourceTree = "<group>"; };
@@ -604,6 +611,8 @@
 		5139DAA11CDB2C7500C7F931 /* Plist */ = {
 			isa = PBXGroup;
 			children = (
+				5186088D1CE040240066E0D6 /* chatList.plist */,
+				5186088F1CE0405A0066E0D6 /* FriendCircleList.plist */,
 			);
 			path = Plist;
 			sourceTree = "<group>";
@@ -640,6 +649,8 @@
 				5162AAAB1CCF5CF0008317D1 /* FriendCircleHeaderView.xib */,
 				514D2BA71CDB375F00A12073 /* FriendPhotoContainerView.h */,
 				514D2BA81CDB375F00A12073 /* FriendPhotoContainerView.m */,
+				518608911CE066AB0066E0D6 /* FriendCircleIssueCell.h */,
+				518608921CE066AB0066E0D6 /* FriendCircleIssueCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1225,7 +1236,9 @@
 				51DE66321CCA1C1F001F0BAC /* Assets.xcassets in Resources */,
 				5139DAA31CDB2EB100C7F931 /* listview_header_foot_drag_icon.png in Resources */,
 				5139DA971CDB2B1E00C7F931 /* MJRefresh.bundle in Resources */,
+				5186088E1CE040240066E0D6 /* chatList.plist in Resources */,
 				5139DAA01CDB2C7000C7F931 /* listview_header_footer_loading.gif in Resources */,
+				518608901CE0405A0066E0D6 /* FriendCircleList.plist in Resources */,
 				51DE667B1CCA274E001F0BAC /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1302,6 +1315,7 @@
 				51700BEF1CD8771F0091FF33 /* CommonAbstractObject.m in Sources */,
 				51778B501CD9E4D400FA6CCE /* LoginViewController.m in Sources */,
 				516746A41CD1E98D007AC9C6 /* QRCodeAreaView.m in Sources */,
+				518608931CE066AB0066E0D6 /* FriendCircleIssueCell.m in Sources */,
 				5189E0EF1CD0C9DC001CE0E6 /* RankingDetailViewController.m in Sources */,
 				5139DA9B1CDB2B1E00C7F931 /* UIView+MJExtension.m in Sources */,
 				51700BDB1CD84A0A0091FF33 /* RankingListCell.m in Sources */,

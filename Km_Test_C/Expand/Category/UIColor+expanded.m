@@ -24,4 +24,5 @@
     CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5; //0.5 to 1.0,away from black
     return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:alpha];
 }
+
 @end

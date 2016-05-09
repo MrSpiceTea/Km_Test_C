@@ -6,8 +6,8 @@
 //  Copyright © 2016年 OMG. All rights reserved.
 //
 
-#import "CommonTableViewController.h"
+#import "ChooseBaseTableViewController.h"
 
-@interface AlbumRecListViewController : CommonTableViewController
+@interface AlbumRecListViewController : ChooseBaseTableViewController
 
 @end

@@ -8,8 +8,6 @@
 
 #import "SearchViewController.h"
 
-#define kSearchHistoryPath [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"historyDatas.plist"]
-
 @interface SearchViewController ()<UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UIView *backgroudView;
 @property (nonatomic,strong) UITableView *historyTableView;

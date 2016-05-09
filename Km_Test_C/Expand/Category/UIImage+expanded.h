@@ -13,4 +13,5 @@
 + (UIImage *)imageOfRoundRectWithImage: (UIImage *)image
                                   size: (CGSize)size
                                 radius: (CGFloat)radius;
++ (UIImage *)createImageWithColor:(UIColor *)color;
 @end

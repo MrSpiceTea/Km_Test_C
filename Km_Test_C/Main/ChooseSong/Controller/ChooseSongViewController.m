@@ -35,7 +35,7 @@
 @implementation ChooseSongViewController
 
 #pragma mark - LifeCycle
-static const CGFloat kTimerInterval = 5.0f;
+//static const CGFloat kTimerInterval = 5.0f;
 CGFloat kGirdViewHeight = 480.0f;
 -(void)viewWillAppear:(BOOL)animated
 {

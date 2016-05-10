@@ -20,13 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    [[KM_NetAPIClient defaultManage] gettest];
-    
-    NSArray *titlearray = [NSArray arrayWithObjects:@"第一",@"第二", nil];
-    SegmentedView *seg = [[SegmentedView alloc]initWithFrame:CGRectMake(20, 100, 120, 30)];
-    [seg setTitles:titlearray];
-    seg.backgroundColor = [UIColor brownColor];
-    [self.view addSubview:seg];
+
 }
 
 - (void)didReceiveMemoryWarning {

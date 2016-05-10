@@ -52,17 +52,17 @@
         UIButton *button = [UIButton new];
         [button setTitle:titles[i] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [button setTitleColor:SegmentedViewSeparatorBackColorNormal forState:UIControlStateHighlighted];
         [button setTitleColor:SegmentedViewSeparatorBackColorNormal forState:UIControlStateSelected];
         [button.titleLabel setFont:SegmentedViewTitleFont];
         [button setTag:i];
         [button addTarget:self action:@selector(buttonSelectAction:) forControlEvents:UIControlEventTouchUpInside];
-        [button setFrame:CGRectMake(i*_viewWidth, 0, _viewWidth, CGRectGetHeight(self.frame) -5)];
-        if (i==0) {
+        [button setFrame:CGRectMake(i*_viewWidth, 0, _viewWidth, CGRectGetHeight(self.frame) - 5)];
+        if (i == 0) {
             [button setSelected:YES];
-            self.separatorLineView.frame = CGRectMake(5, CGRectGetHeight(self.frame)-5, _viewWidth - 10, 3);
+            self.separatorLineView.frame = CGRectMake(5, CGRectGetHeight(self.frame) - 5, _viewWidth - 10, 3);
             [self addSubview:self.separatorLineView];
         }
-        
         [self.separatorviews addObject:button];
         [self addSubview:button];
     }
@@ -128,6 +128,11 @@
     }
     button.selected = YES;
     [self selectActionMoveTo :button.center.x];
+    
+    selectBolck block = self.selectbolck;
+    if (block) {
+        block(button.tag);
+    }
     //block
 }
 

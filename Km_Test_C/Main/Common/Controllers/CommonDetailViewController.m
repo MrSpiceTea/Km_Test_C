@@ -1,37 +1,23 @@
 //
-//  ArtistDetailViewController.m
+//  CommonDetailViewController.m
 //  Km_Test_C
 //
-//  Created by 谢展图 on 16/4/25.
+//  Created by Mr.Xie on 16/5/10.
 //  Copyright © 2016年 OMG. All rights reserved.
 //
 
-#import "ArtistDetailViewController.h"
-#import "AlbumListCell.h"
-#import "ArtistDetailCell.h"
-#import "ArtistModel.h"
+#import "CommonDetailViewController.h"
 #import "UINavigationBar+expanded.h"
-@interface ArtistDetailViewController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
-
-@property (nonatomic, strong) UITableView                *tableView;
-@property (nonatomic, strong) UIImageView                *backgroundImageView;
-@property (nonatomic, strong) UIView                     *backgroundView;
-@property (nonatomic, strong) UIView                     *backgroundToolBarView;
-@property (nonatomic, strong) UIButton                   *likeButton;
-@property (nonatomic, strong) NSMutableArray             *dataSource;
+@interface CommonDetailViewController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @end
 static const CGFloat kBackgroundImageHeight = 180;
-@implementation ArtistDetailViewController
+@implementation CommonDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"张学友";
-//    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil]];
-//
     [self setupUI];
-
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -43,9 +29,6 @@ static const CGFloat kBackgroundImageHeight = 180;
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];//状态栏
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -53,32 +36,15 @@ static const CGFloat kBackgroundImageHeight = 180;
 }
 
 - (void)setupUI{
- 
     //将view的自动添加scroll的内容偏移关闭
     self.automaticallyAdjustsScrollViewInsets = NO;
     //设置背景色
     self.view.backgroundColor = [UIColor whiteColor];
-   
+    
     [self.view addSubview:self.backgroundImageView];
     [self.view addSubview:self.tableView];
-    [self initData];
     
 }
-- (void)initData{
-//    ArtistModel *model = [[ArtistModel alloc]init];
-//    model.artistName = @"张学友";
-//    model.fansNum = @"53611";
-
- 
-    for (int i=0; i<30; i++) {
-        AlbumModel *albumModel = [[AlbumModel alloc]init];
-        albumModel.serialNumber = [NSString stringWithFormat:@"%d",i];
-        albumModel.artistName = @"张学友";
-        albumModel.albumName = [NSString stringWithFormat:@"歌曲%d",i];
-        [self.dataSource addObject:albumModel];
-    }
-}
-
 - (NSMutableArray *)dataSource{
     if (!_dataSource) {
         _dataSource = [NSMutableArray array];
@@ -105,7 +71,7 @@ static const CGFloat kBackgroundImageHeight = 180;
         _backgroundImageView = [[UIImageView alloc] init];
         _backgroundImageView.frame = CGRectMake(0, kNavBar_Height, kSCREEN_WIDTH, kBackgroundImageHeight);
         _backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
-        [_backgroundImageView setImage:[UIImage imageNamed:@"jay"]];
+        [_backgroundImageView setImage:[UIImage imageNamed:@"record_cover_def"]];
     }
     
     return _backgroundImageView;
@@ -140,12 +106,12 @@ static const CGFloat kBackgroundImageHeight = 180;
             [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil]];
             [self.navigationController.navigationBar cnSetBackgroundColor:[color colorWithAlphaComponent:0]];
         }
-//        CGFloat insetTop = scrollView.contentInset.top;
-
+        //        CGFloat insetTop = scrollView.contentInset.top;
+        
         CGFloat scaleTopView = 1 - (offsetY + kBackgroundImageHeight)/ 300;
-//        CGRect frame = self.backgroundImageView.frame;
-//        frame.origin.y = kBackgroundImageHeight/2;
-//        self.backgroundImageView.frame = frame;
+        //        CGRect frame = self.backgroundImageView.frame;
+        //        frame.origin.y = kBackgroundImageHeight/2;
+        //        self.backgroundImageView.frame = frame;
         scaleTopView = scaleTopView > 1 ? scaleTopView : 1;
         CGAffineTransform transform = CGAffineTransformMakeScale(scaleTopView, scaleTopView);
         CGFloat ty = (scaleTopView - 1) * kBackgroundImageHeight ;
@@ -153,27 +119,8 @@ static const CGFloat kBackgroundImageHeight = 180;
     }
 }
 
-#pragma mark - UITablewViewDelegate
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 55;
-}
-
-#pragma mark - UITableViewDataSource
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    if (indexPath.row == 0) {
-        ArtistDetailCell *cell = [[ArtistDetailCell alloc]initWithTitle:@"邓紫棋" Fans:@"65656"];
-        return cell;
-    }else{
-        AlbumListCell *cell = [AlbumListCell cellWithTabelView:tableView];
-        cell.albumModel = self.dataSource[indexPath.row -1];
-        return cell;
-    }
- 
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataSource.count;
+#warning Incomplete implementation, return the number of rows
+    return 0;
 }
-
 @end

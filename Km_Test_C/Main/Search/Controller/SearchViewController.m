@@ -89,6 +89,9 @@
         cell.textLabel.text = @"清空搜索历史";
     }
     if (indexPath.row != self.historyDatas.count) {
+        if (self.historyDatas[indexPath.row]) {
+            
+        }
         cell.textLabel.text = self.historyDatas[indexPath.row];
         cell.imageView.image = [UIImage imageNamed:@"book_ktv_time"];
         

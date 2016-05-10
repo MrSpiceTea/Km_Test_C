@@ -11,6 +11,6 @@
 
 #define kSearchHistoryPath [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"historyDatas.plist"]
 
-#define kFriendCircleListPath [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"historyDatas.plist"]
+#define kFriendCircleListPath [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"IssueDatas.plist"]
 
 #endif /* GlobalDefines_h */

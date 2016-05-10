@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ChooseBaseTableViewController.h"
-@interface FirendCircleIssueViewController : ChooseBaseTableViewController
+#import "CommonTableViewController.h"
+@interface FirendCircleIssueViewController : CommonTableViewController
 
 @end

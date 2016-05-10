@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ChooseBaseViewController.h"
-@interface RankingDetailViewController : ChooseBaseViewController
+#import "CommonDetailViewController.h"
+@interface RankingDetailViewController : CommonDetailViewController
+@property (nonatomic, strong) NSMutableArray *dataSource;
 
 @end

@@ -12,6 +12,7 @@
 #import "PeopleInformationViewController.h"
 #import "FriendCircleModel.h"
 #import "FriendCircleCell.h"
+#import "PeoPleListCell.h"
 #import "SegmentedView.h"
 #import "MJRefresh.h"
 
@@ -202,15 +203,13 @@
         }
         return cell;
     }else if([tableView isEqual:self.peopleTablewView]){
-        //TODO: customcell
-        static NSString *peoplecellidentifier = @"peoplecell";
-        UITableViewCell *peoplecell = [tableView dequeueReusableCellWithIdentifier:peoplecellidentifier];
-        if (!peoplecell) {
-            peoplecell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:peoplecellidentifier];
-        }
-        peoplecell.textLabel.text = @"测试";
-        peoplecell.detailTextLabel.text = @"641米";
-        peoplecell.imageView.image = [UIImage imageNamed:@"zhangxueyou"];
+        //TODO: peoplemodel
+        PeoPleListCell *peoplecell = [PeoPleListCell cellWidthTable:tableView];
+        peoplecell.nameLabel.text = @"张学友";
+        peoplecell.timeLabel.text = @"1小时前";
+        peoplecell.distanLabel.text = @"10km";
+        peoplecell.locationLabel.text = @"堂会";
+        peoplecell.levelLabel.text = @"21";
         return peoplecell;
     }
     
@@ -261,7 +260,8 @@
 
 - (UITableView *)peopleTablewView{
     if (!_peopleTablewView) {
-        _peopleTablewView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT) style:UITableViewStylePlain];
+        //???: why y is kNavBar_Height
+        _peopleTablewView = [[UITableView alloc]initWithFrame:CGRectMake(0, kNavBar_Height, kSCREEN_WIDTH, kSCREEN_HEIGHT - kNavBar_Height - 44) style:UITableViewStylePlain];
         _peopleTablewView.delegate = self;
         _peopleTablewView.dataSource = self;
         _peopleTablewView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;

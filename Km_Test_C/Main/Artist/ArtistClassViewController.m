@@ -10,6 +10,7 @@
 #import "ArtistListViewController.h"
 #import "SearchViewController.h"
 #import "ArtistSearchView.h"
+#import "SearchViewController.h"
 #import "ArtistClassCell.h"
 
 @interface ArtistClassViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -83,6 +84,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 0) {
+            if (indexPath.row == 0) {
+                SearchViewController *search = [[SearchViewController alloc]init];
+                [self.navigationController pushViewController:search animated:YES];
+            }
+    }
     if (indexPath.section!=0) {
         ArtistListViewController *artitListVC = [[ArtistListViewController alloc]init];
         [self.navigationController pushViewController:artitListVC animated:YES];

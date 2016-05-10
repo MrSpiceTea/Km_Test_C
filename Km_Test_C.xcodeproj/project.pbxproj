@@ -19,6 +19,10 @@
 		356A37DD1CCE5A6C001F4FA0 /* ArtistListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356A37DC1CCE5A6C001F4FA0 /* ArtistListViewController.m */; };
 		356A37E01CCE5BBA001F4FA0 /* ArtistClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356A37DF1CCE5BBA001F4FA0 /* ArtistClassViewController.m */; };
 		358935FC1CE0E1EA001B2DD0 /* SegmentedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 358935FB1CE0E1EA001B2DD0 /* SegmentedView.m */; };
+		35C08FBE1CE2359A0050D749 /* PeoPleListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C08FBC1CE2359A0050D749 /* PeoPleListCell.m */; };
+		35C08FBF1CE2359A0050D749 /* PeoPleListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35C08FBD1CE2359A0050D749 /* PeoPleListCell.xib */; };
+		35C08FC11CE2476B0050D749 /* PeopleInformationHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35C08FC01CE2476B0050D749 /* PeopleInformationHeaderView.xib */; };
+		35C08FC31CE248930050D749 /* CoustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35C08FC21CE248930050D749 /* CoustomView.xib */; };
 		35E68FE41CCCB385003F1AC7 /* ChooseSongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FE31CCCB385003F1AC7 /* ChooseSongCell.m */; };
 		35E68FE71CCCB3A1003F1AC7 /* ChooseSongHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FE61CCCB3A1003F1AC7 /* ChooseSongHeadView.m */; };
 		35E68FED1CCCD148003F1AC7 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FEC1CCCD148003F1AC7 /* ChatViewController.m */; };
@@ -29,7 +33,6 @@
 		513571A41CDC355E00E600DE /* ArtistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 513571A31CDC355E00E600DE /* ArtistModel.m */; };
 		5135ED311CE1760D00E0AB6D /* CommonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5135ED301CE1760D00E0AB6D /* CommonDetailViewController.m */; };
 		5135ED341CE1C49F00E0AB6D /* PeopleInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5135ED331CE1C49F00E0AB6D /* PeopleInformationViewController.m */; };
-		5135ED371CE1D77A00E0AB6D /* PeopleInformationHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5135ED361CE1D77A00E0AB6D /* PeopleInformationHeaderView.m */; };
 		5139DA891CDB2B1E00C7F931 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139DA5F1CDB2B1E00C7F931 /* MJRefreshAutoFooter.m */; };
 		5139DA8A1CDB2B1E00C7F931 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139DA611CDB2B1E00C7F931 /* MJRefreshBackFooter.m */; };
 		5139DA8B1CDB2B1E00C7F931 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139DA631CDB2B1E00C7F931 /* MJRefreshComponent.m */; };
@@ -119,7 +122,6 @@
 		51DE66881CCA2781001F0BAC /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66871CCA2781001F0BAC /* UIColor+expanded.m */; };
 		51DE668B1CCA28BC001F0BAC /* UIImage+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE668A1CCA28BC001F0BAC /* UIImage+expanded.m */; };
 		51DE668E1CCA28E9001F0BAC /* UINavigationBar+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE668D1CCA28E9001F0BAC /* UINavigationBar+expanded.m */; };
-		51EB301B1CE1EABA00A88CC5 /* PeoPleListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51EB301A1CE1EABA00A88CC5 /* PeoPleListCell.m */; };
 		51F7C3111CD06676002BEB8F /* ArtistSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F7C3101CD06676002BEB8F /* ArtistSearchView.m */; };
 		51F7C3151CD08CAA002BEB8F /* ArtistClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F7C3141CD08CAA002BEB8F /* ArtistClassCell.m */; };
 /* End PBXBuildFile section */
@@ -149,6 +151,11 @@
 		356A37DF1CCE5BBA001F4FA0 /* ArtistClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistClassViewController.m; sourceTree = "<group>"; };
 		358935FA1CE0E1EA001B2DD0 /* SegmentedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedView.h; sourceTree = "<group>"; };
 		358935FB1CE0E1EA001B2DD0 /* SegmentedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedView.m; sourceTree = "<group>"; };
+		35C08FBB1CE2359A0050D749 /* PeoPleListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeoPleListCell.h; sourceTree = "<group>"; };
+		35C08FBC1CE2359A0050D749 /* PeoPleListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeoPleListCell.m; sourceTree = "<group>"; };
+		35C08FBD1CE2359A0050D749 /* PeoPleListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeoPleListCell.xib; sourceTree = "<group>"; };
+		35C08FC01CE2476B0050D749 /* PeopleInformationHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeopleInformationHeaderView.xib; sourceTree = "<group>"; };
+		35C08FC21CE248930050D749 /* CoustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoustomView.xib; sourceTree = "<group>"; };
 		35E68FE21CCCB385003F1AC7 /* ChooseSongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChooseSongCell.h; path = ../Controller/ChooseSongCell.h; sourceTree = "<group>"; };
 		35E68FE31CCCB385003F1AC7 /* ChooseSongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChooseSongCell.m; path = ../Controller/ChooseSongCell.m; sourceTree = "<group>"; };
 		35E68FE51CCCB3A1003F1AC7 /* ChooseSongHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChooseSongHeadView.h; path = ../Controller/ChooseSongHeadView.h; sourceTree = "<group>"; };
@@ -169,8 +176,6 @@
 		5135ED301CE1760D00E0AB6D /* CommonDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonDetailViewController.m; sourceTree = "<group>"; };
 		5135ED321CE1C49F00E0AB6D /* PeopleInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleInformationViewController.h; sourceTree = "<group>"; };
 		5135ED331CE1C49F00E0AB6D /* PeopleInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleInformationViewController.m; sourceTree = "<group>"; };
-		5135ED351CE1D77A00E0AB6D /* PeopleInformationHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PeopleInformationHeaderView.h; path = ../Model/PeopleInformationHeaderView.h; sourceTree = "<group>"; };
-		5135ED361CE1D77A00E0AB6D /* PeopleInformationHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PeopleInformationHeaderView.m; path = ../Model/PeopleInformationHeaderView.m; sourceTree = "<group>"; };
 		5139DA5E1CDB2B1E00C7F931 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		5139DA5F1CDB2B1E00C7F931 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		5139DA601CDB2B1E00C7F931 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -353,8 +358,6 @@
 		51DE668A1CCA28BC001F0BAC /* UIImage+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+expanded.m"; sourceTree = "<group>"; };
 		51DE668C1CCA28E9001F0BAC /* UINavigationBar+expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+expanded.h"; sourceTree = "<group>"; };
 		51DE668D1CCA28E9001F0BAC /* UINavigationBar+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+expanded.m"; sourceTree = "<group>"; };
-		51EB30191CE1EABA00A88CC5 /* PeoPleListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeoPleListCell.h; sourceTree = "<group>"; };
-		51EB301A1CE1EABA00A88CC5 /* PeoPleListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeoPleListCell.m; sourceTree = "<group>"; };
 		51F7C30F1CD06676002BEB8F /* ArtistSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArtistSearchView.h; path = ../ArtistSearchView.h; sourceTree = "<group>"; };
 		51F7C3101CD06676002BEB8F /* ArtistSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArtistSearchView.m; path = ../ArtistSearchView.m; sourceTree = "<group>"; };
 		51F7C3131CD08CAA002BEB8F /* ArtistClassCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistClassCell.h; sourceTree = "<group>"; };
@@ -659,8 +662,6 @@
 		5162AA841CCF46C3008317D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5135ED351CE1D77A00E0AB6D /* PeopleInformationHeaderView.h */,
-				5135ED361CE1D77A00E0AB6D /* PeopleInformationHeaderView.m */,
 				5162AA851CCF46C3008317D1 /* FriendCircleCell.h */,
 				5162AA861CCF46C3008317D1 /* FriendCircleCell.m */,
 				5162AAA81CCF58A8008317D1 /* FriendCircleHeaderView.h */,
@@ -670,8 +671,10 @@
 				514D2BA81CDB375F00A12073 /* FriendPhotoContainerView.m */,
 				518608911CE066AB0066E0D6 /* FriendCircleIssueCell.h */,
 				518608921CE066AB0066E0D6 /* FriendCircleIssueCell.m */,
-				51EB30191CE1EABA00A88CC5 /* PeoPleListCell.h */,
-				51EB301A1CE1EABA00A88CC5 /* PeoPleListCell.m */,
+				35C08FBB1CE2359A0050D749 /* PeoPleListCell.h */,
+				35C08FBC1CE2359A0050D749 /* PeoPleListCell.m */,
+				35C08FBD1CE2359A0050D749 /* PeoPleListCell.xib */,
+				35C08FC01CE2476B0050D749 /* PeopleInformationHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -726,6 +729,7 @@
 				513C20D01CD33A7600A6A886 /* HeaderInsetTableView.m */,
 				358935FA1CE0E1EA001B2DD0 /* SegmentedView.h */,
 				358935FB1CE0E1EA001B2DD0 /* SegmentedView.m */,
+				35C08FC21CE248930050D749 /* CoustomView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1261,11 +1265,14 @@
 				5162AAAC1CCF5CF0008317D1 /* FriendCircleHeaderView.xib in Resources */,
 				51DE66321CCA1C1F001F0BAC /* Assets.xcassets in Resources */,
 				5139DAA31CDB2EB100C7F931 /* listview_header_foot_drag_icon.png in Resources */,
+				35C08FBF1CE2359A0050D749 /* PeoPleListCell.xib in Resources */,
+				35C08FC31CE248930050D749 /* CoustomView.xib in Resources */,
 				5139DA971CDB2B1E00C7F931 /* MJRefresh.bundle in Resources */,
 				5186088E1CE040240066E0D6 /* chatList.plist in Resources */,
 				5139DAA01CDB2C7000C7F931 /* listview_header_footer_loading.gif in Resources */,
 				518608901CE0405A0066E0D6 /* FriendCircleList.plist in Resources */,
 				51DE667B1CCA274E001F0BAC /* Info.plist in Resources */,
+				35C08FC11CE2476B0050D749 /* PeopleInformationHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1295,7 +1302,6 @@
 				51700BE61CD851270091FF33 /* AlbumRecListViewController.m in Sources */,
 				51700C0B1CD8AC510091FF33 /* RemoteControlView.m in Sources */,
 				51DE662A1CCA1C1F001F0BAC /* AppDelegate.m in Sources */,
-				5135ED371CE1D77A00E0AB6D /* PeopleInformationHeaderView.m in Sources */,
 				51DE668B1CCA28BC001F0BAC /* UIImage+expanded.m in Sources */,
 				51DE66271CCA1C1F001F0BAC /* main.m in Sources */,
 				51DE667F1CCA274E001F0BAC /* MASLayoutConstraint.m in Sources */,
@@ -1358,7 +1364,7 @@
 				51DE66801CCA274E001F0BAC /* MASViewAttribute.m in Sources */,
 				5162AAAA1CCF58A8008317D1 /* FriendCircleHeaderView.m in Sources */,
 				3568ECB21CDF147500A56133 /* FirendCircleIssueViewController.m in Sources */,
-				51EB301B1CE1EABA00A88CC5 /* PeoPleListCell.m in Sources */,
+				35C08FBE1CE2359A0050D749 /* PeoPleListCell.m in Sources */,
 				51700BEC1CD8575D0091FF33 /* AlbumModel.m in Sources */,
 				516746AB1CD1F713007AC9C6 /* ParallaxTableViewController.m in Sources */,
 				5139DA911CDB2B1E00C7F931 /* MJRefreshBackGifFooter.m in Sources */,

@@ -37,8 +37,6 @@
     self.imageViewsArray = [temp copy];
 }
 
-
-
 static const CGFloat kFriendPhotoContainerViewPicMargin = 5.0f;
 - (void)setPicUrlStringsArray:(NSArray *)picUrlStringsArray{
     _picUrlStringsArray = picUrlStringsArray;
@@ -48,15 +46,6 @@ static const CGFloat kFriendPhotoContainerViewPicMargin = 5.0f;
             view.image = nil;
         }
     }
-//    if (picUrlStringsArray.count == 0) {
-////        [self setFrame:CGRectZero];
-////        [self mas_makeConstraints:^(MASConstraintMaker *make) {
-////            make.size.mas_equalTo(CGSizeMake(0, 0));
-////        }];
-//        self.hidden = YES;
-//        return;
-//    }
-//    self.hidden = NO;
     CGFloat itemW = [self itemWidthForPicPathArray:_imageViewsArray];
     CGFloat itemH = 0;
     if (_picUrlStringsArray.count == 1) {
@@ -85,9 +74,6 @@ static const CGFloat kFriendPhotoContainerViewPicMargin = 5.0f;
     frame.size = CGSizeMake(width, height);
     self.frame = frame;
     self.backgroundColor = [UIColor redColor];
-//    [self mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.size.mas_equalTo(CGSizeMake(width, height));
-//    }];
 }
 
 #pragma mark - private actions

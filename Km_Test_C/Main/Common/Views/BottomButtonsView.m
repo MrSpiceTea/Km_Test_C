@@ -7,13 +7,12 @@
 //
 
 #import "BottomButtonsView.h"
-static const CGFloat kBootomButtonsViewHeight = 80.0f;
+//static const CGFloat kBootomButtonsViewHeight = 80.0f;
 @implementation BottomButtonsView
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-//        UIButton *lefttButton = [UIButton new];
-//        UIButton rightButton = [UIButton new];
+   
     }
     return self;
 }

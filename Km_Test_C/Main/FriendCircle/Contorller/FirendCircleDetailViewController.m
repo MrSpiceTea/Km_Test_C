@@ -8,6 +8,8 @@
 
 #import "FirendCircleDetailViewController.h"
 #import "FriendCircleCell.h"
+#import "FriendCircleDetailBottomView.h"
+
 @interface FirendCircleDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
 @end
@@ -32,6 +34,7 @@
 //}
 #pragma mark Healper
 - (void)setupUI{
+    self.title  = @"详情";
     [self.navigationController.navigationBar setBarTintColor:RGB(230, 230, 230)];
     UIBarButtonItem *navRightBtn = [[UIBarButtonItem alloc]initWithTitle:@"更多"
                                                                    style:UIBarButtonItemStyleBordered
@@ -40,6 +43,15 @@
     [navRightBtn setTintColor:RGB(255, 140, 0)];
     self.navigationItem.rightBarButtonItem = navRightBtn;
     [self.view addSubview:self.tableView];
+    
+    CGFloat bottomViewHeight = 60.0f;
+    FriendCircleDetailBottomView *bottomView = [[FriendCircleDetailBottomView alloc]initWithFrame:CGRectMake(0, kSCREEN_HEIGHT- bottomViewHeight - 39 , kSCREEN_WIDTH, bottomViewHeight)];
+//    bottomView.backgroundColor = [UIColor blueColor];
+    [bottomView.leftButton setImage:[UIImage imageNamed:@"activity_detail_like"] forState:UIControlStateNormal];
+    [bottomView.leftButton setTitle:@"赞" forState:UIControlStateNormal];
+    [bottomView.rightButton setImage:[UIImage imageNamed:@"activity_detail_like"] forState:UIControlStateNormal];
+    [bottomView.rightButton setTitle:@"评论" forState:UIControlStateNormal];
+    [self.view addSubview:bottomView];
 }
 
 - (UIView *)bottomView{

@@ -7,7 +7,7 @@
 //
 
 #import "PeoPleListCell.h"
-
+#define kPeoPleListCellidentifer  @"peoplelistCell"
 @implementation PeoPleListCell
 
 - (void)awakeFromNib {
@@ -22,7 +22,7 @@
 }
 
 + (instancetype)cellWidthTable:(UITableView *)tableView{
-    static NSString *identifer = @"peoplelistCell";
+    static NSString *identifer = kPeoPleListCellidentifer;
     PeoPleListCell *cell = [tableView dequeueReusableCellWithIdentifier:identifer];
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"PeoPleListCell" owner:nil options:nil] firstObject];
@@ -36,6 +36,4 @@
     self.levelLabel.layer.cornerRadius = 5;
     self.levelLabel.layer.masksToBounds = YES;
 }
-
-
 @end

@@ -29,6 +29,13 @@
 		35E68FF61CCCD18D003F1AC7 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FF51CCCD18D003F1AC7 /* DiscoverViewController.m */; };
 		35E68FF91CCCD19F003F1AC7 /* FirendCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FF81CCCD19F003F1AC7 /* FirendCircleViewController.m */; };
 		35E68FFC1CCD1219003F1AC7 /* ChosseSongSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FFB1CCD1219003F1AC7 /* ChosseSongSearchView.m */; };
+		35ED92B31CE37DB8003FE776 /* FriendCircleDetailBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ED92B21CE37DB8003FE776 /* FriendCircleDetailBottomView.m */; };
+		35ED92B61CE38E87003FE776 /* ChatFriendListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ED92B51CE38E87003FE776 /* ChatFriendListViewController.m */; };
+		35ED92B91CE38EDE003FE776 /* ChatFriendApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ED92B81CE38EDE003FE776 /* ChatFriendApplyViewController.m */; };
+		35ED92BC1CE38EFB003FE776 /* ChatFriendAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ED92BB1CE38EFB003FE776 /* ChatFriendAddViewController.m */; };
+		35ED92BF1CE38F3E003FE776 /* ChatFriendSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ED92BE1CE38F3E003FE776 /* ChatFriendSearchViewController.m */; };
+		35ED92C21CE38F4A003FE776 /* ChatFriendSearchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ED92C11CE38F4A003FE776 /* ChatFriendSearchListViewController.m */; };
+		35ED92C51CE38FA2003FE776 /* ChatFriendAddAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ED92C41CE38FA2003FE776 /* ChatFriendAddAddressViewController.m */; };
 		513571A01CDC2B3D00E600DE /* ArtistDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5135719F1CDC2B3D00E600DE /* ArtistDetailCell.m */; };
 		513571A41CDC355E00E600DE /* ArtistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 513571A31CDC355E00E600DE /* ArtistModel.m */; };
 		5135ED311CE1760D00E0AB6D /* CommonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5135ED301CE1760D00E0AB6D /* CommonDetailViewController.m */; };
@@ -175,6 +182,20 @@
 		35E68FF81CCCD19F003F1AC7 /* FirendCircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirendCircleViewController.m; sourceTree = "<group>"; };
 		35E68FFA1CCD1219003F1AC7 /* ChosseSongSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChosseSongSearchView.h; path = ../Controller/ChosseSongSearchView.h; sourceTree = "<group>"; };
 		35E68FFB1CCD1219003F1AC7 /* ChosseSongSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChosseSongSearchView.m; path = ../Controller/ChosseSongSearchView.m; sourceTree = "<group>"; };
+		35ED92B11CE37DB8003FE776 /* FriendCircleDetailBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCircleDetailBottomView.h; sourceTree = "<group>"; };
+		35ED92B21CE37DB8003FE776 /* FriendCircleDetailBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCircleDetailBottomView.m; sourceTree = "<group>"; };
+		35ED92B41CE38E87003FE776 /* ChatFriendListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatFriendListViewController.h; sourceTree = "<group>"; };
+		35ED92B51CE38E87003FE776 /* ChatFriendListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatFriendListViewController.m; sourceTree = "<group>"; };
+		35ED92B71CE38EDE003FE776 /* ChatFriendApplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatFriendApplyViewController.h; sourceTree = "<group>"; };
+		35ED92B81CE38EDE003FE776 /* ChatFriendApplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatFriendApplyViewController.m; sourceTree = "<group>"; };
+		35ED92BA1CE38EFB003FE776 /* ChatFriendAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatFriendAddViewController.h; sourceTree = "<group>"; };
+		35ED92BB1CE38EFB003FE776 /* ChatFriendAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatFriendAddViewController.m; sourceTree = "<group>"; };
+		35ED92BD1CE38F3E003FE776 /* ChatFriendSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatFriendSearchViewController.h; sourceTree = "<group>"; };
+		35ED92BE1CE38F3E003FE776 /* ChatFriendSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatFriendSearchViewController.m; sourceTree = "<group>"; };
+		35ED92C01CE38F4A003FE776 /* ChatFriendSearchListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatFriendSearchListViewController.h; sourceTree = "<group>"; };
+		35ED92C11CE38F4A003FE776 /* ChatFriendSearchListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatFriendSearchListViewController.m; sourceTree = "<group>"; };
+		35ED92C31CE38FA2003FE776 /* ChatFriendAddAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatFriendAddAddressViewController.h; sourceTree = "<group>"; };
+		35ED92C41CE38FA2003FE776 /* ChatFriendAddAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatFriendAddAddressViewController.m; sourceTree = "<group>"; };
 		5135719E1CDC2B3D00E600DE /* ArtistDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistDetailCell.h; sourceTree = "<group>"; };
 		5135719F1CDC2B3D00E600DE /* ArtistDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistDetailCell.m; sourceTree = "<group>"; };
 		513571A21CDC355E00E600DE /* ArtistModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistModel.h; sourceTree = "<group>"; };
@@ -483,6 +504,18 @@
 			children = (
 				35E68FEB1CCCD148003F1AC7 /* ChatViewController.h */,
 				35E68FEC1CCCD148003F1AC7 /* ChatViewController.m */,
+				35ED92B41CE38E87003FE776 /* ChatFriendListViewController.h */,
+				35ED92B51CE38E87003FE776 /* ChatFriendListViewController.m */,
+				35ED92B71CE38EDE003FE776 /* ChatFriendApplyViewController.h */,
+				35ED92B81CE38EDE003FE776 /* ChatFriendApplyViewController.m */,
+				35ED92BA1CE38EFB003FE776 /* ChatFriendAddViewController.h */,
+				35ED92BB1CE38EFB003FE776 /* ChatFriendAddViewController.m */,
+				35ED92C31CE38FA2003FE776 /* ChatFriendAddAddressViewController.h */,
+				35ED92C41CE38FA2003FE776 /* ChatFriendAddAddressViewController.m */,
+				35ED92BD1CE38F3E003FE776 /* ChatFriendSearchViewController.h */,
+				35ED92BE1CE38F3E003FE776 /* ChatFriendSearchViewController.m */,
+				35ED92C01CE38F4A003FE776 /* ChatFriendSearchListViewController.h */,
+				35ED92C11CE38F4A003FE776 /* ChatFriendSearchListViewController.m */,
 			);
 			path = Contorller;
 			sourceTree = "<group>";
@@ -703,6 +736,8 @@
 				5162AAA81CCF58A8008317D1 /* FriendCircleHeaderView.h */,
 				5162AAA91CCF58A8008317D1 /* FriendCircleHeaderView.m */,
 				5162AAAB1CCF5CF0008317D1 /* FriendCircleHeaderView.xib */,
+				35ED92B11CE37DB8003FE776 /* FriendCircleDetailBottomView.h */,
+				35ED92B21CE37DB8003FE776 /* FriendCircleDetailBottomView.m */,
 				514D2BA71CDB375F00A12073 /* FriendPhotoContainerView.h */,
 				514D2BA81CDB375F00A12073 /* FriendPhotoContainerView.m */,
 				518608911CE066AB0066E0D6 /* FriendCircleIssueCell.h */,
@@ -1336,8 +1371,10 @@
 				518F9DEB1CDC908D00C084E7 /* AFHTTPSessionManager.m in Sources */,
 				35E68FF91CCCD19F003F1AC7 /* FirendCircleViewController.m in Sources */,
 				51DE66811CCA274E001F0BAC /* MASViewConstraint.m in Sources */,
+				35ED92B91CE38EDE003FE776 /* ChatFriendApplyViewController.m in Sources */,
 				51700BE91CD851AF0091FF33 /* AlbumListCell.m in Sources */,
 				356A37DA1CCE5A56001F4FA0 /* ArtistDetailViewController.m in Sources */,
+				35ED92C51CE38FA2003FE776 /* ChatFriendAddAddressViewController.m in Sources */,
 				51AC5AB81CE332800002F4EE /* BottomButtonsView.m in Sources */,
 				51DE667C1CCA274E001F0BAC /* MASCompositeConstraint.m in Sources */,
 				3560131F1CCA9DA900DE2275 /* ChooseSongViewController.m in Sources */,
@@ -1351,6 +1388,7 @@
 				51DE667F1CCA274E001F0BAC /* MASLayoutConstraint.m in Sources */,
 				5139DA8F1CDB2B1E00C7F931 /* MJRefreshAutoNormalFooter.m in Sources */,
 				51DE665E1CCA229F001F0BAC /* RootViewController.m in Sources */,
+				35ED92B61CE38E87003FE776 /* ChatFriendListViewController.m in Sources */,
 				51F7C3111CD06676002BEB8F /* ArtistSearchView.m in Sources */,
 				51DE66851CCA274E001F0BAC /* ViewController+MASAdditions.m in Sources */,
 				518F9DED1CDC908D00C084E7 /* AFSecurityPolicy.m in Sources */,
@@ -1363,6 +1401,7 @@
 				518F9DDC1CDC8F1000C084E7 /* FirendCircleDetailViewController.m in Sources */,
 				5162AA881CCF46C3008317D1 /* FriendCircleCell.m in Sources */,
 				518608891CE024B70066E0D6 /* NSObject+ObjectMap.m in Sources */,
+				35ED92B31CE37DB8003FE776 /* FriendCircleDetailBottomView.m in Sources */,
 				5162AAA71CCF4B9F008317D1 /* KMAbstractObject.m in Sources */,
 				51DE66841CCA274E001F0BAC /* View+MASAdditions.m in Sources */,
 				5162AA991CCF470D008317D1 /* BaseTableViewCell.m in Sources */,
@@ -1394,10 +1433,13 @@
 				5139DA8C1CDB2B1E00C7F931 /* MJRefreshFooter.m in Sources */,
 				5139DA901CDB2B1E00C7F931 /* MJRefreshAutoStateFooter.m in Sources */,
 				51700BEF1CD8771F0091FF33 /* CommonAbstractObject.m in Sources */,
+				35ED92C21CE38F4A003FE776 /* ChatFriendSearchListViewController.m in Sources */,
 				51778B501CD9E4D400FA6CCE /* LoginViewController.m in Sources */,
+				35ED92BF1CE38F3E003FE776 /* ChatFriendSearchViewController.m in Sources */,
 				516746A41CD1E98D007AC9C6 /* QRCodeAreaView.m in Sources */,
 				518608931CE066AB0066E0D6 /* FriendCircleIssueCell.m in Sources */,
 				5189E0EF1CD0C9DC001CE0E6 /* RankingDetailViewController.m in Sources */,
+				35ED92BC1CE38EFB003FE776 /* ChatFriendAddViewController.m in Sources */,
 				5139DA9B1CDB2B1E00C7F931 /* UIView+MJExtension.m in Sources */,
 				51700BDB1CD84A0A0091FF33 /* RankingListCell.m in Sources */,
 				51700C051CD898ED0091FF33 /* SearchViewController.m in Sources */,

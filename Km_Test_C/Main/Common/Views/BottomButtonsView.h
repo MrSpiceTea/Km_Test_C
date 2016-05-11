@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
-
 @interface BottomButtonsView : UIView
-
+@property(nonatomic,copy) UIButton *(^fetchButtonAtIndex)(NSUInteger index);
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "PeopleInformationViewController.h"
+#import "FriendCircleDetailBottomView.h"
 #import "UINavigationBar+expanded.h"
 static const CGFloat kBackgroudViewHeigth = 260.0f;
 @interface PeopleInformationViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -21,6 +22,16 @@ static const CGFloat kBackgroudViewHeigth = 260.0f;
     // Do any additional setup after loading the view.
     [self.view addSubview:self.tableView];
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    
+    CGFloat bottomViewHeight = 60.0f;
+    FriendCircleDetailBottomView *bottomView = [[FriendCircleDetailBottomView alloc]initWithFrame:CGRectMake(0, kSCREEN_HEIGHT- bottomViewHeight - 39 , kSCREEN_WIDTH, bottomViewHeight)];
+    //    bottomView.backgroundColor = [UIColor blueColor];
+    [bottomView.leftButton setImage:[UIImage imageNamed:@"activity_detail_like"] forState:UIControlStateNormal];
+    [bottomView.leftButton setTitle:@"聊天" forState:UIControlStateNormal];
+    [bottomView.rightButton setImage:[UIImage imageNamed:@"activity_detail_like"] forState:UIControlStateNormal];
+    [bottomView.rightButton setTitle:@"添加好友" forState:UIControlStateNormal];
+    [self.view addSubview:bottomView];
 }
 
 - (void)viewWillAppear:(BOOL)animated{

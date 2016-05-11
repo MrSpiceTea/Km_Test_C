@@ -37,7 +37,7 @@ static const CGFloat kImageCount = 9;
             [button setTag:i];
 //            button.backgroundColor = [UIColor brownColor];
             [button setBackgroundImage:[UIImage imageNamed:@"jay"] forState:UIControlStateNormal];
-            
+            [button addTarget:self action:@selector(ImageViewTap:) forControlEvents:UIControlEventTouchUpInside];
             UILabel *iconLabel = [[UILabel alloc]init];
             iconLabel.text = @"周杰伦";
             iconLabel.font = [UIFont systemFontOfSize:12];
@@ -113,5 +113,12 @@ static const CGFloat kImageCount = 9;
         return;
     }
     [super addSubview:view];
+}
+
+#pragma mark - ButtonAction
+- (void)ImageViewTap:(UIButton *)btn{
+    if (self.tapbolck) {
+        self.tapbolck(btn.tag);
+    }
 }
 @end

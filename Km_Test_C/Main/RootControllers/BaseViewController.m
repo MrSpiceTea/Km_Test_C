@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController.navigationBar setBarTintColor:RGB(240, 240, 240)];
+    [self.navigationController.navigationBar setBarTintColor:kCommonBavkgroundViewColor];
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor], NSForegroundColorAttributeName, nil]];
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     float ver =[[[UIDevice currentDevice] systemVersion] floatValue];
@@ -27,7 +27,7 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.view.backgroundColor = RGB(240, 240, 240);
+    self.view.backgroundColor = kCommonBavkgroundViewColor;
 }
 
 - (void)viewWillDisAppear:(BOOL)animated

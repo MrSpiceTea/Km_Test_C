@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "UINavigationBar+expanded.h"
+#import "RegisterViewController.h"
 
 @interface LoginViewController ()
 
@@ -45,6 +46,12 @@
 //    [settingBtn setTitle:@"返回" forState:UIControlStateNormal];
 //    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:settingBtn];
 //    self.navigationItem.leftBarButtonItem = item;
+    
+    UIButton *registerButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 30)];
+    [registerButton setTitle:@"注册" forState:UIControlStateNormal];
+    [registerButton addTarget:self action:@selector(registerButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightBI = [[UIBarButtonItem alloc]initWithCustomView:registerButton];
+    self.navigationItem.rightBarButtonItem = rightBI;
 
     UIImageView *atImageView = [[UIImageView alloc]initWithFrame:CGRectMake(5, 0, 50, 20)];
     [atImageView setImage:[UIImage imageNamed:@"login_username"]];
@@ -100,6 +107,7 @@
     [loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [loginButton setBackgroundColor:[UIColor orangeColor]];
     loginButton.layer.cornerRadius = 5;
+    [loginButton addTarget:self action:@selector(loginButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:forgetButton];
     [self.view addSubview:phoneButton];
@@ -120,6 +128,16 @@
         make.centerX.equalTo(atTextField);
         make.size.equalTo(atTextField);
     }];
+}
+
+#pragma mark - TargetAction
+- (void)loginButtonAction:(UIButton *)btn{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)registerButtonAction:(UIButton *)btn{
+    RegisterViewController *registerVC = [[RegisterViewController alloc]init];
+    [self.navigationController pushViewController:registerVC animated:YES];
 }
 
 @end

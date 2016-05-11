@@ -77,7 +77,7 @@
         [detailLabel setBackgroundColor:[UIColor clearColor]];
         [detailLabel setText:detail];
         [detailLabel setFont:[UIFont systemFontOfSize:12]];
-        [detailLabel setTextColor:RGB(150, 150, 150)];
+        [detailLabel setTextColor:kCommonCellDetailTextLabelColor];
         [self.contentView addSubview:detailLabel];
         
         UIButton *button = [UIButton new];

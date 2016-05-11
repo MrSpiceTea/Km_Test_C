@@ -8,6 +8,7 @@
 
 #import "MeViewController.h"
 #import "LoginViewController.h"
+#import "MeZoneViewController.h"
 #import "MeCell.h"
 #import "MeHeaderCell.h"
 
@@ -85,8 +86,14 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    LoginViewController *loginVC = [[LoginViewController alloc]init];
-    [self.navigationController pushViewController:loginVC animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 0) {
+        MeZoneViewController *meZoneVC = [[MeZoneViewController alloc]init];
+        [self.navigationController pushViewController:meZoneVC animated:YES];
+    }else{
+        LoginViewController *loginVC = [[LoginViewController alloc]init];
+        [self.navigationController pushViewController:loginVC animated:YES];
+    }
 //    [self presentViewController:loginVC animated:YES completion:nil];
 }
 
@@ -114,7 +121,7 @@
         if (!cell) {
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            cell.textLabel.text = self.dataSource[indexPath.section -1][@"title" ];
+            cell.textLabel.text = self.dataSource[indexPath.section -1][@"title"];
             [cell.imageView setImage:[UIImage scaleToSize:[UIImage imageNamed:self.dataSource[indexPath.section -1][@"imageName"]] size:CGSizeMake(30, 30)]];
         }
         return cell;

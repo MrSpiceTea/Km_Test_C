@@ -33,6 +33,11 @@
 		513571A41CDC355E00E600DE /* ArtistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 513571A31CDC355E00E600DE /* ArtistModel.m */; };
 		5135ED311CE1760D00E0AB6D /* CommonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5135ED301CE1760D00E0AB6D /* CommonDetailViewController.m */; };
 		5135ED341CE1C49F00E0AB6D /* PeopleInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5135ED331CE1C49F00E0AB6D /* PeopleInformationViewController.m */; };
+		513989E11CE2DCC2006C10C8 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513989DF1CE2DCC2006C10C8 /* RegisterViewController.m */; };
+		513989E21CE2DCC2006C10C8 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 513989E01CE2DCC2006C10C8 /* RegisterViewController.xib */; };
+		513989E51CE2DDFC006C10C8 /* MeInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513989E41CE2DDFC006C10C8 /* MeInformationViewController.m */; };
+		513989E81CE2DF4D006C10C8 /* MeZoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513989E71CE2DF4D006C10C8 /* MeZoneViewController.m */; };
+		513989EC1CE2E1C0006C10C8 /* CommonZoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513989EB1CE2E1C0006C10C8 /* CommonZoneViewController.m */; };
 		5139DA891CDB2B1E00C7F931 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139DA5F1CDB2B1E00C7F931 /* MJRefreshAutoFooter.m */; };
 		5139DA8A1CDB2B1E00C7F931 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139DA611CDB2B1E00C7F931 /* MJRefreshBackFooter.m */; };
 		5139DA8B1CDB2B1E00C7F931 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139DA631CDB2B1E00C7F931 /* MJRefreshComponent.m */; };
@@ -104,6 +109,8 @@
 		518F9DF91CDC98DB00C084E7 /* KM_NetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DF81CDC98DB00C084E7 /* KM_NetAPIClient.m */; };
 		518F9DFC1CDC9C6400C084E7 /* KM_APIRequestAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DFB1CDC9C6400C084E7 /* KM_APIRequestAgent.m */; };
 		519008011CCF621E000BAE7A /* CommonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 519008001CCF621E000BAE7A /* CommonTableViewController.m */; };
+		51AC5AB51CE32F740002F4EE /* FriendCircleIssueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 51AC5AB41CE32F740002F4EE /* FriendCircleIssueModel.m */; };
+		51AC5AB81CE332800002F4EE /* BottomButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51AC5AB71CE332800002F4EE /* BottomButtonsView.m */; };
 		51DE66271CCA1C1F001F0BAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66261CCA1C1F001F0BAC /* main.m */; };
 		51DE662A1CCA1C1F001F0BAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66291CCA1C1F001F0BAC /* AppDelegate.m */; };
 		51DE66321CCA1C1F001F0BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DE66311CCA1C1F001F0BAC /* Assets.xcassets */; };
@@ -176,6 +183,15 @@
 		5135ED301CE1760D00E0AB6D /* CommonDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonDetailViewController.m; sourceTree = "<group>"; };
 		5135ED321CE1C49F00E0AB6D /* PeopleInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleInformationViewController.h; sourceTree = "<group>"; };
 		5135ED331CE1C49F00E0AB6D /* PeopleInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleInformationViewController.m; sourceTree = "<group>"; };
+		513989DE1CE2DCC2006C10C8 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = ../Me/Contorller/RegisterViewController.h; sourceTree = "<group>"; };
+		513989DF1CE2DCC2006C10C8 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = ../Me/Contorller/RegisterViewController.m; sourceTree = "<group>"; };
+		513989E01CE2DCC2006C10C8 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RegisterViewController.xib; path = ../Me/Contorller/RegisterViewController.xib; sourceTree = "<group>"; };
+		513989E31CE2DDFC006C10C8 /* MeInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeInformationViewController.h; sourceTree = "<group>"; };
+		513989E41CE2DDFC006C10C8 /* MeInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeInformationViewController.m; sourceTree = "<group>"; };
+		513989E61CE2DF4D006C10C8 /* MeZoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeZoneViewController.h; sourceTree = "<group>"; };
+		513989E71CE2DF4D006C10C8 /* MeZoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeZoneViewController.m; sourceTree = "<group>"; };
+		513989EA1CE2E1C0006C10C8 /* CommonZoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonZoneViewController.h; sourceTree = "<group>"; };
+		513989EB1CE2E1C0006C10C8 /* CommonZoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonZoneViewController.m; sourceTree = "<group>"; };
 		5139DA5E1CDB2B1E00C7F931 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		5139DA5F1CDB2B1E00C7F931 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		5139DA601CDB2B1E00C7F931 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -267,8 +283,8 @@
 		51700C041CD898ED0091FF33 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		51700C091CD8AC510091FF33 /* RemoteControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteControlView.h; sourceTree = "<group>"; };
 		51700C0A1CD8AC510091FF33 /* RemoteControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteControlView.m; sourceTree = "<group>"; };
-		51778B4E1CD9E4D400FA6CCE /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../../UserCenter/Controller/LoginViewController.h; sourceTree = "<group>"; };
-		51778B4F1CD9E4D400FA6CCE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../../UserCenter/Controller/LoginViewController.m; sourceTree = "<group>"; };
+		51778B4E1CD9E4D400FA6CCE /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../UserCenter/Controller/LoginViewController.h; sourceTree = "<group>"; };
+		51778B4F1CD9E4D400FA6CCE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../UserCenter/Controller/LoginViewController.m; sourceTree = "<group>"; };
 		517D093E1CCDEBDE007EA37D /* MeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeCell.h; path = Contorller/MeCell.h; sourceTree = "<group>"; };
 		517D093F1CCDEBDE007EA37D /* MeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MeCell.m; path = Contorller/MeCell.m; sourceTree = "<group>"; };
 		517D09411CCDF11E007EA37D /* MeHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeHeaderCell.h; path = Contorller/MeHeaderCell.h; sourceTree = "<group>"; };
@@ -317,6 +333,10 @@
 		518F9DFB1CDC9C6400C084E7 /* KM_APIRequestAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KM_APIRequestAgent.m; sourceTree = "<group>"; };
 		519007FF1CCF621E000BAE7A /* CommonTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTableViewController.h; sourceTree = "<group>"; };
 		519008001CCF621E000BAE7A /* CommonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTableViewController.m; sourceTree = "<group>"; };
+		51AC5AB31CE32F740002F4EE /* FriendCircleIssueModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCircleIssueModel.h; sourceTree = "<group>"; };
+		51AC5AB41CE32F740002F4EE /* FriendCircleIssueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCircleIssueModel.m; sourceTree = "<group>"; };
+		51AC5AB61CE332800002F4EE /* BottomButtonsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomButtonsView.h; sourceTree = "<group>"; };
+		51AC5AB71CE332800002F4EE /* BottomButtonsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomButtonsView.m; sourceTree = "<group>"; };
 		51DE66221CCA1C1F001F0BAC /* Km_Test_C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Km_Test_C.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DE66261CCA1C1F001F0BAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		51DE66281CCA1C1F001F0BAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -424,10 +444,12 @@
 		356013231CCA9E1F00DE2275 /* Contorller */ = {
 			isa = PBXGroup;
 			children = (
-				51778B4E1CD9E4D400FA6CCE /* LoginViewController.h */,
-				51778B4F1CD9E4D400FA6CCE /* LoginViewController.m */,
 				356013241CCA9E3500DE2275 /* MeViewController.h */,
 				356013251CCA9E3500DE2275 /* MeViewController.m */,
+				513989E61CE2DF4D006C10C8 /* MeZoneViewController.h */,
+				513989E71CE2DF4D006C10C8 /* MeZoneViewController.m */,
+				513989E31CE2DDFC006C10C8 /* MeInformationViewController.h */,
+				513989E41CE2DDFC006C10C8 /* MeInformationViewController.m */,
 			);
 			path = Contorller;
 			sourceTree = "<group>";
@@ -524,6 +546,18 @@
 				513571A31CDC355E00E600DE /* ArtistModel.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		513989E91CE2DF8E006C10C8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				51778B4E1CD9E4D400FA6CCE /* LoginViewController.h */,
+				51778B4F1CD9E4D400FA6CCE /* LoginViewController.m */,
+				513989DE1CE2DCC2006C10C8 /* RegisterViewController.h */,
+				513989DF1CE2DCC2006C10C8 /* RegisterViewController.m */,
+				513989E01CE2DCC2006C10C8 /* RegisterViewController.xib */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		5139DA5C1CDB2B1E00C7F931 /* MJRefresh */ = {
@@ -655,6 +689,8 @@
 			children = (
 				5162AA821CCF46C3008317D1 /* FriendCircleModel.h */,
 				5162AA831CCF46C3008317D1 /* FriendCircleModel.m */,
+				51AC5AB31CE32F740002F4EE /* FriendCircleIssueModel.h */,
+				51AC5AB41CE32F740002F4EE /* FriendCircleIssueModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -711,6 +747,8 @@
 				516746AA1CD1F713007AC9C6 /* ParallaxTableViewController.m */,
 				5135ED2F1CE1760D00E0AB6D /* CommonDetailViewController.h */,
 				5135ED301CE1760D00E0AB6D /* CommonDetailViewController.m */,
+				513989EA1CE2E1C0006C10C8 /* CommonZoneViewController.h */,
+				513989EB1CE2E1C0006C10C8 /* CommonZoneViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -729,6 +767,8 @@
 				513C20D01CD33A7600A6A886 /* HeaderInsetTableView.m */,
 				358935FA1CE0E1EA001B2DD0 /* SegmentedView.h */,
 				358935FB1CE0E1EA001B2DD0 /* SegmentedView.m */,
+				51AC5AB61CE332800002F4EE /* BottomButtonsView.h */,
+				51AC5AB71CE332800002F4EE /* BottomButtonsView.m */,
 				35C08FC21CE248930050D749 /* CoustomView.xib */,
 			);
 			path = Views;
@@ -1053,6 +1093,7 @@
 			isa = PBXGroup;
 			children = (
 				5162AA891CCF470C008317D1 /* Common */,
+				513989E91CE2DF8E006C10C8 /* Login */,
 				51778B4A1CD9E47400FA6CCE /* UserCenter */,
 				51700BFF1CD8987B0091FF33 /* Search */,
 				51700BE01CD850490091FF33 /* Album */,
@@ -1273,6 +1314,7 @@
 				518608901CE0405A0066E0D6 /* FriendCircleList.plist in Resources */,
 				51DE667B1CCA274E001F0BAC /* Info.plist in Resources */,
 				35C08FC11CE2476B0050D749 /* PeopleInformationHeaderView.xib in Resources */,
+				513989E21CE2DCC2006C10C8 /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1284,6 +1326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				514D2BA91CDB375F00A12073 /* FriendPhotoContainerView.m in Sources */,
+				513989EC1CE2E1C0006C10C8 /* CommonZoneViewController.m in Sources */,
 				3560131B1CCA922600DE2275 /* BaseViewController.m in Sources */,
 				51DE66831CCA274E001F0BAC /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				519008011CCF621E000BAE7A /* CommonTableViewController.m in Sources */,
@@ -1295,6 +1338,7 @@
 				51DE66811CCA274E001F0BAC /* MASViewConstraint.m in Sources */,
 				51700BE91CD851AF0091FF33 /* AlbumListCell.m in Sources */,
 				356A37DA1CCE5A56001F4FA0 /* ArtistDetailViewController.m in Sources */,
+				51AC5AB81CE332800002F4EE /* BottomButtonsView.m in Sources */,
 				51DE667C1CCA274E001F0BAC /* MASCompositeConstraint.m in Sources */,
 				3560131F1CCA9DA900DE2275 /* ChooseSongViewController.m in Sources */,
 				5139DA931CDB2B1E00C7F931 /* MJRefreshBackStateFooter.m in Sources */,
@@ -1338,9 +1382,12 @@
 				517D094E1CCE2698007EA37D /* ChooseAlwaysViewController.m in Sources */,
 				51DE668E1CCA28E9001F0BAC /* UINavigationBar+expanded.m in Sources */,
 				5139DA991CDB2B1E00C7F931 /* UIScrollView+MJExtension.m in Sources */,
+				513989E51CE2DDFC006C10C8 /* MeInformationViewController.m in Sources */,
+				51AC5AB51CE32F740002F4EE /* FriendCircleIssueModel.m in Sources */,
 				5186088C1CE038E10066E0D6 /* NSDictionary+Utilities.m in Sources */,
 				5139DA961CDB2B1E00C7F931 /* MJRefreshStateHeader.m in Sources */,
 				518F9DFC1CDC9C6400C084E7 /* KM_APIRequestAgent.m in Sources */,
+				513989E11CE2DCC2006C10C8 /* RegisterViewController.m in Sources */,
 				5135ED311CE1760D00E0AB6D /* CommonDetailViewController.m in Sources */,
 				517D09401CCDEBDE007EA37D /* MeCell.m in Sources */,
 				518F9DF91CDC98DB00C084E7 /* KM_NetAPIClient.m in Sources */,
@@ -1376,6 +1423,7 @@
 				35E68FE71CCCB3A1003F1AC7 /* ChooseSongHeadView.m in Sources */,
 				513571A01CDC2B3D00E600DE /* ArtistDetailCell.m in Sources */,
 				5139DA8B1CDB2B1E00C7F931 /* MJRefreshComponent.m in Sources */,
+				513989E81CE2DF4D006C10C8 /* MeZoneViewController.m in Sources */,
 				35E68FE41CCCB385003F1AC7 /* ChooseSongCell.m in Sources */,
 				5162AA9C1CCF470D008317D1 /* SlideViewController.m in Sources */,
 				5139DA941CDB2B1E00C7F931 /* MJRefreshGifHeader.m in Sources */,

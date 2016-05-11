@@ -47,6 +47,10 @@
     //    [self.tableView.mj_header beginRefreshing];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
+
 - (void)setupUI{
     [self.navigationController.navigationBar setBarTintColor:RGB(230, 230, 230)];
     UIBarButtonItem *navRightBtn = [[UIBarButtonItem alloc]initWithTitle:@"发布"
@@ -72,11 +76,6 @@
     [self.navigationItem setTitleView:seg];
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
-  
-}
 
 - (void)initData{
 //    NSMutableArray *array = [NSMutableArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"FriendCircleList" ofType:@"plist"]];
@@ -217,9 +216,13 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if ([tableView isEqual:self.tableView]) {
-        FirendCircleDetailViewController *firendCircleDetailVC = [[FirendCircleDetailViewController alloc] init];
-        [self.navigationController pushViewController:firendCircleDetailVC animated:YES];
+        if (indexPath.row!=0 ) {
+            FirendCircleDetailViewController *firendCircleDetailVC = [[FirendCircleDetailViewController alloc] init];
+            firendCircleDetailVC.model = self.dataSource[indexPath.row - 1];
+            [self.navigationController pushViewController:firendCircleDetailVC animated:YES];
+        }
     }else if([tableView isEqual:self.peopleTablewView]){
         PeopleInformationViewController *peopleInformationVC = [[PeopleInformationViewController alloc]init];
         [self.navigationController pushViewController:peopleInformationVC animated:YES];

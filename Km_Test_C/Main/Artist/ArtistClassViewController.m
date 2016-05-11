@@ -47,7 +47,6 @@
 }
 
 -(void)initData{
-    
     NSDictionary *dic1 = @{@"title":@"消息",@"imageName":@"icon_message"};
     NSDictionary *dic2 = @{@"title":@"我的作品",@"imageName":@"icon_record"};
     NSDictionary *dic3 = @{@"title":@"我的订单",@"imageName":@"icon_order"};
@@ -84,16 +83,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.section == 0) {
-            if (indexPath.row == 0) {
-                SearchViewController *search = [[SearchViewController alloc]init];
-                [self.navigationController pushViewController:search animated:YES];
-            }
+    if (indexPath.section == 0 &&indexPath.row == 0) {
+        SearchViewController *search = [[SearchViewController alloc]init];
+        [self.navigationController pushViewController:search animated:YES];
     }
-    if (indexPath.section!=0) {
-        ArtistListViewController *artitListVC = [[ArtistListViewController alloc]init];
-        [self.navigationController pushViewController:artitListVC animated:YES];
-    }
+    
+    ArtistListViewController *artitListVC = [[ArtistListViewController alloc]init];
+    [self.navigationController pushViewController:artitListVC animated:YES];
+
 }
 
 #pragma mark - UITableViewDataSource
@@ -113,6 +110,10 @@
             cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
             if (!cell) {
                 cell = [[ArtistClassCell alloc]initWithArtists:nil reuseIdentifier:hotArtitsCellIdentifier];
+                cell.tapbolck = ^(NSUInteger tag){
+                    ArtistListViewController *artitListVC = [[ArtistListViewController alloc]init];
+                    [self.navigationController pushViewController:artitListVC animated:YES];
+                };
             }
         }
         return cell;

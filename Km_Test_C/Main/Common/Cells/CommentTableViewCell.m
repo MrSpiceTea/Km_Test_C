@@ -38,6 +38,9 @@
     image2 = [image2 stretchableImageWithLeftCapWidth:image2.size.width*0.5 topCapHeight:image2.size.height*0.5];
     self.messageBackgroundImageView.image = image2;
     self.contentLabel.numberOfLines = 0;
+    
+    self.headImageView.layer.masksToBounds = YES;
+    [self.headImageView.layer setCornerRadius:CGRectGetHeight(self.headImageView.bounds)/2];
 }
 
 - (void)setModel:(FriendCircleCommentModel *)model{

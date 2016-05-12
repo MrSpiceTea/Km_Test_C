@@ -51,7 +51,7 @@
     self.navigationItem.rightBarButtonItem = navRightBtn;
     [self.view addSubview:self.tableView];
     
-    CGFloat bottomViewHeight = 60.0f;
+    CGFloat bottomViewHeight = 44.0f;
     FriendCircleDetailBottomView *bottomView = [[FriendCircleDetailBottomView alloc]initWithFrame:CGRectMake(0, kSCREEN_HEIGHT- bottomViewHeight, kSCREEN_WIDTH, bottomViewHeight)];
 //    bottomView.backgroundColor = [UIColor blueColor];
     [bottomView.leftButton setImage:[UIImage imageNamed:@"activity_detail_like"] forState:UIControlStateNormal];
@@ -163,6 +163,7 @@
     if (text.length>0) {
         FriendCircleCommentModel *commentModel = [[FriendCircleCommentModel alloc]init];
         commentModel.content = text;
+        commentModel.profileImageUrl = @"zhangxueyou";
         [self.model.commentArray insertObject:commentModel atIndex:0];
         NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:1];
         [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];

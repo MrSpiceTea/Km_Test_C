@@ -8,6 +8,8 @@
 
 #import "ChatFriendListViewController.h"
 #import "ChatFriendAddViewController.h"
+#import "ChatFriendApplyViewController.h"
+#import "UIImage+expanded.h"
 
 @interface ChatFriendListViewController ()
 
@@ -17,11 +19,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
     self.title = @"我的好友";
+    
+    UIBarButtonItem *navRightBtn = [[UIBarButtonItem alloc]initWithTitle:@"添加好友"
+                                                                   style:UIBarButtonItemStyleBordered
+                                                                  target:self
+                                                                  action:@selector(navRightBtnAction)];
+    [navRightBtn setTintColor:RGB(255, 140, 0)];
+    self.navigationItem.rightBarButtonItem = navRightBtn;
+    
     self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.tableView.backgroundColor = kCommonTableViewBavkgroundColor;
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 //    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
@@ -46,8 +55,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == 0) {
-        ChatFriendAddViewController *chatFriendAddVC = [[ChatFriendAddViewController alloc]init];
-        [self.navigationController pushViewController:chatFriendAddVC animated:YES];
+        ChatFriendApplyViewController *chatFriendApplyVC = [[ChatFriendApplyViewController alloc]init];
+        [self.navigationController pushViewController:chatFriendApplyVC animated:YES];
     }
 }
 
@@ -67,9 +76,14 @@
         cell.textLabel.font = [UIFont systemFontOfSize:12];
         cell.contentView.backgroundColor = RGB(200, 200, 200);
     }else{
+        cell.imageView.image = [UIImage imageOfRoundRectWithImage:[UIImage imageNamed:@"zhangxueyou"] size:CGSizeMake(50, 50) radius:50];
         cell.textLabel.text = @"K米克服";
     }
     return cell;
 }
 
+- (void)navRightBtnAction{
+    ChatFriendAddViewController *chatFriendaddVC = [[ChatFriendAddViewController alloc]init];
+    [self.navigationController pushViewController:chatFriendaddVC animated:YES];
+}
 @end

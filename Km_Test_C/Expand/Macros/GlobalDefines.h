@@ -17,6 +17,7 @@
 #define RGB(r, g, b)             [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:1.0]
 #define RGBAlpha(r, g, b, a)     [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:(a)]
 
+#define kCommonBottomText RGB(100, 100, 100)
 #define kCommonCellDetailTextLabelColor RGB(150, 150, 150)
 #define kCommonBavkgroundViewColor RGB(240, 240, 240)
 #define kCommonTableViewBavkgroundColor RGB(246, 246, 246)

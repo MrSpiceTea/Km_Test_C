@@ -115,7 +115,7 @@
         model1.distan = dic[@"distan"];
         model1.createdAt = dic[@"createdAt"];
         model1.imagesArray = dic[@"images"];
-        model1.commentArray = commentModelArray;
+//        model1.commentArray = commentModelArray;
 
         [self.dataSource addObject:model1];
     }

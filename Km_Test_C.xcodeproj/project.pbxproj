@@ -23,6 +23,8 @@
 		35C08FBF1CE2359A0050D749 /* PeoPleListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35C08FBD1CE2359A0050D749 /* PeoPleListCell.xib */; };
 		35C08FC11CE2476B0050D749 /* PeopleInformationHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35C08FC01CE2476B0050D749 /* PeopleInformationHeaderView.xib */; };
 		35C08FC31CE248930050D749 /* CoustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35C08FC21CE248930050D749 /* CoustomView.xib */; };
+		35D07E651CE4EA0A00A305C7 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D07E631CE4EA0A00A305C7 /* MessageCell.m */; };
+		35D07E661CE4EA0A00A305C7 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D07E641CE4EA0A00A305C7 /* MessageCell.xib */; };
 		35E68FE41CCCB385003F1AC7 /* ChooseSongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FE31CCCB385003F1AC7 /* ChooseSongCell.m */; };
 		35E68FE71CCCB3A1003F1AC7 /* ChooseSongHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FE61CCCB3A1003F1AC7 /* ChooseSongHeadView.m */; };
 		35E68FED1CCCD148003F1AC7 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FEC1CCCD148003F1AC7 /* ChatViewController.m */; };
@@ -174,6 +176,9 @@
 		35C08FBD1CE2359A0050D749 /* PeoPleListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeoPleListCell.xib; sourceTree = "<group>"; };
 		35C08FC01CE2476B0050D749 /* PeopleInformationHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeopleInformationHeaderView.xib; sourceTree = "<group>"; };
 		35C08FC21CE248930050D749 /* CoustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoustomView.xib; sourceTree = "<group>"; };
+		35D07E621CE4EA0A00A305C7 /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
+		35D07E631CE4EA0A00A305C7 /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
+		35D07E641CE4EA0A00A305C7 /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		35E68FE21CCCB385003F1AC7 /* ChooseSongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChooseSongCell.h; path = ../Controller/ChooseSongCell.h; sourceTree = "<group>"; };
 		35E68FE31CCCB385003F1AC7 /* ChooseSongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChooseSongCell.m; path = ../Controller/ChooseSongCell.m; sourceTree = "<group>"; };
 		35E68FE51CCCB3A1003F1AC7 /* ChooseSongHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChooseSongHeadView.h; path = ../Controller/ChooseSongHeadView.h; sourceTree = "<group>"; };
@@ -822,6 +827,9 @@
 				358935FB1CE0E1EA001B2DD0 /* SegmentedView.m */,
 				51AC5AB61CE332800002F4EE /* BottomButtonsView.h */,
 				51AC5AB71CE332800002F4EE /* BottomButtonsView.m */,
+				35D07E621CE4EA0A00A305C7 /* MessageCell.h */,
+				35D07E631CE4EA0A00A305C7 /* MessageCell.m */,
+				35D07E641CE4EA0A00A305C7 /* MessageCell.xib */,
 				35C08FC21CE248930050D749 /* CoustomView.xib */,
 			);
 			path = Views;
@@ -1361,6 +1369,7 @@
 				5139DAA31CDB2EB100C7F931 /* listview_header_foot_drag_icon.png in Resources */,
 				35C08FBF1CE2359A0050D749 /* PeoPleListCell.xib in Resources */,
 				513CD6CB1CE432CB00841BCD /* CommentTableViewCell.xib in Resources */,
+				35D07E661CE4EA0A00A305C7 /* MessageCell.xib in Resources */,
 				35C08FC31CE248930050D749 /* CoustomView.xib in Resources */,
 				5139DA971CDB2B1E00C7F931 /* MJRefresh.bundle in Resources */,
 				5186088E1CE040240066E0D6 /* chatList.plist in Resources */,
@@ -1403,6 +1412,7 @@
 				51DE66821CCA274E001F0BAC /* NSArray+MASAdditions.m in Sources */,
 				51700BE61CD851270091FF33 /* AlbumRecListViewController.m in Sources */,
 				513CD6CE1CE457EC00841BCD /* FriendCircleCommentModel.m in Sources */,
+				35D07E651CE4EA0A00A305C7 /* MessageCell.m in Sources */,
 				51700C0B1CD8AC510091FF33 /* RemoteControlView.m in Sources */,
 				51DE662A1CCA1C1F001F0BAC /* AppDelegate.m in Sources */,
 				51DE668B1CCA28BC001F0BAC /* UIImage+expanded.m in Sources */,

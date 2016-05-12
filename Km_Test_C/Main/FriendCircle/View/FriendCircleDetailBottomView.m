@@ -67,9 +67,9 @@ static const CGFloat separatorViewWidth = 1.0f;
 - (UIButton *)leftButton{
     if (!_leftButton) {
         _leftButton = [UIButton new];
-        [_leftButton setTitleColor:kCommonCellDetailTextLabelColor forState:UIControlStateNormal];
+        [_leftButton setTitleColor:kCommonBottomText forState:UIControlStateNormal];
         [_leftButton setTitleColor:[UIColor orangeColor] forState:UIControlStateSelected];
-        [_leftButton.titleLabel setFont:[UIFont systemFontOfSize:12]];
+        [_leftButton.titleLabel setFont:[UIFont systemFontOfSize:14]];
         [_leftButton setTag:0];
         [_leftButton addTarget:self action:@selector(buttonTargetAcion:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_leftButton];
@@ -80,8 +80,8 @@ static const CGFloat separatorViewWidth = 1.0f;
 - (UIButton *)rightButton{
     if (!_rightButton) {
          _rightButton = [UIButton new];
-        [_rightButton setTitleColor:kCommonCellDetailTextLabelColor forState:UIControlStateNormal];
-        [_rightButton.titleLabel setFont:[UIFont systemFontOfSize:12]];
+        [_rightButton setTitleColor:kCommonBottomText forState:UIControlStateNormal];
+        [_rightButton.titleLabel setFont:[UIFont systemFontOfSize:14]];
         [_rightButton setTag:1];
         [_rightButton addTarget:self action:@selector(buttonTargetAcion:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_rightButton];

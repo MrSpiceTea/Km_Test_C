@@ -25,7 +25,7 @@ static const CGFloat kBackgroudViewHeigth = 260.0f;
     
     
     CGFloat bottomViewHeight = 60.0f;
-    FriendCircleDetailBottomView *bottomView = [[FriendCircleDetailBottomView alloc]initWithFrame:CGRectMake(0, kSCREEN_HEIGHT- bottomViewHeight - 39 , kSCREEN_WIDTH, bottomViewHeight)];
+    FriendCircleDetailBottomView *bottomView = [[FriendCircleDetailBottomView alloc]initWithFrame:CGRectMake(0, kSCREEN_HEIGHT- bottomViewHeight , kSCREEN_WIDTH, bottomViewHeight)];
     //    bottomView.backgroundColor = [UIColor blueColor];
     [bottomView.leftButton setImage:[UIImage imageNamed:@"activity_detail_like"] forState:UIControlStateNormal];
     [bottomView.leftButton setTitle:@"聊天" forState:UIControlStateNormal];
@@ -97,7 +97,7 @@ static const CGFloat kBackgroudViewHeigth = 260.0f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 20;
+    return 10;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -128,10 +128,10 @@ static const CGFloat kBackgroudViewHeigth = 260.0f;
     }else{
         if (indexPath.row == 0) {
             cell.textLabel.text = @"动态";
-            cell.detailTextLabel.text = @"你还没有发布任何动态哦";
+            cell.detailTextLabel.text = @"他还没有发布任何动态哦";
         }else{
             cell.textLabel.text = @"作品";
-            cell.detailTextLabel.text = @"你还没有任何作品";
+            cell.detailTextLabel.text = @"他还没有任何作品";
         }
         
     }

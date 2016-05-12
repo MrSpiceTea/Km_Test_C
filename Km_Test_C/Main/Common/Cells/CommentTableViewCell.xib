@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="KGk-i7-Jjw" customClass="CommentTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="399" height="95"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="399" height="94"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myhome_default_head" translatesAutoresizingMaskIntoConstraints="NO" id="WIS-S0-mDo">
+                        <rect key="frame" x="18" y="22" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="EES-rD-bJ3"/>
+                            <constraint firstAttribute="width" constant="50" id="ryX-nb-jC4"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="omz-T9-pVK">
+                        <rect key="frame" x="58" y="10" width="345" height="74"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容如内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IK8-4h-jeL">
+                        <rect key="frame" x="82" y="33" width="299" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFm-mT-D7i">
+                        <rect key="frame" x="82" y="13" width="31" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="omz-T9-pVK" firstAttribute="leading" secondItem="WIS-S0-mDo" secondAttribute="trailing" constant="-10" id="3ZC-zZ-GwB"/>
+                    <constraint firstItem="DFm-mT-D7i" firstAttribute="leading" secondItem="WIS-S0-mDo" secondAttribute="trailing" constant="14" id="3bh-g7-bdT"/>
+                    <constraint firstItem="IK8-4h-jeL" firstAttribute="top" secondItem="DFm-mT-D7i" secondAttribute="bottom" constant="5" id="6B5-Th-oRR"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="omz-T9-pVK" secondAttribute="bottom" constant="2" id="7OM-c1-QV8"/>
+                    <constraint firstItem="WIS-S0-mDo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="9Zr-fm-Vmo"/>
+                    <constraint firstItem="IK8-4h-jeL" firstAttribute="leading" secondItem="DFm-mT-D7i" secondAttribute="leading" id="IpU-TR-YUY"/>
+                    <constraint firstItem="DFm-mT-D7i" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="LA8-pC-zeQ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="omz-T9-pVK" secondAttribute="trailing" constant="-12" id="Nrm-ss-z2z"/>
+                    <constraint firstItem="WIS-S0-mDo" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="c3h-3w-1kd"/>
+                    <constraint firstItem="omz-T9-pVK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="cep-4U-kny"/>
+                    <constraint firstItem="IK8-4h-jeL" firstAttribute="leading" secondItem="DFm-mT-D7i" secondAttribute="trailing" constant="-31" id="hVD-mU-40c"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="IK8-4h-jeL" secondAttribute="trailing" constant="10" id="kQZ-uH-h17"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="contentLabel" destination="IK8-4h-jeL" id="7RT-be-KQD"/>
+                <outlet property="headImageView" destination="WIS-S0-mDo" id="8BB-m5-LDH"/>
+                <outlet property="messageBackgroundImageView" destination="omz-T9-pVK" id="N8B-Ek-8Nc"/>
+                <outlet property="nameLabel" destination="DFm-mT-D7i" id="ixe-4h-ZT3"/>
+            </connections>
+            <point key="canvasLocation" x="341.5" y="226.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="myhome_default_head" width="70" height="70"/>
+    </resources>
+</document>

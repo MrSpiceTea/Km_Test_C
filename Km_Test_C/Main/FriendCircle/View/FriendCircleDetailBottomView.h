@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef void(^tapBlock)(NSInteger tag);
+typedef void (^tapBlock)(UIButton *button);
 @interface FriendCircleDetailBottomView : UIView
-@property (nonatomic,copy)tapBlock tapblock;
+@property (nonatomic,copy) tapBlock tapblock;
 @property (nonatomic,strong) UIView *topseparatorView;
 @property (nonatomic,strong) UIView *centerseparatorView;
 @property (nonatomic,strong) UIButton *leftButton;

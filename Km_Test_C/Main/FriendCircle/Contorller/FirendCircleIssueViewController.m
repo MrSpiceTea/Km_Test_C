@@ -48,7 +48,6 @@
     [navRightButton addTarget:self action:@selector(barButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightBarBtn = [[UIBarButtonItem alloc]initWithCustomView:navRightButton];
     self.navigationItem.rightBarButtonItem = rightBarBtn;
-    
 }
 
 #pragma mark - TableViewDelegate
@@ -209,6 +208,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
             [alert show];
             return;
         }
+    
         NSMutableDictionary *dic = [NSMutableDictionary dictionary];
         dic[@"userName"] = @"测试名字";
         dic[@"location"] = @"阿拉伯";
@@ -221,6 +221,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
         NSMutableArray *plistarray  = [NSMutableArray arrayWithContentsOfFile:kFriendCircleListPath];
         [plistarray insertObject:dic atIndex:0];
         [plistarray writeToFile:kFriendCircleListPath atomically:YES];
+        //
+        [self.delegate sendIssue:self.textView.text];
         [self.navigationController popViewControllerAnimated:YES];
     }
 }

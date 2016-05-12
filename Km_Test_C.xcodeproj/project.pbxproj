@@ -67,6 +67,10 @@
 		5139DAA01CDB2C7000C7F931 /* listview_header_footer_loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5139DA9F1CDB2C7000C7F931 /* listview_header_footer_loading.gif */; };
 		5139DAA31CDB2EB100C7F931 /* listview_header_foot_drag_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5139DAA21CDB2EB100C7F931 /* listview_header_foot_drag_icon.png */; };
 		513C20D11CD33A7600A6A886 /* HeaderInsetTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 513C20D01CD33A7600A6A886 /* HeaderInsetTableView.m */; };
+		513CD6C11CE420B500841BCD /* FirendCircleCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513CD6C01CE420B500841BCD /* FirendCircleCommentViewController.m */; };
+		513CD6CA1CE432CB00841BCD /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 513CD6C81CE432CB00841BCD /* CommentTableViewCell.m */; };
+		513CD6CB1CE432CB00841BCD /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 513CD6C91CE432CB00841BCD /* CommentTableViewCell.xib */; };
+		513CD6CE1CE457EC00841BCD /* FriendCircleCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 513CD6CD1CE457EC00841BCD /* FriendCircleCommentModel.m */; };
 		513DE63E1CD1A8730073A7EC /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513DE63D1CD1A8730073A7EC /* QRCodeViewController.m */; };
 		514D2BA91CDB375F00A12073 /* FriendPhotoContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 514D2BA81CDB375F00A12073 /* FriendPhotoContainerView.m */; };
 		5162AA871CCF46C3008317D1 /* FriendCircleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162AA831CCF46C3008317D1 /* FriendCircleModel.m */; };
@@ -255,6 +259,13 @@
 		5139DAA21CDB2EB100C7F931 /* listview_header_foot_drag_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = listview_header_foot_drag_icon.png; sourceTree = "<group>"; };
 		513C20CF1CD33A7600A6A886 /* HeaderInsetTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderInsetTableView.h; sourceTree = "<group>"; };
 		513C20D01CD33A7600A6A886 /* HeaderInsetTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderInsetTableView.m; sourceTree = "<group>"; };
+		513CD6BF1CE420B500841BCD /* FirendCircleCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirendCircleCommentViewController.h; sourceTree = "<group>"; };
+		513CD6C01CE420B500841BCD /* FirendCircleCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirendCircleCommentViewController.m; sourceTree = "<group>"; };
+		513CD6C71CE432CB00841BCD /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
+		513CD6C81CE432CB00841BCD /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
+		513CD6C91CE432CB00841BCD /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		513CD6CC1CE457EC00841BCD /* FriendCircleCommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCircleCommentModel.h; sourceTree = "<group>"; };
+		513CD6CD1CE457EC00841BCD /* FriendCircleCommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCircleCommentModel.m; sourceTree = "<group>"; };
 		513DE63C1CD1A8730073A7EC /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
 		513DE63D1CD1A8730073A7EC /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
 		514D2BA71CDB375F00A12073 /* FriendPhotoContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendPhotoContainerView.h; sourceTree = "<group>"; };
@@ -564,6 +575,8 @@
 				35E68FF81CCCD19F003F1AC7 /* FirendCircleViewController.m */,
 				518F9DDA1CDC8F1000C084E7 /* FirendCircleDetailViewController.h */,
 				518F9DDB1CDC8F1000C084E7 /* FirendCircleDetailViewController.m */,
+				513CD6BF1CE420B500841BCD /* FirendCircleCommentViewController.h */,
+				513CD6C01CE420B500841BCD /* FirendCircleCommentViewController.m */,
 				3568ECB01CDF147500A56133 /* FirendCircleIssueViewController.h */,
 				3568ECB11CDF147500A56133 /* FirendCircleIssueViewController.m */,
 				5135ED321CE1C49F00E0AB6D /* PeopleInformationViewController.h */,
@@ -722,6 +735,8 @@
 			children = (
 				5162AA821CCF46C3008317D1 /* FriendCircleModel.h */,
 				5162AA831CCF46C3008317D1 /* FriendCircleModel.m */,
+				513CD6CC1CE457EC00841BCD /* FriendCircleCommentModel.h */,
+				513CD6CD1CE457EC00841BCD /* FriendCircleCommentModel.m */,
 				51AC5AB31CE32F740002F4EE /* FriendCircleIssueModel.h */,
 				51AC5AB41CE32F740002F4EE /* FriendCircleIssueModel.m */,
 			);
@@ -764,6 +779,9 @@
 			children = (
 				5162AA8B1CCF470C008317D1 /* BaseTableViewCell.h */,
 				5162AA8C1CCF470C008317D1 /* BaseTableViewCell.m */,
+				513CD6C71CE432CB00841BCD /* CommentTableViewCell.h */,
+				513CD6C81CE432CB00841BCD /* CommentTableViewCell.m */,
+				513CD6C91CE432CB00841BCD /* CommentTableViewCell.xib */,
 			);
 			name = Cells;
 			path = ../Cells;
@@ -1342,6 +1360,7 @@
 				51DE66321CCA1C1F001F0BAC /* Assets.xcassets in Resources */,
 				5139DAA31CDB2EB100C7F931 /* listview_header_foot_drag_icon.png in Resources */,
 				35C08FBF1CE2359A0050D749 /* PeoPleListCell.xib in Resources */,
+				513CD6CB1CE432CB00841BCD /* CommentTableViewCell.xib in Resources */,
 				35C08FC31CE248930050D749 /* CoustomView.xib in Resources */,
 				5139DA971CDB2B1E00C7F931 /* MJRefresh.bundle in Resources */,
 				5186088E1CE040240066E0D6 /* chatList.plist in Resources */,
@@ -1362,9 +1381,11 @@
 			files = (
 				514D2BA91CDB375F00A12073 /* FriendPhotoContainerView.m in Sources */,
 				513989EC1CE2E1C0006C10C8 /* CommonZoneViewController.m in Sources */,
+				513CD6C11CE420B500841BCD /* FirendCircleCommentViewController.m in Sources */,
 				3560131B1CCA922600DE2275 /* BaseViewController.m in Sources */,
 				51DE66831CCA274E001F0BAC /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				519008011CCF621E000BAE7A /* CommonTableViewController.m in Sources */,
+				513CD6CA1CE432CB00841BCD /* CommentTableViewCell.m in Sources */,
 				517D09491CCE20B7007EA37D /* RemoteControlViewController.m in Sources */,
 				518F9DEF1CDC908D00C084E7 /* AFURLResponseSerialization.m in Sources */,
 				51700BDF1CD84D410091FF33 /* RankingListModel.m in Sources */,
@@ -1381,6 +1402,7 @@
 				5139DA931CDB2B1E00C7F931 /* MJRefreshBackStateFooter.m in Sources */,
 				51DE66821CCA274E001F0BAC /* NSArray+MASAdditions.m in Sources */,
 				51700BE61CD851270091FF33 /* AlbumRecListViewController.m in Sources */,
+				513CD6CE1CE457EC00841BCD /* FriendCircleCommentModel.m in Sources */,
 				51700C0B1CD8AC510091FF33 /* RemoteControlView.m in Sources */,
 				51DE662A1CCA1C1F001F0BAC /* AppDelegate.m in Sources */,
 				51DE668B1CCA28BC001F0BAC /* UIImage+expanded.m in Sources */,
@@ -1577,7 +1599,7 @@
 				INFOPLIST_FILE = Km_Test_C/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.km.test.Km-Test-C-b";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.km.test.Km-Test-C";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1592,7 +1614,7 @@
 				INFOPLIST_FILE = Km_Test_C/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.km.test.Km-Test-C-b";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.km.test.Km-Test-C";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

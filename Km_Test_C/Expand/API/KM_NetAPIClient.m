@@ -10,10 +10,12 @@
 #import "AFNetworking.h"
 
 @interface KM_NetAPIClient()
-
+    
 @end
 
 @implementation KM_NetAPIClient
+
+
 
 + (instancetype)defaultManage {
     static dispatch_once_t onceToken;
@@ -24,6 +26,16 @@
     return _instance;
 }
 
++ (AFHTTPSessionManager *)shareSessionManage {
+    static dispatch_once_t onceToken;
+    static AFHTTPSessionManager *_instance;
+    dispatch_once(&onceToken, ^{
+        _instance = [AFHTTPSessionManager manager];
+    });
+    return _instance;
+}
+
+
 - (void)gettest{
   
 }
@@ -31,7 +43,7 @@
                     withParams:(NSDictionary*)params
                 withMethodType:(NetworkMethod)method
                completionBolck:(void (^)(id jsonResponseObject, NSError *error))completion{
-    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+    AFHTTPSessionManager *session = [KM_NetAPIClient shareSessionManage];
     [session GET:aPath parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         NSLog(@"%@",downloadProgress);
         

@@ -15,8 +15,6 @@
 @property (nonatomic,strong) UILabel *userNameLabel;
 @property (nonatomic,strong) UILabel *dateLabel;
 @property (nonatomic,strong) UILabel *locationLabel;
-@property (nonatomic,strong) UIButton *detailLikeikeButton;
-@property (nonatomic,strong) UIButton *detailCmtikeButton;
 
 
 
@@ -219,10 +217,10 @@ static const CGFloat FriendCircleCellTopMargin = 15.0f;
 + (instancetype)cellWithTabelView:(UITableView *)tableView{
     static NSString *identifier = @"FriendCircleCell";
     FriendCircleCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-
     if (cell == nil) {
         cell = [[FriendCircleCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
+    cell.contentView.backgroundColor = [UIColor whiteColor];
     return cell;
 }
 

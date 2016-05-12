@@ -87,7 +87,7 @@ static const CGFloat kFriendPhotoContainerViewPicMargin = 5.0f;
     if (array.count == 1) {
         return 120;
     } else {
-        CGFloat width = kSCREEN_WIDTH > 320 ? 80 : 70;
+        CGFloat width = kSCREEN_WIDTH > 320 ? 90 : 70;
         return width;
     }
 }

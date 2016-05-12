@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "FirendCircleIssueViewController.h"
 #import <UIKit/UIKit.h>
 
 @interface FirendCircleViewController : BaseViewController

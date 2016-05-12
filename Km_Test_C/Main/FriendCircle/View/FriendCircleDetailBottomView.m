@@ -49,7 +49,7 @@ static const CGFloat separatorViewWidth = 1.0f;
 - (UIView *)topseparatorView{
     if (!_topseparatorView) {
         _topseparatorView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), separatorViewWidth)];
-        [_topseparatorView setBackgroundColor:kCommonCellDetailTextLabelColor];
+        [_topseparatorView setBackgroundColor:RGB(200, 200, 200)];
         [self addSubview:_topseparatorView];
     }
     return _topseparatorView;
@@ -58,7 +58,7 @@ static const CGFloat separatorViewWidth = 1.0f;
 - (UIView *)centerseparatorView{
     if (!_centerseparatorView) {
        _centerseparatorView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, separatorViewWidth, 5)];
-        [_centerseparatorView setBackgroundColor:kCommonCellDetailTextLabelColor];
+        [_centerseparatorView setBackgroundColor:RGB(200, 200, 200)];
         [self addSubview:_centerseparatorView];
     }
     return _centerseparatorView;
@@ -68,6 +68,7 @@ static const CGFloat separatorViewWidth = 1.0f;
     if (!_leftButton) {
         _leftButton = [UIButton new];
         [_leftButton setTitleColor:kCommonCellDetailTextLabelColor forState:UIControlStateNormal];
+        [_leftButton setTitleColor:[UIColor orangeColor] forState:UIControlStateSelected];
         [_leftButton.titleLabel setFont:[UIFont systemFontOfSize:12]];
         [_leftButton setTag:0];
         [_leftButton addTarget:self action:@selector(buttonTargetAcion:) forControlEvents:UIControlEventTouchUpInside];
@@ -90,7 +91,7 @@ static const CGFloat separatorViewWidth = 1.0f;
 
 - (void)buttonTargetAcion:(UIButton *)button{
     if (self.tapblock) {
-        self.tapblock(button.tag);
+        self.tapblock(button);
     }
 }
 @end

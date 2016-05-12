@@ -7,7 +7,8 @@
 //
 
 #import "PeoPleListCell.h"
-#define kPeoPleListCellidentifer  @"peoplelistCell"
+#define kPeoPleListCellidentifer  @"PeoPleListCellidentifer"
+#define kPeoPleListCell  @"PeoPleListCell"
 @implementation PeoPleListCell
 
 - (void)awakeFromNib {
@@ -25,7 +26,7 @@
     static NSString *identifer = kPeoPleListCellidentifer;
     PeoPleListCell *cell = [tableView dequeueReusableCellWithIdentifier:identifer];
     if (!cell) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"PeoPleListCell" owner:nil options:nil] firstObject];
+        cell = [[[NSBundle mainBundle] loadNibNamed:kPeoPleListCell owner:nil options:nil] firstObject];
     }
     return cell;
 }

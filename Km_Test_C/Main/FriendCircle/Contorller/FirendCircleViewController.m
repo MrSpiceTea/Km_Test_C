@@ -7,16 +7,16 @@
 //
 
 #import "FirendCircleViewController.h"
-#import "FirendCircleIssueViewController.h"
 #import "FirendCircleDetailViewController.h"
 #import "PeopleInformationViewController.h"
 #import "FriendCircleModel.h"
+#import "FriendCircleCommentModel.h"
 #import "FriendCircleCell.h"
 #import "PeoPleListCell.h"
 #import "SegmentedView.h"
 #import "MJRefresh.h"
 
-@interface FirendCircleViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface FirendCircleViewController ()<UITableViewDataSource,UITableViewDelegate,FirendCircleIssueDelegate>
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) UITableView *peopleTablewView;
 @property (nonatomic,strong) UIScrollView *scrollView;;
@@ -88,6 +88,24 @@
         [array writeToFile:kFriendCircleListPath atomically:YES];
     }
     
+
+    FriendCircleCommentModel *commentModel = [[FriendCircleCommentModel alloc]init];
+    commentModel.userName = @"测试";
+    commentModel.content =  @"测 is hi测试测试测试测试测试测试测测";
+    commentModel.profileImageUrl = @"myhome_default_head";
+    
+    FriendCircleCommentModel *commentMode3 = [[FriendCircleCommentModel alloc]init];
+    commentMode3.userName = @"测试";
+    commentMode3.content =  @"测 is hi测试测试测试测试测试测试测测试试";
+    commentMode3.profileImageUrl = @"myhome_default_head";
+    
+    FriendCircleCommentModel *commentModel2 = [[FriendCircleCommentModel alloc]init];
+    commentModel2.userName = @"测试";
+    commentModel2.content =  @"测 is hi测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试";
+    commentModel2.profileImageUrl = @"zhangxueyou";
+    
+    NSMutableArray *commentModelArray = [NSMutableArray arrayWithObjects:commentModel,commentModel2,commentMode3, nil];
+    
     for (NSDictionary *dic in array) {
         FriendCircleModel *model1 = [[FriendCircleModel alloc] init];
         model1.profileImageUrl = dic[@"profileImageUrl"];
@@ -97,6 +115,8 @@
         model1.distan = dic[@"distan"];
         model1.createdAt = dic[@"createdAt"];
         model1.imagesArray = dic[@"images"];
+        model1.commentArray = commentModelArray;
+
         [self.dataSource addObject:model1];
     }
 //    NSMutableArray *imagesArray1 = [NSMutableArray arrayWithObjects:@"zhangxueyou", @"zhangxueyou", @"angelababy", @"angelababy", @"zhangxueyou", @"zhangxueyou", @"zhangxueyou", @"zhangxueyou", @"zhangxueyou",nil];
@@ -221,17 +241,29 @@
         if (indexPath.row!=0 ) {
             FirendCircleDetailViewController *firendCircleDetailVC = [[FirendCircleDetailViewController alloc] init];
             firendCircleDetailVC.model = self.dataSource[indexPath.row - 1];
+            firendCircleDetailVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:firendCircleDetailVC animated:YES];
+            firendCircleDetailVC.hidesBottomBarWhenPushed = NO;
         }
     }else if([tableView isEqual:self.peopleTablewView]){
         PeopleInformationViewController *peopleInformationVC = [[PeopleInformationViewController alloc]init];
+        peopleInformationVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:peopleInformationVC animated:YES];
+        peopleInformationVC.hidesBottomBarWhenPushed = NO;
+    }
+}
+
+#pragma mark - FirendCircleIssueDelegate
+- (void)sendIssue:(NSString *)contentText{
+    if (contentText.length>0) {
+        [self initData];
     }
 }
 
 #pragma mark - Target Action
 - (void)navRightBtnAction:(UIButton *)btn{
     FirendCircleIssueViewController *firendCircleIssueVC = [[FirendCircleIssueViewController alloc]init];
+    firendCircleIssueVC.delegate = self;
     [self.navigationController pushViewController:firendCircleIssueVC animated:YES];
 }
 

@@ -7,7 +7,7 @@
 //
 
 #import "ChatViewController.h"
-
+#import "ChatFriendListViewController.h"
 @interface ChatViewController ()
 
 @end
@@ -20,6 +20,7 @@
     UIButton *navButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 30)];
     [navButton setTitle:@"好友" forState:UIControlStateNormal];
     [navButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    [navButton addTarget:self action:@selector(navRightButton) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:navButton];
     self.navigationItem.rightBarButtonItem = item;
     
@@ -46,6 +47,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)navRightButton{
+    ChatFriendListViewController *chatFriendListVC = [[ChatFriendListViewController alloc]init];
+    [self.navigationController pushViewController:chatFriendListVC animated:YES];
+}
 /*
 #pragma mark - Navigation
 

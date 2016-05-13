@@ -17,6 +17,16 @@
 
 @implementation ChatFriendListViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self hidesTabBar:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self hidesTabBar:NO];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"我的好友";

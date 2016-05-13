@@ -35,8 +35,9 @@
 @implementation ChooseSongViewController
 
 #pragma mark - LifeCycle
-//static const CGFloat kTimerInterval = 5.0f;
 CGFloat kGirdViewHeight = 480.0f;
+static const CGFloat kTimerInterval = 5.0f;
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -45,8 +46,8 @@ CGFloat kGirdViewHeight = 480.0f;
     [self.navigationController.navigationBar cnSetBackgroundColor:[UIColor clearColor]];
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil]];
     [self.navigationController.navigationBar cnSetBackgroundColor:self.navColor];
-//    self.timer = [[NSTimer alloc]initWithFireDate:[NSDate distantPast] interval:kTimerInterval target:self selector:@selector(connnectButtionTimer:) userInfo:nil repeats:YES];
-//    [[NSRunLoop mainRunLoop]addTimer:self.timer forMode:NSDefaultRunLoopMode];
+    self.timer = [[NSTimer alloc]initWithFireDate:[NSDate distantPast] interval:kTimerInterval target:self selector:@selector(connnectButtionTimer:) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop]addTimer:self.timer forMode:NSDefaultRunLoopMode];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -204,6 +205,10 @@ static const CGFloat kTopGridViewMargin = 5.0f;
     }
 }
 #pragma mark - ActionTarget
+- (void)connnectButtionTimer:(NSTimer *)timer{
+    [self connnectButtionLoopAnimate];
+}
+
 - (void)topButtonTapAction:(UIButton *)btn{
     if (btn.tag == 101) {
         ArtistClassViewController *artistClasssVC = [[ArtistClassViewController alloc] init];
@@ -227,6 +232,26 @@ static const CGFloat kTopGridViewMargin = 5.0f;
 
 #pragma mark - UITextFieldDelegate
 #pragma mark - Private Method
+static const CGFloat KAnimateDuration = 0.1;
+- (void)connnectButtionLoopAnimate{
+    __weak ChooseSongViewController *weakSelf = self;
+    [UIView animateWithDuration:KAnimateDuration animations:^{
+        weakSelf.headerView.button.transform = CGAffineTransformMakeScale(0.8, 0.8);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:KAnimateDuration animations:^{
+            weakSelf.headerView.button.transform = CGAffineTransformMakeScale(1, 1);
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:KAnimateDuration animations:^{
+                weakSelf.headerView.button.transform = CGAffineTransformMakeScale(0.8, 0.8);
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:KAnimateDuration animations:^{
+                    weakSelf.headerView.button.transform = CGAffineTransformMakeScale(1, 1);
+                }];
+            }];
+        }];
+    }];
+}
+
 - (UIView *)serachBarView{
     UIView *view = [UIView new];
     [view setFrame:CGRectMake(10, 10, kSCREEN_WIDTH - 20, 35)];

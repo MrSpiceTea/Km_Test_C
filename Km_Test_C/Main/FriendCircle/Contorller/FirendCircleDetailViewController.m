@@ -125,6 +125,10 @@
     return CGFLOAT_MIN;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 200;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     FriendCircleCell * cell = nil;
     if (indexPath.section == 0) {

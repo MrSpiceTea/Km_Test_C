@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MessageModel.h"
 @interface MessageCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *receiverImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *senderImageView;
+@property (weak, nonatomic) IBOutlet UIButton *senderTextButton;
+@property (weak, nonatomic) IBOutlet UIButton *receiverTextButton;
+@property (strong,nonatomic) MessageModel *messageModel;
+
++ (MessageCell *)cellWithTableView :(UITableView *)tableView;
 
 @end

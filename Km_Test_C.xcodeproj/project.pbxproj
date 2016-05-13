@@ -74,6 +74,9 @@
 		513CD6CB1CE432CB00841BCD /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 513CD6C91CE432CB00841BCD /* CommentTableViewCell.xib */; };
 		513CD6CE1CE457EC00841BCD /* FriendCircleCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 513CD6CD1CE457EC00841BCD /* FriendCircleCommentModel.m */; };
 		513DE63E1CD1A8730073A7EC /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513DE63D1CD1A8730073A7EC /* QRCodeViewController.m */; };
+		5145BE571CE566C20025DB10 /* ChatSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145BE561CE566C20025DB10 /* ChatSessionViewController.m */; };
+		5145BE611CE570ED0025DB10 /* CommonDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145BE5C1CE570ED0025DB10 /* CommonDataSource.m */; };
+		5145BE651CE5713A0025DB10 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145BE641CE5713A0025DB10 /* MessageModel.m */; };
 		514D2BA91CDB375F00A12073 /* FriendPhotoContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 514D2BA81CDB375F00A12073 /* FriendPhotoContainerView.m */; };
 		5162AA871CCF46C3008317D1 /* FriendCircleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162AA831CCF46C3008317D1 /* FriendCircleModel.m */; };
 		5162AA881CCF46C3008317D1 /* FriendCircleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162AA861CCF46C3008317D1 /* FriendCircleCell.m */; };
@@ -273,6 +276,13 @@
 		513CD6CD1CE457EC00841BCD /* FriendCircleCommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCircleCommentModel.m; sourceTree = "<group>"; };
 		513DE63C1CD1A8730073A7EC /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
 		513DE63D1CD1A8730073A7EC /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
+		5145BE551CE566C20025DB10 /* ChatSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatSessionViewController.h; sourceTree = "<group>"; };
+		5145BE561CE566C20025DB10 /* ChatSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatSessionViewController.m; sourceTree = "<group>"; };
+		5145BE5B1CE570ED0025DB10 /* CommonDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDataSource.h; sourceTree = "<group>"; };
+		5145BE5C1CE570ED0025DB10 /* CommonDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonDataSource.m; sourceTree = "<group>"; };
+		5145BE5F1CE570ED0025DB10 /* KMDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMDataSource.h; sourceTree = "<group>"; };
+		5145BE631CE5713A0025DB10 /* MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
+		5145BE641CE5713A0025DB10 /* MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		514D2BA71CDB375F00A12073 /* FriendPhotoContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendPhotoContainerView.h; sourceTree = "<group>"; };
 		514D2BA81CDB375F00A12073 /* FriendPhotoContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendPhotoContainerView.m; sourceTree = "<group>"; };
 		5162AA821CCF46C3008317D1 /* FriendCircleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCircleModel.h; sourceTree = "<group>"; };
@@ -520,6 +530,8 @@
 			children = (
 				35E68FEB1CCCD148003F1AC7 /* ChatViewController.h */,
 				35E68FEC1CCCD148003F1AC7 /* ChatViewController.m */,
+				5145BE551CE566C20025DB10 /* ChatSessionViewController.h */,
+				5145BE561CE566C20025DB10 /* ChatSessionViewController.m */,
 				35ED92B41CE38E87003FE776 /* ChatFriendListViewController.h */,
 				35ED92B51CE38E87003FE776 /* ChatFriendListViewController.m */,
 				35ED92B71CE38EDE003FE776 /* ChatFriendApplyViewController.h */,
@@ -735,6 +747,18 @@
 			path = QRCode;
 			sourceTree = "<group>";
 		};
+		5145BE581CE570ED0025DB10 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5145BE5B1CE570ED0025DB10 /* CommonDataSource.h */,
+				5145BE5C1CE570ED0025DB10 /* CommonDataSource.m */,
+				5145BE631CE5713A0025DB10 /* MessageModel.h */,
+				5145BE641CE5713A0025DB10 /* MessageModel.m */,
+				5145BE5F1CE570ED0025DB10 /* KMDataSource.h */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5162AA811CCF46C3008317D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -773,6 +797,7 @@
 		5162AA891CCF470C008317D1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5145BE581CE570ED0025DB10 /* Models */,
 				5162AA941CCF470C008317D1 /* Views */,
 				5162AA8D1CCF470C008317D1 /* Controllers */,
 			);
@@ -1414,6 +1439,7 @@
 				513CD6CE1CE457EC00841BCD /* FriendCircleCommentModel.m in Sources */,
 				35D07E651CE4EA0A00A305C7 /* MessageCell.m in Sources */,
 				51700C0B1CD8AC510091FF33 /* RemoteControlView.m in Sources */,
+				5145BE611CE570ED0025DB10 /* CommonDataSource.m in Sources */,
 				51DE662A1CCA1C1F001F0BAC /* AppDelegate.m in Sources */,
 				51DE668B1CCA28BC001F0BAC /* UIImage+expanded.m in Sources */,
 				51DE66271CCA1C1F001F0BAC /* main.m in Sources */,
@@ -1457,6 +1483,7 @@
 				51AC5AB51CE32F740002F4EE /* FriendCircleIssueModel.m in Sources */,
 				5186088C1CE038E10066E0D6 /* NSDictionary+Utilities.m in Sources */,
 				5139DA961CDB2B1E00C7F931 /* MJRefreshStateHeader.m in Sources */,
+				5145BE571CE566C20025DB10 /* ChatSessionViewController.m in Sources */,
 				518F9DFC1CDC9C6400C084E7 /* KM_APIRequestAgent.m in Sources */,
 				513989E11CE2DCC2006C10C8 /* RegisterViewController.m in Sources */,
 				5135ED311CE1760D00E0AB6D /* CommonDetailViewController.m in Sources */,
@@ -1480,6 +1507,7 @@
 				5162AAB51CCF6130008317D1 /* SlideView.m in Sources */,
 				513C20D11CD33A7600A6A886 /* HeaderInsetTableView.m in Sources */,
 				5139DA9A1CDB2B1E00C7F931 /* UIScrollView+MJRefresh.m in Sources */,
+				5145BE651CE5713A0025DB10 /* MessageModel.m in Sources */,
 				356013181CCA91DA00DE2275 /* BaseNavigationController.m in Sources */,
 				3568ECBC1CDF406400A56133 /* TopPresentAnimation.m in Sources */,
 				51DE66801CCA274E001F0BAC /* MASViewAttribute.m in Sources */,

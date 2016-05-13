@@ -18,14 +18,14 @@
     [super viewDidLoad];
     self.title = @"我的通讯录";
     // Do any additional setup after loading the view.
-    [self loadPerson];
+//    [self loadPerson];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+/*
 - (void)loadPerson
 {
     ABAddressBookRef addressBookRef = ABAddressBookCreateWithOptions(NULL, NULL);
@@ -181,5 +181,5 @@
         NSData *image =  (__bridge NSData*)ABPersonCopyImageData(person);
         
     }
-}
+}*/
 @end

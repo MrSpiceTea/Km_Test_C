@@ -19,12 +19,12 @@
         [btn setImage:[UIImage imageNamed:@"picksonghome_scan_hl"] forState:UIControlStateHighlighted];
         [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn];
-        
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_offset(CGSizeMake(150, 150));
             make.centerX.equalTo(btn.superview);
             make.bottom.equalTo(btn.superview).with.offset(-40);
         }];
+        self.button = btn;
     }
     return self;
 }

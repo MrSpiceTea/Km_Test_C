@@ -28,6 +28,7 @@
 		35C08FC31CE248930050D749 /* CoustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35C08FC21CE248930050D749 /* CoustomView.xib */; };
 		35D07E651CE4EA0A00A305C7 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D07E631CE4EA0A00A305C7 /* MessageCell.m */; };
 		35D07E661CE4EA0A00A305C7 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D07E641CE4EA0A00A305C7 /* MessageCell.xib */; };
+		35E095971CE8C909008D3F19 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E095961CE8C909008D3F19 /* UserModel.m */; };
 		35E68FE41CCCB385003F1AC7 /* ChooseSongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FE31CCCB385003F1AC7 /* ChooseSongCell.m */; };
 		35E68FE71CCCB3A1003F1AC7 /* ChooseSongHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FE61CCCB3A1003F1AC7 /* ChooseSongHeadView.m */; };
 		35E68FED1CCCD148003F1AC7 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E68FEC1CCCD148003F1AC7 /* ChatViewController.m */; };
@@ -187,6 +188,8 @@
 		35D07E621CE4EA0A00A305C7 /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
 		35D07E631CE4EA0A00A305C7 /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
 		35D07E641CE4EA0A00A305C7 /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		35E095951CE8C909008D3F19 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		35E095961CE8C909008D3F19 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		35E68FE21CCCB385003F1AC7 /* ChooseSongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChooseSongCell.h; path = ../Controller/ChooseSongCell.h; sourceTree = "<group>"; };
 		35E68FE31CCCB385003F1AC7 /* ChooseSongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChooseSongCell.m; path = ../Controller/ChooseSongCell.m; sourceTree = "<group>"; };
 		35E68FE51CCCB3A1003F1AC7 /* ChooseSongHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChooseSongHeadView.h; path = ../Controller/ChooseSongHeadView.h; sourceTree = "<group>"; };
@@ -976,6 +979,8 @@
 		51778B4C1CD9E4B500FA6CCE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				35E095951CE8C909008D3F19 /* UserModel.h */,
+				35E095961CE8C909008D3F19 /* UserModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1459,6 +1464,7 @@
 				35E68FED1CCCD148003F1AC7 /* ChatViewController.m in Sources */,
 				5139DA981CDB2B1E00C7F931 /* MJRefreshConst.m in Sources */,
 				3568ECB51CDF388100A56133 /* ChooseBaseViewController.m in Sources */,
+				35E095971CE8C909008D3F19 /* UserModel.m in Sources */,
 				513571A41CDC355E00E600DE /* ArtistModel.m in Sources */,
 				51F7C3151CD08CAA002BEB8F /* ArtistClassCell.m in Sources */,
 				35E68FF61CCCD18D003F1AC7 /* DiscoverViewController.m in Sources */,

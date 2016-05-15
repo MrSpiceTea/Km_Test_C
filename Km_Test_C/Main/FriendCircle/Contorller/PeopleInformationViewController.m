@@ -24,7 +24,7 @@ static const CGFloat kBackgroudViewHeigth = 260.0f;
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     
-    CGFloat bottomViewHeight = 60.0f;
+    CGFloat bottomViewHeight = 44.0f;
     FriendCircleDetailBottomView *bottomView = [[FriendCircleDetailBottomView alloc]initWithFrame:CGRectMake(0, kSCREEN_HEIGHT- bottomViewHeight , kSCREEN_WIDTH, bottomViewHeight)];
     //    bottomView.backgroundColor = [UIColor blueColor];
     [bottomView.leftButton setImage:[UIImage imageNamed:@"activity_detail_like"] forState:UIControlStateNormal];

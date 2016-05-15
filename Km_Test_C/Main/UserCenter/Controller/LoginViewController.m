@@ -11,7 +11,8 @@
 #import "RegisterViewController.h"
 
 @interface LoginViewController ()
-
+@property (nonatomic,strong) UITextField *atTextField;
+@property (nonatomic,strong) UITextField *pwTextField;
 @end
 
 @implementation LoginViewController
@@ -52,44 +53,25 @@
     [registerButton addTarget:self action:@selector(registerButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightBI = [[UIBarButtonItem alloc]initWithCustomView:registerButton];
     self.navigationItem.rightBarButtonItem = rightBI;
-
-    UIImageView *atImageView = [[UIImageView alloc]initWithFrame:CGRectMake(5, 0, 50, 20)];
-    [atImageView setImage:[UIImage imageNamed:@"login_username"]];
-    atImageView.contentMode = UIViewContentModeScaleAspectFit;
-    UITextField *atTextField = [[UITextField alloc]init];
-    atTextField.backgroundColor = [UIColor clearColor];
-    [atTextField setLeftView:atImageView];
-    atTextField.leftViewMode = UITextFieldViewModeAlways;
-    atTextField.layer.borderWidth = 1.0f;
-    atTextField.layer.borderColor = [UIColor colorWithWhite:0.6 alpha:0.6].CGColor;
-    atTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"帐号／手机号" attributes:@{NSForegroundColorAttributeName: [UIColor colorWithWhite:0.8 alpha:0.6]}];
     
-    UIImageView *pwImageView = [[UIImageView alloc]initWithFrame:CGRectMake(5, 0, 50, 20)];
-    [pwImageView setImage:[UIImage imageNamed:@"login_password"]];
-    pwImageView.contentMode = UIViewContentModeScaleAspectFit;
-    UITextField *pwTextField = [[UITextField alloc]init];
-    [pwTextField setLeftView:pwImageView];
-    pwTextField.leftViewMode = UITextFieldViewModeAlways;
-    pwTextField.layer.borderWidth = 1.0f;
-    pwTextField.layer.borderColor = [UIColor colorWithWhite:0.6 alpha:0.6].CGColor;
-    pwTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"密码" attributes:@{NSForegroundColorAttributeName: [UIColor colorWithWhite:0.8 alpha:0.6]}];
-    pwTextField.secureTextEntry = YES; //密码
     
-    [self.view addSubview:atTextField];
-    [self.view addSubview:pwTextField];
     
-    [atTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+    
+    [self.view addSubview:self.atTextField];
+    [self.view addSubview:self.pwTextField];
+    
+    [_atTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@10);
         make.right.equalTo(@-10);
         make.top.equalTo(@100);
         make.height.equalTo(@50);
     }];
     
-    [pwTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_pwTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@10);
         make.right.equalTo(@-10);
-        make.top.equalTo(atTextField.mas_bottom).with.offset(20);
-        make.height.equalTo(atTextField);
+        make.top.equalTo(_atTextField.mas_bottom).with.offset(20);
+        make.height.equalTo(_atTextField);
     }];
     
     UIButton *forgetButton = [UIButton new];
@@ -114,24 +96,29 @@
     [self.view addSubview:loginButton];
     
     [forgetButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(pwTextField.mas_bottom).with.offset(5);
-        make.left.equalTo(pwTextField);
+        make.top.equalTo(_pwTextField.mas_bottom).with.offset(5);
+        make.left.equalTo(_pwTextField);
     }];
     
     [phoneButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(pwTextField.mas_bottom).with.offset(5);
-        make.right.equalTo(pwTextField);
+        make.top.equalTo(_pwTextField.mas_bottom).with.offset(5);
+        make.right.equalTo(_pwTextField);
     }];
     
     [loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(pwTextField.mas_bottom).with.offset(80);
-        make.centerX.equalTo(atTextField);
-        make.size.equalTo(atTextField);
+        make.top.equalTo(_pwTextField.mas_bottom).with.offset(80);
+        make.centerX.equalTo(_atTextField);
+        make.size.equalTo(_atTextField);
     }];
 }
 
 #pragma mark - TargetAction
 - (void)loginButtonAction:(UIButton *)btn{
+    NSString *username = self.atTextField.text;
+    NSString *password = self.pwTextField.text;
+    
+    NSLog(@"%@:%@",username,password);
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -139,5 +126,39 @@
     RegisterViewController *registerVC = [[RegisterViewController alloc]init];
     [self.navigationController pushViewController:registerVC animated:YES];
 }
+
+- (UITextField *)atTextField{
+    if (!_atTextField) {
+        UIImageView *atImageView = [[UIImageView alloc]initWithFrame:CGRectMake(5, 0, 50, 20)];
+        [atImageView setImage:[UIImage imageNamed:@"login_username"]];
+        atImageView.contentMode = UIViewContentModeScaleAspectFit;
+        
+        _atTextField = [[UITextField alloc]init];
+        _atTextField.backgroundColor = [UIColor clearColor];
+        [_atTextField setLeftView:atImageView];
+        _atTextField.leftViewMode = UITextFieldViewModeAlways;
+        _atTextField.layer.borderWidth = 1.0f;
+        _atTextField.layer.borderColor = [UIColor colorWithWhite:0.6 alpha:0.6].CGColor;
+        _atTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"帐号／手机号" attributes:@{NSForegroundColorAttributeName: [UIColor colorWithWhite:0.8 alpha:0.6]}];
+    }
+    return _atTextField;
+}
+
+- (UITextField *)pwTextField{
+    if (!_pwTextField) {
+        UIImageView *pwImageView = [[UIImageView alloc]initWithFrame:CGRectMake(5, 0, 50, 20)];
+        [pwImageView setImage:[UIImage imageNamed:@"login_password"]];
+        pwImageView.contentMode = UIViewContentModeScaleAspectFit;
+        _pwTextField = [[UITextField alloc]init];
+        [_pwTextField setLeftView:pwImageView];
+        _pwTextField.leftViewMode = UITextFieldViewModeAlways;
+        _pwTextField.layer.borderWidth = 1.0f;
+        _pwTextField.layer.borderColor = [UIColor colorWithWhite:0.6 alpha:0.6].CGColor;
+        _pwTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"密码" attributes:@{NSForegroundColorAttributeName: [UIColor colorWithWhite:0.8 alpha:0.6]}];
+        _pwTextField.secureTextEntry = YES; //密码
+    }
+    return _pwTextField;
+}
+
 
 @end

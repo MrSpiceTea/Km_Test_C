@@ -91,8 +91,11 @@
         MeZoneViewController *meZoneVC = [[MeZoneViewController alloc]init];
         [self.navigationController pushViewController:meZoneVC animated:YES];
     }else{
-        LoginViewController *loginVC = [[LoginViewController alloc]init];
-        [self.navigationController pushViewController:loginVC animated:YES];
+        BOOL islogin = 1;
+        if (islogin) {
+            LoginViewController *loginVC = [[LoginViewController alloc]init];
+            [self.navigationController pushViewController:loginVC animated:YES];
+        }
     }
 //    [self presentViewController:loginVC animated:YES completion:nil];
 }

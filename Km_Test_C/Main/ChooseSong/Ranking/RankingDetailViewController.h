@@ -9,6 +9,4 @@
 #import <UIKit/UIKit.h>
 #import "CommonDetailViewController.h"
 @interface RankingDetailViewController : CommonDetailViewController
-@property (nonatomic, strong) NSMutableArray *dataSource;
-
 @end

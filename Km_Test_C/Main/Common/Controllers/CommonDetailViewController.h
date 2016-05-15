@@ -14,7 +14,6 @@
 @property (nonatomic, strong) UIImageView                *backgroundImageView;
 @property (nonatomic, strong) UIView                     *backgroundView;
 @property (nonatomic, strong) UIView                     *backgroundToolBarView;
-@property (nonatomic, strong) UIButton                   *likeButton;
 @property (nonatomic, strong) NSMutableArray             *dataSource;
-
+@property (nonatomic, strong) UIImageView    *backgroundHeadView;
 @end

@@ -27,6 +27,15 @@
     _navRightBtn.enabled = NO;
     [_navRightBtn setTintColor:RGB(255, 140, 0)];
     self.navigationItem.rightBarButtonItem = _navRightBtn;
+    
+    UIButton *settingBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [settingBtn setFrame:CGRectMake(20, 0, 50, 50)];
+    [settingBtn setTitle:@"返回" forState:UIControlStateNormal];
+    [settingBtn addTarget:self action:@selector(cancelBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:settingBtn];
+    [item setTintColor:RGB(255, 140, 0)];
+    self.navigationItem.leftBarButtonItem = item;
+    
     [self.view addSubview:self.textView];
 }
 
@@ -55,12 +64,17 @@
     if (self.textView.text.length) {
         [self.delegate textViewtext:self.textView.text];
     }
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissSelf];
 }
 
-//- (void)textViewDidEndEditing:(UITextView *)textView{
-//    if (textView.text.length) {
-//        [self.delegate textViewtext:textView.text];
-//    }
-//}
+- (void)cancelBtnClicked:(id)sender{
+    [self dismissSelf];
+}
+
+- (void)dismissSelf{
+    [self dismissViewControllerAnimated:YES completion:^{
+    }];
+}
+
+
 @end

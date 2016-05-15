@@ -8,6 +8,7 @@
 
 #import "FirendCircleViewController.h"
 #import "FirendCircleDetailViewController.h"
+#import "BaseNavigationController.h"
 #import "PeopleInformationViewController.h"
 #import "FriendCircleModel.h"
 #import "FriendCircleCommentModel.h"
@@ -267,8 +268,9 @@
 #pragma mark - Target Action
 - (void)navRightBtnAction:(UIButton *)btn{
     FirendCircleIssueViewController *firendCircleIssueVC = [[FirendCircleIssueViewController alloc]init];
+    BaseNavigationController *firendCircleIssueVCnav = [[BaseNavigationController alloc]initWithRootViewController:firendCircleIssueVC];
     firendCircleIssueVC.delegate = self;
-    [self.navigationController pushViewController:firendCircleIssueVC animated:YES];
+    [self.parentViewController presentViewController:firendCircleIssueVCnav animated:YES completion:nil];
 }
 
 #pragma mark - Getter/Setter

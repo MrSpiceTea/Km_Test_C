@@ -199,9 +199,14 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 }
 
 #pragma mark - TargetAction
+- (void)dismissSelf{
+    [self dismissViewControllerAnimated:YES completion:^{
+    }];
+}
+
 - (void)barButtonAction:(UIButton *)button{
     if (button.tag == 101) {
-        [self.navigationController popViewControllerAnimated:YES];
+         [self dismissSelf];
     }else if(button.tag == 102){
         if (self.textView.text.length == 0) {
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"无内容" message:@"请输入需要发布的内容" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
@@ -223,7 +228,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
         [plistarray writeToFile:kFriendCircleListPath atomically:YES];
         //
         [self.delegate sendIssue:self.textView.text];
-        [self.navigationController popViewControllerAnimated:YES];
+        [self dismissSelf];
     }
 }
 

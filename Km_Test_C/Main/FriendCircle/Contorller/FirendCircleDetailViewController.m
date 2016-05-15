@@ -5,7 +5,7 @@
 //  Created by Mr.Xie on 16/5/6.
 //  Copyright © 2016年 OMG. All rights reserved.
 //
-
+#import "BaseNavigationController.h"
 #import "FirendCircleDetailViewController.h"
 #import "FirendCircleCommentViewController.h"
 #import "FriendCircleCell.h"
@@ -48,7 +48,7 @@
                                                                   target:self
                                                                   action:@selector(navRightBtnAction:)];
     [navRightBtn setTintColor:RGB(255, 140, 0)];
-    self.navigationItem.rightBarButtonItem = navRightBtn;
+    self.navigationItem.rightBarButtonItem = navRightBtn;    
     [self.view addSubview:self.tableView];
     
     CGFloat bottomViewHeight = 44.0f;
@@ -66,8 +66,9 @@
         }else{
             FirendCircleCommentViewController *FirendCircleCommentViewVC = [[FirendCircleCommentViewController alloc]init];
             FirendCircleCommentViewVC.hidesBottomBarWhenPushed = YES;
+            BaseNavigationController *FirendCircleCommentViewVCNav = [[BaseNavigationController alloc]initWithRootViewController:FirendCircleCommentViewVC];
             FirendCircleCommentViewVC.delegate = weakSelf;
-            [weakSelf.navigationController pushViewController:FirendCircleCommentViewVC animated:YES];
+            [weakSelf.parentViewController presentViewController:FirendCircleCommentViewVCNav animated:YES completion:nil];
         }
     };
 
@@ -187,7 +188,7 @@
 
 #pragma mark - Target Action
 - (void)navRightBtnAction:(UIButton *)btn{
-  
+    
 }
 
 @end

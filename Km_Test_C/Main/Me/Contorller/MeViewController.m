@@ -11,6 +11,7 @@
 #import "MeZoneViewController.h"
 #import "MeCell.h"
 #import "MeHeaderCell.h"
+#import "BaseNavigationController.h"
 
 #import "UIImage+expanded.h"
 
@@ -94,10 +95,10 @@
         BOOL islogin = 1;
         if (islogin) {
             LoginViewController *loginVC = [[LoginViewController alloc]init];
-            [self.navigationController pushViewController:loginVC animated:YES];
+            UINavigationController *logonNavVC = [[BaseNavigationController alloc]initWithRootViewController:loginVC];
+            [self.parentViewController presentViewController:logonNavVC animated:YES completion:nil];
         }
     }
-//    [self presentViewController:loginVC animated:YES completion:nil];
 }
 
 #pragma mark - UITableViewDataSource

@@ -41,21 +41,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (UIBarButtonItem *)itemWithBtnTitle:(NSString *)title target:(id)obj action:(SEL)selector{
+    UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:obj action:selector];
+    [buttonItem setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]} forState:UIControlStateDisabled];
+    return buttonItem;
+}
+
+
 - (void)configUI{
-//    UIButton *settingBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [settingBtn setFrame:CGRectMake(20, 0, 50, 50)];
-//    [settingBtn setTitle:@"返回" forState:UIControlStateNormal];
-//    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:settingBtn];
-//    self.navigationItem.leftBarButtonItem = item;
+
+    UIButton *settingBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [settingBtn setFrame:CGRectMake(20, 0, 50, 50)];
+    [settingBtn setTitle:@"返回" forState:UIControlStateNormal];
+    [settingBtn addTarget:self action:@selector(cancelBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:settingBtn];
+    self.navigationItem.leftBarButtonItem = item;
+    
+//     [self.navigationItem setLeftBarButtonItem:[self itemWithBtnTitle:@"取消" target:self action:@selector(cancelBtnClicked:)] animated:YES];
     
     UIButton *registerButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 30)];
     [registerButton setTitle:@"注册" forState:UIControlStateNormal];
     [registerButton addTarget:self action:@selector(registerButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightBI = [[UIBarButtonItem alloc]initWithCustomView:registerButton];
     self.navigationItem.rightBarButtonItem = rightBI;
-    
-    
-    
     
     [self.view addSubview:self.atTextField];
     [self.view addSubview:self.pwTextField];
@@ -113,6 +121,16 @@
 }
 
 #pragma mark - TargetAction
+- (void)cancelBtnClicked:(id)sender{
+    [self dismissSelf];
+}
+
+- (void)dismissSelf{
+    [self dismissViewControllerAnimated:YES completion:^{
+    }];
+}
+
+
 - (void)loginButtonAction:(UIButton *)btn{
     NSString *username = self.atTextField.text;
     NSString *password = self.pwTextField.text;

@@ -15,4 +15,6 @@
 - (NSURLRequest *)apiRequestOfHotSongList;
 - (NSString *)apiRequestOfHotSongListUrl;
 - (NSString *)apiRequestOfRecommendSongListUrl;
+
++ (NSURL *)imageurlWidthPicurlhead:(NSString *)filid;
 @end

@@ -7,12 +7,13 @@
 //
 
 #import "ChooseSongCell.h"
+#import "ChooseSongGirdView.h"
 static NSString *chooseSongSerachCellIdentifier = @"chooseSongSerachCell";
 static NSString *chooseSongTopGridCellIdentifier = @"chooseSongTopGridCell";
 static NSString *chooseSongTitleCellIdentifier = @"chooseSongTitleCell";
 static NSString *chooseSongHotCellIdentifier = @"chooseSongHotCell";
 static NSString *chooseSongBottomGirdCellIdentifier = @"chooseSongBottomGirdCell";
-CGFloat kGirdViewHeight = 480.0f;
+//CGFloat kGirdViewHeight = 480.0f;
 @implementation ChooseSongCell
 
 - (void)awakeFromNib {
@@ -138,13 +139,15 @@ CGFloat kGirdViewHeight = 480.0f;
     return cell;
 }
 
-- (instancetype)initWithCustomView:(UIView *)customview reuseIdentifier:(NSString *)reuseIdentifier{
-    if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
-        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
-        
-        [self.contentView addSubview:customview];
+- (instancetype)initWithCustomView:(UIView *)customView tableView:(UITableView *)tableView{
+    ChooseSongCell *cell = [tableView dequeueReusableCellWithIdentifier:chooseSongBottomGirdCellIdentifier];
+    if (cell == nil) {
+        cell = [[ChooseSongCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:chooseSongBottomGirdCellIdentifier];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        [cell.contentView addSubview:customView];
+        cell.contentView.backgroundColor = RGB(240, 240, 240);
     }
-    return self;
+    return cell;
 }
 
 + (instancetype)cellWithSerachView:(UITableView *)tableView{
@@ -162,7 +165,7 @@ CGFloat kGirdViewHeight = 480.0f;
     if (cell == nil) {
         cell = [[ChooseSongCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:chooseSongBottomGirdCellIdentifier];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        [cell.contentView addSubview:[cell chooseSongBottomGirdView]];
+//        [cell.contentView addSubview:[cell chooseSongBottomGirdView]];
         cell.contentView.backgroundColor = RGB(240, 240, 240);
     }
     return cell;
@@ -178,10 +181,11 @@ CGFloat kGirdViewHeight = 480.0f;
 }
 
 + (CGFloat)heightWithGirdView{
+    CGFloat GirdViewHeight = 480;
     if (kDevice_Is_iPhone6Plus) {
-        kGirdViewHeight = 520.0f;
+        GirdViewHeight = 520.0f;
     }
-    return kGirdViewHeight;
+    return GirdViewHeight;
 }
 
 + (CGFloat)heightWithCell{
@@ -283,82 +287,87 @@ static const CGFloat kTopGridViewMargin = 5.0f;
 }
 
 - (UIView *)chooseSongBottomGirdView{
-    if (kDevice_Is_iPhone6Plus) {
-        kGirdViewHeight = 520;
-    }
-    CGFloat gridViewHeight = 130;
-    int intes = 10;
-    int num = 3;
-    if(kDevice_Is_iPhone6Plus){
-        gridViewHeight = 150;
-        intes = 12;
-    }
-    __block UIView *lastView = nil;
-    UIView *nineButtonView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kGirdViewHeight - 30)];
-    nineButtonView.backgroundColor = [UIColor whiteColor];
-    for (int i = 0; i < 9; i++) {
-        UIView *view = [UIView new];
-        [view setTag:i];
-        
-        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(nineViewTapAction:)];
-        [view addGestureRecognizer:singleTap];
-        
-        [nineButtonView addSubview:view];
-        UIImageView *icon= [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"zhuanjitest"]];
-        icon.layer.masksToBounds = YES;
-        icon.layer.cornerRadius = 8;
-        UILabel *iconLabel = [[UILabel alloc]init];
-        
-        iconLabel.text = @"好声音第一季";
-        iconLabel.font = [UIFont systemFontOfSize:14];
-        iconLabel.textColor = [UIColor blackColor];
-        [view addSubview:icon];
-        [view addSubview:iconLabel];
-        
-        [icon mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(view).with.insets(UIEdgeInsetsMake(0, 0, 20, 0));
-        }];
-        [iconLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(icon.mas_bottom).with.offset(5);
-            make.width.mas_offset(gridViewHeight);
-            make.left.equalTo(iconLabel.superview.mas_left).with.offset(5);
-        }];
-        [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(gridViewHeight);
-            if (lastView) {
-                make.width.equalTo(lastView);
-            } else {
-                if (i % num != 0) {
-                    make.width.mas_equalTo((view.superview.frame.size.width - (num + 1)* intes)/4);
-                }
-            }
-            // 2. 判断是否是第一列
-            if (i % num == 0) {
-                // 一：是第一列时 添加左侧与父视图左侧约束
-                make.left.mas_equalTo(view.superview).offset(intes);
-            } else {
-                // 二： 不是第一列时 添加左侧与上个view左侧约束
-                make.left.mas_equalTo(lastView.mas_right).offset(intes);
-            }
-            // 3. 判断是否是最后一列 给最后一列添加与父视图右边约束
-            if (i % num == (num - 1)) {
-                make.right.mas_equalTo(view.superview).offset(-intes);
-            }
-            // 4. 判断是否为第一列
-            if (i / num == 0) {
-                // 第一列添加顶部约束
-                make.top.mas_equalTo(view.superview).offset(intes);
-            } else {
-                // 其余添加顶部约束 intes*10 是我留出的距顶部高度
-                make.top.mas_equalTo(intes + ( i / num )* (100 + intes*5));
-            }
-            
-        }];
-        // 每次循环结束 此次的View为下次约束的基准
-        lastView = view;
-    }
-    return nineButtonView;
+    ChooseSongGirdView *gird = [[ChooseSongGirdView alloc]init];
+    return gird;
 }
+
+//- (UIView *)chooseSongBottomGirdView{
+//    if (kDevice_Is_iPhone6Plus) {
+//        kGirdViewHeight = 520;
+//    }
+//    CGFloat gridViewHeight = 130;
+//    int intes = 10;
+//    int num = 3;
+//    if(kDevice_Is_iPhone6Plus){
+//        gridViewHeight = 150;
+//        intes = 12;
+//    }
+//    __block UIView *lastView = nil;
+//    UIView *nineButtonView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kGirdViewHeight - 30)];
+//    nineButtonView.backgroundColor = [UIColor whiteColor];
+//    for (int i = 0; i < 9; i++) {
+//        UIView *view = [UIView new];
+//        [view setTag:i];
+//        
+//        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(nineViewTapAction:)];
+//        [view addGestureRecognizer:singleTap];
+//
+//        [nineButtonView addSubview:view];
+//        UIImageView *icon= [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"zhuanjitest"]];
+//        icon.layer.masksToBounds = YES;
+//        icon.layer.cornerRadius = 8;
+//        UILabel *iconLabel = [[UILabel alloc]init];
+//        
+//        iconLabel.text = @"好声音第一季";
+//        iconLabel.font = [UIFont systemFontOfSize:14];
+//        iconLabel.textColor = [UIColor blackColor];
+//        [view addSubview:icon];
+//        [view addSubview:iconLabel];
+//        
+//        [icon mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.edges.equalTo(view).with.insets(UIEdgeInsetsMake(0, 0, 20, 0));
+//        }];
+//        [iconLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.top.equalTo(icon.mas_bottom).with.offset(5);
+//            make.width.mas_offset(gridViewHeight);
+//            make.left.equalTo(iconLabel.superview.mas_left).with.offset(5);
+//        }];
+//        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.height.mas_equalTo(gridViewHeight);
+//            if (lastView) {
+//                make.width.equalTo(lastView);
+//            } else {
+//                if (i % num != 0) {
+//                    make.width.mas_equalTo((view.superview.frame.size.width - (num + 1)* intes)/4);
+//                }
+//            }
+//            // 2. 判断是否是第一列
+//            if (i % num == 0) {
+//                // 一：是第一列时 添加左侧与父视图左侧约束
+//                make.left.mas_equalTo(view.superview).offset(intes);
+//            } else {
+//                // 二： 不是第一列时 添加左侧与上个view左侧约束
+//                make.left.mas_equalTo(lastView.mas_right).offset(intes);
+//            }
+//            // 3. 判断是否是最后一列 给最后一列添加与父视图右边约束
+//            if (i % num == (num - 1)) {
+//                make.right.mas_equalTo(view.superview).offset(-intes);
+//            }
+//            // 4. 判断是否为第一列
+//            if (i / num == 0) {
+//                // 第一列添加顶部约束
+//                make.top.mas_equalTo(view.superview).offset(intes);
+//            } else {
+//                // 其余添加顶部约束 intes*10 是我留出的距顶部高度
+//                make.top.mas_equalTo(intes + ( i / num )* (100 + intes*5));
+//            }
+//            
+//        }];
+//        // 每次循环结束 此次的View为下次约束的基准
+//        lastView = view;
+//    }
+//    return nineButtonView;
+//}
 
 - (void)topButtonTapAction:(UIButton *)btn{
     if (self.topGridViewTapBlock) {
@@ -366,10 +375,10 @@ static const CGFloat kTopGridViewMargin = 5.0f;
     }
 }
 
-- (void)nineViewTapAction:(UITapGestureRecognizer *)tap{
-    if (self.bottomGirdViewBlock) {
-        self.bottomGirdViewBlock(tap.view.tag);
-    }
-}
+//- (void)nineViewTapAction:(UITapGestureRecognizer *)tap{
+//    if (self.bottomGirdViewBlock) {
+//        self.bottomGirdViewBlock(tap.view.tag);
+//    }
+//}
 
 @end

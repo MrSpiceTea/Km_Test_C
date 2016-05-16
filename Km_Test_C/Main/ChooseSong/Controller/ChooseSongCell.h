@@ -14,7 +14,8 @@ typedef void(^BottomGirdViewBlock)(NSUInteger tag);
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UILabel *detailLabel;
 @property (nonatomic,copy) TopGridViewTapBlock topGridViewTapBlock;
-@property (nonatomic,copy) BottomGirdViewBlock bottomGirdViewBlock;
+//@property (nonatomic,copy) BottomGirdViewBlock bottomGirdViewBlock;
+- (instancetype)initWithCustomView:(UIView *)customView tableView:(UITableView *)tableView;
 
 + (instancetype)cellWithTabelView:(UITableView *)tableView;
 + (instancetype)cellWithSerachView:(UITableView *)tableView;

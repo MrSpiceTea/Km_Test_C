@@ -62,6 +62,7 @@
 		513E5B1C1CE9633200F9B60A /* KM_NetAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DF31CDC952200C084E7 /* KM_NetAPIManager.m */; };
 		513E5B1D1CE9633E00F9B60A /* KM_NetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DF81CDC98DB00C084E7 /* KM_NetAPIClient.m */; };
 		513E5B1E1CE9635800F9B60A /* KM_APIRequestAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DFB1CDC9C6400C084E7 /* KM_APIRequestAgent.m */; };
+		513E5B211CE9B66900F9B60A /* ChooseSongGirdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 513E5B201CE9B66900F9B60A /* ChooseSongGirdView.m */; };
 		5145BE571CE566C20025DB10 /* ChatSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145BE561CE566C20025DB10 /* ChatSessionViewController.m */; };
 		5145BE611CE570ED0025DB10 /* CommonDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145BE5C1CE570ED0025DB10 /* CommonDataSource.m */; };
 		5145BE651CE5713A0025DB10 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145BE641CE5713A0025DB10 /* MessageModel.m */; };
@@ -213,6 +214,8 @@
 		513E5B161CE9629B00F9B60A /* KMAbstractObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMAbstractObject.m; sourceTree = "<group>"; };
 		513E5B181CE962A300F9B60A /* CommonAbstractObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonAbstractObject.h; sourceTree = "<group>"; };
 		513E5B191CE962A300F9B60A /* CommonAbstractObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonAbstractObject.m; sourceTree = "<group>"; };
+		513E5B1F1CE9B66900F9B60A /* ChooseSongGirdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSongGirdView.h; sourceTree = "<group>"; };
+		513E5B201CE9B66900F9B60A /* ChooseSongGirdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSongGirdView.m; sourceTree = "<group>"; };
 		5145BE551CE566C20025DB10 /* ChatSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatSessionViewController.h; sourceTree = "<group>"; };
 		5145BE561CE566C20025DB10 /* ChatSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatSessionViewController.m; sourceTree = "<group>"; };
 		5145BE5B1CE570ED0025DB10 /* CommonDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDataSource.h; sourceTree = "<group>"; };
@@ -382,6 +385,8 @@
 				35E68FE61CCCB3A1003F1AC7 /* ChooseSongHeadView.m */,
 				35E68FFA1CCD1219003F1AC7 /* ChosseSongSearchView.h */,
 				35E68FFB1CCD1219003F1AC7 /* ChosseSongSearchView.m */,
+				513E5B1F1CE9B66900F9B60A /* ChooseSongGirdView.h */,
+				513E5B201CE9B66900F9B60A /* ChooseSongGirdView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1281,6 +1286,7 @@
 				51DE66881CCA2781001F0BAC /* UIColor+expanded.m in Sources */,
 				356013261CCA9E3500DE2275 /* MeViewController.m in Sources */,
 				517D094E1CCE2698007EA37D /* ChooseAlwaysViewController.m in Sources */,
+				513E5B211CE9B66900F9B60A /* ChooseSongGirdView.m in Sources */,
 				51DE668E1CCA28E9001F0BAC /* UINavigationBar+expanded.m in Sources */,
 				350B2CD51CE87AA500A85A86 /* RegisterViewController.m in Sources */,
 				513989E51CE2DDFC006C10C8 /* MeInformationViewController.m in Sources */,

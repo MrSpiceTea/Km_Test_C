@@ -25,4 +25,15 @@
     //TODO: Parameters/enchance
     return kKMRecommendSongListPath;
 }
+
++ (NSURL *)imageurlWidthPicurlhead:(NSString *)filid{
+    NSString *url = [NSString stringWithFormat:@"%@?%@=%@", kKMImagePicurlhead, kKMFileId, filid];
+    return [NSURL URLWithString:url];
+}
+
+//TODO: category
+- (NSString *)httpParameterWithValue:(NSString *)value {
+    return [NSString stringWithFormat:@"%@=%@", self, value];
+}
+
 @end

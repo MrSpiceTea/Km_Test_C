@@ -8,26 +8,23 @@
 
 #import <UIKit/UIKit.h>
 typedef void(^TopGridViewTapBlock)(NSUInteger tag);
-
+typedef void(^BottomGirdViewBlock)(NSUInteger tag);
 @interface ChooseSongCell : UITableViewCell
+
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UILabel *detailLabel;
-@property (nonatomic,weak) TopGridViewTapBlock topGridViewTapBlock;
-
-- (instancetype)initWithTitle:(NSString *)title reuseIdentifier:(NSString *)reuseIdentifier;
-- (instancetype)initWithTitle:(NSString *)title detail:(NSString *)detail reuseIdentifier:(NSString *)reuseIdentifier;
-
-- (instancetype)initWithCustomView:(UIView *)customview reuseIdentifier:(NSString *)reuseIdentifier;
-
+@property (nonatomic,copy) TopGridViewTapBlock topGridViewTapBlock;
+@property (nonatomic,copy) BottomGirdViewBlock bottomGirdViewBlock;
 
 + (instancetype)cellWithTabelView:(UITableView *)tableView;
 + (instancetype)cellWithSerachView:(UITableView *)tableView;
 + (instancetype)cellWithHotCell:(UITableView *)tableView;
 + (instancetype)cellWithTopGridView:(UITableView *)tableView;
-
++ (instancetype)cellWithBottomGirdView:(UITableView *)tableView;
 
 + (CGFloat)heightWithSerachView;
 + (CGFloat)heightWithTopGridView;
-
-- (UIView *)serachBarView;
++ (CGFloat)heightWithGirdView;
++ (CGFloat)heightWithCell;
++ (CGFloat)heightWithhead;
 @end

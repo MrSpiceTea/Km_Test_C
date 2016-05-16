@@ -76,6 +76,11 @@
 		513CD6CB1CE432CB00841BCD /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 513CD6C91CE432CB00841BCD /* CommentTableViewCell.xib */; };
 		513CD6CE1CE457EC00841BCD /* FriendCircleCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 513CD6CD1CE457EC00841BCD /* FriendCircleCommentModel.m */; };
 		513DE63E1CD1A8730073A7EC /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513DE63D1CD1A8730073A7EC /* QRCodeViewController.m */; };
+		513E5B1A1CE962A300F9B60A /* CommonAbstractObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 513E5B191CE962A300F9B60A /* CommonAbstractObject.m */; };
+		513E5B1B1CE962F100F9B60A /* KMAbstractObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 513E5B161CE9629B00F9B60A /* KMAbstractObject.m */; };
+		513E5B1C1CE9633200F9B60A /* KM_NetAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DF31CDC952200C084E7 /* KM_NetAPIManager.m */; };
+		513E5B1D1CE9633E00F9B60A /* KM_NetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DF81CDC98DB00C084E7 /* KM_NetAPIClient.m */; };
+		513E5B1E1CE9635800F9B60A /* KM_APIRequestAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DFB1CDC9C6400C084E7 /* KM_APIRequestAgent.m */; };
 		5145BE571CE566C20025DB10 /* ChatSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145BE561CE566C20025DB10 /* ChatSessionViewController.m */; };
 		5145BE611CE570ED0025DB10 /* CommonDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145BE5C1CE570ED0025DB10 /* CommonDataSource.m */; };
 		5145BE651CE5713A0025DB10 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145BE641CE5713A0025DB10 /* MessageModel.m */; };
@@ -85,7 +90,6 @@
 		5162AA991CCF470D008317D1 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162AA8C1CCF470C008317D1 /* BaseTableViewCell.m */; };
 		5162AA9C1CCF470D008317D1 /* SlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162AA931CCF470C008317D1 /* SlideViewController.m */; };
 		5162AA9D1CCF470D008317D1 /* SegemtedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162AA961CCF470C008317D1 /* SegemtedControl.m */; };
-		5162AAA71CCF4B9F008317D1 /* KMAbstractObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162AAA61CCF4B9F008317D1 /* KMAbstractObject.m */; };
 		5162AAAA1CCF58A8008317D1 /* FriendCircleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162AAA91CCF58A8008317D1 /* FriendCircleHeaderView.m */; };
 		5162AAAC1CCF5CF0008317D1 /* FriendCircleHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5162AAAB1CCF5CF0008317D1 /* FriendCircleHeaderView.xib */; };
 		5162AAB51CCF6130008317D1 /* SlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162AAB41CCF6130008317D1 /* SlideView.m */; };
@@ -98,7 +102,6 @@
 		51700BE61CD851270091FF33 /* AlbumRecListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51700BE51CD851270091FF33 /* AlbumRecListViewController.m */; };
 		51700BE91CD851AF0091FF33 /* AlbumListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51700BE81CD851AF0091FF33 /* AlbumListCell.m */; };
 		51700BEC1CD8575D0091FF33 /* AlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 51700BEB1CD8575D0091FF33 /* AlbumModel.m */; };
-		51700BEF1CD8771F0091FF33 /* CommonAbstractObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 51700BEE1CD8771F0091FF33 /* CommonAbstractObject.m */; };
 		51700BF51CD883CB0091FF33 /* RankingListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51700BF41CD883CB0091FF33 /* RankingListHeaderView.m */; };
 		51700C051CD898ED0091FF33 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51700C041CD898ED0091FF33 /* SearchViewController.m */; };
 		51700C0B1CD8AC510091FF33 /* RemoteControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51700C0A1CD8AC510091FF33 /* RemoteControlView.m */; };
@@ -122,9 +125,6 @@
 		518F9DEE1CDC908D00C084E7 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DE61CDC908D00C084E7 /* AFURLRequestSerialization.m */; };
 		518F9DEF1CDC908D00C084E7 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DE81CDC908D00C084E7 /* AFURLResponseSerialization.m */; };
 		518F9DF01CDC908D00C084E7 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DEA1CDC908D00C084E7 /* AFURLSessionManager.m */; };
-		518F9DF41CDC952200C084E7 /* KM_NetAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DF31CDC952200C084E7 /* KM_NetAPIManager.m */; };
-		518F9DF91CDC98DB00C084E7 /* KM_NetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DF81CDC98DB00C084E7 /* KM_NetAPIClient.m */; };
-		518F9DFC1CDC9C6400C084E7 /* KM_APIRequestAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DFB1CDC9C6400C084E7 /* KM_APIRequestAgent.m */; };
 		519008011CCF621E000BAE7A /* CommonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 519008001CCF621E000BAE7A /* CommonTableViewController.m */; };
 		51AC5AB51CE32F740002F4EE /* FriendCircleIssueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 51AC5AB41CE32F740002F4EE /* FriendCircleIssueModel.m */; };
 		51AC5AB81CE332800002F4EE /* BottomButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51AC5AB71CE332800002F4EE /* BottomButtonsView.m */; };
@@ -281,6 +281,10 @@
 		513CD6CD1CE457EC00841BCD /* FriendCircleCommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCircleCommentModel.m; sourceTree = "<group>"; };
 		513DE63C1CD1A8730073A7EC /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
 		513DE63D1CD1A8730073A7EC /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
+		513E5B151CE9629B00F9B60A /* KMAbstractObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMAbstractObject.h; sourceTree = "<group>"; };
+		513E5B161CE9629B00F9B60A /* KMAbstractObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMAbstractObject.m; sourceTree = "<group>"; };
+		513E5B181CE962A300F9B60A /* CommonAbstractObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonAbstractObject.h; sourceTree = "<group>"; };
+		513E5B191CE962A300F9B60A /* CommonAbstractObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonAbstractObject.m; sourceTree = "<group>"; };
 		5145BE551CE566C20025DB10 /* ChatSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatSessionViewController.h; sourceTree = "<group>"; };
 		5145BE561CE566C20025DB10 /* ChatSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatSessionViewController.m; sourceTree = "<group>"; };
 		5145BE5B1CE570ED0025DB10 /* CommonDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDataSource.h; sourceTree = "<group>"; };
@@ -741,6 +745,10 @@
 		5145BE581CE570ED0025DB10 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				513E5B151CE9629B00F9B60A /* KMAbstractObject.h */,
+				513E5B161CE9629B00F9B60A /* KMAbstractObject.m */,
+				513E5B181CE962A300F9B60A /* CommonAbstractObject.h */,
+				513E5B191CE962A300F9B60A /* CommonAbstractObject.m */,
 				5145BE5B1CE570ED0025DB10 /* CommonDataSource.h */,
 				5145BE5C1CE570ED0025DB10 /* CommonDataSource.m */,
 				5145BE631CE5713A0025DB10 /* MessageModel.h */,
@@ -1411,11 +1419,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				514D2BA91CDB375F00A12073 /* FriendPhotoContainerView.m in Sources */,
+				513E5B1C1CE9633200F9B60A /* KM_NetAPIManager.m in Sources */,
+				513E5B1D1CE9633E00F9B60A /* KM_NetAPIClient.m in Sources */,
 				513989EC1CE2E1C0006C10C8 /* CommonZoneViewController.m in Sources */,
 				513CD6C11CE420B500841BCD /* FirendCircleCommentViewController.m in Sources */,
 				3560131B1CCA922600DE2275 /* BaseViewController.m in Sources */,
 				51DE66831CCA274E001F0BAC /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				519008011CCF621E000BAE7A /* CommonTableViewController.m in Sources */,
+				513E5B1E1CE9635800F9B60A /* KM_APIRequestAgent.m in Sources */,
+				513E5B1B1CE962F100F9B60A /* KMAbstractObject.m in Sources */,
 				513CD6CA1CE432CB00841BCD /* CommentTableViewCell.m in Sources */,
 				517D09491CCE20B7007EA37D /* RemoteControlViewController.m in Sources */,
 				518F9DEF1CDC908D00C084E7 /* AFURLResponseSerialization.m in Sources */,
@@ -1444,6 +1456,7 @@
 				5139DA8F1CDB2B1E00C7F931 /* MJRefreshAutoNormalFooter.m in Sources */,
 				350B2CD11CE87A7D00A85A86 /* LoginViewController.m in Sources */,
 				51DE665E1CCA229F001F0BAC /* RootViewController.m in Sources */,
+				513E5B1A1CE962A300F9B60A /* CommonAbstractObject.m in Sources */,
 				35ED92B61CE38E87003FE776 /* ChatFriendListViewController.m in Sources */,
 				51F7C3111CD06676002BEB8F /* ArtistSearchView.m in Sources */,
 				51DE66851CCA274E001F0BAC /* ViewController+MASAdditions.m in Sources */,
@@ -1458,7 +1471,6 @@
 				5162AA881CCF46C3008317D1 /* FriendCircleCell.m in Sources */,
 				518608891CE024B70066E0D6 /* NSObject+ObjectMap.m in Sources */,
 				35ED92B31CE37DB8003FE776 /* FriendCircleDetailBottomView.m in Sources */,
-				5162AAA71CCF4B9F008317D1 /* KMAbstractObject.m in Sources */,
 				51DE66841CCA274E001F0BAC /* View+MASAdditions.m in Sources */,
 				5162AA991CCF470D008317D1 /* BaseTableViewCell.m in Sources */,
 				35E68FED1CCCD148003F1AC7 /* ChatViewController.m in Sources */,
@@ -1484,13 +1496,10 @@
 				5186088C1CE038E10066E0D6 /* NSDictionary+Utilities.m in Sources */,
 				5139DA961CDB2B1E00C7F931 /* MJRefreshStateHeader.m in Sources */,
 				5145BE571CE566C20025DB10 /* ChatSessionViewController.m in Sources */,
-				518F9DFC1CDC9C6400C084E7 /* KM_APIRequestAgent.m in Sources */,
 				5135ED311CE1760D00E0AB6D /* CommonDetailViewController.m in Sources */,
 				517D09401CCDEBDE007EA37D /* MeCell.m in Sources */,
-				518F9DF91CDC98DB00C084E7 /* KM_NetAPIClient.m in Sources */,
 				5139DA8C1CDB2B1E00C7F931 /* MJRefreshFooter.m in Sources */,
 				5139DA901CDB2B1E00C7F931 /* MJRefreshAutoStateFooter.m in Sources */,
-				51700BEF1CD8771F0091FF33 /* CommonAbstractObject.m in Sources */,
 				35ED92C21CE38F4A003FE776 /* ChatFriendSearchListViewController.m in Sources */,
 				35ED92BF1CE38F3E003FE776 /* ChatFriendSearchViewController.m in Sources */,
 				516746A41CD1E98D007AC9C6 /* QRCodeAreaView.m in Sources */,
@@ -1528,7 +1537,6 @@
 				5162AA9C1CCF470D008317D1 /* SlideViewController.m in Sources */,
 				5139DA941CDB2B1E00C7F931 /* MJRefreshGifHeader.m in Sources */,
 				516746A71CD1EB98007AC9C6 /* QRCodeView.m in Sources */,
-				518F9DF41CDC952200C084E7 /* KM_NetAPIManager.m in Sources */,
 				517D09511CCE26D2007EA37D /* RankingListViewController.m in Sources */,
 				5162AA9D1CCF470D008317D1 /* SegemtedControl.m in Sources */,
 				51DE667D1CCA274E001F0BAC /* MASConstraint.m in Sources */,

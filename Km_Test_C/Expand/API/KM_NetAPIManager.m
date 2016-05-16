@@ -28,6 +28,12 @@
     return self;
 }
 
+- (void)logInWithparam:(NSDictionary *)paramDic completion:(NetAPIRequestListCompletion)completion{
+    if (1) {
+        
+    }
+}
+
 #pragma mark -
 - (void)fetchHotSongListWithCompletion:(NetAPIRequestListCompletion)completion{
     NSString *url = [self.requestAgen apiRequestOfHotSongListUrl];

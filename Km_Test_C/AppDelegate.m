@@ -61,7 +61,7 @@
     
 //    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabbarBackground"]];
     [[UITabBar appearance] setTranslucent:NO];
-//    [[UITabBar appearance] setShadowImage:[UIImage imageNamed:@"tabbarBackground"]];
+//    [[UITabBar appearance] setShadowImage:[UIImage imageNamed:@"ktv_home_shadow"]];
 }
 
 @end

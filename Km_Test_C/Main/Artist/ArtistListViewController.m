@@ -9,7 +9,7 @@
 #import "ArtistListViewController.h"
 #import "ArtistSearchView.h"
 #import "ArtistDetailViewController.h"
-
+#import "SearchViewController.h"
 #import "UIImage+expanded.h"
 
 @interface ArtistListViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -75,6 +75,12 @@
     return cell;
 }
 
+- (void)artistSearchViewTap:(UIGestureRecognizer *)recongnizer{
+    SearchViewController *search = [[SearchViewController alloc]init];
+    [self.navigationController pushViewController:search animated:YES];
+}
+
+
 #pragma mark - GET/SET
 - (UITableView *)tableView{
     if (!_tableView) {
@@ -92,6 +98,8 @@ static const CGFloat kArtistSearchViewHeight = 40;
     if (!_artistSearchView) {
         _artistSearchView = [[ArtistSearchView alloc]initWithFrame:CGRectMake(0, kNavBar_Height, kSCREEN_WIDTH, kArtistSearchViewHeight)];
         _artistSearchView.backgroundColor = RGB(240, 240, 240);
+        UITapGestureRecognizer *tapRcongnizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(artistSearchViewTap:)];
+        [_artistSearchView addGestureRecognizer:tapRcongnizer];
     }
     return _artistSearchView;
 }

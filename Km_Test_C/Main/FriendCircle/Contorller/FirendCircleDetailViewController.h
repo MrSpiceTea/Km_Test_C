@@ -7,7 +7,7 @@
 //
 #import "BaseViewController.h"
 #import <UIKit/UIKit.h>
-
+#import "FriendCircleModel.h"
 @interface FirendCircleDetailViewController : BaseViewController
-
+@property (nonatomic,strong) FriendCircleModel *model;
 @end

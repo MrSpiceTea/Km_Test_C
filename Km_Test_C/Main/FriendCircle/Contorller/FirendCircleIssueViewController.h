@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonTableViewController.h"
 
-@interface FirendCircleIssueViewController : UIViewController
+@protocol FirendCircleIssueDelegate <NSObject>
+- (void)sendIssue:(NSString *)contentText;
+@end
 
+@interface FirendCircleIssueViewController : CommonTableViewController
+@property (nonatomic,weak) id<FirendCircleIssueDelegate> delegate;
 @end

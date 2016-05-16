@@ -58,6 +58,10 @@
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithWhite:0  alpha:0.5]];
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, NSIntegerMin) forBarMetrics:UIBarMetricsDefault];//隐藏返回字
+    
+//    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabbarBackground"]];
+    [[UITabBar appearance] setTranslucent:NO];
+//    [[UITabBar appearance] setShadowImage:[UIImage imageNamed:@"ktv_home_shadow"]];
 }
 
 @end

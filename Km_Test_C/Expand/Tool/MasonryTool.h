@@ -17,5 +17,5 @@
  *  @param LRpadding     距容器的左右边距
  *  @param viewPadding   各view的左右边距
  */
--(void)makeEqualWidthViews:(NSArray *)views inView:(UIView *)containerView LRpadding:(CGFloat)LRpadding viewPadding :(CGFloat)viewPadding;
+- (void)makeEqualWidthViews:(NSArray *)views inView:(UIView *)containerView LRpadding:(CGFloat)LRpadding viewPadding :(CGFloat)viewPadding;
 @end

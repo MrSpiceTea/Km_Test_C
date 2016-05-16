@@ -18,6 +18,7 @@ typedef NS_ENUM(NSUInteger, FriendCircleModelMessageType) {
 @interface FriendCircleModel : KMAbstractObject
 
 @property (nonatomic,assign) long long Id;//id
+//TODO: UserModel
 @property (nonatomic,copy) NSString *profileImageUrl;//头像
 @property (nonatomic,copy) NSString *userName;//发送用户
 @property (nonatomic,copy) NSString *mbtype;//会员类型
@@ -28,6 +29,8 @@ typedef NS_ENUM(NSUInteger, FriendCircleModelMessageType) {
 @property (nonatomic,copy) NSString *distan;//距离
 @property (nonatomic,assign) FriendCircleModelMessageType messageType;//距离
 @property (nonatomic,strong) NSMutableArray *imagesArray;
+@property (nonatomic,strong) NSMutableArray *commentArray;//评论
+@property (nonatomic,strong) NSMutableArray *likeArray;//赞
 @property (nonatomic,assign) CGFloat cellHeight;
 
 - (FriendCircleModel *)initWithDictionary:(NSDictionary *)dic;

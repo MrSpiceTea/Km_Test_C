@@ -8,7 +8,9 @@
 
 #import "ArtistClassViewController.h"
 #import "ArtistListViewController.h"
+#import "SearchViewController.h"
 #import "ArtistSearchView.h"
+#import "SearchViewController.h"
 #import "ArtistClassCell.h"
 
 @interface ArtistClassViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -45,7 +47,6 @@
 }
 
 -(void)initData{
-    
     NSDictionary *dic1 = @{@"title":@"消息",@"imageName":@"icon_message"};
     NSDictionary *dic2 = @{@"title":@"我的作品",@"imageName":@"icon_record"};
     NSDictionary *dic3 = @{@"title":@"我的订单",@"imageName":@"icon_order"};
@@ -82,10 +83,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.section!=0) {
-        ArtistListViewController *artitListVC = [[ArtistListViewController alloc]init];
-        [self.navigationController pushViewController:artitListVC animated:YES];
+    if (indexPath.section == 0 &&indexPath.row == 0) {
+        SearchViewController *search = [[SearchViewController alloc]init];
+        [self.navigationController pushViewController:search animated:YES];
     }
+    
+    ArtistListViewController *artitListVC = [[ArtistListViewController alloc]init];
+    [self.navigationController pushViewController:artitListVC animated:YES];
+
 }
 
 #pragma mark - UITableViewDataSource
@@ -105,6 +110,10 @@
             cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
             if (!cell) {
                 cell = [[ArtistClassCell alloc]initWithArtists:nil reuseIdentifier:hotArtitsCellIdentifier];
+                cell.tapbolck = ^(NSUInteger tag){
+                    ArtistListViewController *artitListVC = [[ArtistListViewController alloc]init];
+                    [self.navigationController pushViewController:artitListVC animated:YES];
+                };
             }
         }
         return cell;
@@ -133,8 +142,11 @@
         return 2;
     }
 }
+- (void)artistSearchViewTap:(UIGestureRecognizer *)recongnizer{
+    SearchViewController *search = [[SearchViewController alloc]init];
+    [self.navigationController pushViewController:search animated:YES];
+}
 
-#pragma mark - GET/SET
 #pragma mark - GET/SET
 - (UITableView *)tableView{
     if (!_tableView) {
@@ -152,6 +164,8 @@ static const CGFloat kArtistSearchViewHeight = 40;
     if (!_artistSearchView) {
         _artistSearchView = [[ArtistSearchView alloc]initWithFrame:CGRectMake(0, kNavBar_Height, kSCREEN_WIDTH, kArtistSearchViewHeight)];
         _artistSearchView.backgroundColor = RGB(240, 240, 240);
+        UITapGestureRecognizer *tapRcongnizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(artistSearchViewTap:)];
+        [_artistSearchView addGestureRecognizer:tapRcongnizer];
     }
     return _artistSearchView;
 }

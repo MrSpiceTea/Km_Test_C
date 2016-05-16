@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>profileImageUrl</key>
+		<string>zhangxueyou</string>
+		<key>images</key>
+		<array>
+			<string>angelababy</string>
+			<string>angelababy</string>
+		</array>
+		<key>userName</key>
+		<string>史提夫</string>
+		<key>text</key>
+		<string>今天天气非常好啊</string>
+		<key>distan</key>
+		<string>6000KM</string>
+		<key>createdAt</key>
+		<string>3年前</string>
+		<key>location</key>
+		<string>阿富汗</string>
+	</dict>
+	<dict>
+		<key>profileImageUrl</key>
+		<string>zhangxueyou</string>
+		<key>images</key>
+		<array>
+			<string>zhangxueyou</string>
+			<string>angelababy</string>
+			<string>zhangxueyou</string>
+			<string>zhangxueyou</string>
+			<string>zhangxueyou</string>
+			<string>zhangxueyou</string>
+			<string>zhangxueyou</string>
+			<string>zhangxueyou</string>
+			<string>zhangxueyou</string>
+		</array>
+		<key>userName</key>
+		<string>史提夫2</string>
+		<key>text</key>
+		<string>今天天气非常好啊</string>
+		<key>distan</key>
+		<string>6000KM</string>
+		<key>createdAt</key>
+		<string>6小时前</string>
+		<key>location</key>
+		<string>阿富汗</string>
+	</dict>
+</array>
+</plist>

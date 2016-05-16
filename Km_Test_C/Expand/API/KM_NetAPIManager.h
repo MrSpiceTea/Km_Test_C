@@ -15,6 +15,9 @@ typedef void (^NetAPIRequestListCompletion)(NSArray *results, NSInteger total, N
 + (instancetype)defaultManage;
 #pragma mark - Login
 
+- (void)logInWithID:(NSString *)userID password:(NSString *)password;
+- (void)logInWithparam:(NSDictionary *)paramDic completion:(NetAPIRequestListCompletion)completion;
+//- (void)logInWithID:(NSString *)userID andPassword:(NSString *)password;
 
 #pragma mark - 
 - (void)fetchHotSongListWithCompletion:(NetAPIRequestListCompletion)completion;

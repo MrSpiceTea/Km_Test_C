@@ -13,7 +13,7 @@
 @end
 
 @interface RemoteControlView : UIView{
-    id<RemoteControlDelegate> delegate;
+//    id<RemoteControlDelegate> delegate;
 }
 @property(assign,nonatomic)id<RemoteControlDelegate> delegate;
 @end

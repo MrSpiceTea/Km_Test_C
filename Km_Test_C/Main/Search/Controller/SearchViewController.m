@@ -8,8 +8,6 @@
 
 #import "SearchViewController.h"
 
-#define kSearchHistoryPath [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"historyDatas.plist"]
-
 @interface SearchViewController ()<UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UIView *backgroudView;
 @property (nonatomic,strong) UITableView *historyTableView;
@@ -91,6 +89,9 @@
         cell.textLabel.text = @"清空搜索历史";
     }
     if (indexPath.row != self.historyDatas.count) {
+        if (self.historyDatas[indexPath.row]) {
+            
+        }
         cell.textLabel.text = self.historyDatas[indexPath.row];
         cell.imageView.image = [UIImage imageNamed:@"book_ktv_time"];
         

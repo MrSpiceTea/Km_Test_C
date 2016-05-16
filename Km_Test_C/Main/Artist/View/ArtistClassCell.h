@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ArtistClassCell : UITableViewCell
+typedef void (^TapBolck)(NSUInteger tag);
 @property (strong, nonatomic) UILabel *titleLabel;
+@property (nonatomic,copy) TapBolck tapbolck;
 - (instancetype)initWithTitle:(NSString *)title reuseIdentifier:(NSString *)reuseIdentifier;
 - (instancetype)initWithArtists:(NSArray *)artists reuseIdentifier:(NSString *)reuseIdentifier;
 @end

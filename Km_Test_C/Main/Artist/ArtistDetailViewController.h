@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ParallaxTableViewController.h"
-#import "ChooseBaseViewController.h"
-@interface ArtistDetailViewController : ChooseBaseViewController
-//@property (nonatomic, strong) id<DataSource> dataSource;
+#import "CommonDetailViewController.h"
+@interface ArtistDetailViewController : CommonDetailViewController
 @end

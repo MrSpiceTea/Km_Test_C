@@ -44,8 +44,8 @@
     }];
     
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).with.offset(50);
-        make.top.equalTo(self.mas_top).with.offset(0);
+        make.left.equalTo(self.mas_left).with.offset(10);
+        make.top.equalTo(self.mas_top).with.offset(20);
     }];
     
     

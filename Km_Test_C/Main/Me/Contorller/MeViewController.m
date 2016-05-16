@@ -8,8 +8,10 @@
 
 #import "MeViewController.h"
 #import "LoginViewController.h"
+#import "MeZoneViewController.h"
 #import "MeCell.h"
 #import "MeHeaderCell.h"
+#import "BaseNavigationController.h"
 
 #import "UIImage+expanded.h"
 
@@ -85,9 +87,18 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    LoginViewController *loginVC = [[LoginViewController alloc]init];
-    [self.navigationController pushViewController:loginVC animated:YES];
-//    [self presentViewController:loginVC animated:YES completion:nil];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 0) {
+        MeZoneViewController *meZoneVC = [[MeZoneViewController alloc]init];
+        [self.navigationController pushViewController:meZoneVC animated:YES];
+    }else{
+        BOOL islogin = 1;
+        if (islogin) {
+            LoginViewController *loginVC = [[LoginViewController alloc]init];
+            UINavigationController *logonNavVC = [[BaseNavigationController alloc]initWithRootViewController:loginVC];
+            [self.parentViewController presentViewController:logonNavVC animated:YES completion:nil];
+        }
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -114,7 +125,7 @@
         if (!cell) {
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            cell.textLabel.text = self.dataSource[indexPath.section -1][@"title" ];
+            cell.textLabel.text = self.dataSource[indexPath.section -1][@"title"];
             [cell.imageView setImage:[UIImage scaleToSize:[UIImage imageNamed:self.dataSource[indexPath.section -1][@"imageName"]] size:CGSizeMake(30, 30)]];
         }
         return cell;

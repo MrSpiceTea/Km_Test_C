@@ -61,4 +61,30 @@
     }];
 }
 
+- (void)fetchRecommendSongListWithCompletion:(NetAPIRequestListCompletion)completion{
+    NSString *url = [self.requestAgen apiRequestOfRecommendSongListUrl];
+    [[KM_NetAPIClient defaultManage] requestJsonDicWithPath:url withParams:nil withMethodType:Get completionBolck:^(id jsonResponseObject, NSError *error) {
+        if (error) {
+            completion(nil,0,error);
+        }else{
+            NSArray *responseArray = [NSArray array];
+            if ([jsonResponseObject isKindOfClass:[NSDictionary class]]) {
+                NSDictionary *rs = ((NSDictionary *)jsonResponseObject)[@"rs"];
+                if (rs&&![rs isKindOfClass:[NSNull class]]&&rs.count>0) {
+                    NSArray *rsArray = rs[@"r"];
+                    if (rsArray&&![rsArray isKindOfClass:[NSNull class]]&&rsArray.count>0) {
+                        NSMutableArray *mutableArray = [NSMutableArray arrayWithCapacity:rsArray.count];
+                        for (NSDictionary *dirtyDict in rsArray) {
+                            AlbumModel *album = [[AlbumModel alloc]initWithDict:dirtyDict];
+                            [mutableArray addObject:album];
+                        }
+                        responseArray = mutableArray;
+                    }
+                }
+            }
+            completion(responseArray,responseArray.count,nil);
+        }
+    }];
+}
+
 @end

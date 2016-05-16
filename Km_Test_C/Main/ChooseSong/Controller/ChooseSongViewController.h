@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ChooseBaseViewController.h"
 @interface ChooseSongViewController : ChooseBaseViewController
-
+@property (nonatomic,strong) NSMutableArray *hotdataSource;
+@property (nonatomic,strong) NSMutableArray *dataSource;
 @end

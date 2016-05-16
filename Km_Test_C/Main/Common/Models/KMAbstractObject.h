@@ -11,5 +11,7 @@
 @interface KMAbstractObject : NSObject
 @property (nonatomic, strong) NSString *theID;
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *des;
+@property (nonatomic, strong) NSString *fileID;
 - (instancetype)initWithDict:(NSDictionary *)dirtyDict;
 @end

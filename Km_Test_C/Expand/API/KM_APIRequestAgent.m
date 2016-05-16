@@ -20,4 +20,9 @@
     //TODO: Parameters/enchance
     return kKMHotSongListPath;
 }
+
+- (NSString *)apiRequestOfRecommendSongListUrl{
+    //TODO: Parameters/enchance
+    return kKMRecommendSongListPath;
+}
 @end

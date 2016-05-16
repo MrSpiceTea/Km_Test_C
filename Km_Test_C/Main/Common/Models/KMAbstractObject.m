@@ -13,7 +13,22 @@
     if (self = [super init]) {
         if (dirtyDict) {
             NSArray *keys = @[@"id", @"contentid"];
-            self.theID = [dirtyDict stringValueForCandidateKeys:keys];
+            NSString *theid = [dirtyDict stringValueForCandidateKeys:keys];
+            if (theid.length>0) {
+                self.theID = theid;
+            }
+
+            keys = @[@"des"];
+            NSString *des = [dirtyDict stringValueForCandidateKeys:keys];
+            if (des.length>0) {
+                self.des = des;
+            }
+            
+            keys = @[@"fid"];
+            NSString *fid = [dirtyDict stringValueForCandidateKeys:keys];
+            if (fid.length>0) {
+                self.fileID = fid;
+            }
         }
     }
     return self;

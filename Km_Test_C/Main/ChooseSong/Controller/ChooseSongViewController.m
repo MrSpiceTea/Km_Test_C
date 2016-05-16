@@ -46,7 +46,6 @@ static const CGFloat kTimerInterval = 5.0f;
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-  
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -66,8 +65,18 @@ static const CGFloat kTimerInterval = 5.0f;
 - (void)refresh{
     KM_NetAPIManager *apiManager = [KM_NetAPIManager defaultManage];
     [apiManager fetchHotSongListWithCompletion:^(NSArray *results, NSInteger total, NSError *error) {
-        
+        if (results) {
+            self.hotdataSource = [NSMutableArray arrayWithArray:results];
+            [self.tableView reloadData];
+        }
     }];
+    
+//    [apiManager fetchRecommendSongListWithCompletion:^(NSArray *results, NSInteger total, NSError *error) {
+//        if (results) {
+//            self.dataSource = [NSMutableArray arrayWithArray:results];
+//            [self.tableView reloadData];
+//        }
+//    }];
 }
 
 #pragma mark - Init
@@ -153,10 +162,10 @@ static const CGFloat kTimerInterval = 5.0f;
     } else if (indexPath.row == 7 ) {
         cell.titleLabel.text = @"推荐歌单";
     }else{
-        cell.titleLabel.text = @"鲁冰花[我是歌手第四季]";
-        cell.detailLabel.text = @"徐佳莹";
+        AlbumModel *album = self.hotdataSource[indexPath.row - 1];
+        cell.titleLabel.text = album.albumName;
+        cell.detailLabel.text = album.artistName;
     }
-
     return cell;
 }
 

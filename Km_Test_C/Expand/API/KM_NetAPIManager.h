@@ -21,5 +21,5 @@ typedef void (^NetAPIRequestListCompletion)(NSArray *results, NSInteger total, N
 
 #pragma mark - 
 - (void)fetchHotSongListWithCompletion:(NetAPIRequestListCompletion)completion;
-
+- (void)fetchRecommendSongListWithCompletion:(NetAPIRequestListCompletion)completion;
 @end

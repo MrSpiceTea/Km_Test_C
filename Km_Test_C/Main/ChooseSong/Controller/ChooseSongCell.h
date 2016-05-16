@@ -7,31 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef void(^TopGridViewTapBlock)(NSUInteger tag);
+typedef void(^BottomGirdViewBlock)(NSUInteger tag);
 @interface ChooseSongCell : UITableViewCell
 
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UILabel *detailLabel;
-/**
- *  初始化
- *
- *  @param title           标题
- *  @param reuseIdentifier 标识符
- *
- *  @return self
- */
-- (instancetype)initWithTitle:(NSString *)title reuseIdentifier:(NSString *)reuseIdentifier;
-- (instancetype)initWithTitle:(NSString *)title detail:(NSString *)detail reuseIdentifier:(NSString *)reuseIdentifier;
-/**
- *  初始化
- *
- *  @param gridView        网状布局
- *  @param reuseIdentifier 标识符
- *
- *  @return self
- */
-- (instancetype)initWithCustomView:(UIView *)customview reuseIdentifier:(NSString *)reuseIdentifier;
+@property (nonatomic,copy) TopGridViewTapBlock topGridViewTapBlock;
+@property (nonatomic,copy) BottomGirdViewBlock bottomGirdViewBlock;
 
++ (instancetype)cellWithTabelView:(UITableView *)tableView;
++ (instancetype)cellWithSerachView:(UITableView *)tableView;
++ (instancetype)cellWithHotCell:(UITableView *)tableView;
++ (instancetype)cellWithTopGridView:(UITableView *)tableView;
++ (instancetype)cellWithBottomGirdView:(UITableView *)tableView;
 
-
++ (CGFloat)heightWithSerachView;
++ (CGFloat)heightWithTopGridView;
++ (CGFloat)heightWithGirdView;
++ (CGFloat)heightWithCell;
++ (CGFloat)heightWithhead;
 @end

@@ -101,7 +101,7 @@ static const CGFloat kTopGridViewMargin = 5.0f;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            return 60;
+            return [ChooseSongCell heightWithSerachView];
         }
         return kSCREEN_WIDTH/2;
     }else{
@@ -124,43 +124,37 @@ static const CGFloat kTopGridViewMargin = 5.0f;
 #pragma mark - UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     ////TODO: tablewcell fix
-    static NSString *chooseSongSerachCellIdentifier = @"chooseSongSerachCell";
     static NSString *chooseSongTopGridCellIdentifier = @"chooseSongTopGridCell";
-    static NSString *chooseSongTitleCellIdentifier = @"chooseSongTitleCell";
-    static NSString *chooseSongHotCellIdentifier = @"chooseSongHotCell";
     static NSString *chooseSongBottomGirdCellIdentifier = @"chooseSongBottomGirdCell";
     ChooseSongCell *cell = nil;
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            cell = (ChooseSongCell *)[tableView dequeueReusableCellWithIdentifier:chooseSongSerachCellIdentifier];
+            cell = [ChooseSongCell cellWithSerachView:tableView];
         }else if (indexPath.row == 1){
             cell = (ChooseSongCell *)[tableView dequeueReusableCellWithIdentifier:chooseSongTopGridCellIdentifier];
         }
     }else if (indexPath.section == 1){
         if (indexPath.row == 0 || indexPath.row == 7) {
-            cell = (ChooseSongCell *)[tableView dequeueReusableCellWithIdentifier:chooseSongTitleCellIdentifier];
+            cell = [ChooseSongCell cellWithTabelView:tableView];
         }else if (indexPath.row == 8){
             cell = (ChooseSongCell *)[tableView dequeueReusableCellWithIdentifier:chooseSongBottomGirdCellIdentifier];
         }else{
-            cell = (ChooseSongCell *)[tableView dequeueReusableCellWithIdentifier:chooseSongHotCellIdentifier];
+            cell = [ChooseSongCell cellWithHotCell:tableView];
         }
     }
 
     if (!cell) {
         if (indexPath.section == 0) {
             if (indexPath.row == 0) {
-                cell = [[ChooseSongCell alloc]initWithCustomView:[self serachBarView] reuseIdentifier:chooseSongSerachCellIdentifier];
             }else if (indexPath.row == 1){
                 cell = [[ChooseSongCell alloc]initWithCustomView:[self chooseSongTopGridView] reuseIdentifier:chooseSongTopGridCellIdentifier];
             }
         }else if (indexPath.section == 1){
             if (indexPath.row == 0 || indexPath.row == 7) {
-                cell = [[ChooseSongCell alloc]initWithTitle:@"" reuseIdentifier:chooseSongTitleCellIdentifier];
             }else if (indexPath.row == 8){
                 cell = [[ChooseSongCell alloc]initWithCustomView:self.chooseSongBottomGirdView reuseIdentifier:chooseSongBottomGirdCellIdentifier];
                 cell.contentView.backgroundColor = RGB(240, 240, 240);
             }else{
-                cell = [[ChooseSongCell alloc]initWithTitle:@"" detail:@"" reuseIdentifier:chooseSongHotCellIdentifier];
             }
         }
     }
@@ -252,34 +246,7 @@ static const CGFloat KAnimateDuration = 0.1;
     }];
 }
 
-- (UIView *)serachBarView{
-    UIView *view = [UIView new];
-    [view setFrame:CGRectMake(10, 10, kSCREEN_WIDTH - 20, 35)];
-    view.backgroundColor = RGB(240, 240, 240);
-    view.layer.cornerRadius = 15;
-    
-    UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"wan_searchview_icon"]];
-    UILabel *label = [UILabel new];
-    [label setText:@"搜歌"];
-    [label setFont:[UIFont systemFontOfSize:13]];
-    [label setTextColor:RGB(160, 160, 160)];
-    
-    [view addSubview:imageView];
-    [view addSubview:label];
-    
-    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_offset(CGSizeMake(15, 15));
-        make.centerY.equalTo(view);
-        make.left.equalTo(view).with.offset(10);
-    }];
-    [label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_offset(CGSizeMake(50, 25));
-        make.centerY.equalTo(view);
-        make.left.equalTo(imageView.mas_right).with.offset(10);
-    }];
-    return view;
-    
-}
+
 - (UIView *)chooseSongTopGridView{
     int sidesMargin = 10;
     int leftWidth = kSCREEN_WIDTH/2 - kTopGridViewMargin/2 - sidesMargin;

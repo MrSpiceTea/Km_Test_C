@@ -34,6 +34,7 @@
 }
 
 - (void)setupUI{
+    self.view.backgroundColor = [UIColor whiteColor];
     self.backgroundImageView.image = [UIImage imageNamed:@"jay"];
     
     UIButton *likeButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 60, 30)];

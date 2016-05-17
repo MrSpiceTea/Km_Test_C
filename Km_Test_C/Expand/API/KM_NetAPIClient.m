@@ -39,19 +39,33 @@
 - (void)gettest{
   
 }
-- (void)requestJsonDicWithPath:(NSString *)aPath
+
+- (void)requestJsonDicWithPathGet:(NSString *)aPath
                     withParams:(NSDictionary*)params
                 withMethodType:(NetworkMethod)method
                completionBolck:(void (^)(id jsonResponseObject, NSError *error))completion{
-    AFHTTPSessionManager *session = [KM_NetAPIClient shareSessionManage];
-    [session GET:aPath parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        NSLog(@"%@",downloadProgress);
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    AFHTTPSessionManager *manager = [KM_NetAPIClient shareSessionManage];
+    [manager GET:aPath parameters:nil progress:nil
+    success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         completion(responseObject,nil);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];
+}
+
+- (void)requestJsonDicWithPathPost:(NSString *)aPath
+                        withParams:(NSDictionary*)params
+                    withMethodType:(NetworkMethod)method
+                   completionBolck:(void (^)(id jsonResponseObject, NSError *error))completion{
+    AFHTTPSessionManager *manager = [KM_NetAPIClient shareSessionManage];
+    [manager POST:aPath parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        completion(responseObject,nil);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    }];
     
 }
+
+
+
 @end

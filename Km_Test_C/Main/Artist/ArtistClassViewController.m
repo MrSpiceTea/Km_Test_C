@@ -16,7 +16,6 @@
 @interface ArtistClassViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong) UITableView *tableView;
 @property(nonatomic,strong) ArtistSearchView *artistSearchView;
-@property (nonatomic,strong) NSArray *dataSource;
 @end
 
 @implementation ArtistClassViewController
@@ -87,8 +86,14 @@
         SearchViewController *search = [[SearchViewController alloc]init];
         [self.navigationController pushViewController:search animated:YES];
     }
-    
+    NSString *songstertypeid = @"0";
+    if (indexPath.section == 1) {
+        songstertypeid = [NSString stringWithFormat:@"%ld",(long)indexPath.row + 1];
+    }else{
+        songstertypeid = [NSString stringWithFormat:@"%ld",(long)indexPath.row + 4];
+    }
     ArtistListViewController *artitListVC = [[ArtistListViewController alloc]init];
+    artitListVC.songstertypeid = songstertypeid;
     [self.navigationController pushViewController:artitListVC animated:YES];
 
 }
@@ -112,6 +117,7 @@
                 cell = [[ArtistClassCell alloc]initWithArtists:nil reuseIdentifier:hotArtitsCellIdentifier];
                 cell.tapbolck = ^(NSUInteger tag){
                     ArtistListViewController *artitListVC = [[ArtistListViewController alloc]init];
+                     artitListVC.songstertypeid = @"0";
                     [self.navigationController pushViewController:artitListVC animated:YES];
                 };
             }

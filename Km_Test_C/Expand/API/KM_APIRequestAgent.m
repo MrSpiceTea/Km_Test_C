@@ -30,10 +30,13 @@
     return kKMRankingSongListPath;
 }
 
+- (NSString *)apiRequestOfArtistListUrl{
+    return kKApiHost;
+}
+
 + (NSURL *)imageurlWidthPicurlhead:(NSString *)filid{
     NSString *url = [NSString stringWithFormat:@"%@?%@=%@", kKMImagePicurlhead, kKMFileId, filid];
     return [NSURL URLWithString:url];
-
 }
 
 //TODO: category

@@ -11,7 +11,8 @@
 #import "ArtistDetailViewController.h"
 #import "SearchViewController.h"
 #import "UIImage+expanded.h"
-
+#import "KM_NetAPIManager.h"
+#import <UIImageView+WebCache.h>
 @interface ArtistListViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong) UITableView *tableView;
 @property(nonatomic,strong) ArtistSearchView *artistSearchView;
@@ -24,6 +25,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+
     [self configUI];
 }
 
@@ -37,7 +39,37 @@
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:settingBtn];
     self.navigationItem.rightBarButtonItem = item;
     [self.view addSubview:self.artistSearchView];
-    [self.view addSubview:self.tableView];
+    [self refreshData];
+   
+}
+
+- (void)refreshData{
+    KM_NetAPIManager *apiManage = [KM_NetAPIManager defaultManage];
+    NSString *letterindex = @"热门";
+    NSDictionary *dic = @{@"cmdid":@"D324",@"letterindex":letterindex,@"songstertypeid":self.songstertypeid,@"requestnum":@"40",@"startpos":@"1"};
+    NSDictionary *Params = @{@"body":[self DataTOjsonString:dic]};
+    [apiManage fetchArtistListWithParams:Params completion:^(NSArray *results, NSInteger total, NSError *error) {
+        if (results) {
+            self.dataSource = [NSMutableArray arrayWithArray:results];
+            [self.tableView reloadData];
+        }
+    }];
+}
+
+//test
+- (NSString *)DataTOjsonString:(id)object
+{
+    NSString *jsonString = nil;
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:object
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    if (! jsonData) {
+        NSLog(@"Got an error: %@", error);
+    } else {
+        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+    return jsonString;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,8 +102,12 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-    cell.imageView.image = [UIImage scaleToSize:[UIImage imageNamed:@"zhangxueyou"] size:CGSizeMake(50, 50)];
-    cell.textLabel.text = @"张学友";
+    
+    
+    ArtistModel *modle = self.dataSource[indexPath.row];
+    [cell.imageView sd_setImageWithURL: [KM_APIRequestAgent imageurlWidthPicurlhead:modle.fileID] placeholderImage:[UIImage imageNamed:@"login_username"]];
+//    = [UIImage scaleToSize:size:CGSizeMake(50, 50)];
+    cell.textLabel.text = modle.name;
     return cell;
 }
 
@@ -88,6 +124,7 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.backgroundColor = RGB(246, 246, 246);
+        [self.view addSubview:_tableView];
     }
     return _tableView;
 }

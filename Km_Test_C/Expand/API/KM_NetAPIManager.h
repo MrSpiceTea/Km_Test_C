@@ -23,4 +23,7 @@ typedef void (^NetAPIRequestListCompletion)(NSArray *results, NSInteger total, N
 - (void)fetchHotSongListWithCompletion:(NetAPIRequestListCompletion)completion;
 - (void)fetchRecommendSongListWithCompletion:(NetAPIRequestListCompletion)completion;
 - (void)fetchRankingListWithCompletion:(NetAPIRequestListCompletion)completion;
+
+
+- (void)fetchArtistListWithParams:(NSDictionary *)paramsDic completion:(NetAPIRequestListCompletion)completion;
 @end

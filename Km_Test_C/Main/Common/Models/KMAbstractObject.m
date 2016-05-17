@@ -17,6 +17,14 @@
             if (theid.length>0) {
                 self.theID = theid;
             }
+            
+            keys = @[@"name"];
+            NSString *name = [dirtyDict stringValueForCandidateKeys:keys];
+            if (name.length>0) {
+                self.name = name;
+            }else{
+                self.name = @"-";
+            }
 
             keys = @[@"des"];
             NSString *des = [dirtyDict stringValueForCandidateKeys:keys];
@@ -39,4 +47,12 @@
     }
     return self;
 }
+
+-(id)copyWithZone:(NSZone*)zone {
+    KMAbstractObject *abstractObject = [[[self class] allocWithZone:zone] init];
+    abstractObject.name = [_name copy];
+    return abstractObject;
+}
+
+
 @end

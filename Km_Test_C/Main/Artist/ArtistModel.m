@@ -10,11 +10,16 @@
 
 @implementation ArtistModel
 
-- (NSMutableArray *)albumArray{
-    if (!_albumArray) {
-        _albumArray = [NSMutableArray array];
+- (instancetype)initWithDict:(NSDictionary *)dirtyDict{
+    if (self = [super initWithDict:dirtyDict]) {
+        if(dirtyDict){
+            NSArray  *keys = @[@"s"];
+            NSString *artisName = [dirtyDict stringValueForCandidateKeys:keys];
+            if (artisName.length>0) {
+                self.artistName = artisName;
+            }
+        }
     }
-    return _albumArray;
+    return self;
 }
-
 @end

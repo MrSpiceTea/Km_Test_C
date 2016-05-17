@@ -22,13 +22,17 @@ typedef enum {
 - (void)gettest;
 - (void)gettest:(NSString *)url;
 
-- (void)requestJsonDicWithPath:(NSString *)aPath
-                     withParams:(NSDictionary*)params
-                 withMethodType:(NetworkMethod)method
-                       completionBolck:(void (^)(id jsonResponseObject, NSError *error))completion;
 //GET
-
+- (void)requestJsonDicWithPathGet:(NSString *)aPath
+                    withParams:(NSDictionary*)params
+                withMethodType:(NetworkMethod)method
+               completionBolck:(void (^)(id jsonResponseObject, NSError *error))completion;
 //POST
+- (void)requestJsonDicWithPathPost:(NSString *)aPath
+                       withParams:(NSDictionary*)params
+                   withMethodType:(NetworkMethod)method
+                  completionBolck:(void (^)(id jsonResponseObject, NSError *error))completion;
+
 
 //DOWNLOAD
 

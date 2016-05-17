@@ -11,11 +11,12 @@
 
 #pragma mark - TESTURL
 #import "AlbumModel.h"
+#import "ArtistModel.h"
 #import "RankingListModel.h"
 //url
 #pragma mark - Protocol Info
 #pragma mark - Request Enchances
-static NSString * const kKMHost                             = @"http://mobile.ktvme.com:8100/";
+static NSString * const kKApiHost                           = @"http://mobile.ktvme.com:8100/";
 static NSString * const kKMFileHost                         = @"http://filedownload.ktvme.com:8080/";
 
 #pragma mark - HTTP Parameters

@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AlbumModel.h"
+#import "KMAbstractObject.h"
 
-@interface ArtistModel : NSObject
+@interface ArtistModel : KMAbstractObject
 @property (nonatomic,copy) NSString *artistName;
 @property (nonatomic,copy) NSString *fansNum;
 @property (nonatomic,copy) NSString *albumCount;
 @property (nonatomic,strong) NSMutableArray *albumArray;
 @property (nonatomic,strong) NSURL *albumImageUrl;
+
+- (instancetype)initWithDict:(NSDictionary *)dirtyDict;
 @end

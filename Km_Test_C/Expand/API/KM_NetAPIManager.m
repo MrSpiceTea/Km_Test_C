@@ -37,7 +37,7 @@
 #pragma mark -
 - (void)fetchHotSongListWithCompletion:(NetAPIRequestListCompletion)completion{
     NSString *url = [self.requestAgen apiRequestOfHotSongListUrl];
-    [[KM_NetAPIClient defaultManage] requestJsonDicWithPath:url withParams:nil withMethodType:Get completionBolck:^(id jsonResponseObject, NSError *error) {
+    [[KM_NetAPIClient defaultManage] requestJsonDicWithPathGet:url withParams:nil withMethodType:Get completionBolck:^(id jsonResponseObject, NSError *error) {
         if (error) {
             completion(nil,0,error);
         }else{
@@ -63,7 +63,7 @@
 
 - (void)fetchRecommendSongListWithCompletion:(NetAPIRequestListCompletion)completion{
     NSString *url = [self.requestAgen apiRequestOfRecommendSongListUrl];
-    [[KM_NetAPIClient defaultManage] requestJsonDicWithPath:url withParams:nil withMethodType:Get completionBolck:^(id jsonResponseObject, NSError *error) {
+    [[KM_NetAPIClient defaultManage] requestJsonDicWithPathGet:url withParams:nil withMethodType:Get completionBolck:^(id jsonResponseObject, NSError *error) {
         if (error) {
             completion(nil,0,error);
         }else{
@@ -89,7 +89,7 @@
 
 - (void)fetchRankingListWithCompletion:(NetAPIRequestListCompletion)completion{
     NSString *url = [self.requestAgen apiRequestOfRankingSongListUrl];
-    [[KM_NetAPIClient defaultManage] requestJsonDicWithPath:url withParams:nil withMethodType:Get completionBolck:^(id jsonResponseObject, NSError *error) {
+    [[KM_NetAPIClient defaultManage] requestJsonDicWithPathGet:url withParams:nil withMethodType:Get completionBolck:^(id jsonResponseObject, NSError *error) {
         if (error) {
             completion(nil,0,error);
         }else{
@@ -102,6 +102,33 @@
                         NSMutableArray *mutableArray = [NSMutableArray arrayWithCapacity:rsArray.count];
                         for (NSDictionary *dirtyDict in rsArray) {
                             RankingListModel *album = [[RankingListModel alloc]initWithDict:dirtyDict];
+                            [mutableArray addObject:album];
+                        }
+                        responseArray = mutableArray;
+                    }
+                }
+            }
+            completion(responseArray,responseArray.count,nil);
+        }
+    }];
+}
+
+- (void)fetchArtistListWithParams:(NSDictionary *)paramsDic completion:(NetAPIRequestListCompletion)completion{
+//    NSMutableDictionary *params = @{@"requestnum":@"40"};
+    NSString *url = [self.requestAgen apiRequestOfArtistListUrl];
+    [[KM_NetAPIClient defaultManage] requestJsonDicWithPathPost:url withParams:paramsDic withMethodType:Post completionBolck:^(id jsonResponseObject, NSError *error) {
+        if (error) {
+            completion(nil,0,error);
+        }else{
+            NSArray *responseArray = [NSArray array];
+            if ([jsonResponseObject isKindOfClass:[NSDictionary class]]) {
+                NSDictionary *rs = ((NSDictionary *)jsonResponseObject)[@"rs"];
+                if (rs&&![rs isKindOfClass:[NSNull class]]&&rs.count>0) {
+                    NSArray *rsArray = rs[@"r"];
+                    if (rsArray&&![rsArray isKindOfClass:[NSNull class]]&&rsArray.count>0) {
+                        NSMutableArray *mutableArray = [NSMutableArray arrayWithCapacity:rsArray.count];
+                        for (NSDictionary *dirtyDict in rsArray) {
+                            ArtistModel *album = [[ArtistModel alloc]initWithDict:dirtyDict];
                             [mutableArray addObject:album];
                         }
                         responseArray = mutableArray;

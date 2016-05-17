@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 #import "ChooseBaseViewController.h"
 @interface ArtistClassViewController : ChooseBaseViewController
-
+@property (nonatomic,strong) NSMutableArray *dataSource;
 @end

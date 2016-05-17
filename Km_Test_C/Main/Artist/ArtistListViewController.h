@@ -10,5 +10,6 @@
 #import "ChooseBaseViewController.h"
 
 @interface ArtistListViewController : ChooseBaseViewController
-
+@property (nonatomic,strong) NSMutableArray *dataSource;
+@property (nonatomic,copy) NSString *songstertypeid;
 @end

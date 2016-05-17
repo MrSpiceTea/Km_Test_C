@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "NSDictionary+Utilities.h"
 @interface KMAbstractObject : NSObject
-@property (nonatomic, strong) NSString *theID;
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *des;
-@property (nonatomic, strong) NSString *fileID;
-@property (nonatomic, strong) NSString *time;
-@property (nonatomic, strong) NSURL *imageURL;
+@property (nonatomic, copy) NSString *theID;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *des;
+@property (nonatomic, copy) NSString *fileID;
+@property (nonatomic, copy) NSString *time;
+@property (nonatomic, copy) NSURL *imageURL;
 - (instancetype)initWithDict:(NSDictionary *)dirtyDict;
 @end

@@ -42,5 +42,12 @@
     return self;
 }
 
+- (void)setModel:(RankingListModel *)model{
+    _model = model;
+    
+    self.titleLabel.text = model.artistName;
+    self.dateLabel.text = model.time;
+}
+
 
 @end

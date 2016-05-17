@@ -9,5 +9,22 @@
 #import "RankingListModel.h"
 
 @implementation RankingListModel
-
+- (instancetype)initWithDict:(NSDictionary *)dirtyDict{
+    if (self = [super initWithDict:dirtyDict]) {
+        if(dirtyDict){
+            NSArray *keys = @[@"songs"];
+            NSString *songs = [dirtyDict stringValueForCandidateKeys:keys];
+            if (songs.length>0) {
+                self.songs = songs;
+            }
+            
+            keys = @[@"singers"];
+            NSString *singers = [dirtyDict stringValueForCandidateKeys:keys];
+            if (singers.length>0) {
+                self.singers = singers;
+            }
+        }
+    }
+    return self;
+}
 @end

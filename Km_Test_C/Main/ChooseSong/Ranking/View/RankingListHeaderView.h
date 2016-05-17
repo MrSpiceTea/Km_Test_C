@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RankingListModel.h"
 
 @interface RankingListHeaderView : UIView
 
+@property (nonatomic,strong) RankingListModel *model;
 @property (nonatomic,strong) UILabel *titleLabel;
 @property (nonatomic,strong) UILabel *dateLabel;
 

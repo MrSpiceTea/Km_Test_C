@@ -7,6 +7,9 @@
 //
 
 #import "RankingListCell.h"
+#import <UIImageView+WebCache.h>
+#import "KM_APIRequestAgent.h"
+#define kRankingListCellIdentifier  @"RankingListCellIdentifier"
 
 @implementation RankingListCell
 
@@ -14,47 +17,48 @@
     if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-        
-        
     }
     return self;
 }
 
-- (instancetype)initWithRankingListModel:(RankingListModel *)rankingListModel reuseIdentifier:(NSString *)reuseIdentifier{
-    if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
-        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
-        [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-    
-        CGFloat labelSize = 10.0f;
+
++ (RankingListCell *)cellWidthTable:(UITableView *)table{
+    RankingListCell *cell = [table dequeueReusableCellWithIdentifier:kRankingListCellIdentifier];
+    if (!cell) {
+        cell = [[RankingListCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kRankingListCellIdentifier];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+        
+        CGFloat labelSize = 11.0f;
         
         UILabel *album1 = [[UILabel alloc] init];
         [album1 setBackgroundColor:[UIColor clearColor]];
-        [album1 setText:rankingListModel.title];
         [album1 setFont:[UIFont systemFontOfSize:labelSize]];
         [album1 setTextColor:RGB(2, 2, 2)];
-        [self.contentView addSubview:album1];
+        [cell.contentView addSubview:album1];
+        cell.album1 = album1;
         
         UILabel *album2 = [[UILabel alloc] init];
         [album2 setBackgroundColor:[UIColor clearColor]];
-        [album2 setText:rankingListModel.title];
         [album2 setFont:[UIFont systemFontOfSize:labelSize]];
         [album2 setTextColor:RGB(2, 2, 2)];
-        [self.contentView addSubview:album2];
+        [cell.contentView addSubview:album2];
+        cell.album2 = album2;
         
         UILabel *album3 = [[UILabel alloc] init];
         [album3 setBackgroundColor:[UIColor clearColor]];
-        [album3 setText:rankingListModel.title];
         [album3 setFont:[UIFont systemFontOfSize:labelSize]];
         [album3 setTextColor:RGB(2, 2, 2)];
-        [self.contentView addSubview:album3];
+        [cell.contentView addSubview:album3];
+        cell.album3 = album3;
         
         UIImageView *imageView = [[UIImageView alloc]init];
-        [imageView setImage:[UIImage imageNamed:rankingListModel.imageUrl]];
-        [self.contentView addSubview:imageView];
+        [cell.contentView addSubview:imageView];
+        cell.headImageView = imageView;
         
         UIView *bottomSeparator = [UIView new];
         bottomSeparator.backgroundColor = RGB(235, 235, 235);
-        [self.contentView addSubview:bottomSeparator];
+        [cell.contentView addSubview:bottomSeparator];
         
         [bottomSeparator mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(bottomSeparator.superview.mas_left).with.offset(0);
@@ -85,7 +89,24 @@
             make.left.equalTo(imageView.mas_right).with.offset(15);
             make.bottom.equalTo(album2.mas_top).with.offset(-2);
         }];
+
     }
-    return self;
+    return cell;
 }
+
+- (void)setModel:(RankingListModel *)model{
+    _model = model;
+    //TODO: if null
+    NSArray *albums = [model.songs componentsSeparatedByString:@";"];
+    NSArray *artists = [model.singers componentsSeparatedByString:@";"];
+    self.album1.text = [NSString stringWithFormat:@"1  %@-%@",albums[0],artists[0]];
+    self.album2.text = [NSString stringWithFormat:@"2  %@-%@",albums[1],artists[1]];
+    self.album3.text = [NSString stringWithFormat:@"3  %@-%@",albums[2],artists[2]];
+    [self.headImageView sd_setImageWithURL:[KM_APIRequestAgent imageurlWidthPicurlhead:model.fileID] placeholderImage:[UIImage imageNamed:@"login_username"]];
+}
+
++ (CGFloat )heightWidthCell{
+    return 100;
+}
+
 @end

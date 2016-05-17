@@ -13,5 +13,7 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *des;
 @property (nonatomic, strong) NSString *fileID;
+@property (nonatomic, strong) NSString *time;
+@property (nonatomic, strong) NSURL *imageURL;
 - (instancetype)initWithDict:(NSDictionary *)dirtyDict;
 @end

@@ -10,5 +10,6 @@
 #import "ChooseBaseTableViewController.h"
 
 @interface RankingListViewController : ChooseBaseTableViewController
+@property (nonatomic,strong) NSMutableArray *dataSource;
 
 @end

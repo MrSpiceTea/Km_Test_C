@@ -26,9 +26,14 @@
     return kKMRecommendSongListPath;
 }
 
+- (NSString *)apiRequestOfRankingSongListUrl{
+    return kKMRankingSongListPath;
+}
+
 + (NSURL *)imageurlWidthPicurlhead:(NSString *)filid{
     NSString *url = [NSString stringWithFormat:@"%@?%@=%@", kKMImagePicurlhead, kKMFileId, filid];
     return [NSURL URLWithString:url];
+
 }
 
 //TODO: category

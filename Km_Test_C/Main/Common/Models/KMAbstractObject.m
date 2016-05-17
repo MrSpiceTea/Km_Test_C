@@ -29,6 +29,12 @@
             if (fid.length>0) {
                 self.fileID = fid;
             }
+            
+            keys = @[@"t"];
+            NSString *time = [dirtyDict stringValueForCandidateKeys:keys];
+            if (time.length>0) {
+                self.time = time;
+            }
         }
     }
     return self;

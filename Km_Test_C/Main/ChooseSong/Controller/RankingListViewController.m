@@ -10,8 +10,8 @@
 #import "RankingListHeaderView.h"
 #import "RankingListCell.h"
 #import "RankingListModel.h"
-
 #import "RankingDetailViewController.h"
+#import "KM_NetAPIManager.h"
 
 @interface RankingListViewController ()
 
@@ -24,6 +24,17 @@
     self.title = @"排行榜";
     self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self refreshData];
+}
+
+- (void)refreshData{
+    KM_NetAPIManager *apiManage = [KM_NetAPIManager defaultManage];
+    [apiManage fetchRankingListWithCompletion:^(NSArray *results, NSInteger total, NSError *error) {
+        if (results) {
+            self.dataSource = [NSMutableArray arrayWithArray:results];
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,7 +44,7 @@
 
 #pragma mark - TableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 100;
+    return [RankingListCell heightWidthCell];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -49,7 +60,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 8;
+    return self.dataSource.count;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -60,21 +71,16 @@
 
 #pragma mark - TableViewDataSource
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    RankingListModel *model = self.dataSource[section];
     RankingListHeaderView *rankingListHeaderView = [[RankingListHeaderView alloc]init];
-    rankingListHeaderView.titleLabel.text = @"网络音乐榜";
-    rankingListHeaderView.dateLabel.text = @"3月2日更新";
+    [rankingListHeaderView setModel:model];
     return rankingListHeaderView;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *cellIdentifier = @"cell";
-    RankingListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (!cell) {
-        RankingListModel *model = [[RankingListModel alloc]init];
-        model.title = @"1 十年－陈奕迅";
-        model.imageUrl = @"angelababy";
-        cell = [[RankingListCell alloc]initWithRankingListModel:model reuseIdentifier:cellIdentifier];
-    }
+    RankingListCell *cell = [RankingListCell cellWidthTable:tableView];
+    RankingListModel * model = self.dataSource[indexPath.section];
+    [cell setModel:model];
     return cell;
 }
 @end

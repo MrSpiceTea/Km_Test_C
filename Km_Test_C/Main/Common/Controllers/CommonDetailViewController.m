@@ -70,7 +70,7 @@ static const CGFloat kBackgroundImageHeight = 180;
 - (UIImageView *)backgroundImageView {
     if (!_backgroundImageView) {
         _backgroundImageView = [[UIImageView alloc] init];
-        _backgroundImageView.frame = CGRectMake(0, kNavBar_Height, kSCREEN_WIDTH, kBackgroundImageHeight);
+        _backgroundImageView.frame = CGRectMake(0, 0, kSCREEN_WIDTH, kBackgroundImageHeight+kNavBar_Height);
         _backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
         [_backgroundImageView setImage:[UIImage imageNamed:@"record_cover_def"]];
     }

@@ -11,6 +11,7 @@
 #import "ArtistDetailCell.h"
 #import "ArtistModel.h"
 #import "UINavigationBar+expanded.h"
+#import <UIImageView+WebCache.h>
 @interface ArtistDetailViewController ()
 @end
 
@@ -34,7 +35,7 @@
 }
 
 - (void)setupUI{
-    self.backgroundImageView.image = [UIImage imageNamed:@"jay"];
+    [self.backgroundImageView sd_setImageWithURL:[NSURL URLWithString:@"http://file.cdn.ktvme.com/jpg/f188888eee31304cca77eeed4c754a7e.jpg"] placeholderImage:[UIImage imageNamed:@"login_username"]];
     
     UIButton *likeButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 60, 30)];
     [likeButton setImage:[UIImage imageNamed:@"singer_unfocus"] forState:UIControlStateNormal];

@@ -7,7 +7,7 @@
 //
 
 #import "AlbumListCell.h"
-
+#import <UIImageView+WebCache.h>
 @implementation AlbumListCell
 
 - (void)awakeFromNib {

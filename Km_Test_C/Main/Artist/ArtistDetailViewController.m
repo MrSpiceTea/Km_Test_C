@@ -12,6 +12,7 @@
 #import "ArtistModel.h"
 #import "UINavigationBar+expanded.h"
 @interface ArtistDetailViewController ()
+@property (nonatomic, assign) BOOL isOpen;
 @end
 
 @implementation ArtistDetailViewController
@@ -62,6 +63,13 @@
 #pragma mark - UITablewViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 55;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    
+    
 }
 
 #pragma mark - UITableViewDataSource

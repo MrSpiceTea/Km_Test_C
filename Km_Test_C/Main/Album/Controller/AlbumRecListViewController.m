@@ -55,11 +55,8 @@
 
 #pragma mark - TableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *cellIdentifier = @"cell";
-    AlbumListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (!cell) {
-        cell = [[AlbumListCell alloc]initWithTitle:@"我带的人" reuseIdentifier:cellIdentifier];
-    }
+    AlbumListCell *cell = [AlbumListCell cellWithTabelView:tableView];
+    cell.titleLabel.text = @"我爱恶人";
     cell.detailLabel.text = @"林宥嘉";
     cell.numLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row + 1];
     return cell;

@@ -14,7 +14,5 @@
 @property (strong, nonatomic) UILabel *detailLabel;
 @property (strong, nonatomic) UILabel *numLabel;
 @property (strong, nonatomic) AlbumModel *albumModel;
-- (instancetype)initWithTitle:(NSString *)title reuseIdentifier:(NSString *)reuseIdentifier;
-+ (instancetype)cellWithTabelView:(UITableView *)tableView AlbumModel:(AlbumModel *)albumModel;
 + (instancetype)cellWithTabelView:(UITableView *)tableView;
 @end

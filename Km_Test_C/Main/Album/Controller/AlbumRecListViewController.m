@@ -19,9 +19,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"推荐歌单";
+//    [self configRightNavBtn];
+    
     self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     [self.tableView setTableHeaderView:[self tablewHeadView]];
+}
+
+- (void)configRightNavBtn{
+    if (!self.navigationItem.rightBarButtonItem) {
+        [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"selected_tip"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemAction)] animated:NO];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,6 +90,10 @@
 #pragma mark - AlbumListCellMentViewDelegate
 - (void)albumListCell:(AlbumListCell *)albumListCell didSeletedMentItemAtIndex:(NSInteger)menuItemIndex{
     NSLog(@"%ld,%ld",(long)albumListCell.indexPath.row,(long)menuItemIndex);
+}
+
+#pragma mark - ButtonAction
+- (void)rightBarButtonItemAction{
 }
 
 @end

@@ -97,9 +97,8 @@ static const CGFloat kBackgroundImageHeight = 180;
     if ([scrollView isKindOfClass:[UITableView class]]) {
         UIColor * color = [UIColor whiteColor];
         CGFloat offsetY = scrollView.contentOffset.y + kNavBar_Height;
-        CGFloat chy =  kBackgroundImageHeight + kNavBar_Height;
-        if (offsetY > - chy + kNavBar_Height) {
-            CGFloat alpha = MIN(1, 1 - (-offsetY/chy));
+        if (offsetY > - kBackgroundImageHeight + kNavBar_Height) {
+            CGFloat alpha = MIN(1, 1 - (-offsetY/kBackgroundImageHeight));
             self.navigationController.navigationBar.tintColor = [UIColor blackColor];
             [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor], NSForegroundColorAttributeName, nil]];
             [self.navigationController.navigationBar cnSetBackgroundColor:[color colorWithAlphaComponent:alpha]];
@@ -109,15 +108,15 @@ static const CGFloat kBackgroundImageHeight = 180;
             [self.navigationController.navigationBar cnSetBackgroundColor:[color colorWithAlphaComponent:0]];
         }
         
-        CGFloat scaleTopView = 1 - (offsetY + kBackgroundImageHeight)/ 300;
+        CGFloat scaleTopView = 1 - (offsetY + kBackgroundImageHeight)/ kBackgroundImageHeight;
         scaleTopView = scaleTopView > 1 ? scaleTopView : 1;
-        CGAffineTransform transform = CGAffineTransformMakeScale(scaleTopView, scaleTopView);
+        CGAffineTransform transform = CGAffineTransformMakeScale(scaleTopView, scaleTopView);//缩放
         CGFloat ty = (scaleTopView - 1) * kBackgroundImageHeight ;
-        self.backgroundImageView.transform = CGAffineTransformTranslate(transform, 0, ty*0.5);
+        self.backgroundImageView.transform = CGAffineTransformTranslate(transform, 0, ty*0.3);//缩放，x，y位移
         
         //backView toolbarview
-        if (-scrollView.contentOffset.y>chy) {
-            CGFloat topoffsetY = -scrollView.contentOffset.y - chy;
+        if (-scrollView.contentOffset.y>kBackgroundImageHeight) {
+            CGFloat topoffsetY = -scrollView.contentOffset.y - kBackgroundImageHeight - kNavBar_Height;
             CGFloat backViewCenterY = CGRectGetHeight(self.backgroundView.frame)/2;
             CGPoint centerpoint = self.backgroundView.center;
             centerpoint.y = backViewCenterY + topoffsetY;
@@ -125,7 +124,6 @@ static const CGFloat kBackgroundImageHeight = 180;
         }
     }
 }
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 0;

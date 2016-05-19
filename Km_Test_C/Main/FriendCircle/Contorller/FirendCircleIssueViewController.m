@@ -10,6 +10,8 @@
 #import "FriendCircleModel.h"
 
 #import "UIImage+expanded.h"
+#import <MobileCoreServices/MobileCoreServices.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface FirendCircleIssueViewController ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (nonatomic,strong) UILabel *textLegnthLabel;
@@ -112,20 +114,40 @@ static const CGFloat kActionViewHeight = 90.0f;
 #pragma mark - UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker
 didFinishPickingMediaWithInfo:(NSDictionary *)info{
-    //得到图片
-    UIImage * image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    //图片存入相册
-    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+    NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
+    if ([mediaType isEqualToString:( NSString *)kUTTypeImage]){//图片
+        //得到图片
+        UIImage * image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        //图片存入相册
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+      
+    }else if ([mediaType isEqualToString:(NSString *)kUTTypeMovie]){//视频
+        //NSURL *mediatype = [info objectForKey:UIImagePickerControllerMediaType];
+        NSURL* mediaURL = [info objectForKey:UIImagePickerControllerMediaURL];
+        //创建ALAssetsLibrary对象并将视频保存到媒体库
+        // Assets Library 框架包是提供了在应用程序中操作图片和视频的相关功能。相当于一个桥梁，链接了应用程序和多媒体文件。
+        ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc] init];
+        // 将视频保存到相册中
+        [assetsLibrary writeVideoAtPathToSavedPhotosAlbum:mediaURL
+                                          completionBlock:^(NSURL *assetURL, NSError *error) {
+                                              if (!error) {
+                                                  NSLog(@"captured video saved with no error.");
+                                              }else{
+                                                  NSLog(@"error occured while saving the video:%@", error);
+                                              }
+                                          }];
+    }
     [picker dismissViewControllerAnimated:YES completion:nil];
-}
 
+}
+//取消
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - pravite method
 //开始拍照
--(void)takePhoto
+- (void)takePhoto
 {
     UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
     if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera])
@@ -136,6 +158,10 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
         picker.allowsEditing = YES;
         picker.sourceType = sourceType;
         
+//        // 设置录制视频的质量
+//        [picker setVideoQuality:UIImagePickerControllerQualityTypeHigh];
+//        //设置最长摄像时间
+//        [picker setVideoMaximumDuration:10.f];
         
 //        if([[[UIDevice currentDevice] systemVersion] floatValue]>=8.0) {
 //            self.modalPresentationStyle=UIModalPresentationOverCurrentContext;
@@ -143,12 +169,17 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
         [self presentViewController:picker animated:YES completion:nil];
     }else
     {
-        NSLog(@"模拟其中无法打开照相机,请在真机中使用");
+        NSLog(@"Camera is not available");
     }
 }
 
+//录像
+- (void)a{
+    
+}
+
 //打开本地相册
--(void)LocalPhoto
+- (void)LocalPhoto
 {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.title = @"选择照片";

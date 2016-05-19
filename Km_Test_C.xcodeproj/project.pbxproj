@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3501A2C61CEE063A0035D821 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3501A2C51CEE063A0035D821 /* MobileCoreServices.framework */; };
+		3501A2C81CEE06BF0035D821 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3501A2C71CEE06BF0035D821 /* AssetsLibrary.framework */; };
 		350B2CD11CE87A7D00A85A86 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350B2CD01CE87A7D00A85A86 /* LoginViewController.m */; };
 		350B2CD51CE87AA500A85A86 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350B2CD31CE87AA500A85A86 /* RegisterViewController.m */; };
 		350B2CD61CE87AA500A85A86 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 350B2CD41CE87AA500A85A86 /* RegisterViewController.xib */; };
@@ -120,6 +122,8 @@
 
 /* Begin PBXFileReference section */
 		008F43D532155A1C8019E546 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		3501A2C51CEE063A0035D821 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		3501A2C71CEE06BF0035D821 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		350B2CCF1CE87A7D00A85A86 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		350B2CD01CE87A7D00A85A86 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		350B2CD21CE87AA500A85A86 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -418,6 +422,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3501A2C81CEE06BF0035D821 /* AssetsLibrary.framework in Frameworks */,
+				3501A2C61CEE063A0035D821 /* MobileCoreServices.framework in Frameworks */,
 				561259F6BA63AC905B96D264 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1330,6 +1336,8 @@
 		9CFB2127E38A0F21979B8F2C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3501A2C71CEE06BF0035D821 /* AssetsLibrary.framework */,
+				3501A2C51CEE063A0035D821 /* MobileCoreServices.framework */,
 				C5A6AAC0663F3CC9673F6F81 /* libPods.a */,
 			);
 			name = Frameworks;

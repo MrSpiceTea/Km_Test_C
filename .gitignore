@@ -12,4 +12,3 @@ xcshareddata/
 .metadata/
 # 忽略`Pods/`和`Podfile.lock`
 Pods/
-Podfile.lock

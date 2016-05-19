@@ -36,15 +36,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void)configRightNavBtn:(UINavigationController *)navigationController {
+    if (!navigationController.navigationItem.rightBarButtonItem) {
+        //???: no add
+        [navigationController.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"selected_tip"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemAction)] animated:NO];
+    }
+}
+
+
 #pragma mark - UINavigationControllerDelegate methods
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
-    
     if ([navigationController.viewControllers[0] isKindOfClass:[ChooseSongViewController class]]) {
-
-    }else{
-
+        if (navigationController.viewControllers.count >=2) {//todo 判断已点页面不用加按钮， isKindOfClass
+                 NSLog(@"asdf");
+            [self configRightNavBtn:navigationController];
+        }
     }
-    
+
     if ([viewController isKindOfClass:[LoginViewController class]]) {
         
     }
@@ -54,6 +63,11 @@
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
 {
     return self.topPresentAnimation;
+}
+
+
+#pragma mark - ButtonAction
+- (void)rightBarButtonItemAction{
 }
 
 @end

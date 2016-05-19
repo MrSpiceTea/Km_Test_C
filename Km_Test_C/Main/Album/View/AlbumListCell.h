@@ -9,12 +9,22 @@
 #import <UIKit/UIKit.h>
 #import "AlbumModel.h"
 
+@protocol AlbumListCellMentViewDelegate;
+
 @interface AlbumListCell : UITableViewCell
+@property (strong, nonatomic) id <AlbumListCellMentViewDelegate> delegate;
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UILabel *detailLabel;
 @property (strong, nonatomic) UILabel *numLabel;
+@property (assign, nonatomic) BOOL isOpenMenu;
+@property (strong, nonatomic) UIView *menuView;
 @property (strong, nonatomic) AlbumModel *albumModel;
-- (instancetype)initWithTitle:(NSString *)title reuseIdentifier:(NSString *)reuseIdentifier;
-+ (instancetype)cellWithTabelView:(UITableView *)tableView AlbumModel:(AlbumModel *)albumModel;
+@property (strong, nonatomic) NSIndexPath *indexPath;
 + (instancetype)cellWithTabelView:(UITableView *)tableView;
+- (void)openMenu;
+@end
+
+
+@protocol AlbumListCellMentViewDelegate <NSObject>
+- (void)albumListCell:(AlbumListCell *)albumListCell didSeletedMentItemAtIndex:(NSInteger)menuItemIndex;
 @end

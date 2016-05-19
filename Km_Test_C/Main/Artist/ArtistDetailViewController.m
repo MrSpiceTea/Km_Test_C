@@ -13,6 +13,7 @@
 #import "UINavigationBar+expanded.h"
 #import <UIImageView+WebCache.h>
 @interface ArtistDetailViewController ()
+@property (nonatomic, assign) BOOL isOpen;
 @end
 
 @implementation ArtistDetailViewController
@@ -36,7 +37,6 @@
 
 - (void)setupUI{
     [self.backgroundImageView sd_setImageWithURL:[NSURL URLWithString:@"http://file.cdn.ktvme.com/jpg/f188888eee31304cca77eeed4c754a7e.jpg"] placeholderImage:[UIImage imageNamed:@"login_username"]];
-    
     UIButton *likeButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 60, 30)];
     [likeButton setImage:[UIImage imageNamed:@"singer_unfocus"] forState:UIControlStateNormal];
     [likeButton setImage:[UIImage imageNamed:@"singer_focus"] forState:UIControlStateSelected];
@@ -62,6 +62,13 @@
 #pragma mark - UITablewViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 55;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    
+    
 }
 
 #pragma mark - UITableViewDataSource

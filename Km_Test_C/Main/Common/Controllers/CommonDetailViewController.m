@@ -125,7 +125,6 @@ static const CGFloat kBackgroundImageHeight = 180;
     }
 }
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 0;
 }

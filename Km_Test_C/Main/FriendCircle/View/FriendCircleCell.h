@@ -21,10 +21,6 @@
 
 
 - (instancetype)initWithFriendCircleModel:(FriendCircleModel *)friendCircleModel reuseIdentifier:(NSString *)reuseIdentifier;
-- (instancetype)initWithTitle:(NSString *)title
-                       detail:(NSString *)detail
-                       detail:(NSString *)imageName
-              reuseIdentifier:(NSString *)reuseIdentifier;
 
 + (CGFloat)heightWithModel:(FriendCircleModel *)model;
 + (instancetype)cellWithTabelView:(UITableView *)tableView;

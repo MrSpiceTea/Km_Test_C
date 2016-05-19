@@ -15,6 +15,7 @@
 @property (nonatomic,strong) UILabel *textLegnthLabel;
 @property (nonatomic,strong) UITextView *textView;
 @property (nonatomic,strong) UIActionSheet *actionSheet;
+@property (nonatomic,strong) NSMutableArray *images;
 @end
 
 @implementation FirendCircleIssueViewController
@@ -86,19 +87,6 @@ static const CGFloat kActionViewHeight = 90.0f;
     return cell;
 }
 
-#pragma mark - UIImagePickerControllerDelegate
-- (void)imagePickerController:(UIImagePickerController *)picker
-didFinishPickingMediaWithInfo:(NSDictionary *)info{
-    //得到图片
-    UIImage * image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    //图片存入相册
-    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
-    [picker dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
-    [picker dismissViewControllerAnimated:YES completion:nil];
-}
 
 #pragma mark - UIActionSheetDelegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -119,6 +107,20 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
             [self takePhoto];
             break;
     }
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    //得到图片
+    UIImage * image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    //图片存入相册
+    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - pravite method
@@ -154,7 +156,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
     picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     picker.delegate = self;
     //设置选择后的图片可被编辑
-    picker.allowsEditing = YES;
+    picker.allowsEditing = NO;
     [self presentViewController:picker animated:YES completion:nil];
 }
 

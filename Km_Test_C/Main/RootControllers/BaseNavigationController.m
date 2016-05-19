@@ -48,8 +48,7 @@
 #pragma mark - UINavigationControllerDelegate methods
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
     if ([navigationController.viewControllers[0] isKindOfClass:[ChooseSongViewController class]]) {
-        if (navigationController.viewControllers.count >=2) {//todo 判断已点页面不用加按钮， isKindOfClass
-                 NSLog(@"asdf");
+        if (navigationController.viewControllers.count >=2) {//todo 判断已点页面不用加按钮， 
             [self configRightNavBtn:navigationController];
         }
     }

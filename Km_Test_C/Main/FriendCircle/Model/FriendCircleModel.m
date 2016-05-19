@@ -30,6 +30,13 @@
     return _imagesArray;
 }
 
+- (NSMutableArray *)likeArray{
+    if (!_likeArray) {
+        _likeArray = [NSMutableArray array];
+    }
+    return _likeArray;
+}
+
 - (NSMutableArray *)commentArray{
     if (!_commentArray) {
         _commentArray = [NSMutableArray array];
@@ -49,6 +56,7 @@
 static const CGFloat FriendCircleCellImageViewHeight = 30.0f;
 static const CGFloat FriendCircleCellTopMargin = 15.0f;
 static const CGFloat kFriendPhotoContainerViewPicMargin = 5.0f;
+
 - (CGFloat)cellHeight{
     if (!_cellHeight) {
         CGFloat textW= kSCREEN_WIDTH - FriendCircleCellImageViewHeight - FriendCircleCellTopMargin*3;

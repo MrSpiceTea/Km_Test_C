@@ -13,9 +13,12 @@
 #import "FriendCircleDetailBottomView.h"
 
 #import "FriendCircleCommentModel.h"
+#import "FriendLikeUserCell.h"
+#import "UserModel.h"
 
-@interface FirendCircleDetailViewController ()<UITableViewDelegate,UITableViewDataSource,FirendCircleCommentDelegate>
+@interface FirendCircleDetailViewController ()<UITableViewDelegate,UITableViewDataSource,FirendCircleCommentDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic,strong) UICollectionView *likeUsersView;
 @end
 
 @implementation FirendCircleDetailViewController
@@ -26,19 +29,6 @@
     [self setupUI];
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-
-//    if (!self.tabBarController.tabBar.hidden) {
-//        [self hideTabBar:self.tabBarController];
-//    }
-    self.hidesBottomBarWhenPushed = YES;
-}
-//
-//- (void)viewWillDisappear:(BOOL)animated{
-//    [super viewWillDisappear:animated];
-//    [self showTabBar:self.tabBarController];
-//}
 #pragma mark Healper
 - (void)setupUI{
     self.title  = @"详情";
@@ -63,6 +53,15 @@
     bottomView.tapblock = ^(UIButton *button){
         if (button.tag == 0) {
             button.selected = !button.selected;
+            if (button.selected) {
+                UserModel *user = [UserModel shareUser];
+                [weakSelf.model.likeArray insertObject:user atIndex:0];
+            }else{
+                if (weakSelf.model.likeArray.count>0 ) {
+                    [weakSelf.model.likeArray removeObjectAtIndex:0];
+                }
+            }
+            [weakSelf.likeUsersView reloadData];
         }else{
             FirendCircleCommentViewController *FirendCircleCommentViewVC = [[FirendCircleCommentViewController alloc]init];
             FirendCircleCommentViewVC.hidesBottomBarWhenPushed = YES;
@@ -97,7 +96,6 @@
                 return 40;
             }else{
                 FriendCircleCommentModel *commentModel = self.model.commentArray[indexPath.row - 1];
-                NSLog(@"%f",commentModel.cellHeight);
                 return commentModel.cellHeight;
             }
         }
@@ -140,9 +138,7 @@
     }else{
         cell = [[FriendCircleCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"headcell"];
         if (indexPath.row == 0) {
-            cell.textLabel.text = 0;
-            cell.imageView.image = [UIImage imageNamed:@"nearby_cardcell_praise_count"];
-            cell.contentView.backgroundColor = [UIColor whiteColor];
+            [cell.contentView addSubview:self.likeUsersView];
         }else{
             if (self.model.commentArray.count == 0) {
                 cell.textLabel.text = @"暂无评论，快来抢沙发吧";
@@ -162,6 +158,43 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+//TODO: do in FriendCircleCell
+#pragma mark Collection 
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return self.model.likeArray.count + 1;
+}
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    FriendLikeUserCell *cell =  [collectionView dequeueReusableCellWithReuseIdentifier:kCellWidhCollectionViewIdentifier forIndexPath:indexPath];
+    if (indexPath.row==0) {
+        [cell.imgView setImage:[UIImage imageNamed:@"nearby_cardcell_praise_count"]];
+    }else{
+        if (self.model.likeArray.count>=indexPath.row) {
+            UserModel *model = self.model.likeArray[indexPath.row - 1];
+            [cell setUserModel:model];
+        }else{
+            [cell setUserModel:nil];
+        }
+    }
+
+    return cell;
+}
+
+static const CGFloat kFriendLikeUserCell_Pading = 40;
+static const CGFloat kCellWidhCollectionCellWidth = 10;
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
+        return kFriendLikeUserCell_Pading;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
+    return kFriendLikeUserCell_Pading/2;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    return CGSizeMake(kCellWidhCollectionCellWidth, kCellWidhCollectionCellWidth);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{}
 
 #pragma mark - FirendCircleCommentDelegate
 - (void)textViewtext:(NSString *)text{
@@ -184,6 +217,20 @@
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _tableView;
+}
+
+- (UICollectionView *)likeUsersView{
+    if (!_likeUsersView) {
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        _likeUsersView = [[UICollectionView alloc] initWithFrame:CGRectMake(15, 0, kSCREEN_WIDTH - 15*2, 35) collectionViewLayout:layout];
+        _likeUsersView.scrollEnabled = NO;
+//        [_likeUsersView setBackgroundView:nil];
+        _likeUsersView.backgroundColor = kCommonTableViewBavkgroundColor;
+        _likeUsersView.dataSource = self;
+        _likeUsersView.delegate = self;
+        [_likeUsersView registerClass:[FriendLikeUserCell class] forCellWithReuseIdentifier:kCellWidhCollectionViewIdentifier];
+    }
+    return _likeUsersView;
 }
 
 #pragma mark - Target Action

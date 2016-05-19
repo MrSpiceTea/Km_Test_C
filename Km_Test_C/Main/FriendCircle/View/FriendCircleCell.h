@@ -19,9 +19,6 @@
 @property (nonatomic,strong) FriendCircleModel *model;
 @property (nonatomic,strong) FriendPhotoContainerView *friendPhotoContainerView;
 
-
-- (instancetype)initWithFriendCircleModel:(FriendCircleModel *)friendCircleModel reuseIdentifier:(NSString *)reuseIdentifier;
-
-+ (CGFloat)heightWithModel:(FriendCircleModel *)model;
+//+ (CGFloat)heightWithModel:(FriendCircleModel *)model;
 + (instancetype)cellWithTabelView:(UITableView *)tableView;
 @end

@@ -152,7 +152,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.title = @"选择照片";
-    [picker.navigationBar setBackgroundImage:[UIImage createImageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
+    [picker.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
     picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     picker.delegate = self;
     //设置选择后的图片可被编辑
@@ -222,7 +222,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
         dic[@"text"] = self.textView.text;
         dic[@"distan"] = @"300km";
         dic[@"createdAt"] = @"公元前";
-        dic[@"profileImageUrl"] = @"张学友";
+        dic[@"profileImageUrl"] = @"zhangxueyou";
         dic[@"images"] = nil;
         
         NSMutableArray *plistarray  = [NSMutableArray arrayWithContentsOfFile:kFriendCircleListPath];

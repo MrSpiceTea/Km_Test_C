@@ -51,6 +51,8 @@
 		513989EC1CE2E1C0006C10C8 /* CommonZoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513989EB1CE2E1C0006C10C8 /* CommonZoneViewController.m */; };
 		5139DAA01CDB2C7000C7F931 /* listview_header_footer_loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5139DA9F1CDB2C7000C7F931 /* listview_header_footer_loading.gif */; };
 		5139DAA31CDB2EB100C7F931 /* listview_header_foot_drag_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5139DAA21CDB2EB100C7F931 /* listview_header_foot_drag_icon.png */; };
+		513B66E41CED679700ECB7D0 /* NSString+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 513B66E31CED679700ECB7D0 /* NSString+expanded.m */; };
+		513B66E71CED9D5200ECB7D0 /* FriendLikeUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 513B66E61CED9D5200ECB7D0 /* FriendLikeUserCell.m */; };
 		513C20D11CD33A7600A6A886 /* HeaderInsetTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 513C20D01CD33A7600A6A886 /* HeaderInsetTableView.m */; };
 		513CD6C11CE420B500841BCD /* FirendCircleCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513CD6C01CE420B500841BCD /* FirendCircleCommentViewController.m */; };
 		513CD6CA1CE432CB00841BCD /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 513CD6C81CE432CB00841BCD /* CommentTableViewCell.m */; };
@@ -237,6 +239,10 @@
 		5139DA881CDB2B1E00C7F931 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		5139DA9F1CDB2C7000C7F931 /* listview_header_footer_loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = listview_header_footer_loading.gif; sourceTree = "<group>"; };
 		5139DAA21CDB2EB100C7F931 /* listview_header_foot_drag_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = listview_header_foot_drag_icon.png; sourceTree = "<group>"; };
+		513B66E21CED679700ECB7D0 /* NSString+expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+expanded.h"; sourceTree = "<group>"; };
+		513B66E31CED679700ECB7D0 /* NSString+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+expanded.m"; sourceTree = "<group>"; };
+		513B66E51CED9D5200ECB7D0 /* FriendLikeUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendLikeUserCell.h; sourceTree = "<group>"; };
+		513B66E61CED9D5200ECB7D0 /* FriendLikeUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendLikeUserCell.m; sourceTree = "<group>"; };
 		513C20CF1CD33A7600A6A886 /* HeaderInsetTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderInsetTableView.h; sourceTree = "<group>"; };
 		513C20D01CD33A7600A6A886 /* HeaderInsetTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderInsetTableView.m; sourceTree = "<group>"; };
 		513CD6BF1CE420B500841BCD /* FirendCircleCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirendCircleCommentViewController.h; sourceTree = "<group>"; };
@@ -755,6 +761,8 @@
 			children = (
 				5162AA851CCF46C3008317D1 /* FriendCircleCell.h */,
 				5162AA861CCF46C3008317D1 /* FriendCircleCell.m */,
+				513B66E51CED9D5200ECB7D0 /* FriendLikeUserCell.h */,
+				513B66E61CED9D5200ECB7D0 /* FriendLikeUserCell.m */,
 				5162AAA81CCF58A8008317D1 /* FriendCircleHeaderView.h */,
 				5162AAA91CCF58A8008317D1 /* FriendCircleHeaderView.m */,
 				5162AAAB1CCF5CF0008317D1 /* FriendCircleHeaderView.xib */,
@@ -1113,6 +1121,8 @@
 				51DE668D1CCA28E9001F0BAC /* UINavigationBar+expanded.m */,
 				5186088A1CE038E10066E0D6 /* NSDictionary+Utilities.h */,
 				5186088B1CE038E10066E0D6 /* NSDictionary+Utilities.m */,
+				513B66E21CED679700ECB7D0 /* NSString+expanded.h */,
+				513B66E31CED679700ECB7D0 /* NSString+expanded.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1460,6 +1470,7 @@
 				514D2BA91CDB375F00A12073 /* FriendPhotoContainerView.m in Sources */,
 				513E5B1C1CE9633200F9B60A /* KM_NetAPIManager.m in Sources */,
 				513E5B1D1CE9633E00F9B60A /* KM_NetAPIClient.m in Sources */,
+				513B66E71CED9D5200ECB7D0 /* FriendLikeUserCell.m in Sources */,
 				513989EC1CE2E1C0006C10C8 /* CommonZoneViewController.m in Sources */,
 				513CD6C11CE420B500841BCD /* FirendCircleCommentViewController.m in Sources */,
 				3560131B1CCA922600DE2275 /* BaseViewController.m in Sources */,
@@ -1507,6 +1518,7 @@
 				35E68FF61CCCD18D003F1AC7 /* DiscoverViewController.m in Sources */,
 				35E68FFC1CCD1219003F1AC7 /* ChosseSongSearchView.m in Sources */,
 				51DE66881CCA2781001F0BAC /* UIColor+expanded.m in Sources */,
+				513B66E41CED679700ECB7D0 /* NSString+expanded.m in Sources */,
 				356013261CCA9E3500DE2275 /* MeViewController.m in Sources */,
 				517D094E1CCE2698007EA37D /* ChooseAlwaysViewController.m in Sources */,
 				51DE668E1CCA28E9001F0BAC /* UINavigationBar+expanded.m in Sources */,

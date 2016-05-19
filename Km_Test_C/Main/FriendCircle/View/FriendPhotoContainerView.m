@@ -73,7 +73,30 @@ static const CGFloat kFriendPhotoContainerViewPicMargin = 5.0f;
     CGRect frame = self.frame;
     frame.size = CGSizeMake(width, height);
     self.frame = frame;
-    self.backgroundColor = [UIColor redColor];
+}
+
+- (CGFloat)heightWidthImages:(NSArray *)images{
+    if (images>0) {
+        CGFloat itemW = [self itemWidthForPicPathArray:images];
+        CGFloat itemH = 0;
+        if (images.count == 1) {
+            UIImage *image = [UIImage imageNamed:images.firstObject];
+            if (image.size.width) {
+                itemH = image.size.height / image.size.width * itemW;
+            }
+            if (image.size.width) {
+                itemH = image.size.height / image.size.width * itemW;
+            }
+        } else {
+            itemH = itemW;
+        }
+        long perRowItemCount = [self rowCountForImagesArray:images];
+        int columnCount = ceilf(images.count * 1.0 / perRowItemCount);
+        CGFloat height = columnCount * itemH + (columnCount - 1) * kFriendPhotoContainerViewPicMargin;
+        return height;
+    }else{
+        return 0;
+    }
 }
 
 #pragma mark - private actions

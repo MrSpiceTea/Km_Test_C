@@ -14,8 +14,10 @@
 #import "FriendCircleCommentModel.h"
 #import "FriendCircleCell.h"
 #import "PeoPleListCell.h"
-#import "SegmentedView.h"
+#import "SegmentedView.h" 
+#import "UserModel.h"
 #import "MJRefresh.h"
+
 
 @interface FirendCircleViewController ()<UITableViewDataSource,UITableViewDelegate,FirendCircleIssueDelegate>
 @property (nonatomic,strong) UITableView *tableView;
@@ -105,7 +107,10 @@
     commentModel2.content =  @"测 is hi测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试";
     commentModel2.profileImageUrl = @"zhangxueyou";
     
-    NSMutableArray *commentModelArray = [NSMutableArray arrayWithObjects:commentModel,commentModel2,commentMode3, nil];
+//    NSMutableArray *commentModelArray = [NSMutableArray arrayWithObjects:commentModel,commentModel2,commentMode3, nil];
+    UserModel *user = [[UserModel alloc]init];
+    user.profileImageUrl = @"zhangxueyou";
+    
     
     for (NSDictionary *dic in array) {
         FriendCircleModel *model1 = [[FriendCircleModel alloc] init];
@@ -116,6 +121,7 @@
         model1.distan = dic[@"distan"];
         model1.createdAt = dic[@"createdAt"];
         model1.imagesArray = dic[@"images"];
+        [model1.likeArray addObject:user];
 //        model1.commentArray = commentModelArray;
 
         [self.dataSource addObject:model1];
@@ -270,7 +276,7 @@
     FirendCircleIssueViewController *firendCircleIssueVC = [[FirendCircleIssueViewController alloc]init];
     BaseNavigationController *firendCircleIssueVCnav = [[BaseNavigationController alloc]initWithRootViewController:firendCircleIssueVC];
     firendCircleIssueVC.delegate = self;
-    [self.parentViewController presentViewController:firendCircleIssueVCnav animated:YES completion:nil];
+    [self presentViewController:firendCircleIssueVCnav animated:YES completion:nil];
 }
 
 #pragma mark - Getter/Setter

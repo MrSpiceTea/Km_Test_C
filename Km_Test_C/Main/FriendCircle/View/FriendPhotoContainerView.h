@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface FriendPhotoContainerView : UIView
-
 @property (nonatomic, strong) NSArray *picUrlStringsArray;
 
+- (CGFloat)heightWidthImages:(NSArray *)images;
+- (CGFloat)itemWidthForPicPathArray:(NSArray *)array;
+- (NSInteger)rowCountForImagesArray:(NSArray *)array;
 @end

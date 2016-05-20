@@ -13,11 +13,13 @@
 #import "ChatViewController.h"
 #import "FirendCircleViewController.h"
 #import "DiscoverViewController.h"
+#import "LoginViewController.h"
 
+#import "TopPresentAnimation.h"
 #import "UIImage+expanded.h"
 
 @interface RootViewController ()<UINavigationControllerDelegate>
-
+@property (nonatomic,strong) TopPresentAnimation *topPresentAnimation;
 @end
 
 @implementation RootViewController
@@ -25,6 +27,7 @@
 #pragma mark - Life Clycle
 - (instancetype)init{
     if (self = [super init]) {
+          _topPresentAnimation = [TopPresentAnimation new];
         [self setupViewControllers];
     }
     return self;
@@ -64,6 +67,7 @@
     tabBarItem.selectedImage = [[UIImage imageNamed:@"bottomview_near_hl"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
     navVc.tabBarItem = tabBarItem;
+    navVc.delegate = self;
     [controllers addObject:navVc];
     
     navVc = [[BaseNavigationController alloc]initWithRootViewController:chatVC];
@@ -72,6 +76,7 @@
     tabBarItem.selectedImage = [[UIImage imageNamed:@"bottomview_chat_hl"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
     navVc.tabBarItem = tabBarItem;
+    navVc.delegate = self;
     [controllers addObject:navVc];
     
     navVc = [[BaseNavigationController alloc]initWithRootViewController:chooseSongVC];
@@ -79,6 +84,7 @@
     tabBarItem.image = [[UIImage imageNamed:@"bottomview_k"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     tabBarItem.selectedImage = [[UIImage imageNamed:@"bottomview_k_hl"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     navVc.tabBarItem = tabBarItem;
+    navVc.delegate = self;
     [controllers addObject:navVc];
     
     navVc = [[BaseNavigationController alloc]initWithRootViewController:discoverVC];
@@ -87,6 +93,7 @@
     tabBarItem.selectedImage = [[UIImage imageNamed:@"bottomview_safari_hl"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
     navVc.tabBarItem = tabBarItem;
+    navVc.delegate = self;
     [controllers addObject:navVc];
     
     navVc = [[BaseNavigationController alloc]initWithRootViewController:meVC];
@@ -97,6 +104,7 @@
     tabBarItem.selectedImage = [[UIImage imageNamed:@"bottomview_me_hl"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
     navVc.tabBarItem = tabBarItem;
+    navVc.delegate = self;
     [controllers addObject:navVc];
 
     [self setViewControllers:controllers];
@@ -107,14 +115,44 @@
     return  [[UIImage scaleToSize:[UIImage imageNamed:name] size:CGSizeMake(60, 60)] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
 
+
+
+- (void)configRightNavBtn:(UINavigationController *)navigationController {
+    if (!navigationController.navigationItem.rightBarButtonItem) {
+        //???: no add
+        [navigationController.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"selected_tip"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemAction)] animated:NO];
+    }
+}
+
 #pragma mark - UINavigationControllerDelegate methods
-//- (id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
-//    NSLog(@"%@",[fromVC class]);
-//    return nil;
-//}
-//
-//- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
-//    NSLog(@"123");
-//}
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    if ([navigationController.viewControllers[0] isKindOfClass:[ChooseSongViewController class]]) {
+        if (navigationController.viewControllers.count >=2) {//todo 判断已点页面不用加按钮，
+            [self configRightNavBtn:navigationController];
+        }
+    }
+    
+    if ([viewController isKindOfClass:[LoginViewController class]]) {
+        
+    }
+}
+
+- (nullable id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
+                                            animationControllerForOperation:(UINavigationControllerOperation)operation
+                                                         fromViewController:(UIViewController *)fromVC
+                                                           toViewController:(UIViewController *)toVC{
+    if (operation == UINavigationControllerOperationPush) {
+//        return self.topPresentAnimation;
+    }else if (operation == UINavigationControllerOperationPop){
+        
+    }
+    return nil;
+}
+
+
+#pragma mark - ButtonAction
+- (void)rightBarButtonItemAction{
+}
+
 
 @end

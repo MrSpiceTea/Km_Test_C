@@ -66,6 +66,8 @@
 		513E5B1C1CE9633200F9B60A /* KM_NetAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DF31CDC952200C084E7 /* KM_NetAPIManager.m */; };
 		513E5B1D1CE9633E00F9B60A /* KM_NetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DF81CDC98DB00C084E7 /* KM_NetAPIClient.m */; };
 		513E5B1E1CE9635800F9B60A /* KM_APIRequestAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DFB1CDC9C6400C084E7 /* KM_APIRequestAgent.m */; };
+		5140FF461CEF038800CADD04 /* SwipeUpInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5140FF451CEF038800CADD04 /* SwipeUpInteractiveTransition.m */; };
+		5140FF491CEF0C6200CADD04 /* NormalDismissAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5140FF481CEF0C6200CADD04 /* NormalDismissAnimation.m */; };
 		5145BE571CE566C20025DB10 /* ChatSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145BE561CE566C20025DB10 /* ChatSessionViewController.m */; };
 		5145BE611CE570ED0025DB10 /* CommonDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145BE5C1CE570ED0025DB10 /* CommonDataSource.m */; };
 		5145BE651CE5713A0025DB10 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145BE641CE5713A0025DB10 /* MessageModel.m */; };
@@ -262,6 +264,10 @@
 		513E5B161CE9629B00F9B60A /* KMAbstractObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMAbstractObject.m; sourceTree = "<group>"; };
 		513E5B181CE962A300F9B60A /* CommonAbstractObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonAbstractObject.h; sourceTree = "<group>"; };
 		513E5B191CE962A300F9B60A /* CommonAbstractObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonAbstractObject.m; sourceTree = "<group>"; };
+		5140FF441CEF038800CADD04 /* SwipeUpInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeUpInteractiveTransition.h; sourceTree = "<group>"; };
+		5140FF451CEF038800CADD04 /* SwipeUpInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeUpInteractiveTransition.m; sourceTree = "<group>"; };
+		5140FF471CEF0C6200CADD04 /* NormalDismissAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalDismissAnimation.h; sourceTree = "<group>"; };
+		5140FF481CEF0C6200CADD04 /* NormalDismissAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalDismissAnimation.m; sourceTree = "<group>"; };
 		5145BE551CE566C20025DB10 /* ChatSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatSessionViewController.h; sourceTree = "<group>"; };
 		5145BE561CE566C20025DB10 /* ChatSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatSessionViewController.m; sourceTree = "<group>"; };
 		5145BE5B1CE570ED0025DB10 /* CommonDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDataSource.h; sourceTree = "<group>"; };
@@ -504,6 +510,10 @@
 			children = (
 				3568ECBA1CDF406400A56133 /* TopPresentAnimation.h */,
 				3568ECBB1CDF406400A56133 /* TopPresentAnimation.m */,
+				5140FF471CEF0C6200CADD04 /* NormalDismissAnimation.h */,
+				5140FF481CEF0C6200CADD04 /* NormalDismissAnimation.m */,
+				5140FF441CEF038800CADD04 /* SwipeUpInteractiveTransition.h */,
+				5140FF451CEF038800CADD04 /* SwipeUpInteractiveTransition.m */,
 			);
 			path = ViewControllerAnimated;
 			sourceTree = "<group>";
@@ -1477,6 +1487,7 @@
 			files = (
 				514D2BA91CDB375F00A12073 /* FriendPhotoContainerView.m in Sources */,
 				513E5B1C1CE9633200F9B60A /* KM_NetAPIManager.m in Sources */,
+				5140FF491CEF0C6200CADD04 /* NormalDismissAnimation.m in Sources */,
 				513E5B1D1CE9633E00F9B60A /* KM_NetAPIClient.m in Sources */,
 				513B66E71CED9D5200ECB7D0 /* FriendLikeUserCell.m in Sources */,
 				513989EC1CE2E1C0006C10C8 /* CommonZoneViewController.m in Sources */,
@@ -1522,6 +1533,7 @@
 				3568ECB51CDF388100A56133 /* ChooseBaseViewController.m in Sources */,
 				35E095971CE8C909008D3F19 /* UserModel.m in Sources */,
 				513571A41CDC355E00E600DE /* ArtistModel.m in Sources */,
+				5140FF461CEF038800CADD04 /* SwipeUpInteractiveTransition.m in Sources */,
 				51F7C3151CD08CAA002BEB8F /* ArtistClassCell.m in Sources */,
 				35E68FF61CCCD18D003F1AC7 /* DiscoverViewController.m in Sources */,
 				35E68FFC1CCD1219003F1AC7 /* ChosseSongSearchView.m in Sources */,

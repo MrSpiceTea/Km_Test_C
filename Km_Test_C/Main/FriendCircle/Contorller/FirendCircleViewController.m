@@ -19,7 +19,7 @@
 #import "MJRefresh.h"
 
 
-@interface FirendCircleViewController ()<UITableViewDataSource,UITableViewDelegate,FirendCircleIssueDelegate>
+@interface FirendCircleViewController ()<UITableViewDataSource,UITableViewDelegate,FirendCircleIssueDelegate,FriendPhotoContainerViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) UITableView *peopleTablewView;
 @property (nonatomic,strong) UIScrollView *scrollView;;
@@ -230,6 +230,7 @@
             cell = [FriendCircleCell cellWithTabelView:tableView];
             FriendCircleModel *model = self.dataSource[indexPath.row - 1];
             [cell setModel:model];
+            cell.friendPhotoContainerView.delegate = self;
         }
         return cell;
     }else if([tableView isEqual:self.peopleTablewView]){
@@ -262,6 +263,10 @@
         [self.navigationController pushViewController:peopleInformationVC animated:YES];
         peopleInformationVC.hidesBottomBarWhenPushed = NO;
     }
+}
+#pragma mark - FriendPhotoContainerViewDelegate
+- (void)imageTapAtIndex:(NSUInteger)index{
+    NSLog(@"%lu",index);
 }
 
 #pragma mark - FirendCircleIssueDelegate

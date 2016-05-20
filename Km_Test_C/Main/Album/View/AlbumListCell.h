@@ -12,7 +12,7 @@
 @protocol AlbumListCellMentViewDelegate;
 
 @interface AlbumListCell : UITableViewCell
-@property (strong, nonatomic) id <AlbumListCellMentViewDelegate> delegate;
+@property (weak, nonatomic) id <AlbumListCellMentViewDelegate> delegate;
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UILabel *detailLabel;
 @property (strong, nonatomic) UILabel *numLabel;

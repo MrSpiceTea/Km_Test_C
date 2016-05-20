@@ -135,7 +135,7 @@ static const CGFloat FriendCircleCellTopMargin = 15.0f;
     [[UIBezierPath bezierPathWithRoundedRect:self.headerImageView .bounds
                                 cornerRadius:10.0] addClip];
     [image drawInRect:self.headerImageView.bounds];
-    self.headerImageView .image = UIGraphicsGetImageFromCurrentImageContext();
+    self.headerImageView.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
     self.friendPhotoContainerView.picUrlStringsArray = model.imagesArray;

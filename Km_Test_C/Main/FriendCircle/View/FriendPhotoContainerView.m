@@ -17,6 +17,7 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
+        self.backgroundColor = [UIColor clearColor];
         [self setupUI];
     }
     return self;
@@ -27,11 +28,12 @@
     NSMutableArray *temp = [NSMutableArray new];
     for (int i = 0; i < 9; i++) {
         UIImageView *imageView = [UIImageView new];
-        [self addSubview:imageView];
         imageView.userInteractionEnabled = YES;
         imageView.tag = i;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImageView:)];
         [imageView addGestureRecognizer:tap];
+        
+        [self addSubview:imageView];
         [temp addObject:imageView];
     }
     self.imageViewsArray = [temp copy];
@@ -102,7 +104,7 @@ static const CGFloat kFriendPhotoContainerViewPicMargin = 5.0f;
 #pragma mark - private actions
 - (void)tapImageView:(UITapGestureRecognizer *)tap
 {
-    
+    [self.delegate imageTapAtIndex:tap.view.tag];
 }
 
 - (CGFloat)itemWidthForPicPathArray:(NSArray *)array

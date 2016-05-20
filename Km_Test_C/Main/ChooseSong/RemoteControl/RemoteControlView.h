@@ -15,5 +15,5 @@
 @interface RemoteControlView : UIView{
 //    id<RemoteControlDelegate> delegate;
 }
-@property(assign,nonatomic)id<RemoteControlDelegate> delegate;
+@property(weak,nonatomic)id<RemoteControlDelegate> delegate;
 @end

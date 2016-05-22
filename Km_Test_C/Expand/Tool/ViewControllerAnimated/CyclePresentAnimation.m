@@ -8,6 +8,10 @@
 
 #import "CyclePresentAnimation.h"
 
+@interface CyclePresentAnimation (){
+    id<UIViewControllerContextTransitioning> _transitionContext;
+}
+@end
 
 @implementation CyclePresentAnimation
 
@@ -44,7 +48,7 @@
 //        [transitionContext completeTransition:YES];
 //    }];
 //
-    
+    _transitionContext = transitionContext;
     switch (_type) {
         case CyclePresentTransitionTypePresent:
             [self presentAnimation:transitionContext];
@@ -58,7 +62,6 @@
 }
     
 - (void)presentAnimation:(id<UIViewControllerContextTransitioning>)transitionContext{
-    
     UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     //拿到控制器获取button的frame来设置动画的开始结束的路径
     //    UINavigationController *fromVC = (UINavigationController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
@@ -96,7 +99,7 @@
     
     
     
-    [transitionContext completeTransition:YES];
+//    [transitionContext completeTransition:YES];
 
 }
 
@@ -128,9 +131,15 @@
     [maskLayerAnimation setValue:transitionContext forKey:@"transitionContext"];
     [maskLayer addAnimation:maskLayerAnimation forKey:@"path"];
     
-    [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+//    [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
 
     
+}
+
+- (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag
+{
+    NSLog(@"end");
+    [_transitionContext completeTransition:YES];
 }
 @end
 

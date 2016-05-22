@@ -8,12 +8,23 @@
 
 #import "RemoteControlViewController.h"
 #import "RemoteControlView.h"
-
-@interface RemoteControlViewController ()<RemoteControlDelegate>
+#import "CyclePresentAnimation.h"
+@interface RemoteControlViewController ()<RemoteControlDelegate,UIViewControllerTransitioningDelegate>
 
 @end
 
 @implementation RemoteControlViewController
+
+//- (instancetype)init
+//{
+//    self = [super init];
+//    if (self) {
+//        self.transitioningDelegate = self;
+//        self.modalPresentationStyle = UIModalPresentationCustom;
+//    }
+//    return self;
+//}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,7 +52,21 @@
 }
 
 - (void)RemoteControlButtonAction:(UIButton *)button{
-    [self.navigationController popViewControllerAnimated:NO];
+//    [self.navigationController popViewControllerAnimated:NO];
+    [self dismissViewControllerAnimated:YES completion:nil];
+//    [self.delegate dismissViewController:self];
 }
+
+
+//- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
+//    //    return self.cyclePresentAnimation;
+//    return [CyclePresentAnimation transitionWithTransitionType:CyclePresentTransitionTypePresent];
+//}
+//
+//- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
+//    return [CyclePresentAnimation transitionWithTransitionType:CyclePresentTransitionTypeDismiss];
+//}
+
+
 
 @end

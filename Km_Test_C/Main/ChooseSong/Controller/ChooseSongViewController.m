@@ -51,7 +51,7 @@ static const CGFloat kTimerInterval = 5.0f;
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self.navigationController.navigationBar cnReset];
+//    [self.navigationController.navigationBar cnReset];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];//状态栏
 }
 

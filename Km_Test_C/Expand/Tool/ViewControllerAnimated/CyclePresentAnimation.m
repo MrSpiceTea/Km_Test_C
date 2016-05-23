@@ -139,7 +139,7 @@
 - (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag
 {
     NSLog(@"end");
-    [_transitionContext completeTransition:YES];
+//    [_transitionContext completeTransition:YES];
 }
 @end
 

@@ -53,17 +53,13 @@
     return _hoverButton;
 }
 
-- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
-//    return self.cyclePresentAnimation;
-    return [CyclePresentAnimation transitionWithTransitionType:CyclePresentTransitionTypePresent];
-}
-
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
-    return [CyclePresentAnimation transitionWithTransitionType:CyclePresentTransitionTypeDismiss];
-}
-
-//- (void)dismissViewController:(UIViewController *)viewController{
-//    [viewController dismissViewControllerAnimated:YES completion:nil];
-//    
+//- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
+////    return self.cyclePresentAnimation;
+//    return [CyclePresentAnimation transitionWithTransitionType:CyclePresentTransitionTypePresent];
 //}
+//
+//- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
+//    return [CyclePresentAnimation transitionWithTransitionType:CyclePresentTransitionTypeDismiss];
+//}
+
 @end

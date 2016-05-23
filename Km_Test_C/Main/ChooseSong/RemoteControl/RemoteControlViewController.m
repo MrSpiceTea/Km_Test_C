@@ -9,27 +9,18 @@
 #import "RemoteControlViewController.h"
 #import "RemoteControlView.h"
 #import "CyclePresentAnimation.h"
+#import "UINavigationBar+expanded.h"
 @interface RemoteControlViewController ()<RemoteControlDelegate,UIViewControllerTransitioningDelegate>
 
 @end
 
 @implementation RemoteControlViewController
 
-//- (instancetype)init
-//{
-//    self = [super init];
-//    if (self) {
-//        self.transitioningDelegate = self;
-//        self.modalPresentationStyle = UIModalPresentationCustom;
-//    }
-//    return self;
-//}
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+//    self.view.backgroundColor = [UIColor whiteColor];
+
     RemoteControlView *remoteView = [[RemoteControlView alloc]init];
     remoteView.delegate = self;
     [self.view addSubview:remoteView];
@@ -38,12 +29,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.hidden = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    self.navigationController.navigationBar.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {

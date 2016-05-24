@@ -23,13 +23,6 @@
     return self;
 }
 
-- (NSMutableArray *)content{
-    if (!_content) {
-        _content = [NSMutableArray array];
-    }
-    return _content;
-}
-
 - (NSMutableArray *)imagesArray{
     if (!_imagesArray) {
         _imagesArray = [NSMutableArray array];

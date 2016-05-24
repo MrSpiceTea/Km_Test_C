@@ -16,9 +16,11 @@
 #define kFriendCircleCell_PadingLeft 15
 #define kFriendCircleCell_PadingRight 15
 #define kFriendCircleCell_PadingTop  15.0
-#define kFriendCircleCell_ContentWidth (kSCREEN_WIDTH - kFriendCircleCell_PadingLeft - kFriendCircleCell_PadingRight)
-#define kFriendCircleCell_ImageViewHeight   30.0f
+#define kFriendCircleCell_HeadImageViewHeight   30.0f
 #define kFriendCircleCell_ContentMaxHeight 200.0
+#define kFriendCircleCell_ContentX kFriendCircleCell_PadingLeft*2 +kFriendCircleCell_HeadImageViewHeight
+#define kFriendCircleCell_ContentWidth kSCREEN_WIDTH - kFriendCircleCell_ContentX - kFriendCircleCell_PadingRight*6
+#define kFriendCircleCell_MediaImageViewHeight  (kFriendCircleCell_ContentWidth - 6)/3
 
 
 @interface FriendCircleCell()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
@@ -61,15 +63,16 @@
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         self.backgroundColor = kCommonTableViewBavkgroundColor;
         
+        NSLog(@"kFriendCircleCell_ContentWidth %f",kFriendCircleCell_ContentWidth);
         if (!_headerImageView) {
             _headerImageView = [UIImageView new];
-            [_headerImageView setFrame:CGRectMake(kFriendCircleCell_PadingLeft, kFriendCircleCell_PadingTop, kFriendCircleCell_ImageViewHeight, kFriendCircleCell_ImageViewHeight)];
+            [_headerImageView setFrame:CGRectMake(kFriendCircleCell_PadingLeft, kFriendCircleCell_PadingTop, kFriendCircleCell_HeadImageViewHeight, kFriendCircleCell_HeadImageViewHeight)];
             [self.contentView addSubview:_headerImageView];
         }
         
         if (!_userNameLabel) {
             _userNameLabel = [UILabel new];
-            [_userNameLabel setFrame:CGRectMake(CGRectGetMaxX(_headerImageView.frame) + kFriendCircleCell_PadingLeft, kFriendCircleCell_PadingTop, 50, 20)];
+            [_userNameLabel setFrame:CGRectMake(kFriendCircleCell_ContentX, kFriendCircleCell_PadingTop, 50, 20)];
             [_userNameLabel setFont:[UIFont systemFontOfSize:13]];
             [self.contentView addSubview:_userNameLabel];
         }
@@ -77,7 +80,7 @@
         
         if (!_distanceLabel) {
             _distanceLabel = [UILabel new];
-            [_distanceLabel setFrame:CGRectMake(CGRectGetMaxX(_headerImageView.frame) + kFriendCircleCell_PadingLeft,CGRectGetMaxY(_userNameLabel.frame), 50, 20)];
+            [_distanceLabel setFrame:CGRectMake(kFriendCircleCell_ContentX,CGRectGetMaxY(_userNameLabel.frame), 50, 20)];
             [_distanceLabel setFont:[UIFont systemFontOfSize:9]];
             [_distanceLabel setTextColor:[UIColor orangeColor]];
             [self.contentView addSubview:_distanceLabel];
@@ -101,7 +104,7 @@
         
         if (!_detailLabel) {
             _detailLabel = [UILabel new];
-            [_detailLabel setFrame:CGRectMake(CGRectGetMaxX(_headerImageView.frame) + kFriendCircleCell_PadingLeft, CGRectGetMaxY(_distanceLabel.frame), kFriendCircleCell_ContentWidth, 20)];
+            [_detailLabel setFrame:CGRectMake(kFriendCircleCell_ContentX, CGRectGetMaxY(_distanceLabel.frame), kFriendCircleCell_ContentWidth, 20)];
             [_detailLabel setFont:[UIFont systemFontOfSize:13.5]];
             _detailLabel.numberOfLines = 0;
             [self.contentView addSubview:_detailLabel];
@@ -131,19 +134,18 @@
             [self.contentView addSubview:_detailCmtikeButton];
         }
         
-        //        if (!self.mediaView) {
-        //            UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-        //            self.mediaView = [[UICollectionView alloc] initWithFrame:CGRectMake(kFriendCircleCell_PadingLeft, 0, kFriendCircleCell_ContentWidth, 80) collectionViewLayout:layout];
-        //            self.mediaView.scrollEnabled = NO;
-        //            [self.mediaView setBackgroundView:nil];
-        //            [self.mediaView setBackgroundColor:[UIColor clearColor]];
-        //            [self.mediaView registerClass:[FriendCircleMediaCell class] forCellWithReuseIdentifier:kCCellIdentifier_FriendCircleMediaCell];
-        //
-        //            self.mediaView.dataSource = self;
-        //            self.mediaView.delegate = self;
-        //            [self.contentView addSubview:self.mediaView];
-        //        }
-        //
+        if (!self.mediaView) {
+            UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+            self.mediaView = [[UICollectionView alloc] initWithFrame:CGRectMake(kFriendCircleCell_ContentX, 0, kFriendCircleCell_ContentWidth, 80) collectionViewLayout:layout];
+            self.mediaView.scrollEnabled = NO;
+            [self.mediaView setBackgroundView:nil];
+            [self.mediaView setBackgroundColor:[UIColor clearColor]];
+            [self.mediaView registerClass:[FriendCircleMediaCell class] forCellWithReuseIdentifier:kCCellIdentifier_FriendCircleMediaCell];
+            self.mediaView.dataSource = self;
+            self.mediaView.delegate = self;
+            [self.contentView addSubview:self.mediaView];
+        }
+        
         
     }
     return self;
@@ -172,8 +174,8 @@
     
     CGFloat curBottomY = CGRectGetMaxY(self.detailLabel.frame);
     if (model.imagesArray.count>0) {
-        CGFloat mediaHeight = [[self class] contentHeightWithModel:model];
-        [self.mediaView setFrame:CGRectMake(kFriendCircleCell_PadingLeft, curBottomY, kFriendCircleCell_ContentWidth, mediaHeight)];
+        CGFloat mediaHeight = [[self class] contentMediaHeightWithTweet:model];
+        [self.mediaView setFrame:CGRectMake(kFriendCircleCell_ContentX, curBottomY, kFriendCircleCell_ContentWidth, mediaHeight)];
         [self.mediaView reloadData];
         self.mediaView.hidden = NO;
         curBottomY += mediaHeight;
@@ -186,12 +188,25 @@
     [self.detailCmtikeButton setY:curBottomY];
 }
 
++ (CGFloat)contentMediaHeightWithTweet:(FriendCircleModel *)model{
+    CGFloat contentMediaHeight = 0;
+    NSInteger mediaCount = model.imagesArray.count;
+    if (mediaCount > 0) {
+        if (mediaCount == 1) {
+            
+        }else{
+            return ceilf((float)mediaCount/3)*kFriendCircleCell_MediaImageViewHeight;
+        }
+    }
+    return contentMediaHeight;
+    return 0;
+}
 
 + (CGFloat)heightWithModel:(FriendCircleModel *)model {
     CGFloat cellHeight = 0;
     cellHeight += kFriendCircleCell_PadingTop;
     cellHeight += 40;
-    cellHeight += [self contentHeightWithModel:model];
+    cellHeight += 300; //[self contentHeightWithModel:model];
     cellHeight += [self mediatHeightWithModel:model];
     cellHeight += kFriendCircleCell_PadingTop;
     cellHeight += 20;
@@ -227,22 +242,23 @@
     return row;
 }
 
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
+}
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     if (collectionView == _mediaView) {
         FriendCircleMediaCell *ccell = [collectionView dequeueReusableCellWithReuseIdentifier:kCCellIdentifier_FriendCircleMediaCell forIndexPath:indexPath];
-        
-//        UIImageView *imgView= [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-//        imgView.layer.masksToBounds = YES;
-//        imgView.layer.cornerRadius = 50/2;
-//        [ccell.contentView addSubview:imgView];
-        ccell.contentView.backgroundColor = [UIColor blackColor];
+        UIImageView *imgView= [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kFriendCircleCell_MediaImageViewHeight, kFriendCircleCell_MediaImageViewHeight)];
+        [imgView setImage:[UIImage imageNamed:self.model.imagesArray[indexPath.row]]];
+        [ccell.contentView addSubview:imgView];
+//        ccell.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1];
         return ccell;
     }else{
         
     }
     return nil;
 }
-
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
     if (collectionView == _mediaView) {
@@ -251,12 +267,25 @@
         return kFriendCircleCell_PadingLeft;
     }
 }
+
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
     if (collectionView == _mediaView) {
-        return 3.0;
+        return 2.0;
     }else{
         return kFriendCircleCell_PadingLeft/2;
     }
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+    return UIEdgeInsetsMake(5, 0, 0, 0);
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    return CGSizeMake(kFriendCircleCell_MediaImageViewHeight, kFriendCircleCell_MediaImageViewHeight);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"%ld",indexPath.row);
 }
 
 

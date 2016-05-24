@@ -32,7 +32,7 @@ typedef NS_ENUM(NSUInteger, FriendCircleModelMessageType) {
 @property (nonatomic,strong) NSMutableArray *imagesArray;
 @property (nonatomic,strong) NSMutableArray *commentArray;//评论
 @property (nonatomic,strong) NSMutableArray *likeArray;//赞
-@property (nonatomic,strong) NSDictionary *content;
+@property (nonatomic,strong) NSDictionary *contentDic;
 @property (nonatomic,assign) CGFloat cellHeight;
 
 - (FriendCircleModel *)initWithDictionary:(NSDictionary *)dic;

@@ -114,6 +114,7 @@
 		51D486271CF3EC9500765024 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D486221CF3EC9500765024 /* UIView+Frame.m */; };
 		51D486281CF3EC9500765024 /* UIButton+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D486241CF3EC9500765024 /* UIButton+expanded.m */; };
 		51D486291CF3EC9500765024 /* UILabel+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D486261CF3EC9500765024 /* UILabel+expanded.m */; };
+		51D4862C1CF3ED5000765024 /* FriendCircleMediaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D4862B1CF3ED5000765024 /* FriendCircleMediaCell.m */; };
 		51DE66271CCA1C1F001F0BAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66261CCA1C1F001F0BAC /* main.m */; };
 		51DE662A1CCA1C1F001F0BAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66291CCA1C1F001F0BAC /* AppDelegate.m */; };
 		51DE66321CCA1C1F001F0BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DE66311CCA1C1F001F0BAC /* Assets.xcassets */; };
@@ -336,6 +337,8 @@
 		51D486241CF3EC9500765024 /* UIButton+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+expanded.m"; sourceTree = "<group>"; };
 		51D486251CF3EC9500765024 /* UILabel+expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+expanded.h"; sourceTree = "<group>"; };
 		51D486261CF3EC9500765024 /* UILabel+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+expanded.m"; sourceTree = "<group>"; };
+		51D4862A1CF3ED5000765024 /* FriendCircleMediaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCircleMediaCell.h; sourceTree = "<group>"; };
+		51D4862B1CF3ED5000765024 /* FriendCircleMediaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCircleMediaCell.m; sourceTree = "<group>"; };
 		51DE66221CCA1C1F001F0BAC /* Km_Test_C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Km_Test_C.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DE66261CCA1C1F001F0BAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		51DE66281CCA1C1F001F0BAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -621,6 +624,8 @@
 			children = (
 				5162AA851CCF46C3008317D1 /* FriendCircleCell.h */,
 				5162AA861CCF46C3008317D1 /* FriendCircleCell.m */,
+				51D4862A1CF3ED5000765024 /* FriendCircleMediaCell.h */,
+				51D4862B1CF3ED5000765024 /* FriendCircleMediaCell.m */,
 				513B66E51CED9D5200ECB7D0 /* FriendLikeUserCell.h */,
 				513B66E61CED9D5200ECB7D0 /* FriendLikeUserCell.m */,
 				5162AAA81CCF58A8008317D1 /* FriendCircleHeaderView.h */,
@@ -1279,6 +1284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51D4862C1CF3ED5000765024 /* FriendCircleMediaCell.m in Sources */,
 				514D2BA91CDB375F00A12073 /* FriendPhotoContainerView.m in Sources */,
 				513E5B1C1CE9633200F9B60A /* KM_NetAPIManager.m in Sources */,
 				5140FF491CEF0C6200CADD04 /* NormalDismissAnimation.m in Sources */,

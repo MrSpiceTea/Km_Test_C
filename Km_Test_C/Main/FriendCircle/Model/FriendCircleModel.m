@@ -23,6 +23,13 @@
     return self;
 }
 
+- (NSMutableArray *)content{
+    if (!_content) {
+        _content = [NSMutableArray array];
+    }
+    return _content;
+}
+
 - (NSMutableArray *)imagesArray{
     if (!_imagesArray) {
         _imagesArray = [NSMutableArray array];
@@ -61,9 +68,9 @@ static const CGFloat kFriendPhotoContainerViewPicMargin = 5.0f;
     if (!_cellHeight) {
         CGFloat textW= kSCREEN_WIDTH - FriendCircleCellImageViewHeight - FriendCircleCellTopMargin*3;
         CGFloat textH = [self.text boundingRectWithSize:CGSizeMake(textW, MAXFLOAT)
-                                                      options:NSStringDrawingUsesLineFragmentOrigin
-                                                   attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:13.5]}
-                                                      context:nil].size.height;
+                                                options:NSStringDrawingUsesLineFragmentOrigin
+                                             attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:13.5]}
+                                                context:nil].size.height;
         
         
         _cellHeight = textH + FriendCircleCellImageViewHeight + FriendCircleCellTopMargin*5;

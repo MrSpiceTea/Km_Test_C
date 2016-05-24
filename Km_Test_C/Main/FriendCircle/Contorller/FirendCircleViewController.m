@@ -14,6 +14,8 @@
 #import "FriendCircleCommentModel.h"
 #import "FriendCircleCell.h"
 #import "PeoPleListCell.h"
+
+#import "ZTImageBrowser.h"
 #import "SegmentedView.h" 
 #import "UserModel.h"
 #import "MJRefresh.h"
@@ -231,6 +233,12 @@
             FriendCircleModel *model = self.dataSource[indexPath.row - 1];
             [cell setModel:model];
             cell.friendPhotoContainerView.delegate = self;
+            __weak FirendCircleViewController *selfWeak = self;
+            cell.mediaClickedBlock = ^(FriendCircleModel *model,NSUInteger index){
+                NSLog(@"%ld",index);
+                ZTImageBrowser *imageBrowser = [[ZTImageBrowser alloc]init];
+                [selfWeak presentViewController:imageBrowser animated:YES completion:nil];
+            };
         }
         return cell;
     }else if([tableView isEqual:self.peopleTablewView]){

@@ -10,8 +10,10 @@
 #import "FriendCircleModel.h"
 #import "FriendPhotoContainerView.h"
 
+typedef void (^MediaClickedBlock)(FriendCircleModel *moedl,NSUInteger index);
 @interface FriendCircleCell : UITableViewCell
 
+@property (nonatomic, copy) MediaClickedBlock mediaClickedBlock;
 @property (nonatomic,strong) UILabel *titleLabel;
 @property (nonatomic,strong) UILabel *detailLabel;
 @property (nonatomic,strong) FriendCircleModel *model;

@@ -115,6 +115,11 @@
 		51D486281CF3EC9500765024 /* UIButton+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D486241CF3EC9500765024 /* UIButton+expanded.m */; };
 		51D486291CF3EC9500765024 /* UILabel+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D486261CF3EC9500765024 /* UILabel+expanded.m */; };
 		51D4862C1CF3ED5000765024 /* FriendCircleMediaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D4862B1CF3ED5000765024 /* FriendCircleMediaCell.m */; };
+		51D486301CF42BA500765024 /* ZTImageBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D4862F1CF42BA500765024 /* ZTImageBrowser.m */; };
+		51D486331CF44A1300765024 /* ZTImageBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D486321CF44A1300765024 /* ZTImageBrowserCell.m */; };
+		51D486361CF4572D00765024 /* ZTImageBrowserImageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D486351CF4572D00765024 /* ZTImageBrowserImageItem.m */; };
+		51D486391CF45B8F00765024 /* ZTImageBrowserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D486381CF45B8F00765024 /* ZTImageBrowserModel.m */; };
+		51D4863C1CF45C1900765024 /* ZTimageBrowserSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D4863B1CF45C1900765024 /* ZTimageBrowserSheetView.m */; };
 		51DE66271CCA1C1F001F0BAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66261CCA1C1F001F0BAC /* main.m */; };
 		51DE662A1CCA1C1F001F0BAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66291CCA1C1F001F0BAC /* AppDelegate.m */; };
 		51DE66321CCA1C1F001F0BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DE66311CCA1C1F001F0BAC /* Assets.xcassets */; };
@@ -339,6 +344,16 @@
 		51D486261CF3EC9500765024 /* UILabel+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+expanded.m"; sourceTree = "<group>"; };
 		51D4862A1CF3ED5000765024 /* FriendCircleMediaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCircleMediaCell.h; sourceTree = "<group>"; };
 		51D4862B1CF3ED5000765024 /* FriendCircleMediaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCircleMediaCell.m; sourceTree = "<group>"; };
+		51D4862E1CF42BA500765024 /* ZTImageBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTImageBrowser.h; sourceTree = "<group>"; };
+		51D4862F1CF42BA500765024 /* ZTImageBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTImageBrowser.m; sourceTree = "<group>"; };
+		51D486311CF44A1300765024 /* ZTImageBrowserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTImageBrowserCell.h; sourceTree = "<group>"; };
+		51D486321CF44A1300765024 /* ZTImageBrowserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTImageBrowserCell.m; sourceTree = "<group>"; };
+		51D486341CF4572D00765024 /* ZTImageBrowserImageItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTImageBrowserImageItem.h; sourceTree = "<group>"; };
+		51D486351CF4572D00765024 /* ZTImageBrowserImageItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTImageBrowserImageItem.m; sourceTree = "<group>"; };
+		51D486371CF45B8F00765024 /* ZTImageBrowserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTImageBrowserModel.h; sourceTree = "<group>"; };
+		51D486381CF45B8F00765024 /* ZTImageBrowserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTImageBrowserModel.m; sourceTree = "<group>"; };
+		51D4863A1CF45C1900765024 /* ZTimageBrowserSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTimageBrowserSheetView.h; sourceTree = "<group>"; };
+		51D4863B1CF45C1900765024 /* ZTimageBrowserSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTimageBrowserSheetView.m; sourceTree = "<group>"; };
 		51DE66221CCA1C1F001F0BAC /* Km_Test_C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Km_Test_C.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DE66261CCA1C1F001F0BAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		51DE66281CCA1C1F001F0BAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -898,6 +913,23 @@
 			name = APIInternalClasses;
 			sourceTree = "<group>";
 		};
+		51D4862D1CF42B7E00765024 /* ZTImageBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				51D4862E1CF42BA500765024 /* ZTImageBrowser.h */,
+				51D4862F1CF42BA500765024 /* ZTImageBrowser.m */,
+				51D486311CF44A1300765024 /* ZTImageBrowserCell.h */,
+				51D486321CF44A1300765024 /* ZTImageBrowserCell.m */,
+				51D486341CF4572D00765024 /* ZTImageBrowserImageItem.h */,
+				51D486351CF4572D00765024 /* ZTImageBrowserImageItem.m */,
+				51D486371CF45B8F00765024 /* ZTImageBrowserModel.h */,
+				51D486381CF45B8F00765024 /* ZTImageBrowserModel.m */,
+				51D4863A1CF45C1900765024 /* ZTimageBrowserSheetView.h */,
+				51D4863B1CF45C1900765024 /* ZTimageBrowserSheetView.m */,
+			);
+			path = ZTImageBrowser;
+			sourceTree = "<group>";
+		};
 		51DE66191CCA1C1F001F0BAC = {
 			isa = PBXGroup;
 			children = (
@@ -997,6 +1029,7 @@
 		51DE66401CCA2167001F0BAC /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				51D4862D1CF42B7E00765024 /* ZTImageBrowser */,
 				3568ECB91CDF401D00A56133 /* ViewControllerAnimated */,
 				517D09441CCE16BE007EA37D /* MasonryTool.h */,
 				517D09451CCE16BE007EA37D /* MasonryTool.m */,
@@ -1321,6 +1354,7 @@
 				35ED92B61CE38E87003FE776 /* ChatFriendListViewController.m in Sources */,
 				51F7C3111CD06676002BEB8F /* ArtistSearchView.m in Sources */,
 				356A37DD1CCE5A6C001F4FA0 /* ArtistListViewController.m in Sources */,
+				51D486361CF4572D00765024 /* ZTImageBrowserImageItem.m in Sources */,
 				517D09461CCE16BE007EA37D /* MasonryTool.m in Sources */,
 				513DE63E1CD1A8730073A7EC /* QRCodeViewController.m in Sources */,
 				51700BF51CD883CB0091FF33 /* RankingListHeaderView.m in Sources */,
@@ -1335,6 +1369,8 @@
 				35E095971CE8C909008D3F19 /* UserModel.m in Sources */,
 				513571A41CDC355E00E600DE /* ArtistModel.m in Sources */,
 				5140FF461CEF038800CADD04 /* SwipeUpInteractiveTransition.m in Sources */,
+				51D486301CF42BA500765024 /* ZTImageBrowser.m in Sources */,
+				51D486331CF44A1300765024 /* ZTImageBrowserCell.m in Sources */,
 				51F7C3151CD08CAA002BEB8F /* ArtistClassCell.m in Sources */,
 				35E68FF61CCCD18D003F1AC7 /* DiscoverViewController.m in Sources */,
 				35E68FFC1CCD1219003F1AC7 /* ChosseSongSearchView.m in Sources */,
@@ -1351,6 +1387,7 @@
 				51D486291CF3EC9500765024 /* UILabel+expanded.m in Sources */,
 				5135ED311CE1760D00E0AB6D /* CommonDetailViewController.m in Sources */,
 				51D486281CF3EC9500765024 /* UIButton+expanded.m in Sources */,
+				51D486391CF45B8F00765024 /* ZTImageBrowserModel.m in Sources */,
 				517D09401CCDEBDE007EA37D /* MeCell.m in Sources */,
 				35ED92C21CE38F4A003FE776 /* ChatFriendSearchListViewController.m in Sources */,
 				35ED92BF1CE38F3E003FE776 /* ChatFriendSearchViewController.m in Sources */,
@@ -1369,6 +1406,7 @@
 				3568ECBC1CDF406400A56133 /* TopPresentAnimation.m in Sources */,
 				5162AAAA1CCF58A8008317D1 /* FriendCircleHeaderView.m in Sources */,
 				3568ECB21CDF147500A56133 /* FirendCircleIssueViewController.m in Sources */,
+				51D4863C1CF45C1900765024 /* ZTimageBrowserSheetView.m in Sources */,
 				35C08FBE1CE2359A0050D749 /* PeoPleListCell.m in Sources */,
 				51700BEC1CD8575D0091FF33 /* AlbumModel.m in Sources */,
 				516746AB1CD1F713007AC9C6 /* ParallaxTableViewController.m in Sources */,

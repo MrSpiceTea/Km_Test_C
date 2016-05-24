@@ -285,7 +285,9 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"%ld",indexPath.row);
+    if (self.mediaClickedBlock) {
+        self.mediaClickedBlock(self.model,indexPath.row);
+    }
 }
 
 

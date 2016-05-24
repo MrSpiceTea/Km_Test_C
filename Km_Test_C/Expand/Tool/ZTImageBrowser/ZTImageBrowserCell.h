@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ZTImageBrowserModel.h"
+#import "ZTImageBrowserImageItem.h"
 @interface ZTImageBrowserCell : UICollectionViewCell
-@property(nonatomic,strong)UIImage *image;
+@property(nonatomic,strong)ZTImageBrowserModel *model;
+@property(nonatomic,weak)ZTImageBrowserImageItem *imageItem;
 @end

@@ -8,13 +8,16 @@
 
 #import "ZTImageBrowser.h"
 #import "ZTImageBrowserCell.h"
+#import "ZTImageBrowserImageItem.h"
+#import "ZTImageBrowserModel.h"
 
 #define kPageControlHeight 40.0f
 
 @interface ZTImageBrowser ()
 <UICollectionViewDataSource,
 UICollectionViewDelegate,
-UIScrollViewDelegate>
+UIScrollViewDelegate,
+ZTImageBrowserImageItemDelegate>
 @property (nonatomic,strong) UICollectionView *collectionView;
 @property (nonatomic,strong) UIPageControl *pageControl;
 @property (nonatomic,strong) UICollectionViewFlowLayout *flowLayout;
@@ -104,6 +107,13 @@ static NSString * const reuseIdentifier = @"ZTImageBrowserCell";
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     ZTImageBrowserCell * cell  = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     cell.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1];
+    
+    //test
+    ZTImageBrowserModel *model = [[ZTImageBrowserModel alloc]init];
+    model.thumbnailImage  = [UIImage imageNamed:@"zhangxueyou"];
+//    model.HDurl =
+    cell.model = model;
+    cell.imageItem.imageItemDelegate = self;
 //    [cell setImage:[UIImage imageNamed:@"zhangxueyou"]];
     
     return cell;
@@ -116,6 +126,11 @@ static NSString * const reuseIdentifier = @"ZTImageBrowserCell";
     self.currentIndex = index;
     self.pageControl.currentPage = self.currentIndex;
   
+}
+
+#pragma mark - ImageItemDelegate
+- (void)disMissBrowser{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

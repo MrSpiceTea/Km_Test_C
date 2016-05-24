@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ZTImageBrowserImageItemDelegate <NSObject>
+
+- (void)disMissBrowser;
+
+@end
+
 @interface ZTImageBrowserImageItem : UIScrollView
 @property (nonatomic,strong) UIImageView* imageView;
+@property (nonatomic,weak) id<ZTImageBrowserImageItemDelegate> imageItemDelegate;
 @end

@@ -111,6 +111,9 @@
 		519008011CCF621E000BAE7A /* CommonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 519008001CCF621E000BAE7A /* CommonTableViewController.m */; };
 		51AC5AB51CE32F740002F4EE /* FriendCircleIssueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 51AC5AB41CE32F740002F4EE /* FriendCircleIssueModel.m */; };
 		51AC5AB81CE332800002F4EE /* BottomButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51AC5AB71CE332800002F4EE /* BottomButtonsView.m */; };
+		51D486271CF3EC9500765024 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D486221CF3EC9500765024 /* UIView+Frame.m */; };
+		51D486281CF3EC9500765024 /* UIButton+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D486241CF3EC9500765024 /* UIButton+expanded.m */; };
+		51D486291CF3EC9500765024 /* UILabel+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D486261CF3EC9500765024 /* UILabel+expanded.m */; };
 		51DE66271CCA1C1F001F0BAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66261CCA1C1F001F0BAC /* main.m */; };
 		51DE662A1CCA1C1F001F0BAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE66291CCA1C1F001F0BAC /* AppDelegate.m */; };
 		51DE66321CCA1C1F001F0BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DE66311CCA1C1F001F0BAC /* Assets.xcassets */; };
@@ -327,6 +330,12 @@
 		51AC5AB41CE32F740002F4EE /* FriendCircleIssueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCircleIssueModel.m; sourceTree = "<group>"; };
 		51AC5AB61CE332800002F4EE /* BottomButtonsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomButtonsView.h; sourceTree = "<group>"; };
 		51AC5AB71CE332800002F4EE /* BottomButtonsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomButtonsView.m; sourceTree = "<group>"; };
+		51D486211CF3EC9500765024 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		51D486221CF3EC9500765024 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		51D486231CF3EC9500765024 /* UIButton+expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+expanded.h"; sourceTree = "<group>"; };
+		51D486241CF3EC9500765024 /* UIButton+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+expanded.m"; sourceTree = "<group>"; };
+		51D486251CF3EC9500765024 /* UILabel+expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+expanded.h"; sourceTree = "<group>"; };
+		51D486261CF3EC9500765024 /* UILabel+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+expanded.m"; sourceTree = "<group>"; };
 		51DE66221CCA1C1F001F0BAC /* Km_Test_C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Km_Test_C.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DE66261CCA1C1F001F0BAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		51DE66281CCA1C1F001F0BAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -954,6 +963,12 @@
 				5186088B1CE038E10066E0D6 /* NSDictionary+Utilities.m */,
 				513B66E21CED679700ECB7D0 /* NSString+expanded.h */,
 				513B66E31CED679700ECB7D0 /* NSString+expanded.m */,
+				51D486211CF3EC9500765024 /* UIView+Frame.h */,
+				51D486221CF3EC9500765024 /* UIView+Frame.m */,
+				51D486231CF3EC9500765024 /* UIButton+expanded.h */,
+				51D486241CF3EC9500765024 /* UIButton+expanded.m */,
+				51D486251CF3EC9500765024 /* UILabel+expanded.h */,
+				51D486261CF3EC9500765024 /* UILabel+expanded.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1285,6 +1300,7 @@
 				35ED92C51CE38FA2003FE776 /* ChatFriendAddAddressViewController.m in Sources */,
 				51AC5AB81CE332800002F4EE /* BottomButtonsView.m in Sources */,
 				3560131F1CCA9DA900DE2275 /* ChooseSongViewController.m in Sources */,
+				51D486271CF3EC9500765024 /* UIView+Frame.m in Sources */,
 				51700BE61CD851270091FF33 /* AlbumRecListViewController.m in Sources */,
 				513CD6CE1CE457EC00841BCD /* FriendCircleCommentModel.m in Sources */,
 				35D07E651CE4EA0A00A305C7 /* MessageCell.m in Sources */,
@@ -1326,7 +1342,9 @@
 				51AC5AB51CE32F740002F4EE /* FriendCircleIssueModel.m in Sources */,
 				5186088C1CE038E10066E0D6 /* NSDictionary+Utilities.m in Sources */,
 				5145BE571CE566C20025DB10 /* ChatSessionViewController.m in Sources */,
+				51D486291CF3EC9500765024 /* UILabel+expanded.m in Sources */,
 				5135ED311CE1760D00E0AB6D /* CommonDetailViewController.m in Sources */,
+				51D486281CF3EC9500765024 /* UIButton+expanded.m in Sources */,
 				517D09401CCDEBDE007EA37D /* MeCell.m in Sources */,
 				35ED92C21CE38F4A003FE776 /* ChatFriendSearchListViewController.m in Sources */,
 				35ED92BF1CE38F3E003FE776 /* ChatFriendSearchViewController.m in Sources */,

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ZTImageBrowserModel.h"
 @protocol ZTImageBrowserImageItemDelegate <NSObject>
 
 - (void)disMissBrowser;
@@ -16,5 +16,7 @@
 
 @interface ZTImageBrowserImageItem : UIScrollView
 @property (nonatomic,strong) UIImageView* imageView;
+@property (nonatomic,strong) ZTImageBrowserModel *imageModel;
 @property (nonatomic,weak) id<ZTImageBrowserImageItemDelegate> imageItemDelegate;
+@property (nonatomic,assign,getter=isFirstShow) BOOL firstShow;
 @end

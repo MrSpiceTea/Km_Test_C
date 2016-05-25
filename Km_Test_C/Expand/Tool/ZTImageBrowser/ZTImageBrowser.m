@@ -9,7 +9,6 @@
 #import "ZTImageBrowser.h"
 #import "ZTImageBrowserCell.h"
 #import "ZTImageBrowserImageItem.h"
-#import "ZTImageBrowserModel.h"
 
 #define kPageControlHeight 40.0f
 
@@ -21,6 +20,7 @@ ZTImageBrowserImageItemDelegate>
 @property (nonatomic,strong) UICollectionView *collectionView;
 @property (nonatomic,strong) UIPageControl *pageControl;
 @property (nonatomic,strong) UICollectionViewFlowLayout *flowLayout;
+@property (nonatomic,assign,getter=isFirstShow) BOOL firstShow;
 @end
 
 @implementation ZTImageBrowser
@@ -32,9 +32,18 @@ static NSString * const reuseIdentifier = @"ZTImageBrowserCell";
     [self setUpChildViewLayout];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.firstShow = YES;
+}
+
+
 - (void)setUpChildViewLayout{
+//    self.view.backgroundColor = [UIColor clearColor];
+    self.view.backgroundColor = [UIColor blackColor];
     [self.view addSubview:self.collectionView];
     [self.view addSubview:self.pageControl];
+    [self.collectionView setContentOffset:CGPointMake(self.currentIndex * (kSCREEN_WIDTH), 0.0f) animated:NO];
 }
 
 - (UICollectionView *)collectionView {
@@ -71,8 +80,8 @@ static NSString * const reuseIdentifier = @"ZTImageBrowserCell";
                                                                        kSCREEN_HEIGHT - kPageControlHeight - 10.0f,
                                                                        kSCREEN_WIDTH,
                                                                        kPageControlHeight)];
-        _pageControl.numberOfPages = 6;
-        _pageControl.currentPage = 0;
+        _pageControl.numberOfPages =  self.imageModels.count;
+        _pageControl.currentPage = self.currentIndex;
         _pageControl.userInteractionEnabled = NO;
     }
     return _pageControl;
@@ -101,21 +110,16 @@ static NSString * const reuseIdentifier = @"ZTImageBrowserCell";
 }
 //返回每个分区的item个数
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 10;
+    return self.imageModels.count;
 }
 //返回每个item
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     ZTImageBrowserCell * cell  = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1];
-    
-    //test
-    ZTImageBrowserModel *model = [[ZTImageBrowserModel alloc]init];
-    model.thumbnailImage  = [UIImage imageNamed:@"zhangxueyou"];
-//    model.HDurl =
+//    cell.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1];
+    ZTImageBrowserModel *model =  self.imageModels[indexPath.row];
+    cell.imageItem.firstShow = self.isFirstShow;
     cell.model = model;
     cell.imageItem.imageItemDelegate = self;
-//    [cell setImage:[UIImage imageNamed:@"zhangxueyou"]];
-    
     return cell;
 }
 
@@ -130,7 +134,7 @@ static NSString * const reuseIdentifier = @"ZTImageBrowserCell";
 
 #pragma mark - ImageItemDelegate
 - (void)disMissBrowser{
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 @end

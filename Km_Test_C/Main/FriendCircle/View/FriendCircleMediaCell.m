@@ -10,4 +10,18 @@
 
 @implementation FriendCircleMediaCell
 
+- (instancetype)initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]) {
+        [self.contentView addSubview:self.imageView];
+    }
+    return self;
+}
+
+- (UIImageView *)imageView{
+    if (!_imageView) {
+        _imageView = [[UIImageView alloc]init];
+    }
+    return _imageView;
+}
+
 @end

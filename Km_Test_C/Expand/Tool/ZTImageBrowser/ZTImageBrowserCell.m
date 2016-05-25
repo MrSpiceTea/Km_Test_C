@@ -17,15 +17,22 @@
     if (!_imageItem) {
         ZTImageBrowserImageItem *imageItem = [[ZTImageBrowserImageItem alloc] initWithFrame:self.bounds];
         _imageItem = imageItem;
-
+        self.backgroundColor = [UIColor clearColor];
         [self.contentView addSubview:imageItem];
     }
     return _imageItem;
 }
 
 - (void)setModel:(ZTImageBrowserModel *)model{
+    if (_model != model) {
+        _model = model;
+    }
     _model = model;
-    [self.imageItem.imageView setImage:model.thumbnailImage];
+//    [self.imageItem.imageView setImage:model.thumbnailImage];
+    self.imageItem.imageModel = model;
+    
 }
+
+
 
 @end

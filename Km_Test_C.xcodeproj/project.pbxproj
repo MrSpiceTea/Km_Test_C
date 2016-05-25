@@ -57,6 +57,9 @@
 		513B66E41CED679700ECB7D0 /* NSString+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 513B66E31CED679700ECB7D0 /* NSString+expanded.m */; };
 		513B66E71CED9D5200ECB7D0 /* FriendLikeUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 513B66E61CED9D5200ECB7D0 /* FriendLikeUserCell.m */; };
 		513C20D11CD33A7600A6A886 /* HeaderInsetTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 513C20D01CD33A7600A6A886 /* HeaderInsetTableView.m */; };
+		513C335E1CF58857005FDDC7 /* FriendCircleList.json in Resources */ = {isa = PBXBuildFile; fileRef = 513C335D1CF58857005FDDC7 /* FriendCircleList.json */; };
+		513C33601CF5889C005FDDC7 /* peoples.json in Resources */ = {isa = PBXBuildFile; fileRef = 513C335F1CF5889C005FDDC7 /* peoples.json */; };
+		513C33631CF58D5F005FDDC7 /* MediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 513C33621CF58D5F005FDDC7 /* MediaModel.m */; };
 		513CD6C11CE420B500841BCD /* FirendCircleCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513CD6C01CE420B500841BCD /* FirendCircleCommentViewController.m */; };
 		513CD6CA1CE432CB00841BCD /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 513CD6C81CE432CB00841BCD /* CommentTableViewCell.m */; };
 		513CD6CB1CE432CB00841BCD /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 513CD6C91CE432CB00841BCD /* CommentTableViewCell.xib */; };
@@ -225,6 +228,10 @@
 		513B66E61CED9D5200ECB7D0 /* FriendLikeUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendLikeUserCell.m; sourceTree = "<group>"; };
 		513C20CF1CD33A7600A6A886 /* HeaderInsetTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderInsetTableView.h; sourceTree = "<group>"; };
 		513C20D01CD33A7600A6A886 /* HeaderInsetTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderInsetTableView.m; sourceTree = "<group>"; };
+		513C335D1CF58857005FDDC7 /* FriendCircleList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FriendCircleList.json; sourceTree = "<group>"; };
+		513C335F1CF5889C005FDDC7 /* peoples.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = peoples.json; sourceTree = "<group>"; };
+		513C33611CF58D5F005FDDC7 /* MediaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaModel.h; sourceTree = "<group>"; };
+		513C33621CF58D5F005FDDC7 /* MediaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaModel.m; sourceTree = "<group>"; };
 		513CD6BF1CE420B500841BCD /* FirendCircleCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirendCircleCommentViewController.h; sourceTree = "<group>"; };
 		513CD6C01CE420B500841BCD /* FirendCircleCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirendCircleCommentViewController.m; sourceTree = "<group>"; };
 		513CD6C71CE432CB00841BCD /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
@@ -586,6 +593,8 @@
 		5139DAA11CDB2C7500C7F931 /* Plist */ = {
 			isa = PBXGroup;
 			children = (
+				513C335F1CF5889C005FDDC7 /* peoples.json */,
+				513C335D1CF58857005FDDC7 /* FriendCircleList.json */,
 				5186088D1CE040240066E0D6 /* chatList.plist */,
 				5186088F1CE0405A0066E0D6 /* FriendCircleList.plist */,
 			);
@@ -616,6 +625,8 @@
 				5145BE5C1CE570ED0025DB10 /* CommonDataSource.m */,
 				5145BE631CE5713A0025DB10 /* MessageModel.h */,
 				5145BE641CE5713A0025DB10 /* MessageModel.m */,
+				513C33611CF58D5F005FDDC7 /* MediaModel.h */,
+				513C33621CF58D5F005FDDC7 /* MediaModel.m */,
 				5145BE5F1CE570ED0025DB10 /* KMDataSource.h */,
 			);
 			path = Models;
@@ -1252,11 +1263,13 @@
 				35C08FBF1CE2359A0050D749 /* PeoPleListCell.xib in Resources */,
 				513CD6CB1CE432CB00841BCD /* CommentTableViewCell.xib in Resources */,
 				35D07E661CE4EA0A00A305C7 /* MessageCell.xib in Resources */,
+				513C33601CF5889C005FDDC7 /* peoples.json in Resources */,
 				5155830A1CEB1ECF007523A1 /* Info.plist in Resources */,
 				35C08FC31CE248930050D749 /* CoustomView.xib in Resources */,
 				5186088E1CE040240066E0D6 /* chatList.plist in Resources */,
 				350B2CD61CE87AA500A85A86 /* RegisterViewController.xib in Resources */,
 				5139DAA01CDB2C7000C7F931 /* listview_header_footer_loading.gif in Resources */,
+				513C335E1CF58857005FDDC7 /* FriendCircleList.json in Resources */,
 				518608901CE0405A0066E0D6 /* FriendCircleList.plist in Resources */,
 				35C08FC11CE2476B0050D749 /* PeopleInformationHeaderView.xib in Resources */,
 			);
@@ -1321,6 +1334,7 @@
 				514D2BA91CDB375F00A12073 /* FriendPhotoContainerView.m in Sources */,
 				513E5B1C1CE9633200F9B60A /* KM_NetAPIManager.m in Sources */,
 				5140FF491CEF0C6200CADD04 /* NormalDismissAnimation.m in Sources */,
+				513C33631CF58D5F005FDDC7 /* MediaModel.m in Sources */,
 				513E5B1D1CE9633E00F9B60A /* KM_NetAPIClient.m in Sources */,
 				513B66E71CED9D5200ECB7D0 /* FriendLikeUserCell.m in Sources */,
 				513989EC1CE2E1C0006C10C8 /* CommonZoneViewController.m in Sources */,

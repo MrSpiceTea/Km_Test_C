@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "KMAbstractObject.h"
+#import "MediaModel.h"
 typedef NS_ENUM(NSUInteger, FriendCircleModelMessageType) {
     FriendCircleModelMessageTypeNone,
     FriendCircleModelMessageTypeImage,
@@ -30,6 +31,7 @@ typedef NS_ENUM(NSUInteger, FriendCircleModelMessageType) {
 @property (nonatomic,copy) NSString *praise;//赞数
 @property (nonatomic,assign) FriendCircleModelMessageType messageType;
 @property (nonatomic,strong) NSMutableArray *imagesArray;
+@property (nonatomic,strong) NSMutableArray *mediaArray;
 @property (nonatomic,strong) NSMutableArray *commentArray;//评论
 @property (nonatomic,strong) NSMutableArray *likeArray;//赞
 @property (nonatomic,strong) NSDictionary *contentDic;

@@ -8,6 +8,7 @@
 
 #import "FriendCircleCell.h"
 #import "FriendCircleMediaCell.h"
+#import "ZTImageBrowserModel.h"
 #import "NSString+expanded.h"
 #import "UILabel+expanded.h"
 #import "UIView+Frame.h"
@@ -62,8 +63,6 @@
     if (self) {
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         self.backgroundColor = kCommonTableViewBavkgroundColor;
-        
-        NSLog(@"kFriendCircleCell_ContentWidth %f",kFriendCircleCell_ContentWidth);
         if (!_headerImageView) {
             _headerImageView = [UIImageView new];
             [_headerImageView setFrame:CGRectMake(kFriendCircleCell_PadingLeft, kFriendCircleCell_PadingTop, kFriendCircleCell_HeadImageViewHeight, kFriendCircleCell_HeadImageViewHeight)];
@@ -249,10 +248,8 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     if (collectionView == _mediaView) {
         FriendCircleMediaCell *ccell = [collectionView dequeueReusableCellWithReuseIdentifier:kCCellIdentifier_FriendCircleMediaCell forIndexPath:indexPath];
-        UIImageView *imgView= [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kFriendCircleCell_MediaImageViewHeight, kFriendCircleCell_MediaImageViewHeight)];
-        [imgView setImage:[UIImage imageNamed:self.model.imagesArray[indexPath.row]]];
-        [ccell.contentView addSubview:imgView];
-//        ccell.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1];
+        [ccell.imageView setFrame:CGRectMake(0, 0, kFriendCircleCell_MediaImageViewHeight, kFriendCircleCell_MediaImageViewHeight)];
+        [ccell.imageView sd_setImageWithURL:[NSURL URLWithString:self.model.imagesArray[indexPath.row]] placeholderImage:[UIImage imageNamed:@"myhome_default_head"]];
         return ccell;
     }else{
         
@@ -286,7 +283,8 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if (self.mediaClickedBlock) {
-        self.mediaClickedBlock(self.model,indexPath.row);
+        FriendCircleMediaCell *cell = (FriendCircleMediaCell *)[collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
+        self.mediaClickedBlock(self.model,cell.imageView,indexPath.row);
     }
 }
 

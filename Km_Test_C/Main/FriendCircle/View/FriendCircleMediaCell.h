@@ -10,5 +10,5 @@
 #define kCCellIdentifier_FriendCircleMediaCell @"FriendCircleMediaCell"
 
 @interface FriendCircleMediaCell : UICollectionViewCell
-
+@property (nonatomic,strong) UIImageView *imageView;
 @end

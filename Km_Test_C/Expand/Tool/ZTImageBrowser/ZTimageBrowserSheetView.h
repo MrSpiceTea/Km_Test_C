@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ZTimageBrowserSheetView : UIView
-
+- (void)show:(BOOL)isshow;
 @end

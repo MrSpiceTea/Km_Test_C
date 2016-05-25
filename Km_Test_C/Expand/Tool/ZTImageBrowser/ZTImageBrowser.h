@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZTImageBrowserModel.h"
 
 @interface ZTImageBrowser : UIViewController
 @property (nonatomic,assign) NSInteger currentIndex;

@@ -93,27 +93,10 @@
         [array writeToFile:kFriendCircleListPath atomically:YES];
     }
     
+    
 
-    FriendCircleCommentModel *commentModel = [[FriendCircleCommentModel alloc]init];
-    commentModel.userName = @"测试";
-    commentModel.content =  @"测 is hi测试测试测试测试测试测试测测";
-    commentModel.profileImageUrl = @"myhome_default_head";
-    
-    FriendCircleCommentModel *commentMode3 = [[FriendCircleCommentModel alloc]init];
-    commentMode3.userName = @"测试";
-    commentMode3.content =  @"测 is hi测试测试测试测试测试测试测测试试";
-    commentMode3.profileImageUrl = @"myhome_default_head";
-    
-    FriendCircleCommentModel *commentModel2 = [[FriendCircleCommentModel alloc]init];
-    commentModel2.userName = @"测试";
-    commentModel2.content =  @"测 is hi测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试";
-    commentModel2.profileImageUrl = @"zhangxueyou";
-    
-//    NSMutableArray *commentModelArray = [NSMutableArray arrayWithObjects:commentModel,commentModel2,commentMode3, nil];
     UserModel *user = [[UserModel alloc]init];
-    user.profileImageUrl = @"zhangxueyou";
-    
-    
+    user.profileImageUrl = @"http://www.rmzt.com/uploads/allimg/151014/1-151014164149411.jpg";
     for (NSDictionary *dic in array) {
         FriendCircleModel *model1 = [[FriendCircleModel alloc] init];
         model1.profileImageUrl = dic[@"profileImageUrl"];
@@ -128,53 +111,7 @@
 
         [self.dataSource addObject:model1];
     }
-//    NSMutableArray *imagesArray1 = [NSMutableArray arrayWithObjects:@"zhangxueyou", @"zhangxueyou", @"angelababy", @"angelababy", @"zhangxueyou", @"zhangxueyou", @"zhangxueyou", @"zhangxueyou", @"zhangxueyou",nil];
-//    NSMutableArray *imagesArray2 = [NSMutableArray arrayWithObjects:@"angelababy", @"angelababy", @"angelababy", @"angelababy", @"angelababy",nil];
-//
-//    FriendCircleModel *model1 = [[FriendCircleModel alloc] init];
-//    model1.profileImageUrl = @"angelababy";
-//    model1.userName = @"陈奕迅 史蒂夫111111";
-//    model1.location = @"阿富汗欢乐ktv";
-//    model1.text = @"???";
-//    model1.distan = @"6000KM";
-//    model1.createdAt = @"6小时前";
-//    model1.imagesArray = imagesArray1;
-//    [self.dataSource addObject:model1];
-//    FriendCircleModel *model2 = [[FriendCircleModel alloc] init];
-//    model2.profileImageUrl = @"angelababy";
-//    model2.userName = @"asdfasdf  史蒂夫222222";
-//    model2.location = @"阿富汗欢";
-//    model2.text = @"今天天气很好啊啊都发生的路啊啊都发生的路口附近阿拉山口大家福利卡圣诞节啊啊都发生的路口附近阿拉山口大家福利卡圣诞节口附近阿拉山口大家福利卡圣诞节";
-//    model2.distan = @"6000KM";
-//    model2.createdAt = @"6小时前";
-//    [self.dataSource addObject:model2];
-//    
-//    FriendCircleModel *model4 = [[FriendCircleModel alloc] init];
-//    model4.profileImageUrl = @"zhangxueyou";
-//    model4.userName = @"史蒂夫33333333";
-//    model4.location = @"欢乐ktv";
-//    model4.text = @"model4model4model4model4model4mo333333333";
-//    model4.distan = @"6000KM";
-//    model4.createdAt = @"6小前";
-//    [self.dataSource addObject:model4];
-//    
-//    FriendCircleModel *model5 = [[FriendCircleModel alloc] init];
-//    model5.profileImageUrl = @"jay";
-//    model5.userName = @"史蒂夫444444";
-//    model5.location = @"欢乐ktv";
-//    model5.text = @"555555天";
-//
-//    model5.imagesArray = imagesArray2;
-//    model5.distan = @"6000KM";
-//    model5.createdAt = @"6小前";
-//    [self.dataSource addObject:model5];
-//    [self.dataSource addObject:model5];
-//    [self.dataSource addObject:model5];
-//    [self.dataSource addObject:model5];
-//    [self.dataSource addObject:model5];
-//    [self.dataSource addObject:model5];
-//    [self.dataSource addObject:model5];
-    
+
     [self.tableView reloadData];
 }
 
@@ -234,10 +171,19 @@
             [cell setModel:model];
             cell.friendPhotoContainerView.delegate = self;
             __weak FirendCircleViewController *selfWeak = self;
-            cell.mediaClickedBlock = ^(FriendCircleModel *model,NSUInteger index){
-                NSLog(@"%ld",index);
+            cell.mediaClickedBlock = ^(FriendCircleModel *model,UIImageView *imageView,NSUInteger index){
+                NSMutableArray *photoArray = [[NSMutableArray alloc] init];
+                for (int i = 0;i< model.imagesArray.count; i ++) {
+                    ZTImageBrowserModel *imageModel = [[ZTImageBrowserModel alloc]init];
+                    imageModel.srcImageView = imageView;
+//                    imageModel.HDURL = model.HDURL;
+                    imageModel.HDURL = [NSURL URLWithString:@"http://www.rmzt.com/uploads/allimg/151014/1-151014164149411.jpg"];
+                    [photoArray addObject:imageModel];
+                }
                 ZTImageBrowser *imageBrowser = [[ZTImageBrowser alloc]init];
-                [selfWeak presentViewController:imageBrowser animated:YES completion:nil];
+                imageBrowser.currentIndex = index;
+                [imageBrowser setImageModels:photoArray];
+                [selfWeak presentViewController:imageBrowser animated:NO completion:nil];
             };
         }
         return cell;

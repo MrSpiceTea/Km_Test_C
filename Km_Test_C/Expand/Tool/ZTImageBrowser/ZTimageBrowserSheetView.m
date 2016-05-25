@@ -7,9 +7,12 @@
 //
 
 #import "ZTimageBrowserSheetView.h"
+#import "UIView+Frame.h"
+const CGFloat kSheetViewHeight = 160.f;
 
 @interface ZTimageBrowserSheetView()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic,assign) BOOL showsSheetView;
 @end
 @implementation ZTimageBrowserSheetView
 
@@ -28,13 +31,35 @@
 }
 
 - (void)setup{
+    self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
     [self addSubview:self.tableView];
+}
+
+#pragma mark - Helper
+- (void)show:(BOOL)isshow{
+    __weak typeof(self) weakSelf = self;
+    if (isshow && !_showsSheetView) {
+        [UIView animateWithDuration:0.3 animations:^{
+            UIWindow* window = [UIApplication sharedApplication].keyWindow;
+            [window addSubview:weakSelf];
+            [weakSelf.tableView setY:kSCREEN_HEIGHT - kSheetViewHeight];
+        } completion:^(BOOL finished) {
+            _showsSheetView = YES;
+        }];
+    }else if(!isshow && _showsSheetView){
+        [UIView animateWithDuration:0.3 animations:^{
+            [weakSelf.tableView setY:kSCREEN_HEIGHT];
+        } completion:^(BOOL finished) {
+            [weakSelf removeFromSuperview];
+            _showsSheetView = NO;
+        }];
+    }
 }
 
 #pragma mark - Getter
 - (UITableView *)tableView{
     if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:self.bounds style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, kSCREEN_HEIGHT, kSCREEN_WIDTH, kSheetViewHeight) style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.scrollEnabled = NO;
@@ -83,5 +108,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 1) {
+        [self show:NO];
+    }
 }
 @end

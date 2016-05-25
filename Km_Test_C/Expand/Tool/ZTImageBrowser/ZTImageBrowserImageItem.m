@@ -8,12 +8,11 @@
 
 const CGFloat kMaximumZoomScale = 3.0f;
 const CGFloat kMinimumZoomScale = 1.0f;
-const CGFloat kDuration = 0.18f;
-const CGFloat kSheetViewHeight = 160.f;
+const CGFloat kDuration = 0.3f;
 
 #import "ZTImageBrowserImageItem.h"
 #import "ZTimageBrowserSheetView.h"
-#import "UIView+Frame.h"
+#import <UIImageView+WebCache.h>
 
 @interface ZTImageBrowserImageItem()<UIScrollViewDelegate>
 @property (nonatomic,strong) ZTimageBrowserSheetView *sheetView;
@@ -39,53 +38,57 @@ const CGFloat kSheetViewHeight = 160.f;
 }
 
 - (void)setupGestures{
-    UITapGestureRecognizer *tapDisMissGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
-    tapDisMissGesture.numberOfTapsRequired = 1;
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleSingleTap:)];
+    singleTap.numberOfTapsRequired = 1;
+    singleTap.numberOfTouchesRequired = 1;
     
-    UITapGestureRecognizer *tapBigGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapBigGestureAction:)];
-    tapBigGesture.numberOfTapsRequired = 2;
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handledoubleTap:)];
+    doubleTap.numberOfTapsRequired = 2;
     
-    UIPinchGestureRecognizer *pinchGesture=[[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(pinchImage:)];
-//    UIPanGestureRecognizer *panGesture=[[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panImage:)];
-    
-    //吃长安
-    UILongPressGestureRecognizer *longPressGesture=[[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPressImage:)];
-    longPressGesture.minimumPressDuration = 0.5;//设置长按时间，默认0.5秒，一般这个值不要修改
-    [self addGestureRecognizer:longPressGesture];
 
-    [self addGestureRecognizer:tapDisMissGesture];
-    [self addGestureRecognizer:tapBigGesture];
-    [self addGestureRecognizer:pinchGesture];
-    [self addGestureRecognizer:tapBigGesture];
+    UILongPressGestureRecognizer *longPressGesture=[[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPressImage:)];
+    longPressGesture.minimumPressDuration = 0.5;//设置长按时间
+    
+    [self addGestureRecognizer:singleTap];
+    [self addGestureRecognizer:doubleTap];
+    [self addGestureRecognizer:longPressGesture];
+    [singleTap requireGestureRecognizerToFail:doubleTap];
 }
 
 #pragma mark - GestureRecognizer
-- (void)tapAction{
-    if (_showsSheetView) {
-        [self showSheetView:NO];
-    }else{
-        [self.imageItemDelegate disMissBrowser];
+- (void)handleSingleTap:(UITapGestureRecognizer *)gesture{
+    if (gesture.numberOfTapsRequired == 1) {
+        if (_showsSheetView) {
+            [self showSheetView:NO];
+        }else{
+             __weak typeof(self) weakSelf = self;
+            if (self.zoomScale != 1.0f) {
+                self.zoomScale = 1.0f;
+            }
+            [UIView animateWithDuration:0.25f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^{
+                weakSelf.imageView.frame  = self.imageModel.srcImageViewRect;
+            } completion:^(BOOL finished) {
+                [self.imageItemDelegate disMissBrowser];
+            }];
+        }
     }
 }
 
-- (void)tapBigGestureAction:(UIPinchGestureRecognizer *)gesture{
-    
-}
-
-- (void)pinchImage:(UIPinchGestureRecognizer *)gesture{
-    //NSLog(@"pinch:%i",gesture.state);
-    if (gesture.state==UIGestureRecognizerStateChanged) {
-        //捏合手势中scale属性记录的缩放比例
-        _imageView.transform=CGAffineTransformMakeScale(gesture.scale, gesture.scale);
-    }else if(gesture.state==UIGestureRecognizerStateEnded){//结束后恢复
-        [UIView animateWithDuration:.5 animations:^{
-            _imageView.transform=CGAffineTransformIdentity;//取消一切形变
-        }];
+- (void)handledoubleTap:(UITapGestureRecognizer *)gesture{
+    if (gesture.numberOfTapsRequired == 2) {
+        if(self.zoomScale == 1){
+            float newScale = [self zoomScale] * 2;
+            CGRect zoomRect = [self zoomRectForScale:newScale withCenter:[gesture locationInView:self]];
+            [self zoomToRect:zoomRect animated:YES];
+        } else {
+            float newScale = [self zoomScale] / 2;
+            CGRect zoomRect = [self zoomRectForScale:newScale withCenter:[gesture locationInView:self]];
+            [self zoomToRect:zoomRect animated:YES];
+        }
     }
 }
 
-- (void)longPressImage:(UIPanGestureRecognizer *)gesture{
-    NSLog(@"longPressImage");
+- (void)longPressImage:(UILongPressGestureRecognizer *)gesture{
     if (gesture.state == UIGestureRecognizerStateBegan) {
         if (!_showsSheetView) {
             [self showSheetView:YES];
@@ -95,34 +98,112 @@ const CGFloat kSheetViewHeight = 160.f;
     }
 }
 
-- (void)panImage:(UIPanGestureRecognizer *)gesture{
-    if (gesture.state==UIGestureRecognizerStateChanged) {
-        CGPoint translation=[gesture translationInView:self];//利用拖动手势的translationInView:方法取得在相对指定视图（这里是控制器根视图）的移动
-        _imageView.transform=CGAffineTransformMakeTranslation(translation.x, translation.y);
-    }else if(gesture.state==UIGestureRecognizerStateEnded){
-        [UIView animateWithDuration:0.5 animations:^{
-            _imageView.transform=CGAffineTransformIdentity;
-        }];
+#pragma mark - Helper
+- (void)loadHdImage:(BOOL)animated {
+    CGRect destinationRect = [self calculateDestinationFrameWithSize:self.imageModel.placeholder.size];
+    SDWebImageManager* manager = [SDWebImageManager sharedManager];
+    BOOL isImageCached = [manager cachedImageExistsForURL:self.imageModel.HDURL];
+    __weak typeof(self) weakSelf = self;
+    //还未下载的图片
+    if (!isImageCached) {
+        self.imageView.image = self.imageModel.thumbnailImage;
+        if (animated) {
+              //TODO:动画
+            self.imageView.frame  = self.imageModel.srcImageViewRect;
+            [UIView animateWithDuration:0.18f delay:0.0f options:UIViewAnimationOptionCurveEaseIn animations:^{
+               weakSelf.imageView.center = weakSelf.center;
+            }completion:^(BOOL finished) {
+               if(finished) {
+                [weakSelf downloadImageWithDestinationRect:destinationRect];
+              }
+           }];
+        } else {
+            weakSelf.imageView.center = weakSelf.center;
+            [self downloadImageWithDestinationRect:destinationRect];
+        }
     }
+    //已经下载的图片
+    else {
+        if (animated) {
+              //TODO:动画
+            self.imageView.frame  = self.imageModel.srcImageViewRect;
+            [self.imageView sd_setImageWithURL:self.imageModel.HDURL];
+            [UIView animateWithDuration:kDuration delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^{
+                weakSelf.imageView.frame = destinationRect;
+            } completion:^(BOOL finished) {
+            }];
+        } else {
+            [self.imageView sd_setImageWithURL:self.imageModel.HDURL];
+            self.imageView.frame = destinationRect;
+        }
+    }
+  
 }
 
-#pragma mark - Helper
+- (void)downloadImageWithDestinationRect:(CGRect)destinationRect{
+    __weak typeof(self) weakSelf = self;
+    SDWebImageManager* manager = [SDWebImageManager sharedManager];
+    SDWebImageOptions options = SDWebImageRetryFailed | SDWebImageLowPriority;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [manager downloadImageWithURL:self.imageModel.HDURL
+                              options:options
+                             progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                                 //TODO:加载动画
+                                 
+                             } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                                 if (finished) {
+                                     weakSelf.imageView.image = image;
+                                     weakSelf.imageModel.thumbnailImage = image;
+                                     // 通知刷新
+//                                     if ([self.eventDelegate respondsToSelector:@selector(didFinishRefreshThumbnailImageIfNeed)]) {
+//                                         [self.eventDelegate didFinishRefreshThumbnailImageIfNeed];
+//                                     }
+                                     [UIView animateWithDuration:0.2f animations:^{
+                                         weakSelf.imageView.frame = destinationRect;
+                                     } completion:^(BOOL finished) {
+                                     }];
+                                 }
+                             }];
+    });
+}
+
+- (CGRect)zoomRectForScale:(CGFloat)scale withCenter:(CGPoint)center{
+    CGRect zoomRect;
+    zoomRect.size.height = [self frame].size.height / scale;
+    zoomRect.size.width = [self frame].size.width / scale;
+    zoomRect.origin.x = center.x - zoomRect.size.width / 2;
+    zoomRect.origin.y = center.y - zoomRect.size.height / 2;
+    return zoomRect;
+}
+
 - (void)showSheetView:(BOOL)show{
-    if (show && !_showsSheetView) {
-        [UIView animateWithDuration:0.3 animations:^{
-            [self addSubview:self.sheetView];
-            [self.sheetView setY:kSCREEN_HEIGHT - kSheetViewHeight];
-            _showsSheetView = YES;
-        } completion:^(BOOL finished) {
-        }];
-    }else if(!show && _showsSheetView){
-        [UIView animateWithDuration:0.3 animations:^{
-            [self.sheetView setY:kSCREEN_HEIGHT];
-        } completion:^(BOOL finished) {
-            [self.sheetView removeFromSuperview];
-            _showsSheetView = NO;
-        }];
-    }
+    [self.sheetView show:show];
+}
+
+- (CGRect)calculateDestinationFrameWithSize:(CGSize)size{
+    CGRect rect = CGRectMake(0.0f,
+                             (kSCREEN_HEIGHT - size.height * kSCREEN_WIDTH/size.width)/2,
+                             kSCREEN_WIDTH,
+                             size.height * kSCREEN_WIDTH/size.width);
+    return rect;
+}
+
+#pragma mark - UIScrollViewDelegate
+/**
+ *  缩放对象
+ *
+ */
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
+    return self.imageView;
+}
+
+/**
+ *  缩放结束
+ *
+ */
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale{
+    [scrollView setZoomScale:scale + 0.01 animated:NO];
+    [scrollView setZoomScale:scale animated:NO];
 }
 
 #pragma mark - Getter
@@ -139,9 +220,23 @@ const CGFloat kSheetViewHeight = 160.f;
 
 - (ZTimageBrowserSheetView *)sheetView{
     if (!_sheetView) {
-        _sheetView = [[ZTimageBrowserSheetView alloc]initWithFrame:CGRectMake(0, kSCREEN_HEIGHT, kSCREEN_WIDTH, kSheetViewHeight)];
-        [_sheetView setBackgroundColor:[UIColor redColor]];
+        _sheetView = [[ZTimageBrowserSheetView alloc]initWithFrame:self.bounds];
+        [self addSubview:_sheetView];
     }
     return _sheetView;
+}
+
+#pragma mark - Setter
+- (void)setImageModel:(ZTImageBrowserModel *)imageModel{
+    if (_imageModel != imageModel) {
+        _imageModel = imageModel;
+    }
+    
+    if (!self.isFirstShow) {
+        [self loadHdImage:YES];
+    }
+    else {
+        [self loadHdImage:NO];
+    }
 }
 @end

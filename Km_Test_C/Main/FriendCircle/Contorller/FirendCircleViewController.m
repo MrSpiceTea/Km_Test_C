@@ -93,10 +93,23 @@
         [array writeToFile:kFriendCircleListPath atomically:YES];
     }
     
+    NSMutableArray *mediaModels = [NSMutableArray array];
+    for (int i=0; i<3; i++) {
+        MediaModel *media = [MediaModel new];
+        media.HDURL = [NSURL URLWithString:@"http://a.hiphotos.baidu.com/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=64dc8a4d1bd8bc3ed2050e98e3e2cd7b/8ad4b31c8701a18b8f8b2d389c2f07082838fe60.jpg"];
+        media.thumbnailImageURL = [NSURL URLWithString:@"http://ww1.sinaimg.cn/crop.0.0.1242.1242.1024/006boC82jw8eulzgtza8uj30yi0yi0tn.jpg"];
+        [mediaModels addObject:media];
+    }
     
+    for (int i=0; i<6; i++) {
+        MediaModel *media = [MediaModel new];
+        media.HDURL = [NSURL URLWithString:@"http://imgsrc.baidu.com/forum/w%3D580/sign=53952d5bc91b9d168ac79a69c3dfb4eb/d7da7b899e510fb32a77c813de33c895d0430cda.jpg"];
+        media.thumbnailImageURL = [NSURL URLWithString:@"http://ww1.sinaimg.cn/crop.0.0.1242.1242.1024/006boC82jw8eulzgtza8uj30yi0yi0tn.jpg"];
+        [mediaModels addObject:media];
+    }
 
     UserModel *user = [[UserModel alloc]init];
-    user.profileImageUrl = @"http://www.rmzt.com/uploads/allimg/151014/1-151014164149411.jpg";
+    user.profileImageUrl = @"http://ww1.sinaimg.cn/crop.0.0.1242.1242.1024/006boC82jw8eulzgtza8uj30yi0yi0tn.jpg";
     for (NSDictionary *dic in array) {
         FriendCircleModel *model1 = [[FriendCircleModel alloc] init];
         model1.profileImageUrl = dic[@"profileImageUrl"];
@@ -105,8 +118,9 @@
         model1.text = dic[@"text"];
         model1.distan = dic[@"distan"];
         model1.createdAt = dic[@"createdAt"];
-        model1.imagesArray = dic[@"images"];
+//        model1.imagesArray = dic[@"images"];
         [model1.likeArray addObject:user];
+        model1.mediaArray = mediaModels;
 //        model1.commentArray = commentModelArray;
 
         [self.dataSource addObject:model1];
@@ -173,11 +187,11 @@
             __weak FirendCircleViewController *selfWeak = self;
             cell.mediaClickedBlock = ^(FriendCircleModel *model,NSMutableArray *imageViews,NSUInteger index){
                 NSMutableArray *photoArray = [[NSMutableArray alloc] init];
-                for (int i = 0;i< model.imagesArray.count; i ++) {
+                for (int i = 0;i< model.mediaArray.count; i ++) {
                     ZTImageBrowserModel *imageModel = [[ZTImageBrowserModel alloc]init];
+                    MediaModel *mediaModel = model.mediaArray[i];
+                    imageModel.HDURL = mediaModel.HDURL;
                     imageModel.srcImageView = imageViews[i];
-//                    imageModel.HDURL = model.HDURL;
-                    imageModel.HDURL = [NSURL URLWithString:@"http://www.rmzt.com/uploads/allimg/151014/1-151014164149411.jpg"];
                     [photoArray addObject:imageModel];
                 }
                 ZTImageBrowser *imageBrowser = [[ZTImageBrowser alloc]init];
@@ -220,7 +234,7 @@
 }
 #pragma mark - FriendPhotoContainerViewDelegate
 - (void)imageTapAtIndex:(NSUInteger)index{
-    NSLog(@"%lu",index);
+    
 }
 
 #pragma mark - FirendCircleIssueDelegate

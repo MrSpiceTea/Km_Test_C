@@ -156,15 +156,16 @@
     if (!_model) {
         return;
     }
-    
-    //    UIImage *image = [UIImage imageNamed:model.profileImageUrl];
-    //    UIGraphicsBeginImageContextWithOptions(self.headerImageView .bounds.size, NO, 1.0);
-    //    [[UIBezierPath bezierPathWithRoundedRect:self.headerImageView .bounds
-    //                                cornerRadius:10.0] addClip];
-    //    [image drawInRect:self.headerImageView.bounds];
-    //    self.headerImageView.image = UIGraphicsGetImageFromCurrentImageContext();
-    
+
     [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:model.profileImageUrl] placeholderImage:[UIImage imageNamed:@"myhome_default_head"]];
+    
+//    UIImage *image = self.headerImageView.image;
+//    UIGraphicsBeginImageContextWithOptions(self.headerImageView.bounds.size, NO, 1.0);
+//    [[UIBezierPath bezierPathWithRoundedRect:self.headerImageView.bounds
+//                                cornerRadius:10.0] addClip];
+//    [image drawInRect:self.headerImageView.bounds];
+//    self.headerImageView.image = UIGraphicsGetImageFromCurrentImageContext();
+    
     self.userNameLabel.text = model.userName;
     self.distanceLabel.text = model.distan;
     self.dateLabel.text = model.createdAt;
@@ -172,7 +173,7 @@
     [self.detailLabel setLongString:model.text withFitWidth:kFriendCircleCell_ContentWidth maxHeight:kFriendCircleCell_ContentMaxHeight];
     
     CGFloat curBottomY = CGRectGetMaxY(self.detailLabel.frame);
-    if (model.imagesArray.count>0) {
+    if (model.mediaArray.count>0) {
         CGFloat mediaHeight = [[self class] contentMediaHeightWithTweet:model];
         [self.mediaView setFrame:CGRectMake(kFriendCircleCell_ContentX, curBottomY, kFriendCircleCell_ContentWidth, mediaHeight)];
         [self.mediaView reloadData];
@@ -189,7 +190,7 @@
 
 + (CGFloat)contentMediaHeightWithTweet:(FriendCircleModel *)model{
     CGFloat contentMediaHeight = 0;
-    NSInteger mediaCount = model.imagesArray.count;
+    NSInteger mediaCount = model.mediaArray.count;
     if (mediaCount > 0) {
         if (mediaCount == 1) {
             
@@ -223,9 +224,9 @@
 }
 
 + (CGFloat)mediatHeightWithModel:(FriendCircleModel *)model{
-    if (model.imagesArray.count>0) {
+    if (model.mediaArray.count>0) {
         FriendPhotoContainerView * friendPhotoContainerView = [FriendPhotoContainerView new];
-        return   [friendPhotoContainerView heightWidthImages:model.imagesArray];
+        return   [friendPhotoContainerView heightWidthImages:model.mediaArray];
     }
     return 0;
 }
@@ -234,7 +235,7 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     NSInteger row = 0;
     if (collectionView == _mediaView) {
-        row = _model.imagesArray.count;
+        row = _model.mediaArray.count;
     }else{
         return 0;
     }
@@ -247,9 +248,10 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     if (collectionView == _mediaView) {
+        MediaModel *media = self.model.mediaArray[indexPath.row];
         FriendCircleMediaCell *ccell = [collectionView dequeueReusableCellWithReuseIdentifier:kCCellIdentifier_FriendCircleMediaCell forIndexPath:indexPath];
         [ccell.imageView setFrame:CGRectMake(0, 0, kFriendCircleCell_MediaImageViewHeight, kFriendCircleCell_MediaImageViewHeight)];
-        [ccell.imageView sd_setImageWithURL:[NSURL URLWithString:self.model.imagesArray[indexPath.row]] placeholderImage:[UIImage imageNamed:@"myhome_default_head"]];
+        [ccell.imageView sd_setImageWithURL:media.thumbnailImageURL placeholderImage:[UIImage imageNamed:@"myhome_default_head"]];
         return ccell;
     }else{
         
@@ -284,7 +286,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if (self.mediaClickedBlock) {
         NSMutableArray *imageViews = [NSMutableArray new];
-        for (int i = 0; i<self.model.imagesArray.count;i++ ) {
+        for (int i = 0; i<self.model.mediaArray.count;i++ ) {
             FriendCircleMediaCell *cell = (FriendCircleMediaCell *)[collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
             [imageViews addObject:cell.imageView];
         }

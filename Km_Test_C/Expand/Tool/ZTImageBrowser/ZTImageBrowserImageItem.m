@@ -17,6 +17,7 @@ const CGFloat kDuration = 0.3f;
 @interface ZTImageBrowserImageItem()<UIScrollViewDelegate>
 @property (nonatomic,strong) ZTimageBrowserSheetView *sheetView;
 @property (nonatomic,assign) BOOL showsSheetView;
+@property (nonatomic,strong) UIActivityIndicatorView *activityIndicatorView;
 @end
 
 @implementation ZTImageBrowserImageItem
@@ -100,7 +101,7 @@ const CGFloat kDuration = 0.3f;
     __weak typeof(self) weakSelf = self;
     //还未下载的图片
     if (!isImageCached) {
-        self.imageView.image = self.imageModel.thumbnailImage;
+        self.imageView.image = self.imageModel.placeholder;
         if (animated) {
             self.imageView.frame  = self.imageModel.srcImageViewRect;
             [UIView animateWithDuration:0.18f delay:0.0f options:UIViewAnimationOptionCurveEaseIn animations:^{
@@ -129,28 +130,29 @@ const CGFloat kDuration = 0.3f;
             self.imageView.frame = destinationRect;
         }
     }
-  
 }
 
 - (void)downloadImageWithDestinationRect:(CGRect)destinationRect{
     __weak typeof(self) weakSelf = self;
     SDWebImageManager* manager = [SDWebImageManager sharedManager];
     SDWebImageOptions options = SDWebImageRetryFailed | SDWebImageLowPriority;
+    [self addSubview:self.activityIndicatorView];
+    [self.activityIndicatorView startAnimating];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [manager downloadImageWithURL:self.imageModel.HDURL options:options
-                             progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-                                 //TODO:加载动画进度条
-                             }completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-                                 if (finished) {
-                                     weakSelf.imageView.image = image;
-                                     weakSelf.imageModel.thumbnailImage = image;
-                                     // 通知
-                                     [UIView animateWithDuration:0.2f animations:^{
-                                         weakSelf.imageView.frame = destinationRect;
-                                     } completion:^(BOOL finished) {
-                                     }];
-                                 }
-                             }];
+        [manager downloadImageWithURL:self.imageModel.HDURL options:options progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        //TODO:加载动画进度条
+        }completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+        if (finished) {
+            [weakSelf.activityIndicatorView stopAnimating];
+            [weakSelf.activityIndicatorView removeFromSuperview];
+            weakSelf.imageView.image = image;
+            weakSelf.imageModel.thumbnailImage = image;
+            // 通知
+            [UIView animateWithDuration:0.2f animations:^{
+                weakSelf.imageView.frame = destinationRect;
+            }completion:^(BOOL finished) {}];
+        }
+        }];
     });
 }
 
@@ -176,18 +178,12 @@ const CGFloat kDuration = 0.3f;
 }
 
 #pragma mark - UIScrollViewDelegate
-/**
- *  缩放对象
- *
- */
+//缩放对象
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
     return self.imageView;
 }
 
-/**
- *  缩放结束
- *
- */
+//缩放结束
 - (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale{
     [scrollView setZoomScale:scale + 0.01 animated:NO];
     [scrollView setZoomScale:scale animated:NO];
@@ -210,6 +206,15 @@ const CGFloat kDuration = 0.3f;
         [self addSubview:_sheetView];
     }
     return _sheetView;
+}
+
+- (UIActivityIndicatorView *)activityIndicatorView{
+    if (!_activityIndicatorView) {
+        _activityIndicatorView = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
+        _activityIndicatorView.center = self.center;
+        [_activityIndicatorView setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    }
+    return _activityIndicatorView;
 }
 
 #pragma mark - Setter

@@ -30,7 +30,7 @@ typedef NS_ENUM(NSUInteger, FriendCircleModelMessageType) {
 @property (nonatomic,copy) NSString *distan;//距离
 @property (nonatomic,copy) NSString *praise;//赞数
 @property (nonatomic,assign) FriendCircleModelMessageType messageType;
-@property (nonatomic,strong) NSMutableArray *imagesArray;
+//@property (nonatomic,strong) NSMutableArray *imagesArray;
 @property (nonatomic,strong) NSMutableArray *mediaArray;
 @property (nonatomic,strong) NSMutableArray *commentArray;//评论
 @property (nonatomic,strong) NSMutableArray *likeArray;//赞

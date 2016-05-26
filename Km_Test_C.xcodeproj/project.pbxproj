@@ -70,6 +70,7 @@
 		513E5B1C1CE9633200F9B60A /* KM_NetAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DF31CDC952200C084E7 /* KM_NetAPIManager.m */; };
 		513E5B1D1CE9633E00F9B60A /* KM_NetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DF81CDC98DB00C084E7 /* KM_NetAPIClient.m */; };
 		513E5B1E1CE9635800F9B60A /* KM_APIRequestAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DFB1CDC9C6400C084E7 /* KM_APIRequestAgent.m */; };
+		5140D5431CF6C66500DA2701 /* ZTImageBrowserProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5140D5421CF6C66500DA2701 /* ZTImageBrowserProgressView.m */; };
 		5140FF461CEF038800CADD04 /* SwipeUpInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5140FF451CEF038800CADD04 /* SwipeUpInteractiveTransition.m */; };
 		5140FF491CEF0C6200CADD04 /* NormalDismissAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5140FF481CEF0C6200CADD04 /* NormalDismissAnimation.m */; };
 		5145BE571CE566C20025DB10 /* ChatSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145BE561CE566C20025DB10 /* ChatSessionViewController.m */; };
@@ -245,6 +246,8 @@
 		513E5B161CE9629B00F9B60A /* KMAbstractObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMAbstractObject.m; sourceTree = "<group>"; };
 		513E5B181CE962A300F9B60A /* CommonAbstractObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonAbstractObject.h; sourceTree = "<group>"; };
 		513E5B191CE962A300F9B60A /* CommonAbstractObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonAbstractObject.m; sourceTree = "<group>"; };
+		5140D5411CF6C66500DA2701 /* ZTImageBrowserProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTImageBrowserProgressView.h; sourceTree = "<group>"; };
+		5140D5421CF6C66500DA2701 /* ZTImageBrowserProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTImageBrowserProgressView.m; sourceTree = "<group>"; };
 		5140FF441CEF038800CADD04 /* SwipeUpInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeUpInteractiveTransition.h; sourceTree = "<group>"; };
 		5140FF451CEF038800CADD04 /* SwipeUpInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeUpInteractiveTransition.m; sourceTree = "<group>"; };
 		5140FF471CEF0C6200CADD04 /* NormalDismissAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalDismissAnimation.h; sourceTree = "<group>"; };
@@ -935,6 +938,8 @@
 				51D486351CF4572D00765024 /* ZTImageBrowserImageItem.m */,
 				51D486371CF45B8F00765024 /* ZTImageBrowserModel.h */,
 				51D486381CF45B8F00765024 /* ZTImageBrowserModel.m */,
+				5140D5411CF6C66500DA2701 /* ZTImageBrowserProgressView.h */,
+				5140D5421CF6C66500DA2701 /* ZTImageBrowserProgressView.m */,
 				51D4863A1CF45C1900765024 /* ZTimageBrowserSheetView.h */,
 				51D4863B1CF45C1900765024 /* ZTimageBrowserSheetView.m */,
 			);
@@ -1350,6 +1355,7 @@
 				35ED92B91CE38EDE003FE776 /* ChatFriendApplyViewController.m in Sources */,
 				51700BE91CD851AF0091FF33 /* AlbumListCell.m in Sources */,
 				356A37DA1CCE5A56001F4FA0 /* ArtistDetailViewController.m in Sources */,
+				5140D5431CF6C66500DA2701 /* ZTImageBrowserProgressView.m in Sources */,
 				35ED92C51CE38FA2003FE776 /* ChatFriendAddAddressViewController.m in Sources */,
 				51AC5AB81CE332800002F4EE /* BottomButtonsView.m in Sources */,
 				3560131F1CCA9DA900DE2275 /* ChooseSongViewController.m in Sources */,

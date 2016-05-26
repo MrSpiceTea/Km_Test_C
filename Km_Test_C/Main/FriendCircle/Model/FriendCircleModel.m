@@ -23,12 +23,12 @@
     return self;
 }
 
-- (NSMutableArray *)imagesArray{
-    if (!_imagesArray) {
-        _imagesArray = [NSMutableArray array];
-    }
-    return _imagesArray;
-}
+//- (NSMutableArray *)imagesArray{
+//    if (!_imagesArray) {
+//        _imagesArray = [NSMutableArray array];
+//    }
+//    return _imagesArray;
+//}
 
 - (NSMutableArray *)likeArray{
     if (!_likeArray) {
@@ -61,18 +61,19 @@ static const CGFloat kFriendPhotoContainerViewPicMargin = 5.0f;
     if (!_cellHeight) {
         CGFloat textW= kSCREEN_WIDTH - FriendCircleCellImageViewHeight - FriendCircleCellTopMargin*3;
         CGFloat textH = [self.text boundingRectWithSize:CGSizeMake(textW, MAXFLOAT)
-                                                      options:NSStringDrawingUsesLineFragmentOrigin
-                                                   attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:13.5]}
-                                                      context:nil].size.height;
+                                                options:NSStringDrawingUsesLineFragmentOrigin
+                                             attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:13.5]}
+                                                context:nil].size.height;
         
         
         _cellHeight = textH + FriendCircleCellImageViewHeight + FriendCircleCellTopMargin*5;
-        if (self.imagesArray.count>0) {
-            CGFloat itemW = [self itemWidthForPicPathArray:self.imagesArray];
-            long perRowItemCount = [self rowCountForImagesArray:self.imagesArray];
+        if (self.mediaArray.count>0) {
+            CGFloat itemW = [self itemWidthForPicPathArray:self.mediaArray];
+            long perRowItemCount = [self rowCountForImagesArray:self.mediaArray];
             CGFloat itemH = 0;
-            if (self.imagesArray.count == 1) {
-                UIImage *image = [UIImage imageNamed:self.imagesArray.firstObject];
+            if (self.mediaArray.count == 1) {
+                MediaModel *media = self.mediaArray.firstObject;
+                UIImage *image = media.thumbnailImage;
                 if (image.size.width) {
                     itemH = image.size.height / image.size.width * itemW;
                 }
@@ -80,7 +81,7 @@ static const CGFloat kFriendPhotoContainerViewPicMargin = 5.0f;
                 itemH = itemW;
             }
             long
-            int columnCount = ceilf(self.imagesArray.count * 1.0 / perRowItemCount);
+            int columnCount = ceilf(self.mediaArray.count * 1.0 / perRowItemCount);
             CGFloat height = columnCount * itemH + (columnCount - 1) * kFriendPhotoContainerViewPicMargin;
             _cellHeight += height;
         }

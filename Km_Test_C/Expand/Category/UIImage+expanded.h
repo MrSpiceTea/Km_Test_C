@@ -16,4 +16,5 @@
 + (UIImage *)imageWithColor:(UIColor *)color;
 + (UIImage *)scaleFromImage: (UIImage *) image toSize: (CGSize) size;
 + (UIImage *)thumbnailWithImageWithoutScale:(UIImage *)image size:(CGSize)asize;
++ (UIImage *)screenShotWidthView:(UIView *)aView;
 @end

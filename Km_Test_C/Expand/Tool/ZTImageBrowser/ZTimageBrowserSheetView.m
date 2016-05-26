@@ -31,7 +31,6 @@ const CGFloat kSheetViewHeight = 160.f;
 }
 
 - (void)setup{
-    self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
     [self addSubview:self.tableView];
 }
 
@@ -40,6 +39,7 @@ const CGFloat kSheetViewHeight = 160.f;
     __weak typeof(self) weakSelf = self;
     if (isshow && !_showsSheetView) {
         [UIView animateWithDuration:0.3 animations:^{
+            self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
             UIWindow* window = [UIApplication sharedApplication].keyWindow;
             [window addSubview:weakSelf];
             [weakSelf.tableView setY:kSCREEN_HEIGHT - kSheetViewHeight];
@@ -49,6 +49,7 @@ const CGFloat kSheetViewHeight = 160.f;
     }else if(!isshow && _showsSheetView){
         [UIView animateWithDuration:0.3 animations:^{
             [weakSelf.tableView setY:kSCREEN_HEIGHT];
+            self.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
         } completion:^(BOOL finished) {
             [weakSelf removeFromSuperview];
             _showsSheetView = NO;

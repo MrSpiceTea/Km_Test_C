@@ -196,8 +196,7 @@ const CGFloat kDuration = 0.3f;
 #pragma mark - Getter
 - (UIImageView *)imageView {
     if (!_imageView) {
-//        _imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-         _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+        _imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
         _imageView.contentMode = UIViewContentModeScaleAspectFill;
         _imageView.userInteractionEnabled = YES;
         _imageView.clipsToBounds = YES;

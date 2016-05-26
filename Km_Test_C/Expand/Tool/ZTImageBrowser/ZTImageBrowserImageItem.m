@@ -44,7 +44,6 @@ const CGFloat kDuration = 0.3f;
     
     UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handledoubleTap:)];
     doubleTap.numberOfTapsRequired = 2;
-    
 
     UILongPressGestureRecognizer *longPressGesture=[[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPressImage:)];
     longPressGesture.minimumPressDuration = 0.5;//设置长按时间
@@ -61,16 +60,10 @@ const CGFloat kDuration = 0.3f;
         if (_showsSheetView) {
             [self showSheetView:NO];
         }else{
-             __weak typeof(self) weakSelf = self;
             if (self.zoomScale != 1.0f) {
                 self.zoomScale = 1.0f;
             }
-            //srcImageViewRect fix
-            [UIView animateWithDuration:0.25f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^{
-                weakSelf.imageView.frame  = self.imageModel.srcImageViewRect;
-            } completion:^(BOOL finished) {
-                [self.imageItemDelegate disMissBrowser];
-            }];
+            [self.imageItemDelegate disMissBrowser];
         }
     }
 }
@@ -225,7 +218,6 @@ const CGFloat kDuration = 0.3f;
     if (_imageModel != imageModel) {
         _imageModel = imageModel;
     }
-    
     if (!self.isFirstShow) {
         [self loadHdImage:YES];
     }

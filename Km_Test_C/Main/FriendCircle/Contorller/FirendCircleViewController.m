@@ -183,7 +183,7 @@
                 ZTImageBrowser *imageBrowser = [[ZTImageBrowser alloc]init];
                 imageBrowser.currentIndex = index;
                 [imageBrowser setImageModels:photoArray];
-                [selfWeak presentViewController:imageBrowser animated:NO completion:nil];
+                [selfWeak presentViewController:imageBrowser animated:NO completion:^{}];
             };
         }
         return cell;

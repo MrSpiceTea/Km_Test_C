@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ZTImageBrowserModel.h"
-
+#import "ZTImageBrowserCell.h"
 @interface ZTImageBrowser : UIViewController
 @property (nonatomic,assign) NSInteger currentIndex;
 @property (nonatomic,strong) NSMutableArray *imageModels;
+@property (nonatomic,strong) ZTImageBrowserImageItem* currentImageItem;
 @end

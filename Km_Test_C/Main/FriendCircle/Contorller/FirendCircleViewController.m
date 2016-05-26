@@ -171,11 +171,11 @@
             [cell setModel:model];
             cell.friendPhotoContainerView.delegate = self;
             __weak FirendCircleViewController *selfWeak = self;
-            cell.mediaClickedBlock = ^(FriendCircleModel *model,UIImageView *imageView,NSUInteger index){
+            cell.mediaClickedBlock = ^(FriendCircleModel *model,NSMutableArray *imageViews,NSUInteger index){
                 NSMutableArray *photoArray = [[NSMutableArray alloc] init];
                 for (int i = 0;i< model.imagesArray.count; i ++) {
                     ZTImageBrowserModel *imageModel = [[ZTImageBrowserModel alloc]init];
-                    imageModel.srcImageView = imageView;
+                    imageModel.srcImageView = imageViews[i];
 //                    imageModel.HDURL = model.HDURL;
                     imageModel.HDURL = [NSURL URLWithString:@"http://www.rmzt.com/uploads/allimg/151014/1-151014164149411.jpg"];
                     [photoArray addObject:imageModel];

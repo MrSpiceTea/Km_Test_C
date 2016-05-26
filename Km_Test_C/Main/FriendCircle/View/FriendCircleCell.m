@@ -283,8 +283,12 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if (self.mediaClickedBlock) {
-        FriendCircleMediaCell *cell = (FriendCircleMediaCell *)[collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
-        self.mediaClickedBlock(self.model,cell.imageView,indexPath.row);
+        NSMutableArray *imageViews = [NSMutableArray new];
+        for (int i = 0; i<self.model.imagesArray.count;i++ ) {
+            FriendCircleMediaCell *cell = (FriendCircleMediaCell *)[collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+            [imageViews addObject:cell.imageView];
+        }
+        self.mediaClickedBlock(self.model,imageViews,indexPath.row);
     }
 }
 

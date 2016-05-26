@@ -65,6 +65,7 @@ const CGFloat kDuration = 0.3f;
             if (self.zoomScale != 1.0f) {
                 self.zoomScale = 1.0f;
             }
+            //srcImageViewRect fix
             [UIView animateWithDuration:0.25f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^{
                 weakSelf.imageView.frame  = self.imageModel.srcImageViewRect;
             } completion:^(BOOL finished) {
@@ -108,7 +109,6 @@ const CGFloat kDuration = 0.3f;
     if (!isImageCached) {
         self.imageView.image = self.imageModel.thumbnailImage;
         if (animated) {
-              //TODO:动画
             self.imageView.frame  = self.imageModel.srcImageViewRect;
             [UIView animateWithDuration:0.18f delay:0.0f options:UIViewAnimationOptionCurveEaseIn animations:^{
                weakSelf.imageView.center = weakSelf.center;
@@ -125,7 +125,6 @@ const CGFloat kDuration = 0.3f;
     //已经下载的图片
     else {
         if (animated) {
-              //TODO:动画
             self.imageView.frame  = self.imageModel.srcImageViewRect;
             [self.imageView sd_setImageWithURL:self.imageModel.HDURL];
             [UIView animateWithDuration:kDuration delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^{
@@ -145,19 +144,14 @@ const CGFloat kDuration = 0.3f;
     SDWebImageManager* manager = [SDWebImageManager sharedManager];
     SDWebImageOptions options = SDWebImageRetryFailed | SDWebImageLowPriority;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [manager downloadImageWithURL:self.imageModel.HDURL
-                              options:options
+        [manager downloadImageWithURL:self.imageModel.HDURL options:options
                              progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-                                 //TODO:加载动画
-                                 
-                             } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                                 //TODO:加载动画进度条
+                             }completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
                                  if (finished) {
                                      weakSelf.imageView.image = image;
                                      weakSelf.imageModel.thumbnailImage = image;
-                                     // 通知刷新
-//                                     if ([self.eventDelegate respondsToSelector:@selector(didFinishRefreshThumbnailImageIfNeed)]) {
-//                                         [self.eventDelegate didFinishRefreshThumbnailImageIfNeed];
-//                                     }
+                                     // 通知
                                      [UIView animateWithDuration:0.2f animations:^{
                                          weakSelf.imageView.frame = destinationRect;
                                      } completion:^(BOOL finished) {

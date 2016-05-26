@@ -87,7 +87,6 @@ static NSString * const reuseIdentifier = @"ZTImageBrowserCell";
     return _pageControl;
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

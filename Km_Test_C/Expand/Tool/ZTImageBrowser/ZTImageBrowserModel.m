@@ -21,6 +21,7 @@
 - (void)setSrcImageView:(UIImageView *)srcImageView
 {
     _srcImageView = srcImageView;
+    NSLog(@"%@,img = %@",self,_srcImageView);
     _placeholder = srcImageView.image;
     _srcImageViewRect = [srcImageView convertRect:srcImageView.bounds toView:nil];
     if (srcImageView.clipsToBounds) {

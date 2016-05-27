@@ -45,6 +45,7 @@
 		35ED92BF1CE38F3E003FE776 /* ChatFriendSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ED92BE1CE38F3E003FE776 /* ChatFriendSearchViewController.m */; };
 		35ED92C21CE38F4A003FE776 /* ChatFriendSearchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ED92C11CE38F4A003FE776 /* ChatFriendSearchListViewController.m */; };
 		35ED92C51CE38FA2003FE776 /* ChatFriendAddAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ED92C41CE38FA2003FE776 /* ChatFriendAddAddressViewController.m */; };
+		511A97431CF7FB4900537DCA /* ImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 511A97421CF7FB4900537DCA /* ImageScrollView.m */; };
 		513571A01CDC2B3D00E600DE /* ArtistDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5135719F1CDC2B3D00E600DE /* ArtistDetailCell.m */; };
 		513571A41CDC355E00E600DE /* ArtistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 513571A31CDC355E00E600DE /* ArtistModel.m */; };
 		5135ED311CE1760D00E0AB6D /* CommonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5135ED301CE1760D00E0AB6D /* CommonDetailViewController.m */; };
@@ -207,6 +208,8 @@
 		35ED92C11CE38F4A003FE776 /* ChatFriendSearchListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatFriendSearchListViewController.m; sourceTree = "<group>"; };
 		35ED92C31CE38FA2003FE776 /* ChatFriendAddAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatFriendAddAddressViewController.h; sourceTree = "<group>"; };
 		35ED92C41CE38FA2003FE776 /* ChatFriendAddAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatFriendAddAddressViewController.m; sourceTree = "<group>"; };
+		511A97411CF7FB4900537DCA /* ImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScrollView.h; sourceTree = "<group>"; };
+		511A97421CF7FB4900537DCA /* ImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScrollView.m; sourceTree = "<group>"; };
 		5135719E1CDC2B3D00E600DE /* ArtistDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistDetailCell.h; sourceTree = "<group>"; };
 		5135719F1CDC2B3D00E600DE /* ArtistDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistDetailCell.m; sourceTree = "<group>"; };
 		513571A21CDC355E00E600DE /* ArtistModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistModel.h; sourceTree = "<group>"; };
@@ -617,6 +620,13 @@
 			path = QRCode;
 			sourceTree = "<group>";
 		};
+		5140D5571CF6F8CC00DA2701 /* ZTImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ZTImagePicker;
+			sourceTree = "<group>";
+		};
 		5145BE581CE570ED0025DB10 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -724,6 +734,8 @@
 				5162AA961CCF470C008317D1 /* SegemtedControl.m */,
 				5162AAB31CCF6130008317D1 /* SlideView.h */,
 				5162AAB41CCF6130008317D1 /* SlideView.m */,
+				511A97411CF7FB4900537DCA /* ImageScrollView.h */,
+				511A97421CF7FB4900537DCA /* ImageScrollView.m */,
 				516746AC1CD1F788007AC9C6 /* ParallaxView.h */,
 				516746AD1CD1F788007AC9C6 /* ParallaxView.m */,
 				513C20CF1CD33A7600A6A886 /* HeaderInsetTableView.h */,
@@ -1045,6 +1057,7 @@
 		51DE66401CCA2167001F0BAC /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				5140D5571CF6F8CC00DA2701 /* ZTImagePicker */,
 				51D4862D1CF42B7E00765024 /* ZTImageBrowser */,
 				3568ECB91CDF401D00A56133 /* ViewControllerAnimated */,
 				517D09441CCE16BE007EA37D /* MasonryTool.h */,
@@ -1424,6 +1437,7 @@
 				5145BE651CE5713A0025DB10 /* MessageModel.m in Sources */,
 				356013181CCA91DA00DE2275 /* BaseNavigationController.m in Sources */,
 				3568ECBC1CDF406400A56133 /* TopPresentAnimation.m in Sources */,
+				511A97431CF7FB4900537DCA /* ImageScrollView.m in Sources */,
 				5162AAAA1CCF58A8008317D1 /* FriendCircleHeaderView.m in Sources */,
 				3568ECB21CDF147500A56133 /* FirendCircleIssueViewController.m in Sources */,
 				51D4863C1CF45C1900765024 /* ZTimageBrowserSheetView.m in Sources */,

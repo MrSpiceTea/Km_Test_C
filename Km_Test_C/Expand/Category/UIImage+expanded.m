@@ -138,6 +138,6 @@ void addRoundRectToPath(CGContextRef context, CGRect rect, float radius, CGImage
     }
     return newimage;
 }
-
+//截图
 
 @end

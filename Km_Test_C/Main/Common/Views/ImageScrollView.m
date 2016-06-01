@@ -57,6 +57,8 @@
 }
 
 - (void)imageScorll{
+    CGPoint newOffset = CGPointMake(self.scrollView.contentOffset.x + CGRectGetWidth(self.scrollView.frame), self.scrollView.contentOffset.y);
+    NSLog(@"%f", newOffset.x);
 //    NSLog(@"timer");
 }
 
@@ -115,7 +117,7 @@
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     //    [self.timer setFireDate:[NSDate distantFuture]];//暂停
-    [self removeTimer];
+//    [self removeTimer];
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {

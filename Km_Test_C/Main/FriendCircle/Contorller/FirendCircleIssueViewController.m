@@ -8,6 +8,8 @@
 
 #import "FirendCircleIssueViewController.h"
 #import "FriendCircleModel.h"
+#import "ZTImagePicker.h"
+#import "ZTImagePickerAlbumList.h"
 
 #import "UIImage+expanded.h"
 #import <MobileCoreServices/MobileCoreServices.h>
@@ -112,8 +114,7 @@ static const CGFloat kActionViewHeight = 90.0f;
 }
 
 #pragma mark - UIImagePickerControllerDelegate
-- (void)imagePickerController:(UIImagePickerController *)picker
-didFinishPickingMediaWithInfo:(NSDictionary *)info{
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
     if ([mediaType isEqualToString:( NSString *)kUTTypeImage]){//图片
         //得到图片
@@ -181,14 +182,18 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 //打开本地相册
 - (void)LocalPhoto
 {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.title = @"选择照片";
-    [picker.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
-    picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-    picker.delegate = self;
-    //设置选择后的图片可被编辑
-    picker.allowsEditing = NO;
-    [self presentViewController:picker animated:YES completion:nil];
+//    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+//    picker.title = @"选择照片";
+//    [picker.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
+//    picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+//    picker.delegate = self;
+//    //设置选择后的图片可被编辑
+//    picker.allowsEditing = NO;
+//    [self presentViewController:picker animated:YES completion:nil];
+    ZTImagePickerAlbumList *albumList = [[ZTImagePickerAlbumList alloc]init];
+    ZTImagePicker *imagePicker = [[ZTImagePicker alloc]init];
+    UINavigationController *imagePickerNav = [[UINavigationController alloc]initWithRootViewController:albumList];
+    [self presentViewController:imagePickerNav animated:YES completion:nil];
 }
 
 - (void)showActionSheet{

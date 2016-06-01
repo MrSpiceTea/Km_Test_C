@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <AssetsLibrary/AssetsLibrary.h>
 @interface ZTImagePicker : UIViewController
-
+@property (nonatomic, strong) ALAssetsGroup *assetGroup;
+@property (nonatomic, strong) NSMutableArray *ztAssets;
 @end

@@ -8,7 +8,6 @@
 
 #import "ZTImagePicker.h"
 #import "ZTImagePickerItem.h"
-#include<AssetsLibrary/AssetsLibrary.h>
 @interface ZTImagePicker ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (nonatomic,strong) UICollectionView *collectionView;
 @end
@@ -38,6 +37,27 @@
 
 #pragma mark - Helper
 - (void)loadImages{
+    [_ztAssets removeAllObjects];
+    @autoreleasepool {
+        [self.ztAssets removeAllObjects];
+        [self.assetGroup enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
+            
+            if (result == nil) {
+                return;
+            }
+   
+            [self.ztAssets addObject:result];
+            NSLog(@"%@",result);
+            
+        }];
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self.collectionView reloadData];
+            // scroll to bottom
+
+        });
+    }
+
 //    ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc]init];
 //    [assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupAll usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
 //        NSLog(@"%@",group);
@@ -51,6 +71,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSMutableArray *)ztAssets{
+    if (!_ztAssets) {
+        _ztAssets = [NSMutableArray array];
+    }
+    return _ztAssets;
 }
 
 #pragma mark - TargetActon
@@ -67,7 +94,7 @@
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 9;
+    return self.ztAssets.count;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{

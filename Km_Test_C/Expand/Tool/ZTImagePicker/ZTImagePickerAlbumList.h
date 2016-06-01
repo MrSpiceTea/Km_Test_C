@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ZTImagePickerAlbumList : UITableViewController
-@property (nonatomic,strong) NSMutableArray *dataSource;
+@property (nonatomic, strong) NSMutableArray *assetGroups;
+@property (nonatomic, strong) NSArray *mediaTypes;
 @end

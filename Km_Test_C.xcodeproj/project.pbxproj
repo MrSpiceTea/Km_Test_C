@@ -48,6 +48,12 @@
 		35ED92BF1CE38F3E003FE776 /* ChatFriendSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ED92BE1CE38F3E003FE776 /* ChatFriendSearchViewController.m */; };
 		35ED92C21CE38F4A003FE776 /* ChatFriendSearchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ED92C11CE38F4A003FE776 /* ChatFriendSearchListViewController.m */; };
 		35ED92C51CE38FA2003FE776 /* ChatFriendAddAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ED92C41CE38FA2003FE776 /* ChatFriendAddAddressViewController.m */; };
+		51129D8C1CFFFFB70098BBF9 /* ZTImagePickerBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51129D871CFFFFB70098BBF9 /* ZTImagePickerBack@2x.png */; };
+		51129D8D1CFFFFB70098BBF9 /* ZTImagePickerBack@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51129D881CFFFFB70098BBF9 /* ZTImagePickerBack@3x.png */; };
+		51129D8E1CFFFFB70098BBF9 /* ZTImagePickerPhoto_circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51129D891CFFFFB70098BBF9 /* ZTImagePickerPhoto_circle@2x.png */; };
+		51129D8F1CFFFFB70098BBF9 /* ZTImagePickerPhoto_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51129D8A1CFFFFB70098BBF9 /* ZTImagePickerPhoto_selected@2x.png */; };
+		51129D901CFFFFB70098BBF9 /* ZTImagePickerPhoto_unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51129D8B1CFFFFB70098BBF9 /* ZTImagePickerPhoto_unselected@2x.png */; };
+		51129D931D0002550098BBF9 /* UIView+animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 51129D921D0002550098BBF9 /* UIView+animation.m */; };
 		511A97431CF7FB4900537DCA /* ImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 511A97421CF7FB4900537DCA /* ImageScrollView.m */; };
 		513571A01CDC2B3D00E600DE /* ArtistDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5135719F1CDC2B3D00E600DE /* ArtistDetailCell.m */; };
 		513571A41CDC355E00E600DE /* ArtistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 513571A31CDC355E00E600DE /* ArtistModel.m */; };
@@ -217,6 +223,13 @@
 		35ED92C11CE38F4A003FE776 /* ChatFriendSearchListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatFriendSearchListViewController.m; sourceTree = "<group>"; };
 		35ED92C31CE38FA2003FE776 /* ChatFriendAddAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatFriendAddAddressViewController.h; sourceTree = "<group>"; };
 		35ED92C41CE38FA2003FE776 /* ChatFriendAddAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatFriendAddAddressViewController.m; sourceTree = "<group>"; };
+		51129D871CFFFFB70098BBF9 /* ZTImagePickerBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZTImagePickerBack@2x.png"; sourceTree = "<group>"; };
+		51129D881CFFFFB70098BBF9 /* ZTImagePickerBack@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZTImagePickerBack@3x.png"; sourceTree = "<group>"; };
+		51129D891CFFFFB70098BBF9 /* ZTImagePickerPhoto_circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZTImagePickerPhoto_circle@2x.png"; sourceTree = "<group>"; };
+		51129D8A1CFFFFB70098BBF9 /* ZTImagePickerPhoto_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZTImagePickerPhoto_selected@2x.png"; sourceTree = "<group>"; };
+		51129D8B1CFFFFB70098BBF9 /* ZTImagePickerPhoto_unselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZTImagePickerPhoto_unselected@2x.png"; sourceTree = "<group>"; };
+		51129D911D0002550098BBF9 /* UIView+animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+animation.h"; sourceTree = "<group>"; };
+		51129D921D0002550098BBF9 /* UIView+animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+animation.m"; sourceTree = "<group>"; };
 		511A97411CF7FB4900537DCA /* ImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScrollView.h; sourceTree = "<group>"; };
 		511A97421CF7FB4900537DCA /* ImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScrollView.m; sourceTree = "<group>"; };
 		5135719E1CDC2B3D00E600DE /* ArtistDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistDetailCell.h; sourceTree = "<group>"; };
@@ -600,6 +613,18 @@
 			path = Contorller;
 			sourceTree = "<group>";
 		};
+		51129D861CFFFF520098BBF9 /* ZTImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				51129D871CFFFFB70098BBF9 /* ZTImagePickerBack@2x.png */,
+				51129D881CFFFFB70098BBF9 /* ZTImagePickerBack@3x.png */,
+				51129D891CFFFFB70098BBF9 /* ZTImagePickerPhoto_circle@2x.png */,
+				51129D8A1CFFFFB70098BBF9 /* ZTImagePickerPhoto_selected@2x.png */,
+				51129D8B1CFFFFB70098BBF9 /* ZTImagePickerPhoto_unselected@2x.png */,
+			);
+			path = ZTImagePicker;
+			sourceTree = "<group>";
+		};
 		513571A11CDC350300E600DE /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -612,6 +637,7 @@
 		5139DA9E1CDB2C7000C7F931 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				51129D861CFFFF520098BBF9 /* ZTImagePicker */,
 				5139DAA21CDB2EB100C7F931 /* listview_header_foot_drag_icon.png */,
 				5139DA9F1CDB2C7000C7F931 /* listview_header_footer_loading.gif */,
 			);
@@ -1045,6 +1071,8 @@
 				513B66E31CED679700ECB7D0 /* NSString+expanded.m */,
 				51D486211CF3EC9500765024 /* UIView+Frame.h */,
 				51D486221CF3EC9500765024 /* UIView+Frame.m */,
+				51129D911D0002550098BBF9 /* UIView+animation.h */,
+				51129D921D0002550098BBF9 /* UIView+animation.m */,
 				51D486231CF3EC9500765024 /* UIButton+expanded.h */,
 				51D486241CF3EC9500765024 /* UIButton+expanded.m */,
 				51D486251CF3EC9500765024 /* UILabel+expanded.h */,
@@ -1295,12 +1323,17 @@
 				5139DAA31CDB2EB100C7F931 /* listview_header_foot_drag_icon.png in Resources */,
 				35C08FBF1CE2359A0050D749 /* PeoPleListCell.xib in Resources */,
 				513CD6CB1CE432CB00841BCD /* CommentTableViewCell.xib in Resources */,
+				51129D8D1CFFFFB70098BBF9 /* ZTImagePickerBack@3x.png in Resources */,
+				51129D8C1CFFFFB70098BBF9 /* ZTImagePickerBack@2x.png in Resources */,
 				35D07E661CE4EA0A00A305C7 /* MessageCell.xib in Resources */,
 				513C33601CF5889C005FDDC7 /* peoples.json in Resources */,
 				5155830A1CEB1ECF007523A1 /* Info.plist in Resources */,
+				51129D8E1CFFFFB70098BBF9 /* ZTImagePickerPhoto_circle@2x.png in Resources */,
 				35C08FC31CE248930050D749 /* CoustomView.xib in Resources */,
 				5186088E1CE040240066E0D6 /* chatList.plist in Resources */,
+				51129D901CFFFFB70098BBF9 /* ZTImagePickerPhoto_unselected@2x.png in Resources */,
 				350B2CD61CE87AA500A85A86 /* RegisterViewController.xib in Resources */,
+				51129D8F1CFFFFB70098BBF9 /* ZTImagePickerPhoto_selected@2x.png in Resources */,
 				5139DAA01CDB2C7000C7F931 /* listview_header_footer_loading.gif in Resources */,
 				513C335E1CF58857005FDDC7 /* FriendCircleList.json in Resources */,
 				518608901CE0405A0066E0D6 /* FriendCircleList.plist in Resources */,
@@ -1386,6 +1419,7 @@
 				5140D5431CF6C66500DA2701 /* ZTImageBrowserProgressView.m in Sources */,
 				35ED92C51CE38FA2003FE776 /* ChatFriendAddAddressViewController.m in Sources */,
 				51AC5AB81CE332800002F4EE /* BottomButtonsView.m in Sources */,
+				51129D931D0002550098BBF9 /* UIView+animation.m in Sources */,
 				3560131F1CCA9DA900DE2275 /* ChooseSongViewController.m in Sources */,
 				51D486271CF3EC9500765024 /* UIView+Frame.m in Sources */,
 				51700BE61CD851270091FF33 /* AlbumRecListViewController.m in Sources */,

@@ -7,11 +7,7 @@
 //
 
 #import "ZTImagePickerAlbumList.h"
-#import "ZTImagePicker.h"
-#include<AssetsLibrary/AssetsLibrary.h>
 #import <MobileCoreServices/UTCoreTypes.h>
-
-
 @interface ZTImagePickerAlbumList ()
 //@property (nonatomic,strong) UITableView *table;
 @property (nonatomic, strong) ALAssetsLibrary *library;
@@ -21,13 +17,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor], NSForegroundColorAttributeName, nil]];
+    [self.navigationController.navigationBar setBarTintColor:RGB(240, 240, 240)];
+    self.view.backgroundColor = RGB(240, 240, 240);
+    UIButton *cancleButton = [UIButton buttonWidthTitle:@"取消" frame:CGRectMake(0, 0, 50, 30) target:self action:@selector(cancleButtonAction)];
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc]initWithCustomView:cancleButton];
+    self.navigationItem.rightBarButtonItem = barButtonItem;
     [self loadAlbumList];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)cancleButtonAction{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)loadAlbumList{
@@ -85,13 +85,10 @@
                                       failureBlock:assetGroupEnumberatorFailure];
             
         }
-        
     });
-    
 }
 
-- (ALAssetsFilter *)assetFilter
-{
+- (ALAssetsFilter *)assetFilter{
     if([self.mediaTypes containsObject:(NSString *)kUTTypeImage] && [self.mediaTypes containsObject:(NSString *)kUTTypeMovie])
     {
         return [ALAssetsFilter allAssets];
@@ -106,14 +103,12 @@
     }
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)reloadTableView
-{
+- (void)reloadTableView{
     [self.tableView reloadData];
     [self.navigationItem setTitle:NSLocalizedString(@"Select an Album", nil)];
 }
@@ -161,14 +156,6 @@
     [imagesPicker.assetGroup setAssetsFilter:[self assetFilter]];
     [self.navigationController pushViewController:imagesPicker animated:YES];
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

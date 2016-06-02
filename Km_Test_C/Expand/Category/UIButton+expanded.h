@@ -10,4 +10,5 @@
 
 @interface UIButton (expanded)
 
++ (UIButton*)buttonWidthTitle:(NSString *)title frame:(CGRect )frame  target:(id)target action:(SEL)action;
 @end

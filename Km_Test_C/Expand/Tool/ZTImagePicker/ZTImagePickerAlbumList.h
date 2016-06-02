@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ZTImagePicker.h"
 @interface ZTImagePickerAlbumList : UITableViewController
+@property (nonatomic, strong) UIViewController *prevc;
 @property (nonatomic, strong) NSMutableArray *assetGroups;
 @property (nonatomic, strong) NSArray *mediaTypes;
+@property (nonatomic, assign) BOOL isOriginal;
 @end

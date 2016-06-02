@@ -15,4 +15,5 @@
 
 @interface FirendCircleIssueViewController : CommonTableViewController
 @property (nonatomic,weak) id<FirendCircleIssueDelegate> delegate;
+@property (nonatomic, strong) NSMutableArray * selectedPhotos;
 @end

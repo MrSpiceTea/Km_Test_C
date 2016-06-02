@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <AssetsLibrary/AssetsLibrary.h>
 #define ZTImagePickerItemID @"ZTImagePickerItem"
 #define kZTImagePickerItemCell_Height  (kSCREEN_WIDTH - 3*5)/4
 @interface ZTImagePickerItem : UICollectionViewCell
-
+@property (nonatomic, strong) ALAsset *assets;
+@property (nonatomic, strong) UIImageView *thumbnailImageView;
+@property (nonatomic, strong) UIButton *selectButton;
+@property (nonatomic, copy) void(^selectedBlock)(BOOL isSelected);
 @end

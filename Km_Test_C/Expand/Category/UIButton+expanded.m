@@ -11,6 +11,14 @@
 #import "NSString+expanded.h"
 
 @implementation UIButton (expanded)
++ (UIButton*)buttonWidthTitle:(NSString *)title frame:(CGRect )frame  target:(id)target action:(SEL)action{
+    UIButton *btn = [[UIButton alloc]initWithFrame:frame];
+    [btn setTitle:title forState:UIControlStateNormal];
+    [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    return btn;
+}
+
+
 - (void)setTitle:(NSString *)title font:(UIFont *)font maxWidth:(CGFloat)maxWidth{
     [self setTitle:title forState:UIControlStateNormal];
     CGRect frame = self.frame;
@@ -22,5 +30,9 @@
     }
     [self setWidth:titleWidth];
     [self.titleLabel setWidth:titleWidth];
+}
+
+- (void)touchAction{
+    
 }
 @end

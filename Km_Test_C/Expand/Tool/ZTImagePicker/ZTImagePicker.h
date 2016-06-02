@@ -7,8 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AssetsLibrary/AssetsLibrary.h>
+#import "ZTImagePickerItem.h"
+
+static NSString * kZTImagePickerSelectedPhotosCompletionNotification = @"ZTImagePickerSelectedPhotosCompletionNotification";
+static NSString * kZTImagePickerSelectedPhotosCompletionNotificationDicKey = @"ZTImagePickerSelectedPhotosCompletionNotificationDicKey";
+
+@protocol ZTImagePickerDelegate <NSObject>
+- (void)fetchImagesWithImagePiceker:(NSMutableArray *)images;
+@end
+
 @interface ZTImagePicker : UIViewController
+@property (nonatomic, weak) id<ZTImagePickerDelegate> delegate;
 @property (nonatomic, strong) ALAssetsGroup *assetGroup;
 @property (nonatomic, strong) NSMutableArray *ztAssets;
+@property (nonatomic, strong) NSMutableArray *selectedPhotos;
 @end

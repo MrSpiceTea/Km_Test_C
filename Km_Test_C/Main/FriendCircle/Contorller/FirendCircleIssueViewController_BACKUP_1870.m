@@ -183,13 +183,14 @@ static const CGFloat kActionViewHeight = 90.0f;
 //打开本地相册
 - (void)LocalPhoto
 {
-
+<<<<<<< HEAD
 //    if ([PHPhotoLibrary authorizationStatus] != PHAuthorizationStatusAuthorized) {
 //        UIAlertView * photoLibaryNotice = [[UIAlertView alloc]initWithTitle:@"应用程序无访问照片权限" message:@"请在“设置\"-\"隐私\"-\"照片”中设置允许访问" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"设置", nil];
 //        [photoLibaryNotice show];
 //        return;
 //    }
-
+=======
+>>>>>>> 0054ef0ba41d230550a21e3b237de0b90c994fee
 //    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
 //    picker.title = @"选择照片";
 //    [picker.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
@@ -198,44 +199,44 @@ static const CGFloat kActionViewHeight = 90.0f;
 //    //设置选择后的图片可被编辑
 //    picker.allowsEditing = NO;
 //    [self presentViewController:picker animated:YES completion:nil];
-
-//    NSString *tipTextWhenNoPhotosAuthorization; // 提示语
-//    // 获取当前应用对照片的访问授权状态
-//    ALAuthorizationStatus authorizationStatus = [ALAssetsLibrary authorizationStatus];
-//    // 如果没有获取访问授权，或者访问授权状态已经被明确禁止，则显示提示语，引导用户开启授权
-//    if (authorizationStatus == ALAuthorizationStatusRestricted || authorizationStatus == ALAuthorizationStatusDenied) {
-//        NSDictionary *mainInfoDictionary = [[NSBundle mainBundle] infoDictionary];
-//        NSString *appName = [mainInfoDictionary objectForKey:@"CFBundleDisplayName"];
-//        tipTextWhenNoPhotosAuthorization = [NSString stringWithFormat:@"请在设备的\"设置-隐私-照片\"选项中，允许%@访问你的手机相册", appName];
-//        // 展示提示语
-//    }
-//    
-//    ALAssetsLibrary *_assetsLibrary = [[ALAssetsLibrary alloc] init];
-//    NSMutableArray * _albumsArray = [[NSMutableArray alloc] init];
-//    [_assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupAll usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
-//        if (group) {
-//            [group setAssetsFilter:[ALAssetsFilter allPhotos]];//过滤
-//            if (group.numberOfAssets > 0) {
-//                // 把相册储存到数组中，方便后面展示相册时使用
-//                [_albumsArray addObject:group];
-//            }
-//        } else {
-//            if ([_albumsArray count] > 0) {
-//                // 把所有的相册储存完毕，可以展示相册列表
-//            } else {
-//                // 没有任何有资源的相册，输出提示
-//            }
-//        }
-//    } failureBlock:^(NSError *error) {
-//        NSLog(@"Asset group not found!\n");
-//    }];
+<<<<<<< HEAD
+    NSString *tipTextWhenNoPhotosAuthorization; // 提示语
+    // 获取当前应用对照片的访问授权状态
+    ALAuthorizationStatus authorizationStatus = [ALAssetsLibrary authorizationStatus];
+    // 如果没有获取访问授权，或者访问授权状态已经被明确禁止，则显示提示语，引导用户开启授权
+    if (authorizationStatus == ALAuthorizationStatusRestricted || authorizationStatus == ALAuthorizationStatusDenied) {
+        NSDictionary *mainInfoDictionary = [[NSBundle mainBundle] infoDictionary];
+        NSString *appName = [mainInfoDictionary objectForKey:@"CFBundleDisplayName"];
+        tipTextWhenNoPhotosAuthorization = [NSString stringWithFormat:@"请在设备的\"设置-隐私-照片\"选项中，允许%@访问你的手机相册", appName];
+        // 展示提示语
+    }
     
-
+    ALAssetsLibrary *_assetsLibrary = [[ALAssetsLibrary alloc] init];
+    NSMutableArray * _albumsArray = [[NSMutableArray alloc] init];
+    [_assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupAll usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
+        if (group) {
+            [group setAssetsFilter:[ALAssetsFilter allPhotos]];//过滤
+            if (group.numberOfAssets > 0) {
+                // 把相册储存到数组中，方便后面展示相册时使用
+                [_albumsArray addObject:group];
+            }
+        } else {
+            if ([_albumsArray count] > 0) {
+                // 把所有的相册储存完毕，可以展示相册列表
+            } else {
+                // 没有任何有资源的相册，输出提示
+            }
+        }
+    } failureBlock:^(NSError *error) {
+        NSLog(@"Asset group not found!\n");
+    }];
+    
+=======
     ZTImagePickerAlbumList *albumList = [[ZTImagePickerAlbumList alloc]init];
     ZTImagePicker *imagePicker = [[ZTImagePicker alloc]init];
     UINavigationController *imagePickerNav = [[UINavigationController alloc]initWithRootViewController:albumList];
     [self presentViewController:imagePickerNav animated:YES completion:nil];
-
+>>>>>>> 0054ef0ba41d230550a21e3b237de0b90c994fee
 }
 
 - (void)showActionSheet{

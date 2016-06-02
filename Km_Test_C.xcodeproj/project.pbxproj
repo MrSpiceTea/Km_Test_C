@@ -12,6 +12,9 @@
 		350B2CD11CE87A7D00A85A86 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350B2CD01CE87A7D00A85A86 /* LoginViewController.m */; };
 		350B2CD51CE87AA500A85A86 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350B2CD31CE87AA500A85A86 /* RegisterViewController.m */; };
 		350B2CD61CE87AA500A85A86 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 350B2CD41CE87AA500A85A86 /* RegisterViewController.xib */; };
+		351A7ED11CFF19D900981E2F /* ZTImagePickerAlbumList.m in Sources */ = {isa = PBXBuildFile; fileRef = 351A7ED01CFF19D900981E2F /* ZTImagePickerAlbumList.m */; };
+		351A7ED41CFF19FA00981E2F /* ZTImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 351A7ED31CFF19FA00981E2F /* ZTImagePicker.m */; };
+		351A7ED71CFF212A00981E2F /* ZTImagePickerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 351A7ED61CFF212A00981E2F /* ZTImagePickerItem.m */; };
 		356013181CCA91DA00DE2275 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356013171CCA91DA00DE2275 /* BaseNavigationController.m */; };
 		3560131B1CCA922600DE2275 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3560131A1CCA922600DE2275 /* BaseViewController.m */; };
 		3560131F1CCA9DA900DE2275 /* ChooseSongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3560131E1CCA9DA900DE2275 /* ChooseSongViewController.m */; };
@@ -146,6 +149,12 @@
 		350B2CD21CE87AA500A85A86 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		350B2CD31CE87AA500A85A86 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		350B2CD41CE87AA500A85A86 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		351A7ECF1CFF19D900981E2F /* ZTImagePickerAlbumList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTImagePickerAlbumList.h; sourceTree = "<group>"; };
+		351A7ED01CFF19D900981E2F /* ZTImagePickerAlbumList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTImagePickerAlbumList.m; sourceTree = "<group>"; };
+		351A7ED21CFF19FA00981E2F /* ZTImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTImagePicker.h; sourceTree = "<group>"; };
+		351A7ED31CFF19FA00981E2F /* ZTImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTImagePicker.m; sourceTree = "<group>"; };
+		351A7ED51CFF212A00981E2F /* ZTImagePickerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTImagePickerItem.h; sourceTree = "<group>"; };
+		351A7ED61CFF212A00981E2F /* ZTImagePickerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTImagePickerItem.m; sourceTree = "<group>"; };
 		356013161CCA91DA00DE2275 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		356013171CCA91DA00DE2275 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		356013191CCA922600DE2275 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -412,6 +421,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		351A7ECE1CFF19BE00981E2F /* ZTImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				351A7ECF1CFF19D900981E2F /* ZTImagePickerAlbumList.h */,
+				351A7ED01CFF19D900981E2F /* ZTImagePickerAlbumList.m */,
+				351A7ED21CFF19FA00981E2F /* ZTImagePicker.h */,
+				351A7ED31CFF19FA00981E2F /* ZTImagePicker.m */,
+				351A7ED51CFF212A00981E2F /* ZTImagePickerItem.h */,
+				351A7ED61CFF212A00981E2F /* ZTImagePickerItem.m */,
+			);
+			path = ZTImagePicker;
+			sourceTree = "<group>";
+		};
 		3560131C1CCA9DA900DE2275 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -618,13 +640,6 @@
 				516746A61CD1EB98007AC9C6 /* QRCodeView.m */,
 			);
 			path = QRCode;
-			sourceTree = "<group>";
-		};
-		5140D5571CF6F8CC00DA2701 /* ZTImagePicker */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ZTImagePicker;
 			sourceTree = "<group>";
 		};
 		5145BE581CE570ED0025DB10 /* Models */ = {
@@ -1057,7 +1072,7 @@
 		51DE66401CCA2167001F0BAC /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				5140D5571CF6F8CC00DA2701 /* ZTImagePicker */,
+				351A7ECE1CFF19BE00981E2F /* ZTImagePicker */,
 				51D4862D1CF42B7E00765024 /* ZTImageBrowser */,
 				3568ECB91CDF401D00A56133 /* ViewControllerAnimated */,
 				517D09441CCE16BE007EA37D /* MasonryTool.h */,
@@ -1411,6 +1426,7 @@
 				513B66E41CED679700ECB7D0 /* NSString+expanded.m in Sources */,
 				356013261CCA9E3500DE2275 /* MeViewController.m in Sources */,
 				517D094E1CCE2698007EA37D /* ChooseAlwaysViewController.m in Sources */,
+				351A7ED71CFF212A00981E2F /* ZTImagePickerItem.m in Sources */,
 				51DE668E1CCA28E9001F0BAC /* UINavigationBar+expanded.m in Sources */,
 				350B2CD51CE87AA500A85A86 /* RegisterViewController.m in Sources */,
 				513989E51CE2DDFC006C10C8 /* MeInformationViewController.m in Sources */,
@@ -1453,10 +1469,12 @@
 				513989E81CE2DF4D006C10C8 /* MeZoneViewController.m in Sources */,
 				35E68FE41CCCB385003F1AC7 /* ChooseSongCell.m in Sources */,
 				5162AA9C1CCF470D008317D1 /* SlideViewController.m in Sources */,
+				351A7ED41CFF19FA00981E2F /* ZTImagePicker.m in Sources */,
 				516746A71CD1EB98007AC9C6 /* QRCodeView.m in Sources */,
 				517D09511CCE26D2007EA37D /* RankingListViewController.m in Sources */,
 				5162AA9D1CCF470D008317D1 /* SegemtedControl.m in Sources */,
 				517D09431CCDF11E007EA37D /* MeHeaderCell.m in Sources */,
+				351A7ED11CFF19D900981E2F /* ZTImagePickerAlbumList.m in Sources */,
 				356A37E01CCE5BBA001F4FA0 /* ArtistClassViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

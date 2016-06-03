@@ -8,8 +8,7 @@
 #import "ZTImagePicker.h"
 #import <Photos/Photos.h>
 #import <MobileCoreServices/UTCoreTypes.h>
-#define OriginalRatio 0.9
-
+#define kMaxSelectedCount 9
 
 
 @interface ZTImagePicker ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
@@ -94,13 +93,14 @@
             BOOL origina;
             if (origina) {
                 imgRef = [assetRep fullResolutionImage];
-                //                    orientation = [assetRep orientation];
+//                                    orientation = [assetRep orientation];
             } else {
                 imgRef = [assetRep fullScreenImage];
             }
             UIImage *img = [UIImage imageWithCGImage:imgRef
                                                scale:1.0f
                                          orientation:orientation];
+            [workingDictionary setObject:[UIImage imageWithCGImage: asset.thumbnail] forKey:@"thumnail"];
             [workingDictionary setObject:img forKey:UIImagePickerControllerOriginalImage];
             
             [workingDictionary setObject:[[asset valueForProperty:ALAssetPropertyURLs] valueForKey:[[[asset valueForProperty:ALAssetPropertyURLs] allKeys] objectAtIndex:0]] forKey:UIImagePickerControllerReferenceURL];
@@ -112,7 +112,9 @@
 
 #pragma mark - TargetActon
 - (void)cancleButtonAction:(UIButton *)btn{
-    NSDictionary *dataDict = [NSDictionary dictionaryWithObject:self.selectedPhotos
+    //TODO: 修改反回方式
+    NSMutableArray *images = [self imagesFromAssets:self.selectedPhotos];
+    NSDictionary *dataDict = [NSDictionary dictionaryWithObject:images
                                                          forKey:kZTImagePickerSelectedPhotosCompletionNotificationDicKey];
     [self.navigationController dismissViewControllerAnimated:YES completion:^{
         [[NSNotificationCenter defaultCenter]
@@ -144,13 +146,23 @@
     ZTImagePickerItem *itemcell = [collectionView dequeueReusableCellWithReuseIdentifier:ZTImagePickerItemID forIndexPath:indexPath];
     itemcell.assets = self.ztAssets[indexPath.row];
     __weak ZTImagePicker *weakSelf = self;
+    __weak typeof(itemcell) weakCell = itemcell;//__weak ZTImagePickerItem *weakCell = itemcell;
     itemcell.selectedBlock = ^(BOOL selected){
         if (selected) {
+            if (weakSelf.selectedPhotos.count == kMaxSelectedCount) {
+                //show alert
+                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"最多只能添加9张照片" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                [alert show];
+                weakCell.selectButton.selected = NO;
+                return ;
+            }
             [weakSelf.selectedPhotos addObject:self.ztAssets[indexPath.row]];
+            [weakCell startSelectedAnimation];
         }else{
             [weakSelf.selectedPhotos removeObject:self.ztAssets[indexPath.row]];
         }
     };
+    //TODO: previewer
     return itemcell;
 }
 
@@ -191,6 +203,7 @@
     }
     return _selectedPhotos;
 }
+
 #pragma mark - AssetHelper
 
 @end

@@ -20,5 +20,6 @@ static NSString * kZTImagePickerSelectedPhotosCompletionNotificationDicKey = @"Z
 @property (nonatomic, weak) id<ZTImagePickerDelegate> delegate;
 @property (nonatomic, strong) ALAssetsGroup *assetGroup;
 @property (nonatomic, strong) NSMutableArray *ztAssets;
+@property (nonatomic, assign) NSUInteger maxCount;
 @property (nonatomic, strong) NSMutableArray *selectedPhotos;
 @end

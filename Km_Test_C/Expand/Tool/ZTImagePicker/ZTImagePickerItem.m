@@ -38,14 +38,13 @@
 }
 
 - (void)selectAction:(UIButton *)btn{
+    self.selectButton.selected = !self.selectButton.selected;
     if (self.selectedBlock) {
-        self.selectButton.selected = !self.selectButton.selected;
         self.selectedBlock(btn.selected);
-        [self startSelectedAnimation:self.selectButton];
     }
 }
 
-- (void)startSelectedAnimation:(UIView *)view {
+- (void)startSelectedAnimation{
     CAKeyframeAnimation * ani = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
     ani.values = @[[NSValue valueWithCATransform3D:CATransform3DMakeScale(1.0, 1.0, 1.0)],
                    [NSValue valueWithCATransform3D:CATransform3DMakeScale(1.3, 1.3, 1.0)],
@@ -55,7 +54,7 @@
     ani.removedOnCompletion = YES;
     ani.fillMode = kCAFillModeForwards;
     ani.duration = 0.4;
-    [view.layer addAnimation:ani forKey:@"transformAni"];
+    [self.selectButton.layer addAnimation:ani forKey:@"transformAni"];
 }
 
 @end

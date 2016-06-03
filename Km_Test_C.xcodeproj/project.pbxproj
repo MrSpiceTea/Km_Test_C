@@ -59,6 +59,8 @@
 		513571A41CDC355E00E600DE /* ArtistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 513571A31CDC355E00E600DE /* ArtistModel.m */; };
 		5135ED311CE1760D00E0AB6D /* CommonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5135ED301CE1760D00E0AB6D /* CommonDetailViewController.m */; };
 		5135ED341CE1C49F00E0AB6D /* PeopleInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5135ED331CE1C49F00E0AB6D /* PeopleInformationViewController.m */; };
+		513881901D012532001E9789 /* FirendCircleIssueImagesCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5138818F1D012532001E9789 /* FirendCircleIssueImagesCCell.m */; };
+		513881921D0125E1001E9789 /* ZTImagePickerPhoto_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 513881911D0125E1001E9789 /* ZTImagePickerPhoto_delete@2x.png */; };
 		513989E51CE2DDFC006C10C8 /* MeInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513989E41CE2DDFC006C10C8 /* MeInformationViewController.m */; };
 		513989E81CE2DF4D006C10C8 /* MeZoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513989E71CE2DF4D006C10C8 /* MeZoneViewController.m */; };
 		513989EC1CE2E1C0006C10C8 /* CommonZoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513989EB1CE2E1C0006C10C8 /* CommonZoneViewController.m */; };
@@ -240,6 +242,9 @@
 		5135ED301CE1760D00E0AB6D /* CommonDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonDetailViewController.m; sourceTree = "<group>"; };
 		5135ED321CE1C49F00E0AB6D /* PeopleInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleInformationViewController.h; sourceTree = "<group>"; };
 		5135ED331CE1C49F00E0AB6D /* PeopleInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleInformationViewController.m; sourceTree = "<group>"; };
+		5138818E1D012532001E9789 /* FirendCircleIssueImagesCCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirendCircleIssueImagesCCell.h; sourceTree = "<group>"; };
+		5138818F1D012532001E9789 /* FirendCircleIssueImagesCCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirendCircleIssueImagesCCell.m; sourceTree = "<group>"; };
+		513881911D0125E1001E9789 /* ZTImagePickerPhoto_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZTImagePickerPhoto_delete@2x.png"; sourceTree = "<group>"; };
 		513989E31CE2DDFC006C10C8 /* MeInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeInformationViewController.h; sourceTree = "<group>"; };
 		513989E41CE2DDFC006C10C8 /* MeInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeInformationViewController.m; sourceTree = "<group>"; };
 		513989E61CE2DF4D006C10C8 /* MeZoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeZoneViewController.h; sourceTree = "<group>"; };
@@ -616,6 +621,7 @@
 		51129D861CFFFF520098BBF9 /* ZTImagePicker */ = {
 			isa = PBXGroup;
 			children = (
+				513881911D0125E1001E9789 /* ZTImagePickerPhoto_delete@2x.png */,
 				51129D871CFFFFB70098BBF9 /* ZTImagePickerBack@2x.png */,
 				51129D881CFFFFB70098BBF9 /* ZTImagePickerBack@3x.png */,
 				51129D891CFFFFB70098BBF9 /* ZTImagePickerPhoto_circle@2x.png */,
@@ -706,6 +712,8 @@
 				5162AA861CCF46C3008317D1 /* FriendCircleCell.m */,
 				51D4862A1CF3ED5000765024 /* FriendCircleMediaCell.h */,
 				51D4862B1CF3ED5000765024 /* FriendCircleMediaCell.m */,
+				5138818E1D012532001E9789 /* FirendCircleIssueImagesCCell.h */,
+				5138818F1D012532001E9789 /* FirendCircleIssueImagesCCell.m */,
 				513B66E51CED9D5200ECB7D0 /* FriendLikeUserCell.h */,
 				513B66E61CED9D5200ECB7D0 /* FriendLikeUserCell.m */,
 				5162AAA81CCF58A8008317D1 /* FriendCircleHeaderView.h */,
@@ -1329,6 +1337,7 @@
 				513C33601CF5889C005FDDC7 /* peoples.json in Resources */,
 				5155830A1CEB1ECF007523A1 /* Info.plist in Resources */,
 				51129D8E1CFFFFB70098BBF9 /* ZTImagePickerPhoto_circle@2x.png in Resources */,
+				513881921D0125E1001E9789 /* ZTImagePickerPhoto_delete@2x.png in Resources */,
 				35C08FC31CE248930050D749 /* CoustomView.xib in Resources */,
 				5186088E1CE040240066E0D6 /* chatList.plist in Resources */,
 				51129D901CFFFFB70098BBF9 /* ZTImagePickerPhoto_unselected@2x.png in Resources */,
@@ -1421,6 +1430,7 @@
 				51AC5AB81CE332800002F4EE /* BottomButtonsView.m in Sources */,
 				51129D931D0002550098BBF9 /* UIView+animation.m in Sources */,
 				3560131F1CCA9DA900DE2275 /* ChooseSongViewController.m in Sources */,
+				513881901D012532001E9789 /* FirendCircleIssueImagesCCell.m in Sources */,
 				51D486271CF3EC9500765024 /* UIView+Frame.m in Sources */,
 				51700BE61CD851270091FF33 /* AlbumRecListViewController.m in Sources */,
 				513CD6CE1CE457EC00841BCD /* FriendCircleCommentModel.m in Sources */,

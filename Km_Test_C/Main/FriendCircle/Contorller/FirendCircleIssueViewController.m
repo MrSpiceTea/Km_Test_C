@@ -21,6 +21,7 @@
 @property (nonatomic,strong) UITextView *textView;
 @property (nonatomic,strong) UIActionSheet *actionSheet;
 @property (nonatomic,strong) NSMutableArray *images;
+@property (nonatomic,strong) UICollectionView *collectionView;
 @end
 
 @implementation FirendCircleIssueViewController
@@ -90,7 +91,9 @@ static const CGFloat kActionViewHeight = 90.0f;
         [cell.contentView addSubview:self.textLegnthLabel];
     }else if(indexPath.row == 2){
         if (self.selectedPhotos.count>0) {
-            [cell.contentView addSubview:[self selectedPhotosView]];
+//            [cell.contentView addSubview:[self selectedPhotosView]];
+            //TODO: FirendCircleIssueImagesCCell selectedPhotos
+             cell.imageView.image = [self.selectedPhotos[0] objectForKey:@"thumnail"];
         }else{
             [cell.contentView addSubview:[self actionView]];
         }
@@ -147,14 +150,13 @@ static const CGFloat kActionViewHeight = 90.0f;
                                           }];
     }
     [picker dismissViewControllerAnimated:YES completion:nil];
-
 }
 //取消
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark - pravite method
+#pragma mark - Pravite method
 //开始拍照
 - (void)takePhoto
 {
@@ -191,6 +193,7 @@ static const CGFloat kActionViewHeight = 90.0f;
 - (void)LocalPhoto
 {
 
+    //  8.0
 //    if ([PHPhotoLibrary authorizationStatus] != PHAuthorizationStatusAuthorized) {
 //        UIAlertView * photoLibaryNotice = [[UIAlertView alloc]initWithTitle:@"应用程序无访问照片权限" message:@"请在“设置\"-\"隐私\"-\"照片”中设置允许访问" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"设置", nil];
 //        [photoLibaryNotice show];
@@ -220,33 +223,9 @@ static const CGFloat kActionViewHeight = 90.0f;
 
         return;
     }
-//
-//    ALAssetsLibrary *_assetsLibrary = [[ALAssetsLibrary alloc] init];
-//    NSMutableArray * _albumsArray = [[NSMutableArray alloc] init];
-//    [_assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupAll usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
-//        if (group) {
-//            [group setAssetsFilter:[ALAssetsFilter allPhotos]];//过滤
-//            if (group.numberOfAssets > 0) {
-//                // 把相册储存到数组中，方便后面展示相册时使用
-//                [_albumsArray addObject:group];
-//            }
-//        } else {
-//            if ([_albumsArray count] > 0) {
-//                // 把所有的相册储存完毕，可以展示相册列表
-//            } else {
-//                // 没有任何有资源的相册，输出提示
-//            }
-//        }
-//    } failureBlock:^(NSError *error) {
-//        NSLog(@"Asset group not found!\n");
-//    }];
-    
 
     ZTImagePickerAlbumList *albumList = [[ZTImagePickerAlbumList alloc]init];
-//    ZTImagePicker *imagePicker = [[ZTImagePicker alloc]init];
-//    imagePicker.delegate = self;
     UINavigationController *imagePickerNav = [[UINavigationController alloc]initWithRootViewController:albumList];
-//    [imagePickerNav pushViewController:imagePicker animated:NO];
     [self presentViewController:imagePickerNav animated:YES completion:nil];
 
 }
@@ -324,7 +303,7 @@ static const CGFloat kActionViewHeight = 90.0f;
         NSMutableArray *plistarray  = [NSMutableArray arrayWithContentsOfFile:kFriendCircleListPath];
         [plistarray insertObject:dic atIndex:0];
         [plistarray writeToFile:kFriendCircleListPath atomically:YES];
-        //
+        
         [self.delegate sendIssue:self.textView.text];
         [self dismissSelf];
     }
@@ -349,11 +328,25 @@ static const CGFloat kActionViewHeight = 90.0f;
 - (void)imagePickerSelectedPhotosCompletionNotification:(NSNotification *)ntf{
     NSMutableArray *images = [[ntf userInfo] objectForKey:kZTImagePickerSelectedPhotosCompletionNotificationDicKey];
     if (images&&images.count>0) {
-          NSLog(@"images%ld",images.count);
+        self.selectedPhotos = images;
+        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:2 inSection:0];
+        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
     }
 }
 
-#pragma mark - get/set
+#pragma mark - Getter
+- (UICollectionView *)collectionView{
+    if (!_collectionView) {
+        UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc]init];
+        _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT) collectionViewLayout:layout];
+        _collectionView.delegate = self;
+        _collectionView.dataSource = self;
+        _collectionView.alwaysBounceVertical = YES;
+        _collectionView.backgroundColor = [UIColor clearColor];
+        [_collectionView registerClass:[ZTImagePickerItem class] forCellWithReuseIdentifier:ZTImagePickerItemID];
+    }
+    return _collectionView;
+}
 - (UILabel *)textLegnthLabel{
     if (!_textLegnthLabel) {
         _textLegnthLabel = [[UILabel alloc]initWithFrame:CGRectMake(kSCREEN_WIDTH - 50, 5, 50, 20)];

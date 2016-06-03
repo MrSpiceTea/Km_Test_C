@@ -15,4 +15,5 @@
 @property (nonatomic, strong) UIImageView *thumbnailImageView;
 @property (nonatomic, strong) UIButton *selectButton;
 @property (nonatomic, copy) void(^selectedBlock)(BOOL isSelected);
+- (void)startSelectedAnimation;
 @end

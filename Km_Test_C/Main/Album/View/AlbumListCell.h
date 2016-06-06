@@ -21,7 +21,6 @@
 @property (strong, nonatomic) AlbumModel *albumModel;
 @property (strong, nonatomic) NSIndexPath *indexPath;
 + (instancetype)cellWithTabelView:(UITableView *)tableView;
-- (void)openMenu;
 @end
 
 

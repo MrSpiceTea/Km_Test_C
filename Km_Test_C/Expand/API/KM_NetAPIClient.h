@@ -18,10 +18,6 @@ typedef enum {
 
 + (instancetype)defaultManage;
 
-//test
-- (void)gettest;
-- (void)gettest:(NSString *)url;
-
 - (void)requestJsonDicWithPath:(NSString *)aPath
                      withParams:(NSDictionary*)params
                  withMethodType:(NetworkMethod)method

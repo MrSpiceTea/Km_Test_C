@@ -335,18 +335,19 @@ static const CGFloat kActionViewHeight = 90.0f;
 }
 
 #pragma mark - Getter
-- (UICollectionView *)collectionView{
-    if (!_collectionView) {
-        UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc]init];
-        _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT) collectionViewLayout:layout];
-        _collectionView.delegate = self;
-        _collectionView.dataSource = self;
-        _collectionView.alwaysBounceVertical = YES;
-        _collectionView.backgroundColor = [UIColor clearColor];
-        [_collectionView registerClass:[ZTImagePickerItem class] forCellWithReuseIdentifier:ZTImagePickerItemID];
-    }
-    return _collectionView;
-}
+//- (UICollectionView *)collectionView{
+//    if (!_collectionView) {
+//        UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc]init];
+//        _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT) collectionViewLayout:layout];
+//        _collectionView.delegate = self;
+//        _collectionView.dataSource = self;
+//        _collectionView.alwaysBounceVertical = YES;
+//        _collectionView.backgroundColor = [UIColor clearColor];
+//        [_collectionView registerClass:[ZTImagePickerItem class] forCellWithReuseIdentifier:ZTImagePickerItemID];
+//    }
+//    return _collectionView;
+//}
+
 - (UILabel *)textLegnthLabel{
     if (!_textLegnthLabel) {
         _textLegnthLabel = [[UILabel alloc]initWithFrame:CGRectMake(kSCREEN_WIDTH - 50, 5, 50, 20)];

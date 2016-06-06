@@ -19,6 +19,6 @@
 
 + (UserModel *)shareUser;
 + (BOOL)isLogin;
-+ (void)saveLoginData;
+//+ (void)saveLoginData;
 + (void)loginOut;
 @end

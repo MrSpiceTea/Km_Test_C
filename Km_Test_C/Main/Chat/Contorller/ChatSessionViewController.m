@@ -23,18 +23,24 @@
     
     //testdata
     MessageModel *model = [[MessageModel alloc]init];
-    model.message = @"阿斯顿发了水电开发";
+    model.message = @"dfsadfasd";
     model.messageType = MessageModelTypeReceiver;
     
     MessageModel *model2 = [[MessageModel alloc]init];
-    model2.message = @"阿斯顿发了水电开发了间发";
+    model2.message = @"阿斯顿发了水电开发电开发了了间发";
     model2.messageType = MessageModelTypeReceiver;
     
     MessageModel *model3 = [[MessageModel alloc]init];
-    model3.message = @"阿斯顿发了水电开发少空间发";
+    model3.message = @"阿斯顿发";
     model3.messageType = MessageModelTypeSender;
-    
     self.dataSource = [NSMutableArray arrayWithObjects:model,model2,model3, nil];
+    
+    for (int i = 0 ; i<9; i++) {
+        MessageModel *model3 = [[MessageModel alloc]init];
+        model3.message = @"阿斯顿发了水电开阿斯顿发了水电开发少空间阿斯顿发了水电开发少空间阿斯顿发了水电开发少空间发少空间发";
+        model3.messageType = i%2;
+        [self.dataSource addObject:model3];
+    }
     
     self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.tableView.backgroundColor = kCommonBavkgroundViewColor;

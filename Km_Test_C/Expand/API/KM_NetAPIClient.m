@@ -35,7 +35,6 @@
     return _instance;
 }
 
-
 - (void)gettest{
   
 }

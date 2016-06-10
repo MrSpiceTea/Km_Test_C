@@ -8,7 +8,9 @@
 
 #import "ChooseBaseViewController.h"
 #import "RemoteControlViewController.h"
-@interface ChooseBaseViewController ()
+#import "CyclePresentAnimation.h"
+
+@interface ChooseBaseViewController ()<UIViewControllerTransitioningDelegate,RemoteControlViewControllerDelegate>
 @property (nonatomic,strong) UIButton *hoverButton;
 @end
 
@@ -16,7 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -37,8 +38,9 @@
 
 - (void)remoteControl:(UIButton *)btn{
     RemoteControlViewController *remoteControVC = [[RemoteControlViewController alloc]init];
-    remoteControVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:remoteControVC animated:NO];
+    remoteControVC.transitioningDelegate = self;
+    
+    [self presentViewController:remoteControVC animated:YES completion:nil];
 }
 
 -(UIButton *)hoverButton{
@@ -50,5 +52,14 @@
     }
     return _hoverButton;
 }
+
+//- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
+////    return self.cyclePresentAnimation;
+//    return [CyclePresentAnimation transitionWithTransitionType:CyclePresentTransitionTypePresent];
+//}
+//
+//- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
+//    return [CyclePresentAnimation transitionWithTransitionType:CyclePresentTransitionTypeDismiss];
+//}
 
 @end

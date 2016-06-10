@@ -8,8 +8,9 @@
 
 #import "RemoteControlViewController.h"
 #import "RemoteControlView.h"
-
-@interface RemoteControlViewController ()<RemoteControlDelegate>
+#import "CyclePresentAnimation.h"
+#import "UINavigationBar+expanded.h"
+@interface RemoteControlViewController ()<RemoteControlDelegate,UIViewControllerTransitioningDelegate>
 
 @end
 
@@ -18,7 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+//    self.view.backgroundColor = [UIColor whiteColor];
+
     RemoteControlView *remoteView = [[RemoteControlView alloc]init];
     remoteView.delegate = self;
     [self.view addSubview:remoteView];
@@ -27,12 +29,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.hidden = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    self.navigationController.navigationBar.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,7 +41,21 @@
 }
 
 - (void)RemoteControlButtonAction:(UIButton *)button{
-    [self.navigationController popViewControllerAnimated:NO];
+//    [self.navigationController popViewControllerAnimated:NO];
+    [self dismissViewControllerAnimated:YES completion:nil];
+//    [self.delegate dismissViewController:self];
 }
+
+
+//- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
+//    //    return self.cyclePresentAnimation;
+//    return [CyclePresentAnimation transitionWithTransitionType:CyclePresentTransitionTypePresent];
+//}
+//
+//- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
+//    return [CyclePresentAnimation transitionWithTransitionType:CyclePresentTransitionTypeDismiss];
+//}
+
+
 
 @end

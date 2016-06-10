@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 
+@protocol RemoteControlViewControllerDelegate <NSObject>
+- (void)dismissViewController:(UIViewController*)viewController;
+@end
+
+
 @interface RemoteControlViewController : BaseViewController
+@property (nonatomic,weak) id<RemoteControlViewControllerDelegate> delegate;
 //- (void)hideTabBar:(UITabBarController *) tabbarcontroller;
 @end

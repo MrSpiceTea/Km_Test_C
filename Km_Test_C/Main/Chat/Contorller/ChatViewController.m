@@ -66,7 +66,9 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == 0) {
         ChatSessionViewController *chatSessionVC = [[ChatSessionViewController alloc]init];
+        chatSessionVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:chatSessionVC animated:YES];
+        chatSessionVC.hidesBottomBarWhenPushed = NO;
     }
 }
 

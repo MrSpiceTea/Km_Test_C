@@ -11,15 +11,14 @@
 @interface UserModel : KMAbstractObject
 @property (nonatomic,copy) NSString *profileImageUrl;//头像
 @property (nonatomic,copy) NSString *state;
-@property (nonatomic,copy) NSString *userName;//发送用户
 @property (nonatomic,copy) NSString *mbtype;//会员类型
 @property (nonatomic,copy) NSString *email;
 @property (nonatomic,copy) NSString *job;
 @property (nonatomic,copy) NSString *location;
 @property (nonatomic,copy) NSString *birthday;
 
-+ (UserModel *)share;
++ (UserModel *)shareUser;
 + (BOOL)isLogin;
-+ (void)saveLoginData;
+//+ (void)saveLoginData;
 + (void)loginOut;
 @end

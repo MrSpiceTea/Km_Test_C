@@ -42,4 +42,14 @@
                          [transitionContext completeTransition:YES];
                      }];
 }
+
+//实现present动画逻辑代码
+- (void)presentAnimation:(id<UIViewControllerContextTransitioning>)transitionContext{
+    
+}
+
+//实现dismiss动画逻辑代码
+- (void)dismissAnimation:(id<UIViewControllerContextTransitioning>)transitionContext{
+    
+}
 @end

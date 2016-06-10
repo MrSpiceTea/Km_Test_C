@@ -225,6 +225,7 @@ static const CGFloat KAnimateDuration = 0.1;
         [UIView animateWithDuration:KAnimateDuration animations:^{
             weakSelf.headerView.button.transform = CGAffineTransformMakeScale(1, 1);
         } completion:^(BOOL finished) {
+//            [weakSelf connnectButtionLoopAnimate];
             [UIView animateWithDuration:KAnimateDuration animations:^{
                 weakSelf.headerView.button.transform = CGAffineTransformMakeScale(0.8, 0.8);
             } completion:^(BOOL finished) {

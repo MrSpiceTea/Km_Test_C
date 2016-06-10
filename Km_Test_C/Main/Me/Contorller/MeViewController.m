@@ -12,10 +12,15 @@
 #import "MeCell.h"
 #import "MeHeaderCell.h"
 #import "BaseNavigationController.h"
-
+#import "TopPresentAnimation.h"
+#import "SwipeUpInteractiveTransition.h"
+#import "NormalDismissAnimation.h"
 #import "UIImage+expanded.h"
 
-@interface MeViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface MeViewController ()<UITableViewDataSource, UITableViewDelegate,UIViewControllerTransitioningDelegate>
+@property (nonatomic,strong) TopPresentAnimation *topPresentAnimation;
+@property (nonatomic,strong) NormalDismissAnimation *normalDismissAnimation;
+@property (nonatomic,strong) SwipeUpInteractiveTransition *transitionController;
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSArray *dataSource;
 @end
@@ -32,6 +37,9 @@
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:settingBtn];
     self.navigationItem.rightBarButtonItem = item;
     
+    _topPresentAnimation = [TopPresentAnimation new];
+    _normalDismissAnimation = [NormalDismissAnimation new];
+    _transitionController = [SwipeUpInteractiveTransition new];
     [self initData];
     
     _tableView = ({
@@ -96,7 +104,9 @@
         if (islogin) {
             LoginViewController *loginVC = [[LoginViewController alloc]init];
             UINavigationController *logonNavVC = [[BaseNavigationController alloc]initWithRootViewController:loginVC];
-            [self.parentViewController presentViewController:logonNavVC animated:YES completion:nil];
+            logonNavVC.transitioningDelegate = self;
+//             [self.transitionController wireToViewController:logonNavVC];
+            [self presentViewController:logonNavVC animated:YES completion:nil];
         }
     }
 }
@@ -148,4 +158,20 @@
 - (void)navRightBtnAction:(UIButton *)btn{
     
 }
+
+#pragma mark - UIViewControllerTransitioningDelegate methods
+//- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
+//    return self.topPresentAnimation;
+//}
+
+//-(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+//{
+//    return self.normalDismissAnimation;
+//}
+//
+//-(id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator {
+//    return self.transitionController.interacting ? self.transitionController : nil;
+//}
+//
+
 @end

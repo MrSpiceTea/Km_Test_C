@@ -9,6 +9,7 @@
 #import "DiscoverViewController.h"
 #import "KM_NetAPIClient.h"
 #import "SegmentedView.h"
+#import "ImageScrollView.h"
 
 @interface DiscoverViewController ()
 
@@ -31,7 +32,10 @@
 }
 
 - (UIView *)headerView{
-    UIView *view = [[[NSBundle mainBundle]loadNibNamed:@"CoustomView" owner:nil options:nil]objectAtIndex:1];
+//    UIView *view = [[[NSBundle mainBundle]loadNibNamed:@"CoustomView" owner:nil options:nil]objectAtIndex:1];
+    NSMutableArray *images = [NSMutableArray arrayWithObjects:@"jay",@"zhangxueyou",@"zhuanjitest",@"angelababy",@"btn_cabasa_n",nil];
+    ImageScrollView *view = [[ImageScrollView alloc]initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, 100)];
+    [view setImages:images];
     return view;
 }
 

@@ -9,16 +9,14 @@
 #import "BaseNavigationController.h"
 #import "ChooseSongViewController.h"
 #import "TopPresentAnimation.h"
-#import "LoginViewController.h"
-
-@interface BaseNavigationController ()<UIViewControllerTransitioningDelegate,UINavigationControllerDelegate>
-@property (nonatomic,strong) UIButton *hoverButton;
+@interface BaseNavigationController ()<UIViewControllerTransitioningDelegate>
 @property (nonatomic,strong) TopPresentAnimation *topPresentAnimation;
 @end
 
 @implementation BaseNavigationController
 - (instancetype)init{
     if (self = [super init]) {
+        self.transitioningDelegate = self;
         _topPresentAnimation = [TopPresentAnimation new];
     }
     return self;
@@ -26,8 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.delegate = self;
-     self.transitioningDelegate = self;
+
     // Do any additional setup after loading the view.
 }
 
@@ -37,37 +34,9 @@
 }
 
 
-- (void)configRightNavBtn:(UINavigationController *)navigationController {
-    if (!navigationController.navigationItem.rightBarButtonItem) {
-        //???: no add
-        [navigationController.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"selected_tip"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemAction)] animated:NO];
-    }
-}
-
-
-#pragma mark - UINavigationControllerDelegate methods
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
-    if ([navigationController.viewControllers[0] isKindOfClass:[ChooseSongViewController class]]) {
-        if (navigationController.viewControllers.count >=2) {//todo 判断已点页面不用加按钮， isKindOfClass
-                 NSLog(@"asdf");
-            [self configRightNavBtn:navigationController];
-        }
-    }
-
-    if ([viewController isKindOfClass:[LoginViewController class]]) {
-        
-    }
-}
-
 #pragma mark - UIViewControllerTransitioningDelegate methods
-- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
-{
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
     return self.topPresentAnimation;
-}
-
-
-#pragma mark - ButtonAction
-- (void)rightBarButtonItemAction{
 }
 
 @end

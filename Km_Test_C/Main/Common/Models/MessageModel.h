@@ -8,7 +8,7 @@
 
 #import "KMAbstractObject.h"
 typedef NS_ENUM(NSUInteger, MessageModelType) {
-    MessageModelTypeReceiver,
+    MessageModelTypeReceiver = 0,
     MessageModelTypeSender,
 };
 

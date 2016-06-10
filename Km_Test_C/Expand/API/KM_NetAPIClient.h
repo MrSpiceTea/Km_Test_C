@@ -18,10 +18,17 @@ typedef enum {
 
 + (instancetype)defaultManage;
 
+<<<<<<< HEAD
 //test
 - (void)gettest;
 - (void)gettest:(NSString *)url;
 
+=======
+- (void)requestJsonDicWithPath:(NSString *)aPath
+                     withParams:(NSDictionary*)params
+                 withMethodType:(NetworkMethod)method
+                       completionBolck:(void (^)(id jsonResponseObject, NSError *error))completion;
+>>>>>>> master
 //GET
 - (void)requestJsonDicWithPathGet:(NSString *)aPath
                     withParams:(NSDictionary*)params

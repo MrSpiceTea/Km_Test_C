@@ -52,22 +52,26 @@
 
 - (void)setShowBtn:(UIButton *)showBtn WithShowImage:(UIImageView *)showImage WithHideBtn:(UIButton *)hideBtn WithHideImage:(UIImageView *)hideImage{
     [showBtn setTitle:_messageModel.message forState:UIControlStateNormal];
-    
+    [self layoutIfNeeded];
     NSLog(@"%f,%@",showBtn.titleLabel.frame.size.height,showBtn.titleLabel.text);
     showBtn.hidden = NO;
     showImage.hidden = NO;
     
     hideBtn.hidden = YES;
     hideImage.hidden = YES;
-
-    [self layoutIfNeeded];
-  
+ 
     [showBtn mas_updateConstraints :^( MASConstraintMaker *make) {
         CGFloat buttonH = showBtn.titleLabel.frame.size.height;
-        make.height.mas_equalTo(buttonH + 25);
+        make.height.mas_equalTo(buttonH + 30);
     }];
     
     [self layoutIfNeeded];
+     UIEdgeInsets edge = UIEdgeInsetsMake(15, 10, 15, 15);
+    if (_messageModel.messageType == MessageModelTypeReceiver) {
+        edge = UIEdgeInsetsMake(15, 15, 15, 10);
+    }
+    
+    [showBtn setTitleEdgeInsets:edge];
     CGFloat btnMaxY = CGRectGetMaxY (showBtn.frame);
     CGFloat imageMaxY = CGRectGetMaxY (showImage.frame);
     self.messageModel.cellHeight = MAX (btnMaxY, imageMaxY);

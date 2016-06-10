@@ -99,7 +99,7 @@ static const NSTimeInterval kAnimationDuration = 0.5;
 }
 
 - (void)setSelectedIndex:(NSUInteger)selectedIndex animated:(BOOL)animated shouldAjustScrollViewContentOffset:(BOOL)shouldAjust {
-    NSUInteger oldSelectedIndex = _selectedIndex;
+//    NSUInteger oldSelectedIndex = _selectedIndex;
     
     if (selectedIndex >= self.scrollView.subviews.count) {
         selectedIndex = self.scrollView.subviews.count - 1;

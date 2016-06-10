@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
-
+#import "UserModel.h"
 @interface AppDelegate ()
 
 @end
@@ -18,13 +18,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = [UIColor whiteColor];
     [self customizeInterface];
     
-    RootViewController *rootViewController = [[RootViewController alloc] init];
-    self.window.rootViewController = rootViewController;
-    [self.window makeKeyAndVisible];
+    //测试数据 已登陆
+    UserModel *user = [UserModel shareUser];
+    user.name = @"张学友";
+    user.profileImageUrl = @"zhangxueyou";
+
     return YES;
 }
 
@@ -52,6 +52,12 @@
 
 #pragma mark - Private Method
 - (void)customizeInterface{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    RootViewController *rootViewController = [[RootViewController alloc] init];
+    self.window.rootViewController = rootViewController;
+    [self.window makeKeyAndVisible];
+    
     [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
     [[UINavigationBar appearance] setShadowImage:[UIImage new]];
 //    [[UINavigationBar appearance] setClipsToBounds:YES];

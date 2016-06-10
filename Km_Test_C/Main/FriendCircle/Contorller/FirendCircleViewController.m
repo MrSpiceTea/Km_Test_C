@@ -14,10 +14,14 @@
 #import "FriendCircleCommentModel.h"
 #import "FriendCircleCell.h"
 #import "PeoPleListCell.h"
-#import "SegmentedView.h"
+
+#import "ZTImageBrowser.h"
+#import "SegmentedView.h" 
+#import "UserModel.h"
 #import "MJRefresh.h"
 
-@interface FirendCircleViewController ()<UITableViewDataSource,UITableViewDelegate,FirendCircleIssueDelegate>
+
+@interface FirendCircleViewController ()<UITableViewDataSource,UITableViewDelegate,FirendCircleIssueDelegate,FriendPhotoContainerViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) UITableView *peopleTablewView;
 @property (nonatomic,strong) UIScrollView *scrollView;;
@@ -89,24 +93,23 @@
         [array writeToFile:kFriendCircleListPath atomically:YES];
     }
     
+    NSMutableArray *mediaModels = [NSMutableArray array];
+    for (int i=0; i<3; i++) {
+        MediaModel *media = [MediaModel new];
+        media.HDURL = [NSURL URLWithString:@"http://a.hiphotos.baidu.com/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=64dc8a4d1bd8bc3ed2050e98e3e2cd7b/8ad4b31c8701a18b8f8b2d389c2f07082838fe60.jpg"];
+        media.thumbnailImageURL = [NSURL URLWithString:@"http://ww1.sinaimg.cn/crop.0.0.1242.1242.1024/006boC82jw8eulzgtza8uj30yi0yi0tn.jpg"];
+        [mediaModels addObject:media];
+    }
+    
+    for (int i=0; i<6; i++) {
+        MediaModel *media = [MediaModel new];
+        media.HDURL = [NSURL URLWithString:@"http://imgsrc.baidu.com/forum/w%3D580/sign=53952d5bc91b9d168ac79a69c3dfb4eb/d7da7b899e510fb32a77c813de33c895d0430cda.jpg"];
+        media.thumbnailImageURL = [NSURL URLWithString:@"http://ww1.sinaimg.cn/crop.0.0.1242.1242.1024/006boC82jw8eulzgtza8uj30yi0yi0tn.jpg"];
+        [mediaModels addObject:media];
+    }
 
-    FriendCircleCommentModel *commentModel = [[FriendCircleCommentModel alloc]init];
-    commentModel.userName = @"测试";
-    commentModel.content =  @"测 is hi测试测试测试测试测试测试测测";
-    commentModel.profileImageUrl = @"myhome_default_head";
-    
-    FriendCircleCommentModel *commentMode3 = [[FriendCircleCommentModel alloc]init];
-    commentMode3.userName = @"测试";
-    commentMode3.content =  @"测 is hi测试测试测试测试测试测试测测试试";
-    commentMode3.profileImageUrl = @"myhome_default_head";
-    
-    FriendCircleCommentModel *commentModel2 = [[FriendCircleCommentModel alloc]init];
-    commentModel2.userName = @"测试";
-    commentModel2.content =  @"测 is hi测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试";
-    commentModel2.profileImageUrl = @"zhangxueyou";
-    
-    NSMutableArray *commentModelArray = [NSMutableArray arrayWithObjects:commentModel,commentModel2,commentMode3, nil];
-    
+    UserModel *user = [[UserModel alloc]init];
+    user.profileImageUrl = @"http://ww1.sinaimg.cn/crop.0.0.1242.1242.1024/006boC82jw8eulzgtza8uj30yi0yi0tn.jpg";
     for (NSDictionary *dic in array) {
         FriendCircleModel *model1 = [[FriendCircleModel alloc] init];
         model1.profileImageUrl = dic[@"profileImageUrl"];
@@ -115,58 +118,14 @@
         model1.text = dic[@"text"];
         model1.distan = dic[@"distan"];
         model1.createdAt = dic[@"createdAt"];
-        model1.imagesArray = dic[@"images"];
+//        model1.imagesArray = dic[@"images"];
+        [model1.likeArray addObject:user];
+        model1.mediaArray = mediaModels;
 //        model1.commentArray = commentModelArray;
 
         [self.dataSource addObject:model1];
     }
-//    NSMutableArray *imagesArray1 = [NSMutableArray arrayWithObjects:@"zhangxueyou", @"zhangxueyou", @"angelababy", @"angelababy", @"zhangxueyou", @"zhangxueyou", @"zhangxueyou", @"zhangxueyou", @"zhangxueyou",nil];
-//    NSMutableArray *imagesArray2 = [NSMutableArray arrayWithObjects:@"angelababy", @"angelababy", @"angelababy", @"angelababy", @"angelababy",nil];
-//
-//    FriendCircleModel *model1 = [[FriendCircleModel alloc] init];
-//    model1.profileImageUrl = @"angelababy";
-//    model1.userName = @"陈奕迅 史蒂夫111111";
-//    model1.location = @"阿富汗欢乐ktv";
-//    model1.text = @"???";
-//    model1.distan = @"6000KM";
-//    model1.createdAt = @"6小时前";
-//    model1.imagesArray = imagesArray1;
-//    [self.dataSource addObject:model1];
-//    FriendCircleModel *model2 = [[FriendCircleModel alloc] init];
-//    model2.profileImageUrl = @"angelababy";
-//    model2.userName = @"asdfasdf  史蒂夫222222";
-//    model2.location = @"阿富汗欢";
-//    model2.text = @"今天天气很好啊啊都发生的路啊啊都发生的路口附近阿拉山口大家福利卡圣诞节啊啊都发生的路口附近阿拉山口大家福利卡圣诞节口附近阿拉山口大家福利卡圣诞节";
-//    model2.distan = @"6000KM";
-//    model2.createdAt = @"6小时前";
-//    [self.dataSource addObject:model2];
-//    
-//    FriendCircleModel *model4 = [[FriendCircleModel alloc] init];
-//    model4.profileImageUrl = @"zhangxueyou";
-//    model4.userName = @"史蒂夫33333333";
-//    model4.location = @"欢乐ktv";
-//    model4.text = @"model4model4model4model4model4mo333333333";
-//    model4.distan = @"6000KM";
-//    model4.createdAt = @"6小前";
-//    [self.dataSource addObject:model4];
-//    
-//    FriendCircleModel *model5 = [[FriendCircleModel alloc] init];
-//    model5.profileImageUrl = @"jay";
-//    model5.userName = @"史蒂夫444444";
-//    model5.location = @"欢乐ktv";
-//    model5.text = @"555555天";
-//
-//    model5.imagesArray = imagesArray2;
-//    model5.distan = @"6000KM";
-//    model5.createdAt = @"6小前";
-//    [self.dataSource addObject:model5];
-//    [self.dataSource addObject:model5];
-//    [self.dataSource addObject:model5];
-//    [self.dataSource addObject:model5];
-//    [self.dataSource addObject:model5];
-//    [self.dataSource addObject:model5];
-//    [self.dataSource addObject:model5];
-    
+
     [self.tableView reloadData];
 }
 
@@ -224,6 +183,22 @@
             cell = [FriendCircleCell cellWithTabelView:tableView];
             FriendCircleModel *model = self.dataSource[indexPath.row - 1];
             [cell setModel:model];
+            cell.friendPhotoContainerView.delegate = self;
+            __weak FirendCircleViewController *selfWeak = self;
+            cell.mediaClickedBlock = ^(FriendCircleModel *model,NSMutableArray *imageViews,NSUInteger index){
+                NSMutableArray *photoArray = [[NSMutableArray alloc] init];
+                for (int i = 0;i< model.mediaArray.count; i ++) {
+                    ZTImageBrowserModel *imageModel = [[ZTImageBrowserModel alloc]init];
+                    MediaModel *mediaModel = model.mediaArray[i];
+                    imageModel.HDURL = mediaModel.HDURL;
+                    imageModel.srcImageView = imageViews[i];
+                    [photoArray addObject:imageModel];
+                }
+                ZTImageBrowser *imageBrowser = [[ZTImageBrowser alloc]init];
+                imageBrowser.currentIndex = index;
+                [imageBrowser setImageModels:photoArray];
+                [selfWeak presentViewController:imageBrowser animated:NO completion:^{}];
+            };
         }
         return cell;
     }else if([tableView isEqual:self.peopleTablewView]){
@@ -257,6 +232,10 @@
         peopleInformationVC.hidesBottomBarWhenPushed = NO;
     }
 }
+#pragma mark - FriendPhotoContainerViewDelegate
+- (void)imageTapAtIndex:(NSUInteger)index{
+    
+}
 
 #pragma mark - FirendCircleIssueDelegate
 - (void)sendIssue:(NSString *)contentText{
@@ -270,7 +249,7 @@
     FirendCircleIssueViewController *firendCircleIssueVC = [[FirendCircleIssueViewController alloc]init];
     BaseNavigationController *firendCircleIssueVCnav = [[BaseNavigationController alloc]initWithRootViewController:firendCircleIssueVC];
     firendCircleIssueVC.delegate = self;
-    [self.parentViewController presentViewController:firendCircleIssueVCnav animated:YES completion:nil];
+    [self presentViewController:firendCircleIssueVCnav animated:YES completion:nil];
 }
 
 #pragma mark - Getter/Setter
@@ -289,7 +268,7 @@
 
 - (UITableView *)tableView{
     if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT - kTabBar_Height) style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
 //        _tableView.tableHeaderView = self.headerView;

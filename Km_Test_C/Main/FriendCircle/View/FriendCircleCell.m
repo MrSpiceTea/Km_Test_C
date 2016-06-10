@@ -7,17 +7,32 @@
 //
 
 #import "FriendCircleCell.h"
+#import "FriendCircleMediaCell.h"
+#import "ZTImageBrowserModel.h"
+#import "NSString+expanded.h"
+#import "UILabel+expanded.h"
+#import "UIView+Frame.h"
+#import <UIImageView+WebCache.h>
 
-@interface FriendCircleCell()
-@property (nonatomic,strong) UIView *lastView;
+#define kFriendCircleCell_PadingLeft 15
+#define kFriendCircleCell_PadingRight 15
+#define kFriendCircleCell_PadingTop  15.0
+#define kFriendCircleCell_HeadImageViewHeight   30.0f
+#define kFriendCircleCell_ContentMaxHeight 200.0
+#define kFriendCircleCell_ContentX kFriendCircleCell_PadingLeft*2 +kFriendCircleCell_HeadImageViewHeight
+#define kFriendCircleCell_ContentWidth kSCREEN_WIDTH - kFriendCircleCell_ContentX - kFriendCircleCell_PadingRight*6
+#define kFriendCircleCell_MediaImageViewHeight  (kFriendCircleCell_ContentWidth - 6)/3
+
+
+@interface FriendCircleCell()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+//@property (nonatomic,strong) UIView *lastView;
 @property (nonatomic,strong) UIImageView *headerImageView;
 @property (nonatomic,strong) UILabel *distanceLabel;
 @property (nonatomic,strong) UILabel *userNameLabel;
 @property (nonatomic,strong) UILabel *dateLabel;
 @property (nonatomic,strong) UILabel *locationLabel;
 
-
-
+@property (nonatomic,strong) UICollectionView *mediaView;
 @end
 
 @implementation FriendCircleCell
@@ -29,189 +44,8 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
-}
-- (instancetype)initWithTitle:(NSString *)title
-                       detail:(NSString *)detail
-                       detail:(NSString *)imageName
-              reuseIdentifier:(NSString *)reuseIdentifier{
-    if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
-        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
-        
-        UIView *iconView = [UIView new];
-        iconView.backgroundColor = RGB(255, 110, 0);
-        iconView.layer.cornerRadius = 3;
-        [self.contentView addSubview:iconView];
-        
-        UILabel *titleLabel = [[UILabel alloc] init];
-        [titleLabel setBackgroundColor:[UIColor clearColor]];
-        [titleLabel setText:title];
-        [titleLabel setFont:[UIFont systemFontOfSize:14]];
-        [titleLabel setTextColor:RGB(2, 2, 2)];
-        [self.contentView addSubview:titleLabel];
-        
-        UILabel *detailLabel = [[UILabel alloc] init];
-        [detailLabel setBackgroundColor:[UIColor clearColor]];
-        [detailLabel setText:detail];
-        [detailLabel setFont:[UIFont systemFontOfSize:12]];
-        [detailLabel setTextColor:RGB(150, 150, 150)];
-        [self.contentView addSubview:detailLabel];
-        
-        UIView *bottomSeparator = [UIView new];
-        bottomSeparator.backgroundColor = RGB(235, 235, 235);
-        [self.contentView addSubview:bottomSeparator];
-        
-        UIButton *button = [UIButton new];
-        button.titleLabel.text = @"立即参加";
-        button.backgroundColor = RGB(225, 127, 80);
-        
-//        UIImageView *avatarImageView = [UIImageView alloc]initWithImage:[UIImage imageNamed:""];
-        
-        [iconView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(iconView.superview);
-            make.left.equalTo(iconView.superview.mas_left).with.offset(10);
-            make.size.mas_equalTo(CGSizeMake(6, 28));
-        }];
-        [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(iconView.superview);
-            make.left.equalTo(iconView.mas_right).with.offset(6);
-            make.size.mas_equalTo(CGSizeMake(80, 15));
-        }];
-        [bottomSeparator mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(bottomSeparator.superview.mas_left).with.offset(0);
-            make.bottom.equalTo(bottomSeparator.superview.mas_bottom).with.offset(0);
-            make.size.mas_equalTo(CGSizeMake(kSCREEN_WIDTH, 1));
-        }];
-        
-        self.titleLabel = titleLabel;
-        self.detailLabel = detailLabel;
-    }
-    return self;
-}
-
-static const CGFloat FriendCircleCellImageViewHeight = 30.0f;
-static const CGFloat FriendCircleCellTopMargin = 15.0f;
-- (instancetype)initWithFriendCircleModel:(FriendCircleModel *)friendCircleModel reuseIdentifier:(NSString *)reuseIdentifier{
-    if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
-        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
-        self.backgroundColor = RGB(246, 246, 246);
-        
-        UIImageView *headerImageView = [UIImageView new];
-        [headerImageView setFrame:CGRectMake(0, 0, FriendCircleCellImageViewHeight, FriendCircleCellImageViewHeight)];
-        UIImage *image = [UIImage imageNamed:friendCircleModel.profileImageUrl];
-        UIGraphicsBeginImageContextWithOptions(headerImageView.bounds.size, NO, 1.0);
-        [[UIBezierPath bezierPathWithRoundedRect:headerImageView.bounds
-                                    cornerRadius:10.0] addClip];
-        [image drawInRect:headerImageView.bounds];
-        headerImageView.image = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        [self.contentView addSubview:headerImageView];
-        
-        UILabel *distanceLabel = [UILabel new];
-        [distanceLabel setText:friendCircleModel.distan];
-        [distanceLabel setFont:[UIFont systemFontOfSize:9]];
-        [distanceLabel setTextColor:[UIColor orangeColor]];
-        [self.contentView addSubview:distanceLabel];
-        
-        UILabel *userNameLabel = [UILabel new];
-        [userNameLabel setText:friendCircleModel.userName];
-        [userNameLabel setFont:[UIFont systemFontOfSize:13]];
-        [self.contentView addSubview:userNameLabel];
-        
-        UILabel *dateLabel = [UILabel new];
-        [dateLabel setText:friendCircleModel.createdAt];
-        [dateLabel setFont:[UIFont systemFontOfSize:10]];
-        [dateLabel setTextColor:[UIColor colorWithWhite:0.4 alpha:1]];
-        [self.contentView addSubview:dateLabel];
-        
-        UILabel *locationLabel = [UILabel new];
-        [locationLabel setText:friendCircleModel.location];
-        [locationLabel setFont:[UIFont systemFontOfSize:9]];
-        [locationLabel setTextColor:[UIColor colorWithWhite:0.5 alpha:1]];
-        [self.contentView addSubview:locationLabel];
-        
-        UILabel *detailLabel = [UILabel new];
-        [detailLabel setText:friendCircleModel.text];
-        [detailLabel setFont:[UIFont systemFontOfSize:13.5]];
-        detailLabel.numberOfLines = 0;
-        [self.contentView addSubview:detailLabel];
-        
-        UIButton *detailLikeikeButton = [UIButton new];
-        [detailLikeikeButton setTitleColor:[UIColor colorWithWhite:0.4 alpha:1] forState:UIControlStateNormal];
-        [detailLikeikeButton.titleLabel setFont:[UIFont systemFontOfSize:9]];
-        [detailLikeikeButton setImage:[UIImage imageNamed:@"activity_detail_like"] forState:UIControlStateNormal];
-        [detailLikeikeButton setTitle:@"赞" forState:UIControlStateNormal];
-        [detailLikeikeButton setImageEdgeInsets:UIEdgeInsetsMake(0, -10, 0, 15)];
-        [detailLikeikeButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -10, 0, 0)];
-        [self.contentView addSubview:detailLikeikeButton];
-        
-        UIButton *detailCmtikeButton = [UIButton new];
-        [detailCmtikeButton setTitleColor:[UIColor colorWithWhite:0.4 alpha:1] forState:UIControlStateNormal];
-        [detailCmtikeButton.titleLabel setFont:[UIFont systemFontOfSize:9]];
-        [detailCmtikeButton setImage:[UIImage imageNamed:@"activity_detail_cmt"] forState:UIControlStateNormal];
-        [detailCmtikeButton setTitle:@"评论" forState:UIControlStateNormal];
-        [detailCmtikeButton setImageEdgeInsets:UIEdgeInsetsMake(0, -10, 0, 15)];
-        [detailCmtikeButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -10, 0, 0)];
-        [self.contentView addSubview:detailCmtikeButton];
-        
-        FriendPhotoContainerView * friendPhotoContainerView = [FriendPhotoContainerView new];
-        [friendPhotoContainerView setPicUrlStringsArray:friendCircleModel.imagesArray];
-        [self.contentView addSubview:friendPhotoContainerView];
-        
-        [headerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.top.equalTo(self.contentView).insets(UIEdgeInsetsMake(FriendCircleCellTopMargin,FriendCircleCellTopMargin,0,0));
-            make.size.mas_equalTo(CGSizeMake(FriendCircleCellImageViewHeight, FriendCircleCellImageViewHeight));
-        }];
-        [userNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(headerImageView);
-            make.left.equalTo(headerImageView.mas_right).with.offset(FriendCircleCellTopMargin);
-        }];
-        [dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(headerImageView);
-            make.right.equalTo(self.contentView.mas_right).with.offset(-FriendCircleCellTopMargin);
-        }];
-        [locationLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.equalTo(headerImageView);
-            make.left.equalTo(userNameLabel);
-        }];
-        [distanceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.equalTo(locationLabel);
-            make.left.equalTo(locationLabel.mas_right).with.offset(5);
-        }];
-        [detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(locationLabel.mas_bottom).with.offset(5);
-            make.left.equalTo(userNameLabel);
-            make.right.equalTo(self.contentView.mas_right).with.offset(-FriendCircleCellTopMargin);
-        }];
-
-        [friendPhotoContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(detailLabel.mas_bottom).with.offset(5);
-            make.left.equalTo(userNameLabel);
-        }];
-
-        [detailCmtikeButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(friendPhotoContainerView.mas_bottom).with.offset(FriendCircleCellTopMargin);
-            make.right.equalTo(self.contentView.mas_right).with.offset(-FriendCircleCellTopMargin);
-        }];
-        [detailLikeikeButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(detailCmtikeButton);
-            make.right.equalTo(detailCmtikeButton.mas_left).with.offset(-FriendCircleCellTopMargin);
-        }];
-        
-        self.headerImageView = headerImageView;
-        self.distanceLabel = distanceLabel;
-        self.userNameLabel = userNameLabel;
-        self.dateLabel = dateLabel;
-        self.locationLabel = locationLabel;
-        self.detailLabel = detailLabel;
-        self.detailLikeikeButton = detailLikeikeButton;
-        self.detailCmtikeButton = detailCmtikeButton;
-        self.friendPhotoContainerView = friendPhotoContainerView;
-
-        self.lastView = detailLikeikeButton;
-    }
-    return self;
 }
 
 + (instancetype)cellWithTabelView:(UITableView *)tableView{
@@ -228,138 +62,237 @@ static const CGFloat FriendCircleCellTopMargin = 15.0f;
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
-        self.backgroundColor = RGB(246, 246, 246);
+        self.backgroundColor = kCommonTableViewBavkgroundColor;
+        if (!_headerImageView) {
+            _headerImageView = [UIImageView new];
+            [_headerImageView setFrame:CGRectMake(kFriendCircleCell_PadingLeft, kFriendCircleCell_PadingTop, kFriendCircleCell_HeadImageViewHeight, kFriendCircleCell_HeadImageViewHeight)];
+            [self.contentView addSubview:_headerImageView];
+        }
         
-        UIImageView *headerImageView = [UIImageView new];
-        [headerImageView setFrame:CGRectMake(0, 0, FriendCircleCellImageViewHeight, FriendCircleCellImageViewHeight)];
-        [self.contentView addSubview:headerImageView];
+        if (!_userNameLabel) {
+            _userNameLabel = [UILabel new];
+            [_userNameLabel setFrame:CGRectMake(kFriendCircleCell_ContentX, kFriendCircleCell_PadingTop, 50, 20)];
+            [_userNameLabel setFont:[UIFont systemFontOfSize:13]];
+            [self.contentView addSubview:_userNameLabel];
+        }
         
-        UILabel *distanceLabel = [UILabel new];
-        [distanceLabel setFont:[UIFont systemFontOfSize:9]];
-        [distanceLabel setTextColor:[UIColor orangeColor]];
-        [self.contentView addSubview:distanceLabel];
         
-        UILabel *userNameLabel = [UILabel new];
-        [userNameLabel setFont:[UIFont systemFontOfSize:13]];
-        [self.contentView addSubview:userNameLabel];
+        if (!_distanceLabel) {
+            _distanceLabel = [UILabel new];
+            [_distanceLabel setFrame:CGRectMake(kFriendCircleCell_ContentX,CGRectGetMaxY(_userNameLabel.frame), 50, 20)];
+            [_distanceLabel setFont:[UIFont systemFontOfSize:9]];
+            [_distanceLabel setTextColor:[UIColor orangeColor]];
+            [self.contentView addSubview:_distanceLabel];
+        }
         
-        UILabel *dateLabel = [UILabel new];
-        [dateLabel setFont:[UIFont systemFontOfSize:10]];
-        [dateLabel setTextColor:[UIColor colorWithWhite:0.4 alpha:1]];
-        [self.contentView addSubview:dateLabel];
+        if (!_locationLabel) {
+            _locationLabel = [UILabel new];
+            [_locationLabel setFrame:CGRectMake(CGRectGetMaxX(_distanceLabel.frame) + 10,CGRectGetMaxY(_userNameLabel.frame), 50, 20)];
+            [_locationLabel setFont:[UIFont systemFontOfSize:9]];
+            [_locationLabel setTextColor:[UIColor colorWithWhite:0.5 alpha:1]];
+            [self.contentView addSubview:_locationLabel];
+        }
         
-        UILabel *locationLabel = [UILabel new];
-        [locationLabel setFont:[UIFont systemFontOfSize:9]];
-        [locationLabel setTextColor:[UIColor colorWithWhite:0.5 alpha:1]];
-        [self.contentView addSubview:locationLabel];
+        if (!_dateLabel) {
+            _dateLabel = [UILabel new];
+            [_dateLabel setFont:[UIFont systemFontOfSize:10]];
+            [_dateLabel setFrame:CGRectMake(kSCREEN_WIDTH - 50 - kFriendCircleCell_PadingTop, kFriendCircleCell_PadingTop, 50, 20)];
+            [_dateLabel setTextColor:[UIColor colorWithWhite:0.4 alpha:1]];
+            [self.contentView addSubview:_dateLabel];
+        }
         
-        UILabel *detailLabel = [UILabel new];
-        [detailLabel setFont:[UIFont systemFontOfSize:13.5]];
-        detailLabel.numberOfLines = 0;
-        [self.contentView addSubview:detailLabel];
+        if (!_detailLabel) {
+            _detailLabel = [UILabel new];
+            [_detailLabel setFrame:CGRectMake(kFriendCircleCell_ContentX, CGRectGetMaxY(_distanceLabel.frame), kFriendCircleCell_ContentWidth, 20)];
+            [_detailLabel setFont:[UIFont systemFontOfSize:13.5]];
+            _detailLabel.numberOfLines = 0;
+            [self.contentView addSubview:_detailLabel];
+        }
         
-        UIButton *detailLikeikeButton = [UIButton new];
-        [detailLikeikeButton setTitleColor:[UIColor colorWithWhite:0.4 alpha:1] forState:UIControlStateNormal];
-        [detailLikeikeButton.titleLabel setFont:[UIFont systemFontOfSize:9]];
-        [detailLikeikeButton setImage:[UIImage imageNamed:@"activity_detail_like"] forState:UIControlStateNormal];
-        [detailLikeikeButton setTitle:@"赞" forState:UIControlStateNormal];
-        [detailLikeikeButton setImageEdgeInsets:UIEdgeInsetsMake(0, -10, 0, 15)];
-        [detailLikeikeButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -10, 0, 0)];
-        [self.contentView addSubview:detailLikeikeButton];
+        if (!_detailLikeikeButton) {
+            _detailLikeikeButton = [UIButton new];
+            [_detailLikeikeButton setFrame:CGRectMake(kSCREEN_WIDTH - 40*2 - kFriendCircleCell_PadingRight*2, 0, 40, 20)];
+            [_detailLikeikeButton setTitleColor:[UIColor colorWithWhite:0.4 alpha:1] forState:UIControlStateNormal];
+            [_detailLikeikeButton.titleLabel setFont:[UIFont systemFontOfSize:9]];
+            [_detailLikeikeButton setImage:[UIImage imageNamed:@"activity_detail_like"] forState:UIControlStateNormal];
+            [_detailLikeikeButton setTitle:@"赞" forState:UIControlStateNormal];
+            [_detailLikeikeButton setImageEdgeInsets:UIEdgeInsetsMake(0, -5, 0, 5)];
+            [_detailLikeikeButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -5, 0, 5)];
+            [self.contentView addSubview:_detailLikeikeButton];
+        }
         
-        UIButton *detailCmtikeButton = [UIButton new];
-        [detailCmtikeButton setTitleColor:[UIColor colorWithWhite:0.4 alpha:1] forState:UIControlStateNormal];
-        [detailCmtikeButton.titleLabel setFont:[UIFont systemFontOfSize:9]];
-        [detailCmtikeButton setImage:[UIImage imageNamed:@"activity_detail_cmt"] forState:UIControlStateNormal];
-        [detailCmtikeButton setTitle:@"评论" forState:UIControlStateNormal];
-        [detailCmtikeButton setImageEdgeInsets:UIEdgeInsetsMake(0, -10, 0, 15)];
-        [detailCmtikeButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -10, 0, 0)];
-        [self.contentView addSubview:detailCmtikeButton];
+        if (!_detailCmtikeButton) {
+            _detailCmtikeButton= [UIButton new];
+            [_detailCmtikeButton setFrame:CGRectMake(CGRectGetMaxX(_detailLikeikeButton.frame) + kFriendCircleCell_PadingLeft, 0, 40, 20)];
+            [_detailCmtikeButton setTitleColor:[UIColor colorWithWhite:0.4 alpha:1] forState:UIControlStateNormal];
+            [_detailCmtikeButton.titleLabel setFont:[UIFont systemFontOfSize:9]];
+            [_detailCmtikeButton setImage:[UIImage imageNamed:@"activity_detail_cmt"] forState:UIControlStateNormal];
+            [_detailCmtikeButton setTitle:@"评论" forState:UIControlStateNormal];
+            [_detailCmtikeButton setImageEdgeInsets:UIEdgeInsetsMake(0, -5, 0, 5)];
+            [_detailCmtikeButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -5, 0, 5)];
+            [self.contentView addSubview:_detailCmtikeButton];
+        }
         
-        FriendPhotoContainerView * friendPhotoContainerView = [FriendPhotoContainerView new];
-        [self.contentView addSubview:friendPhotoContainerView];
+        if (!self.mediaView) {
+            UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+            self.mediaView = [[UICollectionView alloc] initWithFrame:CGRectMake(kFriendCircleCell_ContentX, 0, kFriendCircleCell_ContentWidth, 80) collectionViewLayout:layout];
+            self.mediaView.scrollEnabled = NO;
+            [self.mediaView setBackgroundView:nil];
+            [self.mediaView setBackgroundColor:[UIColor clearColor]];
+            [self.mediaView registerClass:[FriendCircleMediaCell class] forCellWithReuseIdentifier:kCCellIdentifier_FriendCircleMediaCell];
+            self.mediaView.dataSource = self;
+            self.mediaView.delegate = self;
+            [self.contentView addSubview:self.mediaView];
+        }
         
-        self.headerImageView = headerImageView;
-        self.distanceLabel = distanceLabel;
-        self.userNameLabel = userNameLabel;
-        self.dateLabel = dateLabel;
-        self.locationLabel = locationLabel;
-        self.detailLabel = detailLabel;
-        self.detailLikeikeButton = detailLikeikeButton;
-        self.detailCmtikeButton = detailCmtikeButton;
-        self.friendPhotoContainerView = friendPhotoContainerView;
-        self.lastView = detailLikeikeButton;
+        
     }
     return self;
 }
 
-+ (CGFloat)heightWithModel:(FriendCircleModel *)model {
-    FriendCircleCell *cell = [[FriendCircleCell
-                                alloc] initWithFriendCircleModel:model reuseIdentifier:@"FriendCircleCell"];
-    [cell layoutIfNeeded];
-    CGRect frame =  cell.lastView.frame;
-    return frame.origin.y + frame.size.height + FriendCircleCellTopMargin;
-//    return 200;
-}
 
 - (void)setModel:(FriendCircleModel *)model{
     _model = model;
-    self.distanceLabel.text = model.distan;
+    if (!_model) {
+        return;
+    }
+
+    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:model.profileImageUrl] placeholderImage:[UIImage imageNamed:@"myhome_default_head"]];
+    
+//    UIImage *image = self.headerImageView.image;
+//    UIGraphicsBeginImageContextWithOptions(self.headerImageView.bounds.size, NO, 1.0);
+//    [[UIBezierPath bezierPathWithRoundedRect:self.headerImageView.bounds
+//                                cornerRadius:10.0] addClip];
+//    [image drawInRect:self.headerImageView.bounds];
+//    self.headerImageView.image = UIGraphicsGetImageFromCurrentImageContext();
+    
     self.userNameLabel.text = model.userName;
+    self.distanceLabel.text = model.distan;
     self.dateLabel.text = model.createdAt;
     self.locationLabel.text = model.location;
-    self.detailLabel.text = model.text;
-
-    UIImage *image = [UIImage imageNamed:model.profileImageUrl];
-    UIGraphicsBeginImageContextWithOptions(self.headerImageView .bounds.size, NO, 1.0);
-    [[UIBezierPath bezierPathWithRoundedRect:self.headerImageView .bounds
-                                cornerRadius:10.0] addClip];
-    [image drawInRect:self.headerImageView.bounds];
-    self.headerImageView .image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+    [self.detailLabel setLongString:model.text withFitWidth:kFriendCircleCell_ContentWidth maxHeight:kFriendCircleCell_ContentMaxHeight];
     
-
-    self.friendPhotoContainerView.picUrlStringsArray = model.imagesArray;
-
-    [self.headerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.equalTo(self.contentView).insets(UIEdgeInsetsMake(FriendCircleCellTopMargin,FriendCircleCellTopMargin,0,0));
-        make.size.mas_equalTo(CGSizeMake(FriendCircleCellImageViewHeight, FriendCircleCellImageViewHeight));
-    }];
-    [self.userNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.headerImageView);
-        make.left.equalTo(self.headerImageView.mas_right).with.offset(FriendCircleCellTopMargin);
-    }];
-    [self.dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.headerImageView);
-        make.right.equalTo(self.contentView.mas_right).with.offset(-FriendCircleCellTopMargin);
-    }];
-    [self.locationLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.headerImageView);
-        make.left.equalTo(self.userNameLabel);
-    }];
-    [self.distanceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.locationLabel);
-        make.left.equalTo(self.locationLabel.mas_right).with.offset(5);
-    }];
-    [self.detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.locationLabel.mas_bottom).with.offset(5);
-        make.left.equalTo(self.userNameLabel);
-        make.right.equalTo(self.contentView.mas_right).with.offset(-FriendCircleCellTopMargin);
-    }];
-    [self.friendPhotoContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.detailLabel.mas_bottom).with.offset(5);
-        make.left.equalTo(self.userNameLabel);
-    }];
+    CGFloat curBottomY = CGRectGetMaxY(self.detailLabel.frame);
+    if (model.mediaArray.count>0) {
+        CGFloat mediaHeight = [[self class] contentMediaHeightWithTweet:model];
+        [self.mediaView setFrame:CGRectMake(kFriendCircleCell_ContentX, curBottomY, kFriendCircleCell_ContentWidth, mediaHeight)];
+        [self.mediaView reloadData];
+        self.mediaView.hidden = NO;
+        curBottomY += mediaHeight;
+    }else{
+        self.mediaView.hidden = YES;
+    }
     
-    [self.detailCmtikeButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-FriendCircleCellTopMargin);
-        make.right.equalTo(self.contentView.mas_right).with.offset(-FriendCircleCellTopMargin);
-    }];
-    [self.detailLikeikeButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.detailCmtikeButton);
-        make.right.equalTo(self.detailCmtikeButton.mas_left).with.offset(-FriendCircleCellTopMargin);
-    }];
-    
+    curBottomY += kFriendCircleCell_PadingTop;
+    [self.detailLikeikeButton setY:curBottomY];
+    [self.detailCmtikeButton setY:curBottomY];
 }
+
++ (CGFloat)contentMediaHeightWithTweet:(FriendCircleModel *)model{
+    CGFloat contentMediaHeight = 0;
+    NSInteger mediaCount = model.mediaArray.count;
+    if (mediaCount > 0) {
+        if (mediaCount == 1) {
+            
+        }else{
+            return ceilf((float)mediaCount/3)*kFriendCircleCell_MediaImageViewHeight;
+        }
+    }
+    return contentMediaHeight;
+    return 0;
+}
+
++ (CGFloat)heightWithModel:(FriendCircleModel *)model {
+    CGFloat cellHeight = 0;
+    cellHeight += kFriendCircleCell_PadingTop;
+    cellHeight += 40;
+    cellHeight += 300; //[self contentHeightWithModel:model];
+    cellHeight += [self mediatHeightWithModel:model];
+    cellHeight += kFriendCircleCell_PadingTop;
+    cellHeight += 20;
+    cellHeight += kFriendCircleCell_PadingTop;
+    return ceilf(cellHeight);
+}
+
++ (CGFloat)contentHeightWithModel:(FriendCircleModel *)model{
+    CGFloat height = 0;
+    if (model.userName.length > 0) {
+        height += MIN(kFriendCircleCell_ContentMaxHeight, [model.userName getHeightWithFont:[UIFont systemFontOfSize:10] constrainedToSize:CGSizeMake(kFriendCircleCell_ContentWidth, CGFLOAT_MAX)]);
+        height += 15;
+    }
+    return height;
+}
+
++ (CGFloat)mediatHeightWithModel:(FriendCircleModel *)model{
+    if (model.mediaArray.count>0) {
+        FriendPhotoContainerView * friendPhotoContainerView = [FriendPhotoContainerView new];
+        return   [friendPhotoContainerView heightWidthImages:model.mediaArray];
+    }
+    return 0;
+}
+
+#pragma mark UICollection
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    NSInteger row = 0;
+    if (collectionView == _mediaView) {
+        row = _model.mediaArray.count;
+    }else{
+        return 0;
+    }
+    return row;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (collectionView == _mediaView) {
+        MediaModel *media = self.model.mediaArray[indexPath.row];
+        FriendCircleMediaCell *ccell = [collectionView dequeueReusableCellWithReuseIdentifier:kCCellIdentifier_FriendCircleMediaCell forIndexPath:indexPath];
+        [ccell.imageView setFrame:CGRectMake(0, 0, kFriendCircleCell_MediaImageViewHeight, kFriendCircleCell_MediaImageViewHeight)];
+        [ccell.imageView sd_setImageWithURL:media.thumbnailImageURL placeholderImage:[UIImage imageNamed:@"myhome_default_head"]];
+        return ccell;
+    }else{
+        
+    }
+    return nil;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
+    if (collectionView == _mediaView) {
+        return 3.0;
+    }else{
+        return kFriendCircleCell_PadingLeft;
+    }
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
+    if (collectionView == _mediaView) {
+        return 2.0;
+    }else{
+        return kFriendCircleCell_PadingLeft/2;
+    }
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+    return UIEdgeInsetsMake(5, 0, 0, 0);
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    return CGSizeMake(kFriendCircleCell_MediaImageViewHeight, kFriendCircleCell_MediaImageViewHeight);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (self.mediaClickedBlock) {
+        NSMutableArray *imageViews = [NSMutableArray new];
+        for (int i = 0; i<self.model.mediaArray.count;i++ ) {
+            FriendCircleMediaCell *cell = (FriendCircleMediaCell *)[collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+            [imageViews addObject:cell.imageView];
+        }
+        self.mediaClickedBlock(self.model,imageViews,indexPath.row);
+    }
+}
+
 
 @end

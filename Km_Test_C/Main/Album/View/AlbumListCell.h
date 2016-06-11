@@ -10,9 +10,10 @@
 #import "AlbumModel.h"
 
 @protocol AlbumListCellMentViewDelegate;
-
 @interface AlbumListCell : UITableViewCell
+
 @property (weak, nonatomic) id <AlbumListCellMentViewDelegate> delegate;
+
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UILabel *detailLabel;
 @property (strong, nonatomic) UILabel *numLabel;
@@ -21,6 +22,7 @@
 @property (strong, nonatomic) AlbumModel *albumModel;
 @property (strong, nonatomic) NSIndexPath *indexPath;
 + (instancetype)cellWithTabelView:(UITableView *)tableView;
+
 @end
 
 

@@ -33,6 +33,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - UINavigationControllerDelegate methods
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    
+    if ([navigationController.viewControllers[0] isKindOfClass:[ChooseSongViewController class]]) {
+
+    }else{
+
+    }
+    
+//    if ([viewController isKindOfClass:[LoginViewController class]]) {
+//        
+//    }
+}
 
 #pragma mark - UIViewControllerTransitioningDelegate methods
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{

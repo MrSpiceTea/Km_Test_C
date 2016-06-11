@@ -7,7 +7,7 @@
 //
 
 #import "ChooseSongCell.h"
-#import "ChooseSongGirdView.h"
+//#import "ChooseSongGirdView.h"
 static NSString *chooseSongSerachCellIdentifier = @"chooseSongSerachCell";
 static NSString *chooseSongTopGridCellIdentifier = @"chooseSongTopGridCell";
 static NSString *chooseSongTitleCellIdentifier = @"chooseSongTitleCell";
@@ -286,10 +286,10 @@ static const CGFloat kTopGridViewMargin = 5.0f;
     return chooseSongTopGridView;
 }
 
-- (UIView *)chooseSongBottomGirdView{
-    ChooseSongGirdView *gird = [[ChooseSongGirdView alloc]init];
-    return gird;
-}
+//- (UIView *)chooseSongBottomGirdView{
+//    ChooseSongGirdView *gird = [[ChooseSongGirdView alloc]init];
+//    return gird;
+//}
 
 //- (UIView *)chooseSongBottomGirdView{
 //    if (kDevice_Is_iPhone6Plus) {

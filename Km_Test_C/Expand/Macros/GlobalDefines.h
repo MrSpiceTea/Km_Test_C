@@ -22,5 +22,4 @@
 #define kCommonBavkgroundViewColor RGB(240, 240, 240)
 #define kCommonTableViewBavkgroundColor RGB(246, 246, 246)
 #define kCommonTableViewSeparatorBavkgroundColor RGB(246, 246, 246)
-#define kCommonTableViewCellBottomSeparatorBavkgroundColor RGB(235, 235, 235)
 #endif /* GlobalDefines_h */

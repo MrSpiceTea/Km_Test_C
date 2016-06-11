@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3501A2C61CEE063A0035D821 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3501A2C51CEE063A0035D821 /* MobileCoreServices.framework */; };
-		3501A2C81CEE06BF0035D821 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3501A2C71CEE06BF0035D821 /* AssetsLibrary.framework */; };
 		350B2CD11CE87A7D00A85A86 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350B2CD01CE87A7D00A85A86 /* LoginViewController.m */; };
 		350B2CD51CE87AA500A85A86 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350B2CD31CE87AA500A85A86 /* RegisterViewController.m */; };
 		350B2CD61CE87AA500A85A86 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 350B2CD41CE87AA500A85A86 /* RegisterViewController.xib */; };
@@ -82,13 +80,9 @@
 		513E5B1C1CE9633200F9B60A /* KM_NetAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DF31CDC952200C084E7 /* KM_NetAPIManager.m */; };
 		513E5B1D1CE9633E00F9B60A /* KM_NetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DF81CDC98DB00C084E7 /* KM_NetAPIClient.m */; };
 		513E5B1E1CE9635800F9B60A /* KM_APIRequestAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 518F9DFB1CDC9C6400C084E7 /* KM_APIRequestAgent.m */; };
-<<<<<<< HEAD
-		513E5B211CE9B66900F9B60A /* ChooseSongGirdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 513E5B201CE9B66900F9B60A /* ChooseSongGirdView.m */; };
-=======
 		5140D5431CF6C66500DA2701 /* ZTImageBrowserProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5140D5421CF6C66500DA2701 /* ZTImageBrowserProgressView.m */; };
 		5140FF461CEF038800CADD04 /* SwipeUpInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5140FF451CEF038800CADD04 /* SwipeUpInteractiveTransition.m */; };
 		5140FF491CEF0C6200CADD04 /* NormalDismissAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5140FF481CEF0C6200CADD04 /* NormalDismissAnimation.m */; };
->>>>>>> master
 		5145BE571CE566C20025DB10 /* ChatSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145BE561CE566C20025DB10 /* ChatSessionViewController.m */; };
 		5145BE611CE570ED0025DB10 /* CommonDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145BE5C1CE570ED0025DB10 /* CommonDataSource.m */; };
 		5145BE651CE5713A0025DB10 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145BE641CE5713A0025DB10 /* MessageModel.m */; };
@@ -148,16 +142,11 @@
 		51DE668E1CCA28E9001F0BAC /* UINavigationBar+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DE668D1CCA28E9001F0BAC /* UINavigationBar+expanded.m */; };
 		51F7C3111CD06676002BEB8F /* ArtistSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F7C3101CD06676002BEB8F /* ArtistSearchView.m */; };
 		51F7C3151CD08CAA002BEB8F /* ArtistClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F7C3141CD08CAA002BEB8F /* ArtistClassCell.m */; };
-		D8CD2123AF3946F5890E53D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C52ABCEC8E48761AAEB808 /* libPods.a */; };
+		FDAAE1FD63D4362CAFFC62D9 /* libPods-Km_Test_C.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CD278CDC414C2591A3DBE82 /* libPods-Km_Test_C.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-<<<<<<< HEAD
-=======
-		008F43D532155A1C8019E546 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		3501A2C51CEE063A0035D821 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		3501A2C71CEE06BF0035D821 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
->>>>>>> master
+		08CBE17728E0488FFE9AC179 /* Pods-Km_Test_C.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Km_Test_C.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Km_Test_C/Pods-Km_Test_C.debug.xcconfig"; sourceTree = "<group>"; };
 		350B2CCF1CE87A7D00A85A86 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		350B2CD01CE87A7D00A85A86 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		350B2CD21CE87AA500A85A86 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -231,9 +220,6 @@
 		35ED92C11CE38F4A003FE776 /* ChatFriendSearchListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatFriendSearchListViewController.m; sourceTree = "<group>"; };
 		35ED92C31CE38FA2003FE776 /* ChatFriendAddAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatFriendAddAddressViewController.h; sourceTree = "<group>"; };
 		35ED92C41CE38FA2003FE776 /* ChatFriendAddAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatFriendAddAddressViewController.m; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		4A92A70EE6195043F3400FCC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-=======
 		51129D871CFFFFB70098BBF9 /* ZTImagePickerBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZTImagePickerBack@2x.png"; sourceTree = "<group>"; };
 		51129D881CFFFFB70098BBF9 /* ZTImagePickerBack@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZTImagePickerBack@3x.png"; sourceTree = "<group>"; };
 		51129D891CFFFFB70098BBF9 /* ZTImagePickerPhoto_circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZTImagePickerPhoto_circle@2x.png"; sourceTree = "<group>"; };
@@ -243,7 +229,6 @@
 		51129D921D0002550098BBF9 /* UIView+animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+animation.m"; sourceTree = "<group>"; };
 		511A97411CF7FB4900537DCA /* ImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScrollView.h; sourceTree = "<group>"; };
 		511A97421CF7FB4900537DCA /* ImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScrollView.m; sourceTree = "<group>"; };
->>>>>>> master
 		5135719E1CDC2B3D00E600DE /* ArtistDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistDetailCell.h; sourceTree = "<group>"; };
 		5135719F1CDC2B3D00E600DE /* ArtistDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistDetailCell.m; sourceTree = "<group>"; };
 		513571A21CDC355E00E600DE /* ArtistModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistModel.h; sourceTree = "<group>"; };
@@ -286,17 +271,12 @@
 		513E5B161CE9629B00F9B60A /* KMAbstractObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMAbstractObject.m; sourceTree = "<group>"; };
 		513E5B181CE962A300F9B60A /* CommonAbstractObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonAbstractObject.h; sourceTree = "<group>"; };
 		513E5B191CE962A300F9B60A /* CommonAbstractObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonAbstractObject.m; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		513E5B1F1CE9B66900F9B60A /* ChooseSongGirdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSongGirdView.h; sourceTree = "<group>"; };
-		513E5B201CE9B66900F9B60A /* ChooseSongGirdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSongGirdView.m; sourceTree = "<group>"; };
-=======
 		5140D5411CF6C66500DA2701 /* ZTImageBrowserProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTImageBrowserProgressView.h; sourceTree = "<group>"; };
 		5140D5421CF6C66500DA2701 /* ZTImageBrowserProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTImageBrowserProgressView.m; sourceTree = "<group>"; };
 		5140FF441CEF038800CADD04 /* SwipeUpInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeUpInteractiveTransition.h; sourceTree = "<group>"; };
 		5140FF451CEF038800CADD04 /* SwipeUpInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeUpInteractiveTransition.m; sourceTree = "<group>"; };
 		5140FF471CEF0C6200CADD04 /* NormalDismissAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalDismissAnimation.h; sourceTree = "<group>"; };
 		5140FF481CEF0C6200CADD04 /* NormalDismissAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalDismissAnimation.m; sourceTree = "<group>"; };
->>>>>>> master
 		5145BE551CE566C20025DB10 /* ChatSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatSessionViewController.h; sourceTree = "<group>"; };
 		5145BE561CE566C20025DB10 /* ChatSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatSessionViewController.m; sourceTree = "<group>"; };
 		5145BE5B1CE570ED0025DB10 /* CommonDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDataSource.h; sourceTree = "<group>"; };
@@ -427,7 +407,8 @@
 		51F7C3101CD06676002BEB8F /* ArtistSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArtistSearchView.m; path = ../ArtistSearchView.m; sourceTree = "<group>"; };
 		51F7C3131CD08CAA002BEB8F /* ArtistClassCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistClassCell.h; sourceTree = "<group>"; };
 		51F7C3141CD08CAA002BEB8F /* ArtistClassCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistClassCell.m; sourceTree = "<group>"; };
-		C40A96F0FA5F6CBF9C38A730 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		7CD278CDC414C2591A3DBE82 /* libPods-Km_Test_C.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Km_Test_C.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E169CE757CB959F6D24383C /* Pods-Km_Test_C.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Km_Test_C.release.xcconfig"; path = "Pods/Target Support Files/Pods-Km_Test_C/Pods-Km_Test_C.release.xcconfig"; sourceTree = "<group>"; };
 		E3C52ABCEC8E48761AAEB808 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -436,13 +417,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-				D8CD2123AF3946F5890E53D8 /* libPods.a in Frameworks */,
-=======
-				3501A2C81CEE06BF0035D821 /* AssetsLibrary.framework in Frameworks */,
-				3501A2C61CEE063A0035D821 /* MobileCoreServices.framework in Frameworks */,
-				561259F6BA63AC905B96D264 /* libPods.a in Frameworks */,
->>>>>>> master
+				FDAAE1FD63D4362CAFFC62D9 /* libPods-Km_Test_C.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				E3C52ABCEC8E48761AAEB808 /* libPods.a */,
+				7CD278CDC414C2591A3DBE82 /* libPods-Km_Test_C.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -503,8 +479,6 @@
 				35E68FE61CCCB3A1003F1AC7 /* ChooseSongHeadView.m */,
 				35E68FFA1CCD1219003F1AC7 /* ChosseSongSearchView.h */,
 				35E68FFB1CCD1219003F1AC7 /* ChosseSongSearchView.m */,
-				513E5B1F1CE9B66900F9B60A /* ChooseSongGirdView.h */,
-				513E5B201CE9B66900F9B60A /* ChooseSongGirdView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -638,8 +612,6 @@
 			path = Contorller;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-=======
 		51129D861CFFFF520098BBF9 /* ZTImagePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -653,7 +625,6 @@
 			path = ZTImagePicker;
 			sourceTree = "<group>";
 		};
->>>>>>> master
 		513571A11CDC350300E600DE /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1035,8 +1006,8 @@
 			children = (
 				51DE66241CCA1C1F001F0BAC /* Km_Test_C */,
 				51DE66231CCA1C1F001F0BAC /* Products */,
-				EC7F0986935C0390346E8437 /* Pods */,
 				046BDD516F9F142EC688BD37 /* Frameworks */,
+				785D9D5157226217B0F1CA8E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1278,17 +1249,11 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		EC7F0986935C0390346E8437 /* Pods */ = {
+		785D9D5157226217B0F1CA8E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				4A92A70EE6195043F3400FCC /* Pods.debug.xcconfig */,
-				C40A96F0FA5F6CBF9C38A730 /* Pods.release.xcconfig */,
-=======
-				3501A2C71CEE06BF0035D821 /* AssetsLibrary.framework */,
-				3501A2C51CEE063A0035D821 /* MobileCoreServices.framework */,
-				C5A6AAC0663F3CC9673F6F81 /* libPods.a */,
->>>>>>> master
+				08CBE17728E0488FFE9AC179 /* Pods-Km_Test_C.debug.xcconfig */,
+				7E169CE757CB959F6D24383C /* Pods-Km_Test_C.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1300,12 +1265,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51DE66391CCA1C1F001F0BAC /* Build configuration list for PBXNativeTarget "Km_Test_C" */;
 			buildPhases = (
-				F5FFEDB983E5A2E45615123A /* Check Pods Manifest.lock */,
+				823823822F77E1DF2FB9E738 /* [CP] Check Pods Manifest.lock */,
 				51DE661E1CCA1C1F001F0BAC /* Sources */,
 				51DE661F1CCA1C1F001F0BAC /* Frameworks */,
 				51DE66201CCA1C1F001F0BAC /* Resources */,
-				69BE59BCD493051282D859EF /* Embed Pods Frameworks */,
-				E5C34884791CC8152D6D0069 /* Copy Pods Resources */,
+				69BE59BCD493051282D859EF /* [CP] Embed Pods Frameworks */,
+				596C2E3653DB0702C47FE4DA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1362,13 +1327,9 @@
 				51129D8D1CFFFFB70098BBF9 /* ZTImagePickerBack@3x.png in Resources */,
 				51129D8C1CFFFFB70098BBF9 /* ZTImagePickerBack@2x.png in Resources */,
 				35D07E661CE4EA0A00A305C7 /* MessageCell.xib in Resources */,
-<<<<<<< HEAD
-=======
 				513C33601CF5889C005FDDC7 /* peoples.json in Resources */,
-				5155830A1CEB1ECF007523A1 /* Info.plist in Resources */,
 				51129D8E1CFFFFB70098BBF9 /* ZTImagePickerPhoto_circle@2x.png in Resources */,
 				513881921D0125E1001E9789 /* ZTImagePickerPhoto_delete@2x.png in Resources */,
->>>>>>> master
 				35C08FC31CE248930050D749 /* CoustomView.xib in Resources */,
 				5186088E1CE040240066E0D6 /* chatList.plist in Resources */,
 				51129D901CFFFFB70098BBF9 /* ZTImagePickerPhoto_unselected@2x.png in Resources */,
@@ -1384,44 +1345,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		69BE59BCD493051282D859EF /* Embed Pods Frameworks */ = {
+		596C2E3653DB0702C47FE4DA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Km_Test_C/Pods-Km_Test_C-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E5C34884791CC8152D6D0069 /* Copy Pods Resources */ = {
+		69BE59BCD493051282D859EF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Km_Test_C/Pods-Km_Test_C-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F5FFEDB983E5A2E45615123A /* Check Pods Manifest.lock */ = {
+		823823822F77E1DF2FB9E738 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1501,11 +1462,7 @@
 				513B66E41CED679700ECB7D0 /* NSString+expanded.m in Sources */,
 				356013261CCA9E3500DE2275 /* MeViewController.m in Sources */,
 				517D094E1CCE2698007EA37D /* ChooseAlwaysViewController.m in Sources */,
-<<<<<<< HEAD
-				513E5B211CE9B66900F9B60A /* ChooseSongGirdView.m in Sources */,
-=======
 				351A7ED71CFF212A00981E2F /* ZTImagePickerItem.m in Sources */,
->>>>>>> master
 				51DE668E1CCA28E9001F0BAC /* UINavigationBar+expanded.m in Sources */,
 				350B2CD51CE87AA500A85A86 /* RegisterViewController.m in Sources */,
 				513989E51CE2DDFC006C10C8 /* MeInformationViewController.m in Sources */,
@@ -1645,7 +1602,7 @@
 		};
 		51DE663A1CCA1C1F001F0BAC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A92A70EE6195043F3400FCC /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 08CBE17728E0488FFE9AC179 /* Pods-Km_Test_C.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1661,7 +1618,7 @@
 		};
 		51DE663B1CCA1C1F001F0BAC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C40A96F0FA5F6CBF9C38A730 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 7E169CE757CB959F6D24383C /* Pods-Km_Test_C.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

@@ -19,7 +19,7 @@
 
 #import "ChooseSongCell.h"
 #import "ChooseSongHeadView.h"
-#import "ChooseSongGirdView.h"
+//#import "ChooseSongGirdView.h"
 #import "UINavigationBar+expanded.h"
 #import <UIImageView+WebCache.h>
 #import "MJRefresh.h"
@@ -149,21 +149,11 @@ static const CGFloat kTimerInterval = 5.0f;
         if (indexPath.row == 0 || indexPath.row == 7) {
             cell = [ChooseSongCell cellWithTabelView:tableView];
         }else if (indexPath.row == 8){
-            __weak ChooseSongViewController *weakSelf = self;
-            ChooseSongGirdView *girdView = [[ChooseSongGirdView alloc]init];
-            girdView.fetchViewAtTag = ^(NSUInteger tag){
-                AlbumModel *album = self.dataSource[tag];
-                GridView *girdView = [[GridView alloc]init];
-                girdView.titleLabel.text = album.artistName;
-                [girdView.imageView sd_setImageWithURL:[KM_APIRequestAgent imageurlWidthPicurlhead:album.fileID] placeholderImage:[UIImage imageNamed:@"login_username"]];
-                return girdView;
-            };
-            girdView.viewTapBlock = ^(NSUInteger tag){
+            cell = [ChooseSongCell cellWithBottomGirdView:tableView];
+            cell.bottomGirdViewBlock = ^(NSUInteger tag){
                 AlbumRecListViewController *AlbumRecListVC = [[AlbumRecListViewController alloc]init];
                 [weakSelf.navigationController pushViewController:AlbumRecListVC animated:YES];
             };
-            [girdView setGridViewCount:9];
-            cell = [[ChooseSongCell alloc]initWithCustomView:girdView tableView:tableView];
         }else{
             cell = [ChooseSongCell cellWithHotCell:tableView];
         }

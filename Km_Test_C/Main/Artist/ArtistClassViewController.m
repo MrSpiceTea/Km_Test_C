@@ -53,7 +53,7 @@
     NSDictionary *dic5 = @{@"title":@"KTV会员卡",@"imageName":@"icon_ecard"};
     NSDictionary *dic6 = @{@"title":@"K米点歌机",@"imageName":@"icon_connect_kmbox"};
     
-    self.dataSource = [NSArray arrayWithObjects:dic1,dic2,dic3,dic4,dic5,dic6,nil];
+    self.dataSource = [NSMutableArray arrayWithObjects:dic1,dic2,dic3,dic4,dic5,dic6,nil];
 }
 
 #pragma mark - UITablewViewDelegate
